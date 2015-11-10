@@ -1,0 +1,13 @@
+{
+  "name": "ckeditor-light-theme",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Ikimea/ckeditor-light-theme",
+  "authors": [
+    "Mbechezi Mlanawo <mlanawo.mbechezi@ikimea.com>"
+  ],
+  "keywords": [
+    "ckeditor",
+    "theme"
+  ],
+  "license": "MIT"
+}
