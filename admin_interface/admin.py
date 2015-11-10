@@ -43,6 +43,10 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('css_delete_button_background_color', 'css_delete_button_background_hover_color', 'css_delete_button_text_color', )
         }),
+        ('Extras', {
+            'classes': ('wide', ),
+            'fields': ('list_filter_dropdown', )
+        }),
     )
     
     save_on_top = True

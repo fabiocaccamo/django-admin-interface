@@ -4,14 +4,14 @@
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
 <style type="text/css">
-    
+
 {% if theme.active %}
     
     #header { 
-        height: auto; 
-        min-height: 40px; 
-        background: {{ theme.css_header_background_color }};
-        color: {{ theme.css_header_text_color }};
+        height:auto; 
+        min-height:40px; 
+        background:{{ theme.css_header_background_color }};
+        color:{{ theme.css_header_text_color }};
     }
     
     #header #user-tools a {
@@ -21,14 +21,14 @@
     #header #user-tools a:hover, 
     #header #user-tools a:active {
         color:{{ theme.css_header_link_hover_color }};
-        border-bottom-color: rgba(255, 255, 255, 0.5);
+        border-bottom-color:rgba(255, 255, 255, 0.5);
     }
     
     #branding h1 img.logo { 
-        max-height: 100px; 
-        margin-top: 10px; 
-        margin-bottom: 10px; 
-        margin-right: 15px;
+        max-height:100px; 
+        margin-top:10px; 
+        margin-bottom:10px; 
+        margin-right:15px;
     }
     
     #branding h1 {
@@ -36,7 +36,7 @@
     }
     
     #branding h1 img+span {
-        white-space: nowrap;
+        white-space:nowrap;
     }
     
     .module h2, 
@@ -45,147 +45,147 @@
     .module.filtered h2, 
     .inline-group h2, 
     div.breadcrumbs {
-        background: {{ theme.css_module_background_color }};
-        color: {{ theme.css_module_text_color }};
+        background:{{ theme.css_module_background_color }};
+        color:{{ theme.css_module_text_color }};
     }
     
     div.breadcrumbs a {
-        color: {{ theme.css_module_link_color }};
+        color:{{ theme.css_module_link_color }};
     }
     
     div.breadcrumbs a:hover, 
     div.breadcrumbs a:active, 
     fieldset a.collapse-toggle:hover {
-        color: {{ theme.css_module_link_hover_color }} !important;
+        color:{{ theme.css_module_link_hover_color }} !important;
     }
     
     fieldset.collapsed a.collapse-toggle {
-        color: {{ theme.css_module_background_color }} !important;
+        color:{{ theme.css_module_background_color }} !important;
     }
     
     /* same color as above, but this requires !important */
     /* support for modeltranslation tabs */
     .ui-tabs .ui-tabs-nav li.ui-tabs-active a, .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, 
     .selector-chosen h2 {
-        background: {{ theme.css_module_background_color }} !important;
-        color: {{ theme.css_module_text_color }} !important;
+        background:{{ theme.css_module_background_color }} !important;
+        color:{{ theme.css_module_text_color }} !important;
     }
     
     a:link, a:visited {
-        color: {{ theme.css_generic_link_color }};
+        color:{{ theme.css_generic_link_color }};
     }
     
     a:hover {
-        color: {{ theme.css_generic_link_hover_color }};
+        color:{{ theme.css_generic_link_hover_color }};
     }
     
     .button, input[type=submit], input[type=button], .submit-row input, a.button {
-        background: {{ theme.css_save_button_background_color }};
-        color: {{ theme.css_save_button_text_color }};
+        background:{{ theme.css_save_button_background_color }};
+        color:{{ theme.css_save_button_text_color }};
     }
     
     .button:active, input[type=submit]:active, input[type=button]:active,
     .button:hover, input[type=submit]:hover, input[type=button]:hover {
-        background: {{ theme.css_save_button_background_hover_color }};
-        color: {{ theme.css_save_button_text_color }};
+        background:{{ theme.css_save_button_background_hover_color }};
+        color:{{ theme.css_save_button_text_color }};
     }
     
     .button.default, input[type=submit].default, .submit-row input.default {
-        background: {{ theme.css_save_button_background_color }};
-        color: {{ theme.css_save_button_text_color }};
+        background:{{ theme.css_save_button_background_color }};
+        color:{{ theme.css_save_button_text_color }};
     }
     
     .button.default:active, input[type=submit].default:active,
     .button.default:hover, input[type=submit].default:hover {
-        background: {{ theme.css_save_button_background_hover_color }};
-        color: {{ theme.css_save_button_text_color }};
+        background:{{ theme.css_save_button_background_hover_color }};
+        color:{{ theme.css_save_button_text_color }};
     }
     
     .submit-row a.deletelink:link, 
     .submit-row a.deletelink:visited {
-        background: {{ theme.css_delete_button_background_color }};
-        color: {{ theme.css_delete_button_text_color }};
+        background:{{ theme.css_delete_button_background_color }};
+        color:{{ theme.css_delete_button_text_color }};
     }
     
     .submit-row a.deletelink:hover {
-        background: {{ theme.css_delete_button_background_hover_color }} !important;
-        color: {{ theme.css_delete_button_text_color }};
+        background:{{ theme.css_delete_button_background_hover_color }} !important;
+        color:{{ theme.css_delete_button_text_color }};
     }
     
     /*
     #changelist table tbody tr.selected {
-        background-color: #FFFFCC;
+        background-color:#FFFFCC;
     }
     */
     
     #changelist .paginator {
-        margin-top: -1px !important; /* merge 2 borders into 1 */
-        line-height: 42px;
+        margin-top:-1px !important; /* merge 2 borders into 1 */
+        line-height:42px;
     }
     
     .paginator a, 
     .paginator a:link, 
     .paginator a:visited,
     .paginator .this-page {
-        padding: 7px 12px !important;
-        {% if theme.css_module_rounded_corners %}border-radius: 4px;{% endif %}
+        padding:7px 12px !important;
+        {% if theme.css_module_rounded_corners %}border-radius:4px;{% endif %}
     }
     
     .paginator a, 
     .paginator a:link, 
     .paginator a:visited {
-        background-color: #ffffff !important; 
-        color: {{ theme.css_generic_link_color }} !important;
+        background-color:#ffffff !important; 
+        color:{{ theme.css_generic_link_color }} !important;
     }
     
     .paginator a:hover, 
     .paginator a:active {
-        background-color: #f8f8f8 !important;
-        color: {{ theme.css_generic_link_hover_color }} !important;
+        background-color:#f8f8f8 !important;
+        color:{{ theme.css_generic_link_hover_color }} !important;
     }
     
     .paginator .this-page {
-        background-color: {{ theme.css_module_background_color }} !important;
-        color: {{ theme.css_module_link_color }} !important;
+        background-color:{{ theme.css_module_background_color }} !important;
+        color:{{ theme.css_module_link_color }} !important;
     }
     
     .paginator a, 
     .paginator .this-page {
-        margin-left: 0px;
+        margin-left:0px;
     }
     
     .paginator .this-page, 
     .paginator a.end {
-        margin-right: 25px;
+        margin-right:25px;
     }
     
     .paginator .this-page + a:not(.showall)  {
-        margin-left: -25px !important;
+        margin-left:-25px !important;
     }
     
     body .paginator a.showall, 
     body .paginator a.showall:link, 
     body .paginator a.showall:visited {
-        margin-left: 20px;
-        color: {{ theme.css_generic_link_color }} !important;
+        margin-left:20px;
+        color:{{ theme.css_generic_link_color }} !important;
     }
     
     body .paginator a.showall:hover, 
     body .paginator a.showall:active {
-        color: {{ theme.css_generic_link_hover_color }} !important;
+        color:{{ theme.css_generic_link_hover_color }} !important;
     }
     
     /* OTHER FIXES */
     
     /* reduced width */
     .login #container {
-        width: 320px !important;
-        min-width: 320px !important;
+        width:320px !important;
+        min-width:320px !important;
     }
     
     /* same lateral padding as in logged view */
     .login #header {
-        padding: 10px 25px !important;
+        padding:10px 25px !important;
     }
     
     /* login button right aligned */
@@ -195,35 +195,44 @@
     
     /* login button right aligned */
     .login .submit-row {
-        padding-left: 0 !important;
-        text-align: right !important;
+        padding-left:0 !important;
+        text-align:right !important;
     }
     
     /* top-right buttons color on hover -> just a lighten grey */
     .object-tools a:hover, 
     .object-tools li:hover a {
-        background-color: #AAAAAA;
+        background-color:#AAAAAA;
     } 
     
     /* fix help text icon on newline */
     .inline-group thead th {
-        white-space: nowrap;
+        white-space:nowrap;
+    }
+    
+    .inline-group thead th img {
+        vertical-align: -2px;
+        margin-left: 5px;
+    }
+    
+    form .form-row p.file-upload > a {
+        margin-right:10px;    
     }
     
     form .form-row p.file-upload .clearable-file-input { 
-        margin-left:15px; 
+        display:inline-block;
     }
     
     form .wide p.help {
-        padding-left: 10px !important;
+        padding-left:10px !important;
     }
     
     textarea.tinymce ~ p.help {
-        margin-top: 5px !important;
+        margin-top:5px !important;
     }
     
     .aligned p.file-upload {
-        display: table;
+        display:table;
     }
     
     /* fix lateral padding to align text with field labels */
@@ -232,26 +241,26 @@
     .inline-group h2, 
     .module.filtered h2, 
     .inline-group h2 {
-        padding: 8px 10px; 
-        {% if theme.css_module_rounded_corners %}border-radius: 4px;{% endif %}
+        padding:8px 10px; 
+        {% if theme.css_module_rounded_corners %}border-radius:4px;{% endif %}
     }
     
     .module.filtered h2 {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+        border-bottom-left-radius:0;
+        border-bottom-right-radius:0;
     }
     
     .module.filtered #changelist-filter {
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
+        border-bottom-left-radius:4px;
+        border-bottom-right-radius:4px;
     }
     
     .module.filtered #changelist-filter select {
-        background-color: #ffffff;
+        background-color:#ffffff;
     }
     
     #content-related {
-        {% if theme.css_module_rounded_corners %}border-radius: 4px;{% endif %}
+        {% if theme.css_module_rounded_corners %}border-radius:4px;{% endif %}
     }
     
     /* selector chooseall / clearall color on hover -> just a lighten grey */
@@ -260,7 +269,7 @@
     }
     
     .inline-related h3 {
-        padding: 6px 10px !important;
+        padding:6px 10px !important;
     }
     
     /*
@@ -271,78 +280,135 @@
     
     /*.inline-group .tabular tr.has_original td.original,	*/
     .inline-group .tabular tr td.delete {
-        vertical-align: middle !important;
-        text-align: center !important;
+        vertical-align:middle !important;
+        text-align:center !important;
     }
     
     .inline-group .tabular tr td.delete a.inline-deletelink {
-        float: none;
-        display: inline-block;
+        float:none;
+        display:inline-block;
     }
     
     /* improve django-modeltranslation support - https://github.com/deschler/django-modeltranslation/pull/313/commits */
 
     #content h1 select {
-        text-transform: uppercase;
-        margin-left: 15px;  
+        text-transform:uppercase;
+        margin-left:15px;  
     }
     
     .ui-tabs .ui-tabs-nav {
-        padding: 10px 0 0 10px !important;
+        padding:10px 0 0 10px !important;
     }
     
     .ui-tabs .ui-tabs-nav li {
-        margin-left: -1px !important;
+        margin-left:-1px !important;
     }
     
     .ui-tabs .ui-tabs-nav li a {
-        outline: none;
-        background-color: #f8f8f8 !important;
-        border: 1px solid #eeeeee !important;
-        border-bottom: none !important;
-        text-transform: uppercase;
+        outline:none;
+        background-color:#f8f8f8 !important;
+        border:1px solid #eeeeee !important;
+        border-bottom:none !important;
+        text-transform:uppercase;
         
-        padding: 7px 14px 8px 14px !important;
-        margin-top: 1px !important;
+        padding:7px 14px 8px 14px !important;
+        margin-top:1px !important;
         
     }
     
     .ui-tabs .ui-tabs-nav li.ui-tabs-active a, 
     .ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
         
-        padding: 8px 14px 8px 14px !important;
-        margin-top: 0px !important;
+        padding:8px 14px 8px 14px !important;
+        margin-top:0px !important;
         
-        margin-bottom: -1px !important;
+        margin-bottom:-1px !important;
         
-        background-color: #FFFFFF !important;
-        color: {{ theme.css_module_background_color }} !important;
+        background-color:#FFFFFF !important;
+        color:{{ theme.css_module_background_color }} !important;
         
-        border-bottom: 1px solid #FFFFFF !important;
+        border-bottom:1px solid #FFFFFF !important;
     }
     
     .inline-group .tabular .ui-tabs .ui-tabs-panel {
-        padding: 8px !important;
+        padding:8px !important;
     }
     
     #changelist .row1:not(.selected):hover, 
     #changelist .row2:not(.selected):hover {
-        background: #f9f9f9;
+        background:#f9f9f9;
     }
     
     .row2 {
-        background: #fcfcfc;
+        background:#fcfcfc;
     }
     
     .row2 .ui-tabs .ui-tabs-nav li a {
-        background-color: #f5f5f5 !important;
-        border: 1px solid #ebebeb !important;
+        background-color:#f5f5f5 !important;
+        border:1px solid #ebebeb !important;
     }
     
     .row2 .ui-tabs .ui-tabs-nav li.ui-tabs-active a, 
     .row2 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
-        background-color: #fcfcfc !important;
-        border-bottom: 1px solid #fcfcfc !important;
+        background-color:#fcfcfc !important;
+        border-bottom:1px solid #fcfcfc !important;
+    }
+    
+    .list-filter-dropdown {
+        margin-top:10px; 
+        margin-bottom:20px;
+    }
+    
+    .list-filter-dropdown select {
+        width:90%; 
+        margin-right:5%;
+    }
+    
+    
+    /* ckeditor + light theme - https://github.com/Ikimea/ckeditor-light-theme */
+    
+    .cke_inner, .cke_wysiwyg_frame {
+        border-top-left-radius: 4px !important;
+        border-top-right-radius: 4px !important;
+        border-bottom-left-radius: 4px !important;
+        border-bottom-right-radius: 4px !important;
+    }
+    
+    .cke_top {
+        background: #f6f6f6 !important;  
+        border-top: none;
+        
+        border-top-left-radius: 4px !important;
+        border-top-right-radius: 4px !important;
+        
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+    
+    .cke_bottom {
+        background: #f6f6f6 !important;
+        border-top: 1px solid #efefef !important;
+        
+        border-bottom-left-radius: 4px !important;
+        border-bottom-right-radius: 4px !important;
+    }
+    
+    .cke_source {
+        padding: 13px 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    a.cke_button_on {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        background-color: rgba(0,0,0,0.1) !important;
+        border-radius: 4px !important;
+    }
+    
+    .cke_resizer {
+        border-color: transparent #999 transparent transparent !important;
     }
     
     {% if theme.css %}
@@ -352,7 +418,7 @@
 {% else %}
     
     #branding h1 img.logo {
-        display: none;
+        display:none;
     }
     
 {% endif %}
