@@ -12,6 +12,10 @@ import os
 class Theme(models.Model):
     
     @staticmethod
+    def post_migrate_handler(sender, **kwargs):
+        Theme.get_or_create_default_theme()
+        
+    @staticmethod
     def post_delete_handler(instance, **kwargs):
         Theme.get_or_create_default_theme()
     
@@ -68,6 +72,9 @@ class Theme(models.Model):
     
     css = models.TextField( blank = True )
      
+    list_filter_dropdown = models.BooleanField( default = False )
+    
+    
     def set_active(self, value):
         
         if value:

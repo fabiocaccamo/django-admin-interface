@@ -18,7 +18,7 @@ def get_admin_interface_theme(context):
     if len(obj_ls):
         obj = obj_ls[0]
     else:
-        obj, obj_created = Theme.get_or_create_default_theme()
+        obj = Theme.get_or_create_default_theme()
         
     return obj
     
