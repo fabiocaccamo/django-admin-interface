@@ -1,4 +1,4 @@
-# django-admin-interface
+#django-admin-interface
 django-admin-interface is a modern **admin interface customizable by the admin itself (title, logo and colors)**.
 
 ##Requirements
@@ -22,6 +22,19 @@ INSTALLED_APPS = (
 - Run ``python manage.py collectstatic``
 - Restart your application server
 
+##Screenshots
+######Admin login
+![django-admin-interface_login](https://cloud.githubusercontent.com/assets/1035294/11152611/ea0369e0-8a33-11e5-8af2-cbbbd1fa8d4b.jpg)
+---
+######Admin dashboard
+![django-admin-interface_dashboard](https://cloud.githubusercontent.com/assets/1035294/11152620/f3ac9e30-8a33-11e5-9886-5772c219a634.jpg)
+---
+######Admin themes management
+![django-admin-interface_themes_management](https://cloud.githubusercontent.com/assets/1035294/11152628/faeab95c-8a33-11e5-84c3-ef2ee2c0de35.jpg)
+---
+######Admin theme customization
+![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11153155/361c4c86-8a37-11e5-8f82-b4c145004a35.jpg)
+===
 ##Thanks
 - [django-flat-theme](https://github.com/elky/django-flat-theme/)
 - [django-colorfield](https://github.com/jaredly/django-colorfield/)
