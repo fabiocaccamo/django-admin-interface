@@ -1,5 +1,7 @@
 #django-admin-interface
-django-admin-interface is a modern **admin interface customizable by the admin itself (title, logo and colors)**.
+django-admin-interface is a modern **flat admin interface customizable by the admin itself**.
+
+You can use the builtin django admin theme or create your own and [**customize**](Admin theme customization) its **title, logo and colors**.
 
 ##Requirements
 - Python 2.6, Python 2.7
