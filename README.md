@@ -27,16 +27,16 @@ INSTALLED_APPS = (
 
 ##Screenshots
 ######Admin login
-![django-admin-interface_login](https://cloud.githubusercontent.com/assets/1035294/11153338/887e6d14-8a38-11e5-815e-8d91825ffa20.jpg)
+![django-admin-interface_login](https://cloud.githubusercontent.com/assets/1035294/11240233/55c8d4ba-8df1-11e5-9568-00fdc987ede8.gif)
 ---
 ######Admin dashboard
-![django-admin-interface_dashboard](https://cloud.githubusercontent.com/assets/1035294/11152620/f3ac9e30-8a33-11e5-9886-5772c219a634.jpg)
+![django-admin-interface_dashboard](https://cloud.githubusercontent.com/assets/1035294/11240239/627c0362-8df1-11e5-81fa-216366a5d8da.gif)
 ---
 ######Admin themes management
-![django-admin-interface_themes_management](https://cloud.githubusercontent.com/assets/1035294/11153350/9c377cd8-8a38-11e5-8ee8-e663589453ea.jpg)
+![django-admin-interface_themes_management](https://cloud.githubusercontent.com/assets/1035294/11240245/6cd1c342-8df1-11e5-928b-f22217474d3d.gif)
 ---
 ######Admin theme customization
-![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11153155/361c4c86-8a37-11e5-8f82-b4c145004a35.jpg)
+![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11240250/7350d942-8df1-11e5-9b28-f2f54c333cdc.gif)
 
 ####Thanks
 - [django-flat-theme](https://github.com/elky/django-flat-theme/)
