@@ -7,12 +7,10 @@ from admin_interface.models import Theme
 
 
 class AdminInterfaceConfig(AppConfig):
-    
+
     name = 'admin_interface'
     verbose_name = 'Admin Interface'
-    
+
     def ready(self):
-        
-        post_migrate.connect(Theme.post_migrate_handler, sender = self)
-        
-        
+
+        post_migrate.connect(Theme.post_migrate_handler, sender=self)
