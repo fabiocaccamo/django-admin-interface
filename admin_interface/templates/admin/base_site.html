@@ -41,8 +41,21 @@
     
     .module h2, 
     .module caption, 
-    .module.filtered h2, 
-    .inline-group h2, 
+    .module.filtered h2 {
+        background:{{ theme.css_module_background_color }};
+        color:{{ theme.css_module_text_color }};
+    }
+    
+    .module a.section:link, 
+    .module a.section:visited {
+        color:{{ theme.css_module_link_color }};
+    }
+    
+    .module a.section:active, 
+    .module a.section:hover {
+        color:{{ theme.css_module_link_hover_color }};
+    }
+    
     div.breadcrumbs {
         background:{{ theme.css_module_background_color }};
         color:{{ theme.css_module_text_color }};
@@ -60,6 +73,12 @@
     
     fieldset.collapsed a.collapse-toggle {
         color:{{ theme.css_module_background_color }} !important;
+    }
+    
+    .inline-group h2, 
+    .inline-group h2 {
+        background:{{ theme.css_module_background_color }};
+        color:{{ theme.css_module_text_color }};
     }
     
     .selector-chosen h2 {
