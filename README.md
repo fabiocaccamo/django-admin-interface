@@ -21,7 +21,7 @@ INSTALLED_APPS = (
     #...
 )
 ```
-- Run ``python manage.py migrate admin_interface``
+- Run ``python manage.py migrate`` *(add ``--fake-initial`` if your are upgrading from 0.1.0 to 0.1.1 version)*
 - Run ``python manage.py collectstatic``
 - Restart your application server
 
