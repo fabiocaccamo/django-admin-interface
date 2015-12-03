@@ -10,7 +10,7 @@ setup(
     include_package_data=True,
     license='MIT License',
     version=__version__,
-    description='django-admin-interface is a modern admin interface customizable by the admin itself.',
+    description='django-admin-interface is a modern flat admin interface customizable by the admin itself.',
     author='Fabio Caccamo',
     author_email='fabio.caccamo@gmail.com',
     url='https://github.com/fabiocaccamo/django-admin-interface',
