@@ -17,7 +17,8 @@ setup(
     download_url='https://github.com/fabiocaccamo/django-admin-interface/archive/%s.tar.gz' % __version__,
     keywords=['django', 'admin', 'interface', 'ui', 'flat', 'theme', 'custom'],
     install_requires=[
-        'django-colorfield==0.1.10'
+        'django-colorfield==0.1.10',
+        'django-flat-theme==1.1.2'
     ],
     classifiers=[]
 )
