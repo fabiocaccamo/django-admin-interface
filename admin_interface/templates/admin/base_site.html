@@ -66,14 +66,36 @@
     }
     
     div.breadcrumbs a:hover, 
-    div.breadcrumbs a:active, 
-    fieldset a.collapse-toggle:hover {
+    div.breadcrumbs a:active {
         color:{{ theme.css_module_link_hover_color }} !important;
     }
     
-    fieldset.collapsed a.collapse-toggle {
-        color:{{ theme.css_module_background_color }} !important;
+    fieldset.collapse {
+        border: 1px solid transparent;
     }
+    
+    fieldset.collapse.collapsed a.collapse-toggle {
+        color:{{ theme.css_generic_link_color }} !important;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+    
+    fieldset.collapse.collapsed a.collapse-toggle:hover, 
+    fieldset.collapse.collapsed a.collapse-toggle:active {
+        color:{{ theme.css_generic_link_hover_color }} !important;
+    }
+    
+    fieldset.collapse a.collapse-toggle {
+        color:{{ theme.css_module_link_color }} !important;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+    
+    fieldset.collapse a.collapse-toggle:hover, 
+    fieldset.collapse a.collapse-toggle:active {
+        color:{{ theme.css_module_link_hover_color }} !important;
+    }
+    
     
     .inline-group h2, 
     .inline-group h2 {
