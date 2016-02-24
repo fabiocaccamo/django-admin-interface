@@ -3,7 +3,6 @@
 from django.apps import AppConfig
 from django.db.models.signals import post_migrate
 
-from admin_interface.models import Theme
 
 
 class AdminInterfaceConfig(AppConfig):
@@ -13,6 +12,7 @@ class AdminInterfaceConfig(AppConfig):
     
     def ready(self):
         
+        from admin_interface.models import Theme
         post_migrate.connect(Theme.post_migrate_handler, sender = self)
         
         
