@@ -6,10 +6,10 @@ from admin_interface.models import Theme
 
 
 class ThemeAdmin(admin.ModelAdmin):
-    
+
     list_display = ('name', 'active', )
     list_editable = ('active', )
-    
+
     fieldsets = (
         (None, {
             'classes': ('wide', ),
@@ -48,8 +48,8 @@ class ThemeAdmin(admin.ModelAdmin):
             'fields': ('list_filter_dropdown', )
         }),
     )
-    
+
     save_on_top = True
-    
+
 admin.site.register(Theme, ThemeAdmin)
 
