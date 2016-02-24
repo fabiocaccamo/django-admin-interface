@@ -5,7 +5,7 @@ You can use the builtin **django-theme** or create your own and **customize** **
 
 ##Requirements
 - Python 2.6, Python 2.7
-- Django 1.6.5 through Django 1.8.4
+- Django 1.6.5 through Django 1.9
 
 ##Installation
 - Run `pip install django-admin-interface`
@@ -15,7 +15,7 @@ INSTALLED_APPS = (
     #...
     'flat',
     'colorfield',
-    'admin_interface', 
+    'admin_interface',
     #...
     'django.contrib.admin',
     #...
