@@ -18,7 +18,7 @@ setup(
     keywords=['django', 'admin', 'interface', 'ui', 'flat', 'theme', 'custom'],
     install_requires=[
         'django-colorfield==0.1.10',
-        'django-flat-theme==1.1.2'
+        'django-flat-theme==1.1.3'
     ],
     classifiers=[]
 )
