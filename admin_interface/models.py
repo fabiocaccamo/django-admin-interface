@@ -85,11 +85,12 @@ class Theme(models.Model):
 
 
     def set_default_logo(self):
-        file_name = 'logo-django.svg'
-        logo_path = os.path.normpath(os.path.dirname(__file__) + '/data/' + file_name)
+
+        logo_filename = 'logo-django.svg'
+        logo_path = os.path.normpath(os.path.dirname(__file__) + '/data/' + logo_filename)
         logo_file = open(logo_path)
 
-        self.logo = File(logo_file, file_name)
+        self.logo = File(logo_file, logo_filename)
         self.save()
 
         logo_file.close()
