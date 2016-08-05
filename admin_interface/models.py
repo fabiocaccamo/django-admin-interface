@@ -83,12 +83,13 @@ class Theme(models.Model):
         else:
             Theme.objects.filter(pk = self.pk).update(active = False)
 
-    def set_default_logo(self):
 
-        logo_path = os.path.normpath(os.path.dirname(__file__) + '/data/logo-django.svg')
+    def set_default_logo(self):
+        file_name = 'logo-django.svg'
+        logo_path = os.path.normpath(os.path.dirname(__file__) + '/data/' + file_name)
         logo_file = open(logo_path)
 
-        self.logo = File(logo_file)
+        self.logo = File(logo_file, file_name)
         self.save()
 
         logo_file.close()
@@ -107,4 +108,3 @@ class Theme(models.Model):
 
 post_delete.connect(Theme.post_delete_handler, sender = Theme)
 post_save.connect(Theme.post_save_handler, sender = Theme)
-
