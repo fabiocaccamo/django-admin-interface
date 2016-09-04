@@ -14,7 +14,7 @@ You can use the builtin **django-theme** or create your own and **customize** **
 INSTALLED_APPS = (
     #...
     'admin_interface',
-    'flat',
+    'flat', #if django version < 1.9
     'colorfield',
     #...
     'django.contrib.admin',
