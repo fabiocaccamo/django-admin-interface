@@ -122,20 +122,25 @@
     }
 
     .button:active, input[type=submit]:active, input[type=button]:active,
+    .button:focus, input[type=submit]:focus, input[type=button]:focus,
     .button:hover, input[type=submit]:hover, input[type=button]:hover {
         background:{{ theme.css_save_button_background_hover_color }};
         color:{{ theme.css_save_button_text_color }};
+        outline: none;
     }
 
     .button.default, input[type=submit].default, .submit-row input.default {
         background:{{ theme.css_save_button_background_color }};
         color:{{ theme.css_save_button_text_color }};
+        outline: none;
     }
 
     .button.default:active, input[type=submit].default:active,
+    .button.default:focus, input[type=submit].default:focus,
     .button.default:hover, input[type=submit].default:hover {
         background:{{ theme.css_save_button_background_hover_color }};
         color:{{ theme.css_save_button_text_color }};
+        outline: none;
     }
 
     .submit-row a.deletelink:link,
