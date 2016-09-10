@@ -1,6 +1,11 @@
 {% extends "admin/base.html" %}
 {% load i18n staticfiles admin_interface_tags %}
 
+{% block title %}
+{% get_admin_interface_theme as theme %}
+{% if theme.title %}{% trans theme.title %}{% else %}{% trans 'Django administration' %}{% endif %}
+{% endblock %}
+
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
 <style type="text/css">
