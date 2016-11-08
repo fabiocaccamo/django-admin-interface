@@ -1,5 +1,5 @@
 #django-admin-interface
-django-admin-interface is a modern **flat admin interface customizable by the admin itself**.
+django-admin-interface is a modern **responsive flat admin interface customizable by the admin itself**.
 
 You can use the builtin **django-theme** or create your own and **customize** **title, logo and colors**.
 
@@ -9,11 +9,12 @@ You can use the builtin **django-theme** or create your own and **customize** **
 
 ##Installation
 - Run `pip install django-admin-interface`
-- Add `admin_interface`, `flat` and `colorfield` to `settings.INSTALLED_APPS` **before** `django.contrib.admin`
+- Add `admin_interface`, `flat_responsive`, `flat` and `colorfield` to `settings.INSTALLED_APPS` **before** `django.contrib.admin`
 ```python
 INSTALLED_APPS = (
     #...
     'admin_interface',
+    'flat_responsive',
     'flat', #if django version < 1.9
     'colorfield',
     #...
@@ -40,6 +41,7 @@ INSTALLED_APPS = (
 
 ####Thanks
 - [django-flat-theme](https://github.com/elky/django-flat-theme/)
+- [django-flat-responsive](https://github.com/elky/django-flat-responsive)
 - [django-colorfield](https://github.com/jaredly/django-colorfield/)
 
 ##License
