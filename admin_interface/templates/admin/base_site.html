@@ -298,6 +298,12 @@
         display:table;
     }
 
+    /* begin fix issue #13 - Datetime widget broken in long inlines */
+    p.datetime {
+        white-space:nowrap;
+    }
+    /* end fix */
+
     /* begin fix lateral padding to align text with field labels */
     .module h2,
     .dashboard .module caption,
