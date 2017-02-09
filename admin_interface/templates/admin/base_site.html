@@ -365,12 +365,7 @@
         padding:6px 10px !important;
     }
 
-    /*
-    .inline-group .tabular thead th:last-child:not([class]):not([style]) {
-        text-align:center;
-    }
-    */
-
+    /* begin fix issue #12 - Inlines bad delete buttons alignement */
     .inline-group .tabular thead th:last-child:not([class]):not([style]) {
         text-align:right;
     }
@@ -385,6 +380,7 @@
         overflow:hidden;
         text-indent:9999px;
     }
+    /* end fix */
 
     /* improve django-modeltranslation support - https://github.com/deschler/django-modeltranslation/pull/313/commits */
 
