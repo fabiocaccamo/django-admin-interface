@@ -371,15 +371,19 @@
     }
     */
 
-    /*.inline-group .tabular tr.has_original td.original,   */
+    .inline-group .tabular thead th:last-child:not([class]):not([style]) {
+        text-align:right;
+    }
+
     .inline-group .tabular tr td.delete {
-        vertical-align:middle !important;
-        text-align:center !important;
+        text-align:right;
+        padding-right:18px;
     }
 
     .inline-group .tabular tr td.delete a.inline-deletelink {
-        float:none;
-        display:inline-block;
+        margin-top:2px;
+        overflow:hidden;
+        text-indent:9999px;
     }
 
     /* improve django-modeltranslation support - https://github.com/deschler/django-modeltranslation/pull/313/commits */
