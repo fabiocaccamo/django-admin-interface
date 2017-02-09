@@ -298,14 +298,32 @@
         display:table;
     }
 
-    /* fix lateral padding to align text with field labels */
+    /* begin fix lateral padding to align text with field labels */
     .module h2,
     .dashboard .module caption,
     .module.filtered h2,
     .inline-group h2 {
-        padding:8px 10px;
-        {% if theme.css_module_rounded_corners %}border-radius:4px;{% endif %}
+        padding-left:10px;
+        padding-right:10px;
     }
+    /* end fix */
+
+    /* begin fix issue #11 - Inline border bottom should not be rounded */
+    .module h2,
+    .dashboard .module caption,
+    .module.filtered h2 {
+        {% if theme.css_module_rounded_corners %}
+        border-radius:4px;
+        {% endif %}
+    }
+
+    .inline-group h2 {
+        {% if theme.css_module_rounded_corners %}
+        border-bottom-left-radius:0;
+        border-bottom-right-radius:0;
+        {% endif %}
+    }
+    /* end fix */
 
     .module.filtered h2 {
         border-bottom-left-radius:0;
