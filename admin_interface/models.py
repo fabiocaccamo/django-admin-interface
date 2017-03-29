@@ -13,30 +13,35 @@ class Theme(models.Model):
 
     @staticmethod
     def post_migrate_handler(sender, **kwargs):
-        Theme.get_or_create_default_theme()
+        Theme.get_active_theme()
 
     @staticmethod
     def post_delete_handler(instance, **kwargs):
-        Theme.get_or_create_default_theme()
+        Theme.get_active_theme()
 
     @staticmethod
     def post_save_handler(instance, created, **kwargs):
-        instance.set_active(instance.active)
-        Theme.get_or_create_default_theme()
+        Theme.get_active_theme()
 
     @staticmethod
-    def get_or_create_default_theme():
+    def get_active_theme():
 
-        obj_active = (True if len(list(Theme.objects.filter(active = True))) == 0 else False)
-        obj, obj_created = Theme.objects.get_or_create(pk = '1', defaults = { 'active':obj_active })
+        #get or create default theme and enforce default logo if deleted
+        default_obj_active = (Theme.objects.filter( active = True ).count() == 0)
+        default_obj, default_obj_created = Theme.objects.get_or_create(pk = '1', defaults = { 'active':default_obj_active })
 
-        if not obj.logo:
-            obj.set_default_logo()
+        if not default_obj_created and default_obj_active:
+            default_obj.set_active()
 
-        if not obj_created and obj_active:
-            obj.set_active(True)
+        if not default_obj.logo:
+            default_obj.set_default_logo()
 
-        return (obj, obj_created, )
+        objs_active_count = Theme.objects.filter( active = True ).count()
+
+        obj = Theme.objects.filter( active = True ).last()
+        obj.set_active()
+        return obj
+
 
     name = models.CharField( max_length = 50, default = 'Django' )
     active = models.BooleanField( default = True )
@@ -74,15 +79,13 @@ class Theme(models.Model):
 
     list_filter_dropdown = models.BooleanField( default = False )
 
+    def set_active(self):
 
-    def set_active(self, value):
+        Theme.objects.exclude( pk = self.pk ).update( active = False )
 
-        if value:
-            Theme.objects.exclude(pk = self.pk).update(active = False)
-            Theme.objects.filter(pk = self.pk).update(active = True)
-        else:
-            Theme.objects.filter(pk = self.pk).update(active = False)
-
+        if not self.active:
+            self.active = True
+            self.save()
 
     def set_default_logo(self):
 
@@ -109,3 +112,4 @@ class Theme(models.Model):
 
 post_delete.connect(Theme.post_delete_handler, sender = Theme)
 post_save.connect(Theme.post_save_handler, sender = Theme)
+
