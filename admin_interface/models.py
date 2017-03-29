@@ -26,8 +26,10 @@ class Theme(models.Model):
     @staticmethod
     def get_active_theme():
 
+        objs_active_qs = Theme.objects.filter( active = True )
+
         #get or create default theme and enforce default logo if deleted
-        default_obj_active = (Theme.objects.filter( active = True ).count() == 0)
+        default_obj_active = (objs_active_qs.count() == 0)
         default_obj, default_obj_created = Theme.objects.get_or_create(pk = '1', defaults = { 'active':default_obj_active })
 
         if not default_obj_created and default_obj_active:
@@ -36,10 +38,12 @@ class Theme(models.Model):
         if not default_obj.logo:
             default_obj.set_default_logo()
 
-        objs_active_count = Theme.objects.filter( active = True ).count()
+        obj = objs_active_qs.last()
+        objs_active_count = objs_active_qs.count()
 
-        obj = Theme.objects.filter( active = True ).last()
-        obj.set_active()
+        if objs_active_count > 1:
+            obj.set_active()
+
         return obj
 
 
