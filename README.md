@@ -1,11 +1,17 @@
+[![Build Status](https://travis-ci.org/fabiocaccamo/django-admin-interface.svg?branch=master)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
+[![codecov](https://codecov.io/gh/fabiocaccamo/django-admin-interface/branch/master/graph/badge.svg)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
+[![PyPI version](https://badge.fury.io/py/django-admin-interface.svg)](https://badge.fury.io/py/django-admin-interface)
+[![Py versions](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)
+[![License](https://img.shields.io/pypi/l/django-admin-interface.svg)](https://img.shields.io/pypi/l/django-admin-interface.svg)
+
 # django-admin-interface
 django-admin-interface is a modern **responsive flat admin interface customizable by the admin itself**.
 
 You can use the builtin **django-theme** or create your own and **customize** **title, logo and colors**.
 
 ## Requirements
-- Python 2.6, Python 2.7, Python 3.4
-- Django 1.6.5 through Django 1.10
+- Python 2.7, 3.4, 3.5, 3.6
+- Django 1.7, 1.8, 1.9, 1.10
 
 ## Installation
 - Run `pip install django-admin-interface`
