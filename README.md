@@ -11,7 +11,7 @@ You can use the builtin **django-theme** or create your own and **customize** **
 
 ## Requirements
 - Python 2.7, 3.4, 3.5, 3.6
-- Django 1.7, 1.8, 1.9, 1.10
+- Django 1.7, 1.8, 1.9, 1.10, 1.11
 
 ## Installation
 - Run `pip install django-admin-interface`
