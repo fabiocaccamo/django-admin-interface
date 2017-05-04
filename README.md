@@ -7,7 +7,13 @@
 # django-admin-interface
 django-admin-interface is a modern **responsive flat admin interface customizable by the admin itself**.
 
-You can use the builtin **django-theme** or create your own and **customize** **title, logo and colors**.
+## Features
+- Beautiful default **django-theme**
+- Themes management and customization *(you can **customize admin title, logo and colors**)*
+- Responsive
+- List filter dropdown *(optional)*
+- **`NEW`** **Related modal** *(instead of the old popup window, optional)*
+
 
 ## Requirements
 - Python 2.7, 3.4, 3.5, 3.6
@@ -28,9 +34,16 @@ INSTALLED_APPS = (
     #...
 )
 ```
-- Run ``python manage.py migrate`` *(add ``--fake-initial`` if you are upgrading from 0.1.0 version)*
+- Run ``python manage.py migrate``
 - Run ``python manage.py collectstatic``
 - Restart your application server
+
+#### Upgrade
+- Run `pip install django-admin-interface --upgrade`
+- Run ``python manage.py migrate`` *(add ``--fake-initial`` if you are upgrading from 0.1.0 version)*
+- Run ``python manage.py collectstatic --clear``
+- Restart your application server
+
 
 ## Screenshots
 ###### Admin login
