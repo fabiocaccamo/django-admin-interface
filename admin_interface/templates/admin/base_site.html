@@ -539,6 +539,57 @@
         border-color: transparent #999 transparent transparent !important;
     }
 
+    /*
+    related modal + magnific popup customization
+    https://github.com/dimsemenov/Magnific-Popup
+    */
+    .related-modal.mfp-bg {
+        background-color:{{ theme.related_modal_background_color }} !important;
+        opacity: {{ theme.related_modal_background_opacity }} !important;
+    }
+
+    .related-modal .mfp-content {
+        height: 100% !important;
+        overflow: hidden;
+        {% if theme.related_modal_rounded_corners %}
+        border-radius: 4px;
+        {% endif %}
+        -webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.2);
+        -moz-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.2);
+    }
+
+    .related-modal .mfp-container {
+        padding: 90px 90px 90px 90px !important;
+    }
+
+    .related-modal__nested .mfp-container {
+        padding: 30px 60px 30px 60px !important;
+    }
+
+    @media (max-width:640px){
+        .related-modal .mfp-container {
+            padding: 60px 15px 60px 15px !important;
+        }
+        .related-modal__nested .mfp-container {
+            padding: 30px 30px 30px 30px !important;
+        }
+    }
+
+    .related-modal #related-modal-iframe {
+        width: 100%;
+        height: 100%;
+        background-color: #FFFFFF;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 30px 30px;
+        background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='30px' height='30px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='xMidYMid' class='uil-ring-alt'><rect x='0' y='0' width='100' height='100' fill='none' class='bk'></rect><circle cx='50' cy='50' r='40' stroke='#eeeeee' fill='none' stroke-width='6' stroke-linecap='round'></circle><circle cx='50' cy='50' r='40' stroke='#aaaaaa' fill='none' stroke-width='6' stroke-linecap='round'><animate attributeName='stroke-dashoffset' dur='2s' repeatCount='indefinite' from='0' to='500'></animate><animate attributeName='stroke-dasharray' dur='2s' repeatCount='indefinite' values='150 100;1 250;150 100'></animate></circle></svg>");
+        border: none;
+        margin: 0 auto;
+        padding: 0;
+        display: block;
+    }
+
     {% if theme.css %}
         {{ theme.css|safe }}
     {% endif %}
@@ -549,6 +600,10 @@
 {% block extrahead %}
 {{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}" />
+{% get_admin_interface_theme as theme %}
+{% if theme.related_modal_active %}
+<link rel="stylesheet" type="text/css" href="{% static "admin_interface/magnific-popup/magnific-popup.css" %}" />
+{% endif %}
 {% endblock %}
 
 {% block branding %}
@@ -572,3 +627,13 @@
 
 {% block sidebar %}
 {% endblock %}
+
+{% block footer %}
+{{ block.super }}
+{% get_admin_interface_theme as theme %}
+{% if theme.related_modal_active %}
+<script type="text/javascript" src="{% static "admin_interface/magnific-popup/jquery.magnific-popup.js" %}"></script>
+<script type="text/javascript" src="{% static "admin_interface/related-modal/related-modal.js" %}"></script>
+{% endif %}
+{% endblock %}
+

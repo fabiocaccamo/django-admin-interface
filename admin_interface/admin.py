@@ -43,7 +43,11 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('css_delete_button_background_color', 'css_delete_button_background_hover_color', 'css_delete_button_text_color', )
         }),
-        ('Extras', {
+        ('Related Modal', {
+            'classes': ('wide', ),
+            'fields': ('related_modal_active', 'related_modal_background_color', 'related_modal_background_opacity', 'related_modal_rounded_corners', )
+        }),
+        ('List Filter', {
             'classes': ('wide', ),
             'fields': ('list_filter_dropdown', )
         }),
