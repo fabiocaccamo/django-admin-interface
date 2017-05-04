@@ -10,8 +10,6 @@
 {% get_admin_interface_theme as theme %}
 <style type="text/css">
 
-{% if theme.active %}
-
     #header {
         height:auto;
         min-height:40px;
@@ -424,7 +422,6 @@
 
         padding:7px 14px 8px 14px !important;
         margin-top:1px !important;
-
     }
 
     .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
@@ -533,14 +530,6 @@
         {{ theme.css|safe }}
     {% endif %}
 
-{% else %}
-
-    #branding h1 img.logo {
-        display:none;
-    }
-
-{% endif %}
-
 </style>
 {% endblock %}
 
@@ -550,15 +539,11 @@
 {% block branding %}
 {% get_admin_interface_theme as theme %}
 <h1 id="site-name">
-    {% if theme.active %}
-        {% if theme.logo_visible and theme.logo %}
-        <img class="logo" src="{{ theme.logo.url }}" width="{{ theme.logo.width }}" height="{{ theme.logo.height }}" />
-        {% endif %}
-        {% if theme.title_visible %}
-        <span>{% if theme.title %}{% trans theme.title %}{% else %}{% trans 'Django administration' %}{% endif %}</span>
-        {% endif %}
-    {% else %}
-        {% trans 'Django administration' %}
+    {% if theme.logo_visible and theme.logo %}
+    <img class="logo" src="{{ theme.logo.url }}" width="{{ theme.logo.width }}" height="{{ theme.logo.height }}" />
+    {% endif %}
+    {% if theme.title_visible %}
+    <span>{% if theme.title %}{% trans theme.title %}{% else %}{% trans 'Django administration' %}{% endif %}</span>
     {% endif %}
 </h1>
 {% endblock %}
@@ -566,9 +551,8 @@
 {% block bodyclass %}admin-interface flat-theme{% endblock %}
 
 {% block blockbots %}
-    {{ block.super }}
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}" />
+{{ block.super }}
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
 {% endblock %}
 
 {% block sidebar %}

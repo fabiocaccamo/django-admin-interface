@@ -5,15 +5,11 @@
 {% if theme.list_filter_dropdown %}
 
     {% include "admin_interface/dropdown_filter.html" %}
-    
+
 {% else %}
-    
-    {% comment %}
-    
-    Use the default list filter template -> https://github.com/django/django/blob/master/django/contrib/admin/templates/admin/filter.html
-    
-    {% endcomment %}
-    
+
+    {# Use the default list filter template -> https://github.com/django/django/blob/master/django/contrib/admin/templates/admin/filter.html #}
+
     <h3>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h3>
     <ul>
     {% for choice in choices %}
