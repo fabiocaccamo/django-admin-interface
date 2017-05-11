@@ -35,8 +35,7 @@ class Theme(models.Model):
         if not default_obj_created and default_obj_active:
             default_obj.set_active()
 
-        if not default_obj.logo:
-            default_obj.set_default_logo()
+        default_obj.set_default_logo()
 
         obj = objs_active_qs.last()
         objs_active_count = objs_active_qs.count()
@@ -45,7 +44,6 @@ class Theme(models.Model):
             obj.set_active()
 
         return obj
-
 
     name = models.CharField( max_length = 50, default = 'Django' )
     active = models.BooleanField( default = True )
@@ -109,12 +107,18 @@ class Theme(models.Model):
 
     def set_default_logo(self):
 
+        if self.logo and os.path.isfile(self.logo.url):
+            return
+
         logo_filename = 'logo-django.svg'
         logo_path = os.path.normpath(os.path.dirname(__file__) + '/data/' + logo_filename)
         logo_file = open(logo_path)
 
         self.logo = File(logo_file, logo_filename)
+
+        post_save.disconnect(Theme.post_save_handler, sender = Theme)
         self.save()
+        post_save.connect(Theme.post_save_handler, sender = Theme)
 
         logo_file.close()
 
