@@ -597,14 +597,20 @@
 </style>
 {% endblock %}
 
-{% block extrahead %}
+{% block blockbots %}
 {{ block.super }}
-<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}" />
+{# https://github.com/elky/django-flat-responsive#important-note #}
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}" />
 {% get_admin_interface_theme as theme %}
 {% if theme.related_modal_active %}
-<link rel="stylesheet" type="text/css" href="{% static "admin_interface/magnific-popup/magnific-popup.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}" />
+<script type="text/javascript" src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin_interface/related-modal/related-modal.js' %}"></script>
 {% endif %}
 {% endblock %}
+
+{% block bodyclass %}admin-interface flat-theme {% get_admin_interface_theme as theme %}{% if theme.name %}{{ theme.name|slugify }}-theme{% endif %}{% endblock %}
 
 {% block branding %}
 {% get_admin_interface_theme as theme %}
@@ -617,23 +623,3 @@
     {% endif %}
 </h1>
 {% endblock %}
-
-{% block bodyclass %}admin-interface flat-theme{% endblock %}
-
-{% block blockbots %}
-{{ block.super }}
-<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-{% endblock %}
-
-{% block sidebar %}
-{% endblock %}
-
-{% block footer %}
-{{ block.super }}
-{% get_admin_interface_theme as theme %}
-{% if theme.related_modal_active %}
-<script type="text/javascript" src="{% static "admin_interface/magnific-popup/jquery.magnific-popup.js" %}"></script>
-<script type="text/javascript" src="{% static "admin_interface/related-modal/related-modal.js" %}"></script>
-{% endif %}
-{% endblock %}
-
