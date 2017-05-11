@@ -3,7 +3,7 @@
 
 {% block title %}
 {% get_admin_interface_theme as theme %}
-{% if theme.title %}{% trans theme.title %}{% else %}{% trans 'Django administration' %}{% endif %}
+{% if title %}{{ title }} | {% endif %}{% if theme.title %}{% trans theme.title %}{% else %}{{ site_title|default:_('Django administration') }}{% endif %}
 {% endblock %}
 
 {% block extrastyle %}
