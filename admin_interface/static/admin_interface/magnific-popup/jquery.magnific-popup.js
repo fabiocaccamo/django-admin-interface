@@ -13,7 +13,10 @@
         factory(django.jQuery);
     } else {
         // Browser globals
-        factory(window.jQuery || window.Zepto);
+        var $ = (window.jQuery || window.Zepto);
+        if( $ ){
+            factory($);
+        }
     }
 }(function ($) {
 
