@@ -1,0 +1,65 @@
+/*
+django-modeltranslation support
+https://github.com/deschler/django-modeltranslation/pull/313/commits
+*/
+.admin-interface #content h1 select {
+    text-transform:uppercase;
+    margin-left:15px;
+}
+
+.admin-interface .ui-tabs .ui-tabs-nav {
+    padding:10px 0 0 10px/* !important*/;
+}
+
+.admin-interface .ui-tabs .ui-tabs-nav li {
+    margin-left:-1px/* !important*/;
+}
+
+.admin-interface .ui-tabs .ui-tabs-nav li a {
+    outline:none;
+    background-color:#f8f8f8/* !important*/;
+    border:1px solid #eeeeee/* !important*/;
+    border-bottom:none/* !important*/;
+    text-transform:uppercase;
+
+    padding:7px 14px 8px 14px/* !important*/;
+    margin-top:1px/* !important*/;
+}
+
+.admin-interface .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.admin-interface .ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+
+    padding:8px 14px 8px 14px/* !important*/;
+    margin-top:0px/* !important*/;
+
+    margin-bottom:-1px/* !important*/;
+
+    background-color:#FFFFFF/* !important*/;
+    color:{{ theme.css_module_background_color }} !important;
+
+    border-bottom:1px solid #FFFFFF !important;
+}
+
+.admin-interface .inline-group .tabular .ui-tabs .ui-tabs-panel {
+    padding:8px/* !important*/;
+}
+
+.admin-interface #changelist .row1:not(.selected):hover,
+.admin-interface #changelist .row2:not(.selected):hover {
+    background:#f9f9f9;
+}
+
+.admin-interface .row2 {
+    background:#fcfcfc;
+}
+
+.admin-interface .row2 .ui-tabs .ui-tabs-nav li a {
+    background-color:#f5f5f5/* !important*/;
+    border:1px solid #ebebeb/* !important*/;
+}
+
+.admin-interface .row2 .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.admin-interface .row2 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+    background-color:#fcfcfc/* !important*/;
+    border-bottom:1px solid #fcfcfc/* !important*/;
+}

@@ -1,0 +1,37 @@
+/*
+sorl-thumbnail - improved AdminImageMixin widget layout
+https://github.com/mariocesar/sorl-thumbnail
+*/
+.admin-interface a.thumbnail + input[type="checkbox"] {
+    margin: 10px 0;
+}
+
+.admin-interface a.thumbnail ~ label {
+    color: #333;
+    font-size: 11px;
+    display: inline;
+    float: none;
+    margin-left: 2px;
+}
+
+.admin-interface.change-form div[style="float:left"] {
+    font-size: 11px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.admin-interface .aligned .form-row a.thumbnail ~ input[type="file"] {
+    margin-top: 0px;
+}
+
+@media (max-width:767px){
+    .admin-interface .aligned .form-row a.thumbnail ~ input[type="file"] {
+        width: auto;
+        padding: 0px;
+    }
+
+    .admin-interface div[style="float:left"] {
+        margin-bottom: 0px;
+    }
+}

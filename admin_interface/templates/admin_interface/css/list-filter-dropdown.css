@@ -1,0 +1,13 @@
+/*
+list-filter-dropdown
+*/
+.admin-interface .list-filter-dropdown {
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.admin-interface .list-filter-dropdown select {
+    background-color:#FFFFFF;
+    width:90%;
+    margin-right:5%;
+}

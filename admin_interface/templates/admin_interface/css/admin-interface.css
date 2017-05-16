@@ -1,0 +1,204 @@
+.admin-interface #header {
+    background:{{ theme.css_header_background_color }};
+    color:{{ theme.css_header_text_color }};
+}
+
+.admin-interface #branding h1 {
+    color:{{ theme.css_header_title_color }};
+}
+
+.admin-interface #header #user-tools a {
+    color:{{ theme.css_header_link_color }};
+}
+
+.admin-interface #header #user-tools a:hover,
+.admin-interface #header #user-tools a:active {
+    color:{{ theme.css_header_link_hover_color }};
+    border-bottom-color:rgba(255, 255, 255, 0.5);
+}
+
+.admin-interface .module h2,
+.admin-interface .module caption,
+.admin-interface .module.filtered h2 {
+    background:{{ theme.css_module_background_color }};
+    color:{{ theme.css_module_text_color }};
+}
+
+.admin-interface .module a.section:link,
+.admin-interface .module a.section:visited {
+    color:{{ theme.css_module_link_color }};
+}
+
+.admin-interface .module a.section:active,
+.admin-interface .module a.section:hover {
+    color:{{ theme.css_module_link_hover_color }};
+}
+
+.admin-interface div.breadcrumbs {
+    background:{{ theme.css_module_background_color }};
+    color:{{ theme.css_module_text_color }};
+}
+
+.admin-interface div.breadcrumbs a {
+    color:{{ theme.css_module_link_color }};
+}
+
+.admin-interface div.breadcrumbs a:active,
+.admin-interface div.breadcrumbs a:focus,
+.admin-interface div.breadcrumbs a:hover {
+    color:{{ theme.css_module_link_hover_color }};
+}
+
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle {
+    color:{{ theme.css_generic_link_color }};
+}
+
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle:hover,
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle:active {
+    color:{{ theme.css_generic_link_hover_color }};
+}
+
+.admin-interface fieldset.collapse a.collapse-toggle {
+    color:{{ theme.css_module_link_color }};
+}
+
+.admin-interface fieldset.collapse a.collapse-toggle:hover,
+.admin-interface fieldset.collapse a.collapse-toggle:active {
+    color:{{ theme.css_module_link_hover_color }};
+}
+
+.admin-interface .inline-group h2 {
+    background:{{ theme.css_module_background_color }};
+    color:{{ theme.css_module_text_color }};
+}
+
+.admin-interface .selector-chosen h2 {
+    background:{{ theme.css_module_background_color }};
+    color:{{ theme.css_module_text_color }};
+}
+
+.admin-interface a:link,
+.admin-interface a:visited {
+    color:{{ theme.css_generic_link_color }};
+}
+
+.admin-interface a:hover {
+    color:{{ theme.css_generic_link_hover_color }};
+}
+
+.admin-interface .button,
+.admin-interface input[type=submit],
+.admin-interface input[type=button],
+.admin-interface .submit-row input,
+.admin-interface a.button {
+    background:{{ theme.css_save_button_background_color }};
+    color:{{ theme.css_save_button_text_color }};
+}
+
+.admin-interface .button:active,
+.admin-interface .button:focus,
+.admin-interface .button:hover,
+.admin-interface input[type=submit]:active,
+.admin-interface input[type=submit]:focus,
+.admin-interface input[type=submit]:hover,
+.admin-interface input[type=button]:active,
+.admin-interface input[type=button]:focus,
+.admin-interface input[type=button]:hover {
+    background:{{ theme.css_save_button_background_hover_color }};
+    color:{{ theme.css_save_button_text_color }};
+    outline: none;
+}
+
+.admin-interface .button.default,
+.admin-interface input[type=submit].default,
+.admin-interface .submit-row input.default {
+    background:{{ theme.css_save_button_background_color }};
+    color:{{ theme.css_save_button_text_color }};
+    outline: none;
+}
+
+.admin-interface .button.default:active,
+.admin-interface .button.default:focus,
+.admin-interface .button.default:hover,
+.admin-interface input[type=submit].default:active,
+.admin-interface input[type=submit].default:focus,
+.admin-interface input[type=submit].default:hover {
+    background:{{ theme.css_save_button_background_hover_color }};
+    color:{{ theme.css_save_button_text_color }};
+    outline: none;
+}
+
+.admin-interface .submit-row a.deletelink:link,
+.admin-interface .submit-row a.deletelink:visited {
+    background:{{ theme.css_delete_button_background_color }};
+    color:{{ theme.css_delete_button_text_color }};
+}
+
+.admin-interface .submit-row a.deletelink:hover {
+    background:{{ theme.css_delete_button_background_hover_color }};
+    color:{{ theme.css_delete_button_text_color }};
+}
+
+.admin-interface .paginator a,
+.admin-interface .paginator a:link,
+.admin-interface .paginator a:visited,
+.admin-interface .paginator .this-page {
+    {% if theme.css_module_rounded_corners %}border-radius:4px;{% endif %}
+}
+
+.admin-interface .paginator a,
+.admin-interface .paginator a:link,
+.admin-interface .paginator a:visited {
+    background-color:#FFFFFF !important;
+    color:{{ theme.css_generic_link_color }};
+}
+
+.admin-interface .paginator a:hover,
+.admin-interface .paginator a:active {
+    background-color:#F8F8F8 !important;
+    color:{{ theme.css_generic_link_hover_color }};
+}
+
+.admin-interface .paginator .this-page {
+    background-color:{{ theme.css_module_background_color }};
+    color:{{ theme.css_module_link_color }};
+}
+
+.admin-interface .paginator a.showall,
+.admin-interface .paginator a.showall:link,
+.admin-interface .paginator a.showall:visited {
+    color:{{ theme.css_generic_link_color }};
+}
+
+.admin-interface .paginator a.showall:hover,
+.admin-interface .paginator a.showall:active {
+    color:{{ theme.css_generic_link_hover_color }};
+}
+
+.admin-interface .module.filtered #changelist-filter li.selected a,
+.admin-interface .module.filtered #changelist-filter li.selected a:hover {
+    color: {{ theme.css_generic_link_color }};
+}
+
+/* begin fix issue #11 - Inline border bottom should not be rounded */
+.admin-interface .module h2,
+.admin-interface.dashboard .module caption,
+.admin-interface .module.filtered h2 {
+    {% if theme.css_module_rounded_corners %}
+    border-radius:4px;
+    {% endif %}
+}
+
+.admin-interface .inline-group h2 {
+    {% if theme.css_module_rounded_corners %}
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    {% endif %}
+}
+/* end fix */
+
+.admin-interface #content-related {
+    {% if theme.css_module_rounded_corners %}
+    border-radius:4px;
+    {% endif %}
+}
