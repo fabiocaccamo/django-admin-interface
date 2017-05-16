@@ -107,7 +107,7 @@ class Theme(models.Model):
 
     def set_default_logo(self):
 
-        if self.logo and os.path.isfile(self.logo.url):
+        if self.logo and os.path.isfile(self.logo.path):
             return
 
         logo_filename = 'logo-django.svg'

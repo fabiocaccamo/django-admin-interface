@@ -66,6 +66,24 @@ class AdminInterfaceTestCase(TestCase):
         Theme.objects.filter( pk = Theme.get_active_theme().pk ).delete()
         self.assertEqual( Theme.get_active_theme().pk, 1 )
 
+    def test_default_theme_logo_created_if_deleted(self):
+
+        Theme.objects.all().delete()
+        theme = Theme.get_active_theme()
+        theme.logo = ''
+        theme.save()
+        theme = Theme.get_active_theme()
+        self.assertNotEqual( theme.logo, None )
+
+    def test_default_theme_logo_not_created_if_not_deleted(self):
+
+        Theme.objects.all().delete()
+        theme = Theme.get_active_theme()
+        self.assertNotEqual( theme.logo, None )
+        logo_url = theme.logo.url
+        theme = Theme.get_active_theme()
+        self.assertEqual( theme.logo.url, logo_url )
+
     def test_last_theme_activated_on_multiple_themes_created(self):
 
         Theme.objects.all().delete()
