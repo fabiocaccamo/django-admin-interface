@@ -616,7 +616,7 @@
 {% get_admin_interface_theme as theme %}
 <h1 id="site-name">
     {% if theme.logo_visible and theme.logo %}
-    <img class="logo" src="{{ theme.logo.url }}" width="{{ theme.logo.width }}" height="{{ theme.logo.height }}" />
+    <img class="logo" style="display:none;" src="{{ theme.logo.url }}" {% if theme.logo.width %}width="{{ theme.logo.width }}"{% endif %} {% if theme.logo.height %}height="{{ theme.logo.height }}"{% endif %} />
     {% endif %}
     {% if theme.title_visible %}
     <span>{% if theme.title %}{% trans theme.title %}{% else %}{% trans 'Django administration' %}{% endif %}</span>
