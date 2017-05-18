@@ -107,8 +107,13 @@ class Theme(models.Model):
 
     def set_default_logo(self):
 
-        if self.logo and os.path.isfile(self.logo.path):
-            return
+        if self.logo:
+            # django-storages compatibility
+            try:
+                if os.path.isfile(self.logo.path):
+                    return
+            except NotImplementedError:
+                return
 
         logo_filename = 'logo-django.svg'
         logo_path = os.path.normpath(os.path.dirname(__file__) + '/data/' + logo_filename)
