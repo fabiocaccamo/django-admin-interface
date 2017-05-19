@@ -3,12 +3,12 @@ related modal + magnific popup customization
 https://github.com/dimsemenov/Magnific-Popup
 */
 .admin-interface .related-modal.mfp-bg {
-    background-color:{{ theme.related_modal_background_color }}/* !important*/;
-    opacity: {{ theme.related_modal_background_opacity }}/* !important*/;
+    background-color:{{ theme.related_modal_background_color }};
+    opacity: {{ theme.related_modal_background_opacity }};
 }
 
 .admin-interface .related-modal .mfp-content {
-    height: 100%/* !important*/;
+    height: 100%;
     overflow: hidden;
     {% if theme.related_modal_rounded_corners %}
     border-radius: 4px;
@@ -19,19 +19,19 @@ https://github.com/dimsemenov/Magnific-Popup
 }
 
 .admin-interface .related-modal .mfp-container {
-    padding: 90px 90px 90px 90px/* !important*/;
+    padding: 90px 90px 90px 90px;
 }
 
 .admin-interface .related-modal__nested .mfp-container {
-    padding: 30px 60px 30px 60px/* !important*/;
+    padding: 30px 60px 30px 60px;
 }
 
 @media (max-width:640px){
     .admin-interface .related-modal .mfp-container {
-        padding: 60px 15px 60px 15px/* !important*/;
+        padding: 60px 15px 60px 15px;
     }
     .admin-interface .related-modal__nested .mfp-container {
-        padding: 30px 30px 30px 30px/* !important*/;
+        padding: 30px 30px 30px 30px;
     }
 }
 

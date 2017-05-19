@@ -72,9 +72,25 @@
     color:{{ theme.css_module_text_color }};
 }
 
-.admin-interface .selector-chosen h2 {
+.admin-interface .selector .selector-chosen h2 {
+    border-color:{{ theme.css_module_background_color }};
     background:{{ theme.css_module_background_color }};
     color:{{ theme.css_module_text_color }};
+}
+
+.admin-interface .selector .selector-available h2,
+.admin-interface .selector .selector-chosen h2 {
+    {% if theme.css_module_rounded_corners %}
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    {% endif %}
+}
+
+.admin-interface .selector a.selector-chooseall:focus,
+.admin-interface .selector a.selector-chooseall:hover,
+.admin-interface .selector a.selector-clearall:focus,
+.admin-interface .selector a.selector-clearall:hover {
+    color:{{ theme.css_generic_link_hover_color }};
 }
 
 .admin-interface a:link,
@@ -149,13 +165,13 @@
 .admin-interface .paginator a,
 .admin-interface .paginator a:link,
 .admin-interface .paginator a:visited {
-    background-color:#FFFFFF !important;
+    background-color:#FFFFFF;
     color:{{ theme.css_generic_link_color }};
 }
 
 .admin-interface .paginator a:hover,
 .admin-interface .paginator a:active {
-    background-color:#F8F8F8 !important;
+    background-color:#F8F8F8;
     color:{{ theme.css_generic_link_hover_color }};
 }
 

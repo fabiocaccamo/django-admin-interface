@@ -45,6 +45,18 @@
     text-align:right;
 }
 
+@media (max-width:767px){
+    .admin-interface.login .submit-row label {
+        display:none;
+    }
+    .admin-interface.login .submit-row {
+        float: left;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}
+
 .admin-interface #header {
     height:auto;
     min-height:40px;
@@ -55,7 +67,7 @@
     margin-top:10px;
     margin-bottom:10px;
     margin-right:15px;
-    display:inline-block !important;
+    display:inline-block !important; /* override inline display:none; */
 }
 
 .admin-interface #branding h1 img.logo+span {
@@ -83,7 +95,7 @@
 */
 
 .admin-interface #changelist .paginator {
-    margin-top:-1px !important; /* merge 2 borders into 1 */
+    margin-top:-1px; /* merge 2 borders into 1 */
     line-height:42px;
 }
 
@@ -91,7 +103,7 @@
 .admin-interface .paginator a:link,
 .admin-interface .paginator a:visited,
 .admin-interface .paginator .this-page {
-    padding:7px 12px !important;
+    padding:7px 12px;
 }
 
 .admin-interface .paginator a,
@@ -105,7 +117,7 @@
 }
 
 .admin-interface .paginator .this-page + a:not(.showall)  {
-    margin-left:-25px/* !important*/;
+    margin-left:-25px;
 }
 
 body.admin-interface .paginator a.showall,
@@ -147,9 +159,16 @@ body.admin-interface .paginator a.showall:visited {
 }
 
 @media (max-width:767px){
+
+    .admin-interface form .form-row p.file-upload {
+        width: 100%;
+    }
+
     .admin-interface form .form-row p.file-upload > a {
         margin-right:0px;
         display: block;
+        white-space: pre-wrap;
+        word-break: break-word;
     }
 
     .admin-interface form .form-row p.file-upload .clearable-file-input {
@@ -166,27 +185,27 @@ body.admin-interface .paginator a.showall:visited {
 }
 
 
-/* HELPS / MESSAGES */
-.admin-interface form .wide p.help {
-    padding-left:10px;
+/* FIX WIDE FIELDSET HELPS / ERROR MESSAGES */
+.admin-interface form .wide p.help,
+.admin-interface form .wide div.help {
+    padding-left: 50px;
+}
+
+.admin-interface form .wide input + p.help,
+.admin-interface form .wide input + div.help {
+    margin-left: 160px;
 }
 
 @media (max-width:767px){
-    .admin-interface form .wide p.help {
-        padding-left:0px;
+    .admin-interface form .form-row div.help {
+        display: block;
+        width: 100%;
     }
 }
 
-.admin-interface form .aligned.wide p.help,
-.admin-interface form .aligned.wide ul.error-list,
-.admin-interface form .aligned.wide ul.errorlist {
+.admin-interface form .wide ul.errorlist {
     margin-left: 200px;
 }
-
-.admin-interface form .aligned.wide div.help {
-    margin-left: 210px;
-}
-
 
 /* LIST FILTER */
 .admin-interface .module.filtered h2 {
@@ -220,12 +239,6 @@ body.admin-interface .paginator a.showall:visited {
 }
 /* end fix */
 
-/* selector chooseall / clearall color on hover -> just a lighten grey */
-.admin-interface a.selector-chooseall:hover,
-.admin-interface a.selector-clearall:hover {
-    color:#888888/* !important*/;
-}
-
 .admin-interface .inline-group {
     overflow-x:auto;
 }
@@ -237,7 +250,7 @@ body.admin-interface .paginator a.showall:visited {
 /* end fix */
 
 .admin-interface .inline-related h3 {
-    padding:6px 10px/* !important*/;
+    padding:6px 10px;
 }
 
 /* begin fix issue #12 - Inlines bad delete buttons alignement */
@@ -268,8 +281,66 @@ body.admin-interface .paginator a.showall:visited {
     background-color:#AAAAAA;
 }
 
-/* selector chooseall / clearall color on hover -> just a lighten grey */
-.admin-interface a.selector-chooseall:hover,
-.admin-interface a.selector-clearall:hover {
-    color:#888888/* !important*/;
+/* fix textarea horizontal scroll on Firefox */
+@media (max-width: 767px){
+    .admin-interface .aligned .form-row textarea {
+        width: 100% !important;
+        flex: 0 1 auto;
+    }
+}
+
+/* improve responsive selector */
+.admin-interface .selector.stacked {
+    width: 480px;
+    margin-right: 10px;
+}
+
+.admin-interface .selector.stacked .selector-chooser {
+    margin-left: calc(50% - 25px);
+}
+
+@media (min-width: 767px) and (max-width: 1124px){
+    .admin-interface .selector {
+        width: 610px;
+        display: block;
+    }
+    .admin-interface .selector .selector-available,
+    .admin-interface .selector .selector-chosen {
+        width: 285px;
+        flex: 0 1 auto;
+    }
+    .admin-interface .selector .selector-filter {
+        display: flex;
+        align-items: center;
+    }
+    .admin-interface .selector .selector-filter label {
+        margin: 0;
+    }
+    .admin-interface .selector .selector-available input {
+        width: auto;
+        flex: 1 1;
+    }
+    .admin-interface .selector select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px){
+    .admin-interface .selector.stacked {
+        margin-right: 0px;
+    }
+    .admin-interface .selector.stacked .selector-available select {
+        margin-bottom: 0px;
+    }
+}
+
+/* equalize selectors height by adding the height of the .selector-available filter-bar */
+.admin-interface .selector:not(.stacked) .selector-chosen select {
+    height: calc(46px + 17.2em);
+}
+
+/* equalize horizontal and vertical select padding */
+.admin-interface .selector .selector-available select,
+.admin-interface .selector .selector-chosen select {
+    padding: 7px 10px;
 }
