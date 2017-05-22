@@ -336,7 +336,7 @@ body.admin-interface .paginator a.showall:visited {
 
 /* equalize selectors height by adding the height of the .selector-available filter-bar */
 .admin-interface .selector:not(.stacked) .selector-chosen select {
-    height: calc(46px + 17.2em);
+    height: calc(46px + 17.2em) !important;
 }
 
 /* equalize horizontal and vertical select padding */
