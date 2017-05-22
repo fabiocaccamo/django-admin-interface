@@ -21,6 +21,9 @@ class Theme(models.Model):
 
     @staticmethod
     def post_save_handler(instance, created, **kwargs):
+        theme = instance
+        if theme.active:
+            Theme.objects.exclude( pk = theme.pk ).update( active = False )
         Theme.get_active_theme()
 
     @staticmethod
@@ -99,11 +102,8 @@ class Theme(models.Model):
 
     def set_active(self):
 
-        Theme.objects.exclude( pk = self.pk ).update( active = False )
-
-        if not self.active:
-            self.active = True
-            self.save()
+        self.active = True
+        self.save()
 
     def set_default_logo(self):
 
