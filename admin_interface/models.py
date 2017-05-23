@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from django.core.files import File
 from django.db import models
 from django.db.models.signals import post_delete, post_save
+from django.utils.encoding import python_2_unicode_compatible, force_text
 
 from colorfield.fields import ColorField
 
 import os
 
 
+@python_2_unicode_compatible
 class Theme(models.Model):
 
     @staticmethod
@@ -134,9 +137,8 @@ class Theme(models.Model):
         verbose_name = 'Theme'
         verbose_name_plural = 'Themes'
 
-    def __unicode__(self):
-
-        return unicode(u'%s' % (self.name, ))
+    def __str__(self):
+        return force_text(self.name)
 
 
 post_delete.connect(Theme.post_delete_handler, sender = Theme)
