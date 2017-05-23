@@ -58,6 +58,16 @@ class AdminInterfaceTestCase(TestCase):
         Theme.objects.all().update( active = False )
         self.__test_active_theme()
 
+    def test_default_theme_activated_after_update_if_multiple_active_themes(self):
+
+        Theme.objects.all().delete()
+        theme_1 = Theme.objects.create( name = 'Custom 1', active = True )
+        theme_2 = Theme.objects.create( name = 'Custom 2', active = True )
+        theme_3 = Theme.objects.create( name = 'Custom 3', active = True )
+        Theme.objects.update( active = False )
+        Theme.objects.update( active = True )
+        self.__test_active_theme()
+
     def test_default_theme_activated_on_active_theme_deleted(self):
 
         Theme.objects.all().delete()
@@ -65,7 +75,7 @@ class AdminInterfaceTestCase(TestCase):
         theme_2 = Theme.objects.create( name = 'Custom 2', active = True )
         theme_3 = Theme.objects.create( name = 'Custom 3', active = True )
         Theme.objects.filter( pk = Theme.get_active_theme().pk ).delete()
-        self.assertEqual( Theme.get_active_theme().pk, 1 )
+        self.__test_active_theme()
 
     def test_default_theme_logo_created_if_deleted(self):
 
