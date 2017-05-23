@@ -116,3 +116,7 @@ class AdminInterfaceTestCase(TestCase):
         rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}')
         self.assertEqual(rendered, 'Django')
 
+    def test_repr(self):
+        theme = Theme.get_active_theme()
+        self.assertEqual( "{0}".format(theme), 'Django' )
+
