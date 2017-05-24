@@ -51,6 +51,7 @@ class Theme(models.Model):
     active = models.BooleanField( default = True )
 
     title = models.CharField( max_length = 50, default = 'Django administration', blank = True )
+    title_color = ColorField( blank = True, default = '#F5DD5D', help_text = '#F5DD5D', verbose_name = 'title color' )
     title_visible = models.BooleanField( default = True, verbose_name = 'visible' )
 
     logo = models.FileField( upload_to = 'admin-interface/logo/', blank = True, help_text = '(leave blank to use the default Django logo)' )
@@ -58,7 +59,6 @@ class Theme(models.Model):
     logo_visible = models.BooleanField( default = True, verbose_name = 'visible' )
 
     css_header_background_color = ColorField( blank = True, default = '#0C4B33', help_text = '#0C4B33', verbose_name = 'background color' )
-    css_header_title_color = ColorField( blank = True, default = '#F5DD5D', help_text = '#F5DD5D', verbose_name = 'title color' )
     css_header_text_color = ColorField( blank = True, default = '#44B78B', help_text = '#44B78B', verbose_name = 'text color' )
     css_header_link_color = ColorField( blank = True, default = '#FFFFFF', help_text = '#FFFFFF', verbose_name = 'link color' )
     css_header_link_hover_color = ColorField( blank = True, default = '#C9F0DD', help_text = '#C9F0DD', verbose_name = 'link hover color' )

@@ -4,7 +4,8 @@
 }
 
 .admin-interface #branding h1 {
-    color:{{ theme.css_header_title_color }};
+    color:{{ theme.title_color }};
+}
 
 .admin-interface #branding h1 .logo.default {
     background-color: transparent;

@@ -21,11 +21,11 @@ class ThemeAdmin(admin.ModelAdmin):
         }),
         ('Title', {
             'classes': ('wide', ),
-            'fields': ('title', 'title_visible', )
+            'fields': ('title', 'title_color', 'title_visible', )
         }),
         ('Header', {
             'classes': ('wide', ),
-            'fields': ('css_header_background_color', 'css_header_title_color', 'css_header_text_color', 'css_header_link_color', 'css_header_link_hover_color', )
+            'fields': ('css_header_background_color', 'css_header_text_color', 'css_header_link_color', 'css_header_link_hover_color', )
         }),
         ('Breadcrumbs / Module headers', {
             'classes': ('wide', ),
