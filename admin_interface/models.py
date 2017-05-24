@@ -98,7 +98,7 @@ class Theme(models.Model):
     related_modal_background_opacity = models.FloatField( choices = related_modal_background_opacity_choices, default = 0.2, help_text = '20%', verbose_name = 'background opacity' )
     related_modal_rounded_corners = models.BooleanField( default = True, verbose_name = 'rounded corners' )
 
-    list_filter_dropdown = models.BooleanField( default = False, verbose_name = 'use dropdown'  )
+    list_filter_dropdown = models.BooleanField( default = False, verbose_name = 'use dropdown' )
 
     def set_active(self):
 
