@@ -51,6 +51,10 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('list_filter_dropdown', )
         }),
+        ('Recent Actions', {
+            'classes': ('wide', ),
+            'fields': ('recent_actions_visible', )
+        }),
     )
 
     save_on_top = True

@@ -1,0 +1,9 @@
+{% if not theme.recent_actions_visible %}
+.admin-interface.dashboard #content {
+    max-width:600px;
+    margin-right:0;
+}
+.admin-interface.dashboard #content #recent-actions-module {
+    display:none;
+}
+{% endif %}

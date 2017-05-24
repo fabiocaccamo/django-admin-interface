@@ -99,6 +99,7 @@ class Theme(models.Model):
     related_modal_rounded_corners = models.BooleanField( default = True, verbose_name = 'rounded corners' )
 
     list_filter_dropdown = models.BooleanField( default = False, verbose_name = 'use dropdown' )
+    recent_actions_visible = models.BooleanField( default = True, verbose_name = 'visible' )
 
     def set_active(self):
 
