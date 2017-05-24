@@ -27,7 +27,7 @@ INSTALLED_APPS = (
     #...
     'admin_interface',
     'flat_responsive',
-    'flat', #if django version < 1.9
+    'flat', # only if django version < 1.9
     'colorfield',
     #...
     'django.contrib.admin',
@@ -44,6 +44,29 @@ INSTALLED_APPS = (
 - Run ``python manage.py collectstatic --clear``
 - Restart your application server
 
+## Optional themes
+This package ships with optional themes as fixtures, they can be installed using the [loaddata admin command](https://docs.djangoproject.com/en/1.11/ref/django-admin/#django-admin-loaddata). Optional themes are activated on installation.
+
+##### Django theme (default):
+Run ``python manage.py loaddata admin_interface_theme_django.json``
+
+##### Bootstrap theme: 
+Run ``python manage.py loaddata admin_interface_theme_bootstrap.json``
+
+##### Foundation theme: 
+Run ``python manage.py loaddata admin_interface_theme_foundation.json``
+
+### Add more themes
+You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add :
+
+1. Export your exact theme as fixture using the `dumpdata` admin command: 
+``python manage.py dumpdata admin_interface.Theme --indent 4 -o admin_interface_theme_{{name}}.json --pks=N``
+
+2. Copy the generated json file into the fixtures folder *(making sure its name starts with `admin_interface_theme_` to avoid clashes with fixtures that might be provided by other third party apps)*.
+
+3. Remove the `"pk"` from the fixture and make sure the `active` field is set to `true` *(in this way a theme is automatically activated when installed)*.
+
+4. Edit the section above to document your theme.
 
 ## Screenshots
 ###### Admin login
