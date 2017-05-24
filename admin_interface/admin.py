@@ -17,7 +17,7 @@ class ThemeAdmin(admin.ModelAdmin):
         }),
         ('Logo', {
             'classes': ('wide', ),
-            'fields': ('logo', 'logo_visible', )
+            'fields': ('logo', 'logo_color', 'logo_visible', )
         }),
         ('Title', {
             'classes': ('wide', ),

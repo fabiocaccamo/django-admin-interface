@@ -4,7 +4,6 @@ from django.conf import settings
 from django.test import TestCase
 from django.template import Context, Template
 
-import os
 import random
 import shutil
 
@@ -76,24 +75,6 @@ class AdminInterfaceTestCase(TestCase):
         theme_3 = Theme.objects.create( name = 'Custom 3', active = True )
         Theme.objects.filter( pk = Theme.get_active_theme().pk ).delete()
         self.__test_active_theme()
-
-    def test_default_theme_logo_created_if_deleted(self):
-
-        Theme.objects.all().delete()
-        theme = Theme.get_active_theme()
-        theme.logo = ''
-        theme.save()
-        theme = Theme.get_active_theme()
-        self.assertNotEqual( theme.logo, None )
-
-    def test_default_theme_logo_not_created_if_not_deleted(self):
-
-        Theme.objects.all().delete()
-        theme = Theme.get_active_theme()
-        self.assertNotEqual( theme.logo, None )
-        logo_url = theme.logo.url
-        theme = Theme.get_active_theme()
-        self.assertEqual( theme.logo.url, logo_url )
 
     def test_last_theme_activated_on_multiple_themes_created(self):
 

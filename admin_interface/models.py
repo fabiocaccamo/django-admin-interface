@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 
-from django.core.files import File
 from django.db import models
 from django.db.models.signals import post_delete, post_save
 from django.utils.encoding import python_2_unicode_compatible, force_text
 
 from colorfield.fields import ColorField
-
-import os
 
 
 @python_2_unicode_compatible
@@ -41,8 +39,6 @@ class Theme(models.Model):
         if not default_obj_created and default_obj_active:
             default_obj.set_active()
 
-        default_obj.set_default_logo()
-
         obj = objs_active_qs.last()
         objs_active_count = objs_active_qs.count()
 
@@ -57,7 +53,8 @@ class Theme(models.Model):
     title = models.CharField( max_length = 50, default = 'Django administration', blank = True )
     title_visible = models.BooleanField( default = True, verbose_name = 'visible' )
 
-    logo = models.FileField( upload_to = 'admin-interface/logo/', blank = True )
+    logo = models.FileField( upload_to = 'admin-interface/logo/', blank = True, help_text = '(leave blank to use the default Django logo)' )
+    logo_color = ColorField( blank = True, default = '#FFFFFF', help_text = '#FFFFFF', verbose_name = 'logo color' )
     logo_visible = models.BooleanField( default = True, verbose_name = 'visible' )
 
     css_header_background_color = ColorField( blank = True, default = '#0C4B33', help_text = '#0C4B33', verbose_name = 'background color' )
@@ -107,28 +104,6 @@ class Theme(models.Model):
 
         self.active = True
         self.save()
-
-    def set_default_logo(self):
-
-        if self.logo:
-            # django-storages compatibility
-            try:
-                if os.path.isfile(self.logo.path):
-                    return
-            except NotImplementedError:
-                return
-
-        logo_filename = 'logo-django.svg'
-        logo_path = os.path.normpath(os.path.dirname(__file__) + '/data/' + logo_filename)
-        logo_file = open(logo_path)
-
-        self.logo = File(logo_file, logo_filename)
-
-        post_save.disconnect(Theme.post_save_handler, sender = Theme)
-        self.save()
-        post_save.connect(Theme.post_save_handler, sender = Theme)
-
-        logo_file.close()
 
     class Meta:
 
