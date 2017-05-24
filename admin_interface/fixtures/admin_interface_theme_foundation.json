@@ -1,0 +1,39 @@
+[
+    {
+        "model": "admin_interface.theme",
+        "fields": {
+            "name": "Foundation",
+            "active": true,
+            "title": "Django administration",
+            "title_color": "#DDDDDD",
+            "title_visible": false,
+            "logo": "",
+            "logo_color": "#CCCCCC",
+            "logo_visible": true,
+            "css_header_background_color": "#2C3840",
+            "css_header_text_color": "#FFFFFF",
+            "css_header_link_color": "#FFFFFF",
+            "css_header_link_hover_color": "#DDDDDD",
+            "css_module_background_color": "#074E68",
+            "css_module_text_color": "#FFFFFF",
+            "css_module_link_color": "#FFFFFF",
+            "css_module_link_hover_color": "#DDDDDD",
+            "css_module_rounded_corners": true,
+            "css_generic_link_color": "#000000",
+            "css_generic_link_hover_color": "#074E68",
+            "css_save_button_background_color": "#2199E8",
+            "css_save_button_background_hover_color": "#1585CF",
+            "css_save_button_text_color": "#FFFFFF",
+            "css_delete_button_background_color": "#CC4B37",
+            "css_delete_button_background_hover_color": "#BF4634",
+            "css_delete_button_text_color": "#FFFFFF",
+            "css": "",
+            "related_modal_active": true,
+            "related_modal_background_color": "#000000",
+            "related_modal_background_opacity": 0.2,
+            "related_modal_rounded_corners": true,
+            "list_filter_dropdown": false,
+            "recent_actions_visible": true
+        }
+    }
+]
