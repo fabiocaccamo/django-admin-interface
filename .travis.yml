@@ -20,7 +20,7 @@ env:
 matrix:
   allow_failures:
     - env: TOX_ENV=py34-master
-    - env: TOX_ENV=py34-master
+    - env: TOX_ENV=py35-master
 install:
   - pip install tox
 script:
