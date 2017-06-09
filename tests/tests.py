@@ -2,6 +2,7 @@
 
 from django.conf import settings
 from django.test import TestCase
+from django.test.client import RequestFactory
 from django.template import Context, Template
 
 import random
@@ -13,16 +14,14 @@ from admin_interface.models import Theme
 class AdminInterfaceTestCase(TestCase):
 
     def setUp(self):
+        self.request_factory = RequestFactory()
         pass
 
     def tearDown(self):
         shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
         pass
 
-    def __render_template(self, string, context=None):
-
-        context = context or {}
-        context = Context(context)
+    def __render_template(self, string, context):
         return Template(string).render(context)
 
     def __test_active_theme(self):
@@ -104,7 +103,17 @@ class AdminInterfaceTestCase(TestCase):
     def test_templatetags(self):
 
         Theme.objects.all().delete()
-        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}')
+        context = Context({})
+        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
+        self.assertEqual(rendered, 'Django')
+
+    def test_templatetags_with_request(self):
+
+        Theme.objects.all().delete()
+        context = Context({
+            'request': self.request_factory.get('/')
+        })
+        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
 
     def test_repr(self):
