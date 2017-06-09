@@ -8,7 +8,7 @@ from admin_interface.models import Theme
 register = template.Library()
 
 
-@register.assignment_tag(takes_context = True)
+@register.simple_tag(takes_context = True)
 def get_admin_interface_theme(context):
 
     theme = None
