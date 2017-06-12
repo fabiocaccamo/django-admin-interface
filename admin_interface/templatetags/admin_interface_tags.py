@@ -7,8 +7,13 @@ from admin_interface.models import Theme
 
 register = template.Library()
 
+try:
+    assignment_tag = register.assignment_tag
+except AttributeError:
+    assignment_tag = register.simple_tag
 
-@register.assignment_tag(takes_context = True)
+
+@assignment_tag(takes_context = True)
 def get_admin_interface_theme(context):
 
     theme = None

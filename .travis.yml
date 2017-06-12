@@ -9,12 +9,21 @@ env:
   - TOX_ENV=py34-18
   - TOX_ENV=py34-19
   - TOX_ENV=py34-110
+  - TOX_ENV=py34-master
   - TOX_ENV=py35-18
   - TOX_ENV=py35-19
   - TOX_ENV=py35-110
-  #- TOX_ENV=py36-18
-  #- TOX_ENV=py36-19
-  #- TOX_ENV=py36-110
+  - TOX_ENV=py35-master
+matrix:
+  include:
+    - python: "3.6"
+      env: TOX_ENV=py36-111
+    - python: "3.6"
+      env: TOX_ENV=py36-master
+  allow_failures:
+    - env: TOX_ENV=py34-master
+    - env: TOX_ENV=py35-master
+    - env: TOX_ENV=py36-master
 install:
   - pip install tox
 script:
