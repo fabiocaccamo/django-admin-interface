@@ -50,11 +50,14 @@ This package ships with optional themes as fixtures, they can be installed using
 ##### Django theme (default):
 Run ``python manage.py loaddata admin_interface_theme_django.json``
 
-##### Bootstrap theme: 
+##### [Bootstrap](http://getbootstrap.com/) theme: 
 Run ``python manage.py loaddata admin_interface_theme_bootstrap.json``
 
-##### Foundation theme: 
+##### [Foundation](http://foundation.zurb.com/) theme: 
 Run ``python manage.py loaddata admin_interface_theme_foundation.json``
+
+##### [U.S. Web Design Standards](https://standards.usa.gov/) theme:
+Run ``python manage.py loaddata admin_interface_theme_uswds.json``
 
 ### Add more themes
 You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add :
