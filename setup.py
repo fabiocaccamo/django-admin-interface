@@ -17,9 +17,9 @@ setup(
     keywords=['django', 'admin', 'interface', 'responsive', 'flat', 'theme', 'custom', 'ui'],
     requires=['django(>=1.7)'],
     install_requires=[
-        'django-colorfield==0.1.12',
-        'django-flat-theme==1.1.4',
-        'django-flat-responsive==1.3.0'
+        'django-colorfield>=0.1,<1.0',
+        'django-flat-theme>=1.0,<2.0',
+        'django-flat-responsive>=1.0,<2.0',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
