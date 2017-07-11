@@ -1,5 +1,7 @@
 language: python
 python: 3.5
+services:
+  - postgresql
 env:
   - TOX_ENV=py27-17
   - TOX_ENV=py27-18
@@ -24,6 +26,8 @@ matrix:
     - env: TOX_ENV=py34-master
     - env: TOX_ENV=py35-master
     - env: TOX_ENV=py36-master
+before_script:
+  - psql -c 'create database djadmininterface;' -U postgres
 install:
   - pip install tox
 script:
