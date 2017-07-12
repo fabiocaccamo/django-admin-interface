@@ -112,6 +112,7 @@ class Theme(models.Model):
 
         verbose_name = 'Theme'
         verbose_name_plural = 'Themes'
+        select_on_save = True
 
     def __str__(self):
         return force_text(self.name)
