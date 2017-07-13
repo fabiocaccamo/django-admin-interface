@@ -1,0 +1,15 @@
+{% load i18n static %}<!DOCTYPE html>
+<html>
+  <head><title>{% trans 'Popup closing...' %}</title></head>
+  <body>
+    <script type="text/javascript"
+            id="django-admin-popup-response-constants"
+            src="{% static "admin/js/popup_response.js" %}"
+            {% if popup_response_data %}
+            data-popup-response="{{ popup_response_data }}"
+            {% else %}
+            data-popup-response='{"action":"{{ action|escape }}","value":"{{ value|escape }}","obj":"{{ obj|escape }}","new_value":"{{ new_value|escape }}"}'
+            {% endif %}>
+    </script>
+  </body>
+</html>
