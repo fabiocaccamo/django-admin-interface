@@ -22,13 +22,23 @@
     var initData = JSON.parse(document.getElementById('django-admin-popup-response-constants').dataset.popupResponse);
     switch(initData.action){
         case 'change':
-            openerRef.dismissChangeRelatedObjectPopup(modalRef, initData.value, initData.obj, initData.new_value);
+            if( typeof(openerRef.dismissChangeRelatedObjectPopup) == 'function' ){
+                openerRef.dismissChangeRelatedObjectPopup(modalRef, initData.value, initData.obj, initData.new_value);
+            }
             break;
         case 'delete':
-            openerRef.dismissDeleteRelatedObjectPopup(modalRef, initData.value);
+            if( typeof(openerRef.dismissDeleteRelatedObjectPopup) == 'function' ){
+                openerRef.dismissDeleteRelatedObjectPopup(modalRef, initData.value);
+            }
             break;
         default:
-            openerRef.dismissAddRelatedObjectPopup(modalRef, initData.value, initData.obj);
+            if( typeof(openerRef.dismissAddRelatedObjectPopup) == 'function' ){
+                openerRef.dismissAddRelatedObjectPopup(modalRef, initData.value, initData.obj);
+            }
+            else if( typeof(openerRef.dismissAddAnotherPopup) == 'function' ){
+                // django 1.7 compatibility
+                openerRef.dismissAddAnotherPopup(modalRef, initData.value, initData.obj);
+            }
             break;
     }
 })();
