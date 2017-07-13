@@ -8,8 +8,12 @@
 
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
+{% get_admin_interface_version as version %}
 <style type="text/css">
-
+/*
+django-admin-interface {{ version }}
+https://github.com/fabiocaccamo/django-admin-interface
+*/
 {% include "admin_interface/css/admin-interface.css" %}
 {% include "admin_interface/css/admin-interface-fix.css" %}
 {% include "admin_interface/css/list-filter-dropdown.css" %}
@@ -29,14 +33,15 @@
 
 {% block blockbots %}
 {{ block.super }}
+{% get_admin_interface_theme as theme %}
+{% get_admin_interface_version as version %}
 {# https://github.com/elky/django-flat-responsive#important-note #}
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}" />
-{% get_admin_interface_theme as theme %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}?v={{ version }}" />
 {% if theme.related_modal_active %}
-<link rel="stylesheet" type="text/css" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}" />
-<script type="text/javascript" src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}"></script>
-<script type="text/javascript" src="{% static 'admin_interface/related-modal/related-modal.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}?v={{ version }}" />
+<script type="text/javascript" src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}?v={{ version }}"></script>
+<script type="text/javascript" src="{% static 'admin_interface/related-modal/related-modal.js' %}?v={{ version }}"></script>
 {% endif %}
 {% endblock %}
 

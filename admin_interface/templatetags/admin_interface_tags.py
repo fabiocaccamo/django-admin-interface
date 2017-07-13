@@ -3,7 +3,7 @@
 from django import template
 
 from admin_interface.models import Theme
-
+from admin_interface.version import __version__
 
 register = template.Library()
 
@@ -29,4 +29,9 @@ def get_admin_interface_theme(context):
         request.admin_interface_theme = theme
 
     return theme
+
+
+@assignment_tag(takes_context = True)
+def get_admin_interface_version(context):
+    return __version__
 
