@@ -13,10 +13,6 @@ from colorfield.fields import ColorField
 class Theme(models.Model):
 
     @staticmethod
-    def post_migrate_handler(sender, **kwargs):
-        Theme.get_active_theme()
-
-    @staticmethod
     def post_delete_handler(instance, **kwargs):
         Theme.get_active_theme()
 
