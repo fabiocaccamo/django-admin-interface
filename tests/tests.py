@@ -96,8 +96,8 @@ class AdminInterfaceTestCase(TestCase):
     def test_templatetags_get_theme(self):
         Theme.objects.all().delete()
         context = Context({})
-        result = templatetags.get_admin_interface_theme(context)
-        self.assertEqual(result, 'Django')
+        theme = templatetags.get_admin_interface_theme(context)
+        self.assertEqual(theme.name, 'Django')
         rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
 
@@ -106,15 +106,15 @@ class AdminInterfaceTestCase(TestCase):
         context = Context({
             'request': self.request_factory.get('/')
         })
-        result = templatetags.get_admin_interface_theme(context)
-        self.assertEqual(result, 'Django')
+        theme = templatetags.get_admin_interface_theme(context)
+        self.assertEqual(theme.name, 'Django')
         rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
 
     def test_templatetags_get_version(self):
         context = Context({})
-        result = templatetags.get_admin_interface_version(context)
-        self.assertEqual(result, __version__)
+        version = templatetags.get_admin_interface_version(context)
+        self.assertEqual(version, __version__)
         rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_version as version %}{{ version }}', context)
         self.assertEqual(rendered, __version__)
 
