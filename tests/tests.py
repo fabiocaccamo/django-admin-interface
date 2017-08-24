@@ -9,6 +9,7 @@ import random
 import shutil
 
 from admin_interface.models import Theme
+from admin_interface.version import __version__
 
 
 class AdminInterfaceTestCase(TestCase):
@@ -107,6 +108,12 @@ class AdminInterfaceTestCase(TestCase):
         rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
 
+    def test_templatetags_version(self):
+
+        context = Context({})
+        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_version as version %}{{ version }}', context)
+        self.assertEqual(rendered, __version__)
+
     def test_templatetags_with_request(self):
 
         Theme.objects.all().delete()
@@ -118,5 +125,5 @@ class AdminInterfaceTestCase(TestCase):
 
     def test_repr(self):
         theme = Theme.get_active_theme()
-        self.assertEqual( "{0}".format(theme), 'Django' )
+        self.assertEqual( '{0}'.format(theme), 'Django' )
 
