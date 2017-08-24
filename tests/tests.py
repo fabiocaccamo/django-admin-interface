@@ -9,6 +9,7 @@ import random
 import shutil
 
 from admin_interface.models import Theme
+from admin_interface.templatetags import admin_interface_tags as templatetags
 from admin_interface.version import __version__
 
 
@@ -26,7 +27,6 @@ class AdminInterfaceTestCase(TestCase):
         return Template(string).render(context)
 
     def __test_active_theme(self):
-
         theme = Theme.get_active_theme()
         print( theme )
         self.assertTrue(theme != None)
@@ -34,17 +34,14 @@ class AdminInterfaceTestCase(TestCase):
         self.assertEqual(Theme.objects.filter( active = True ).count(), 1);
 
     def test_default_theme_created_if_no_themes(self):
-
         Theme.objects.all().delete()
         self.__test_active_theme()
 
     def test_default_theme_created_if_all_themes_deleted(self):
-
         Theme.objects.all().delete()
         self.__test_active_theme()
 
     def test_default_theme_activated_on_save_if_no_active_themes(self):
-
         Theme.objects.all().delete()
         theme = Theme.get_active_theme()
         theme.active = False
@@ -52,13 +49,11 @@ class AdminInterfaceTestCase(TestCase):
         self.__test_active_theme()
 
     def test_default_theme_activated_after_update_if_no_active_themes(self):
-
         Theme.objects.all().delete()
         Theme.objects.all().update( active = False )
         self.__test_active_theme()
 
     def test_default_theme_activated_after_update_if_multiple_active_themes(self):
-
         Theme.objects.all().delete()
         theme_1 = Theme.objects.create( name = 'Custom 1', active = True )
         theme_2 = Theme.objects.create( name = 'Custom 2', active = True )
@@ -68,7 +63,6 @@ class AdminInterfaceTestCase(TestCase):
         self.__test_active_theme()
 
     def test_default_theme_activated_on_active_theme_deleted(self):
-
         Theme.objects.all().delete()
         theme_1 = Theme.objects.create( name = 'Custom 1', active = True )
         theme_2 = Theme.objects.create( name = 'Custom 2', active = True )
@@ -77,7 +71,6 @@ class AdminInterfaceTestCase(TestCase):
         self.__test_active_theme()
 
     def test_last_theme_activated_on_multiple_themes_created(self):
-
         Theme.objects.all().delete()
         theme_1 = Theme.objects.create( name = 'Custom 1', active = True )
         theme_2 = Theme.objects.create( name = 'Custom 2', active = True )
@@ -86,7 +79,6 @@ class AdminInterfaceTestCase(TestCase):
         self.__test_active_theme()
 
     def test_last_theme_activated_on_multiple_themes_activated(self):
-
         Theme.objects.all().delete()
         theme_1 = Theme.objects.create( name = 'Custom 1', active = True )
         theme_2 = Theme.objects.create( name = 'Custom 2', active = True )
@@ -101,27 +93,30 @@ class AdminInterfaceTestCase(TestCase):
                 self.assertEqual( Theme.get_active_theme().pk, theme.pk )
         self.__test_active_theme()
 
-    def test_templatetags(self):
-
+    def test_templatetags_get_theme(self):
         Theme.objects.all().delete()
         context = Context({})
+        result = templatetags.get_admin_interface_theme(context)
+        self.assertEqual(result, 'Django')
         rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
 
-    def test_templatetags_version(self):
-
-        context = Context({})
-        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_version as version %}{{ version }}', context)
-        self.assertEqual(rendered, __version__)
-
-    def test_templatetags_with_request(self):
-
+    def test_templatetags_get_theme_with_request(self):
         Theme.objects.all().delete()
         context = Context({
             'request': self.request_factory.get('/')
         })
+        result = templatetags.get_admin_interface_theme(context)
+        self.assertEqual(result, 'Django')
         rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
+
+    def test_templatetags_get_version(self):
+        context = Context({})
+        result = templatetags.get_admin_interface_version(context)
+        self.assertEqual(result, __version__)
+        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_version as version %}{{ version }}', context)
+        self.assertEqual(rendered, __version__)
 
     def test_repr(self):
         theme = Theme.get_active_theme()
