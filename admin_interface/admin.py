@@ -19,6 +19,10 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('logo', 'logo_color', 'logo_visible', )
         }),
+        ('Favicon', {
+            'classes': ('wide', ),
+            'fields': ('favicon', )
+        }),
         ('Title', {
             'classes': ('wide', ),
             'fields': ('title', 'title_color', 'title_visible', )

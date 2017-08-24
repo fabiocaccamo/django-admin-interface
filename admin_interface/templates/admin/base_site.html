@@ -38,6 +38,9 @@ https://github.com/fabiocaccamo/django-admin-interface
 {# https://github.com/elky/django-flat-responsive#important-note #}
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}?v={{ version }}" />
+{% if theme.favicon %}
+<link rel="icon" type="image/x-icon" href="{{ theme.favicon.url }}?v={{ version }}" />
+{% endif %}
 {% if theme.related_modal_active %}
 <link rel="stylesheet" type="text/css" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}?v={{ version }}" />
 <script type="text/javascript" src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}?v={{ version }}"></script>

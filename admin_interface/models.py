@@ -60,6 +60,8 @@ class Theme(models.Model):
     logo_color = ColorField( blank = True, default = '#FFFFFF', help_text = '#FFFFFF', max_length = 10, verbose_name = 'logo color' )
     logo_visible = models.BooleanField( default = True, verbose_name = 'visible' )
 
+    favicon = models.FileField( upload_to = 'admin-interface/favicon/', blank = True, help_text = '(.ico|.png|.gif - 16x16|32x32 px)', verbose_name = 'favicon' )
+
     css_header_background_color = ColorField( blank = True, default = '#0C4B33', help_text = '#0C4B33', max_length = 10, verbose_name = 'background color' )
     css_header_text_color = ColorField( blank = True, default = '#44B78B', help_text = '#44B78B', max_length = 10, verbose_name = 'text color' )
     css_header_link_color = ColorField( blank = True, default = '#FFFFFF', help_text = '#FFFFFF', max_length = 10, verbose_name = 'link color' )
