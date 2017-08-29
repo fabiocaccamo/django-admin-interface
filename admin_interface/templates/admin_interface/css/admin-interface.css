@@ -58,12 +58,12 @@
 }
 
 .admin-interface fieldset.collapse.collapsed a.collapse-toggle {
-    color:{{ theme.css_generic_link_color }};
+    color:{{ theme.css_module_link_color }};
 }
 
 .admin-interface fieldset.collapse.collapsed a.collapse-toggle:hover,
 .admin-interface fieldset.collapse.collapsed a.collapse-toggle:active {
-    color:{{ theme.css_generic_link_hover_color }};
+    color:{{ theme.css_module_link_hover_color }};
 }
 
 .admin-interface fieldset.collapse a.collapse-toggle {

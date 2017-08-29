@@ -78,14 +78,13 @@
     border: 1px solid transparent;
 }
 
-.admin-interface fieldset.collapse.collapsed a.collapse-toggle {
-    font-weight: bold;
-    text-transform: lowercase;
-}
-
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle,
 .admin-interface fieldset.collapse a.collapse-toggle {
-    font-weight: bold;
+    font-weight: normal;
     text-transform: lowercase;
+    font-size: 12px;
+    text-decoration: underline;
+    padding: 0 1px;
 }
 
 /*
