@@ -85,6 +85,12 @@ You can add a theme you've created through the admin to this repository by [send
 ###### Admin theme customization
 ![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11240250/7350d942-8df1-11e5-9b28-f2f54c333cdc.gif)
 
+## FAQ
+- #### I already have a custom `base_site.html`, how can I make it work?
+
+You can use [django-apptemplates](https://github.com/bittner/django-apptemplates), then add **`{% extends "admin_interface:admin/base_site.html" %}`** to your `base_site.html`
+
+---
 #### Thanks
 - [django-flat-theme](https://github.com/elky/django-flat-theme/)
 - [django-flat-responsive](https://github.com/elky/django-flat-responsive)
