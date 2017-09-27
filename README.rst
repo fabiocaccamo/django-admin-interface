@@ -115,19 +115,19 @@ Screenshots
 Admin login
 ~~~~~~~~~~~
 
-|django-admin-interface\_login|
+|django-admin-interface_login|
 -------------------------------
 
 Admin dashboard
 ~~~~~~~~~~~~~~~
 
-|django-admin-interface\_dashboard|
+|django-admin-interface_dashboard|
 -----------------------------------
 
 Admin themes management
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-|django-admin-interface\_themes\_management|
+|django-admin-interface_themes_management|
 --------------------------------------------
 
 Admin theme customization
@@ -176,6 +176,6 @@ Released under `MIT License <LICENSE>`__.
    :target: https://img.shields.io/pypi/pyversions/django-admin-interface.svg
 .. |License| image:: https://img.shields.io/pypi/l/django-admin-interface.svg
    :target: https://img.shields.io/pypi/l/django-admin-interface.svg
-.. |django-admin-interface\_login| image:: https://cloud.githubusercontent.com/assets/1035294/11240233/55c8d4ba-8df1-11e5-9568-00fdc987ede8.gif
-.. |django-admin-interface\_dashboard| image:: https://cloud.githubusercontent.com/assets/1035294/11240239/627c0362-8df1-11e5-81fa-216366a5d8da.gif
-.. |django-admin-interface\_themes\_management| image:: https://cloud.githubusercontent.com/assets/1035294/11240245/6cd1c342-8df1-11e5-928b-f22217474d3d.gif
+.. |django-admin-interface_login| image:: https://cloud.githubusercontent.com/assets/1035294/11240233/55c8d4ba-8df1-11e5-9568-00fdc987ede8.gif
+.. |django-admin-interface_dashboard| image:: https://cloud.githubusercontent.com/assets/1035294/11240239/627c0362-8df1-11e5-81fa-216366a5d8da.gif
+.. |django-admin-interface_themes_management| image:: https://cloud.githubusercontent.com/assets/1035294/11240245/6cd1c342-8df1-11e5-928b-f22217474d3d.gif
