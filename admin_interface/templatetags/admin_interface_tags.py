@@ -13,7 +13,7 @@ except AttributeError:
     assignment_tag = register.simple_tag
 
 
-@assignment_tag(takes_context = True)
+@assignment_tag(takes_context=True)
 def get_admin_interface_theme(context):
 
     theme = None
@@ -31,7 +31,6 @@ def get_admin_interface_theme(context):
     return theme
 
 
-@assignment_tag(takes_context = True)
+@assignment_tag(takes_context=True)
 def get_admin_interface_version(context):
     return __version__
-
