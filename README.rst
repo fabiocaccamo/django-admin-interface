@@ -121,17 +121,17 @@ License
 Released under **MIT License**.
 
 
-.. |Build Status| image:: https://travis-ci.org/fabiocaccamo/django-admin-interface.svg?branch=master :target: https://travis-ci.org/fabiocaccamo/django-admin-interface
+.. |Build Status| image:: https://travis-ci.org/fabiocaccamo/django-admin-interface.svg?branch=master
 
-.. |codecov| image:: https://codecov.io/gh/fabiocaccamo/django-admin-interface/branch/master/graph/badge.svg :target: https://codecov.io/gh/fabiocaccamo/django-admin-interface
+.. |codecov| image:: https://codecov.io/gh/fabiocaccamo/django-admin-interface/branch/master/graph/badge.svg
 
-.. |Code Health| image:: https://landscape.io/github/fabiocaccamo/django-admin-interface/master/landscape.svg?style=flat :target: https://landscape.io/github/fabiocaccamo/django-admin-interface/master
+.. |Code Health| image:: https://landscape.io/github/fabiocaccamo/django-admin-interface/master/landscape.svg?style=flat
 
-.. |PyPI version| image:: https://badge.fury.io/py/django-admin-interface.svg :target: https://badge.fury.io/py/django-admin-interface
+.. |PyPI version| image:: https://badge.fury.io/py/django-admin-interface.svg
 
-.. |Py versions| image:: https://img.shields.io/pypi/pyversions/django-admin-interface.svg :target: https://img.shields.io/pypi/pyversions/django-admin-interface.svg
+.. |Py versions| image:: https://img.shields.io/pypi/pyversions/django-admin-interface.svg
 
-.. |License| image:: https://img.shields.io/pypi/l/django-admin-interface.svg :target: https://img.shields.io/pypi/l/django-admin-interface.svg
+.. |License| image:: https://img.shields.io/pypi/l/django-admin-interface.svg
 
 .. |django-admin-interface_login| image:: https://cloud.githubusercontent.com/assets/1035294/11240233/55c8d4ba-8df1-11e5-9568-00fdc987ede8.gif
 
