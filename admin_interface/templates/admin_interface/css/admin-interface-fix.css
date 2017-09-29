@@ -238,9 +238,17 @@ body.admin-interface .paginator a.showall:visited {
 }
 /* end fix */
 
-.admin-interface .inline-group {
+/* begin fix restrict tabular-inline horizontal-scroll to inline-group instead of whole page */
+.admin-interface .inline-group[data-inline-type="tabular"] {
     overflow-x:auto;
 }
+/* end fix */
+
+/* begin fix stacked-inline margin-bottom in responsive small viewport */
+.admin-interface .inline-group[data-inline-type="stacked"] .module {
+    margin-bottom:0px;
+}
+/* end fix */
 
 /* begin fix issue #10 - Related widget broken in long tabular inline */
 .admin-interface .inline-group .tabular .related-widget-wrapper {
