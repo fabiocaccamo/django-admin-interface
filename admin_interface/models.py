@@ -13,19 +13,18 @@ from colorfield.fields import ColorField
 class Theme(models.Model):
 
     @staticmethod
-    def post_migrate_handler(sender, **kwargs):
-        theme = Theme.get_active_theme()
+    def post_migrate_handler(**kwargs):
+        Theme.get_active_theme()
 
     @staticmethod
-    def post_delete_handler(instance, **kwargs):
-        theme = Theme.get_active_theme()
+    def post_delete_handler(**kwargs):
+        Theme.get_active_theme()
 
     @staticmethod
-    def post_save_handler(instance, created, **kwargs):
-        theme = instance
-        if theme.active:
-            Theme.objects.exclude(pk=theme.pk).update(active=False)
-        theme = Theme.get_active_theme()
+    def post_save_handler(instance, **kwargs):
+        if instance.active:
+            Theme.objects.exclude(pk=instance.pk).update(active=False)
+        Theme.get_active_theme()
 
     @staticmethod
     def get_active_theme():
