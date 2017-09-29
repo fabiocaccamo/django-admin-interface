@@ -1,17 +1,25 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from setuptools import find_packages, setup
+
+import os
+import pypandoc
 
 exec(open('admin_interface/version.py').read())
 
 github_url = 'https://github.com/fabiocaccamo'
 package_name = 'django-admin-interface'
+package_path = os.path.abspath(os.path.dirname(__file__))
+long_description = pypandoc.convert(os.path.join(package_path, 'README.md'), 'rst')
+
 setup(
     name=package_name,
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     include_package_data=True,
     version=__version__,
     description='django-admin-interface is a modern responsive flat admin interface customizable by the admin itself.',
+    long_description=long_description,
     author='Fabio Caccamo',
     author_email='fabio.caccamo@gmail.com',
     url='%s/%s' % (github_url, package_name, ),
@@ -47,4 +55,3 @@ setup(
     license='MIT',
     test_suite='runtests.runtests'
 )
-
