@@ -4,16 +4,18 @@ from setuptools import find_packages, setup
 
 exec(open('admin_interface/version.py').read())
 
+github_url = 'https://github.com/fabiocaccamo'
+package_name = 'django-admin-interface'
 setup(
-    name='django-admin-interface',
+    name=package_name,
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
     include_package_data=True,
     version=__version__,
     description='django-admin-interface is a modern responsive flat admin interface customizable by the admin itself.',
     author='Fabio Caccamo',
     author_email='fabio.caccamo@gmail.com',
-    url='https://github.com/fabiocaccamo/django-admin-interface',
-    download_url='https://github.com/fabiocaccamo/django-admin-interface/archive/%s.tar.gz' % __version__,
+    url='%s/%s' % (github_url, package_name, ),
+    download_url='%s/%s/archive/%s.tar.gz' % (github_url, package_name, __version__, ),
     keywords=['django', 'admin', 'interface', 'responsive', 'flat', 'theme', 'custom', 'ui'],
     requires=['django(>=1.7)'],
     install_requires=[
