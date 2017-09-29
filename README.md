@@ -13,7 +13,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Themes management and customization *(you can **customize admin title, logo and colors**)*
 - Responsive
 - List filter dropdown *(optional)*
-- **`NEW`** **Related modal** *(instead of the old popup window, optional)*
+- `NEW` **Related modal** *(instead of the old popup window, optional)*
 - Style optimizations for: `django-ckeditor`, `django-modeltranslation`, `sorl-thumbnail`
 
 ## Requirements
@@ -41,7 +41,7 @@ INSTALLED_APPS = (
 
 #### Upgrade
 - Run `pip install django-admin-interface --upgrade`
-- Run ``python manage.py migrate`` *(add ``--fake-initial`` if you are upgrading from 0.1.0 version)*
+- Run ``python manage.py migrate`` *(add* ``--fake-initial`` *if you are upgrading from 0.1.0 version)*
 - Run ``python manage.py collectstatic --clear``
 - Restart your application server
 
@@ -51,10 +51,10 @@ This package ships with optional themes as fixtures, they can be installed using
 ##### [Django](https://www.djangoproject.com/) theme (default):
 Run ``python manage.py loaddata admin_interface_theme_django.json``
 
-##### [Bootstrap](http://getbootstrap.com/) theme: 
+##### [Bootstrap](http://getbootstrap.com/) theme:
 Run ``python manage.py loaddata admin_interface_theme_bootstrap.json``
 
-##### [Foundation](http://foundation.zurb.com/) theme: 
+##### [Foundation](http://foundation.zurb.com/) theme:
 Run ``python manage.py loaddata admin_interface_theme_foundation.json``
 
 ##### [U.S. Web Design Standards](https://standards.usa.gov/) theme:
@@ -63,10 +63,10 @@ Run ``python manage.py loaddata admin_interface_theme_uswds.json``
 ### Add more themes
 You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add :
 
-1. Export your exact theme as fixture using the `dumpdata` admin command: 
+1. Export your exact theme as fixture using the `dumpdata` admin command:
 ``python manage.py dumpdata admin_interface.Theme --indent 4 -o admin_interface_theme_{{name}}.json --pks=N``
 
-2. Copy the generated json file into the fixtures folder *(making sure its name starts with `admin_interface_theme_` to avoid clashes with fixtures that might be provided by other third party apps)*.
+2. Copy the generated json file into the fixtures folder *(making sure its name starts with* `admin_interface_theme_` *to avoid clashes with fixtures that might be provided by other third party apps)*.
 
 3. Remove the `"pk"` from the fixture and make sure the `active` field is set to `true` *(in this way a theme is automatically activated when installed)*.
 
@@ -88,13 +88,9 @@ You can add a theme you've created through the admin to this repository by [send
 ## FAQ
 - #### I already have a custom `base_site.html`, how can I make it work?
 
-You can use [django-apptemplates](https://github.com/bittner/django-apptemplates), then add **`{% extends "admin_interface:admin/base_site.html" %}`** to your `base_site.html`
+You can use [django-apptemplates](https://github.com/bittner/django-apptemplates), then add `{% extends "admin_interface:admin/base_site.html" %}` to your `base_site.html`
 
 ---
-#### Thanks
-- [django-flat-theme](https://github.com/elky/django-flat-theme/)
-- [django-flat-responsive](https://github.com/elky/django-flat-responsive)
-- [django-colorfield](https://github.com/jaredly/django-colorfield/)
 
 ## License
 Released under [MIT License](LICENSE).

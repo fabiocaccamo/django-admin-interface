@@ -4,14 +4,18 @@
 from setuptools import find_packages, setup
 
 import os
-import pypandoc
+# import pypandoc
 
 exec(open('admin_interface/version.py').read())
 
 github_url = 'https://github.com/fabiocaccamo'
 package_name = 'django-admin-interface'
 package_path = os.path.abspath(os.path.dirname(__file__))
-long_description = pypandoc.convert(os.path.join(package_path, 'README.md'), 'rst')
+# long_description = pypandoc.convert(os.path.join(package_path, 'README.md'), 'rst')
+long_description_file_path = os.path.join(package_path, 'README.rst')
+long_description = ''
+with open(long_description_file_path) as f:
+    long_description = f.read()
 
 setup(
     name=package_name,
