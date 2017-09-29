@@ -31,6 +31,6 @@ def get_admin_interface_theme(context):
     return theme
 
 
-@assignment_tag(takes_context=True)
-def get_admin_interface_version(context):
+@assignment_tag(takes_context=False)
+def get_admin_interface_version():
     return __version__

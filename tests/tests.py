@@ -23,8 +23,8 @@ class AdminInterfaceTestCase(TestCase):
         shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
         pass
 
-    def __render_template(self, string, context):
-        return Template(string).render(context)
+    def __render_template(self, string, context=None):
+        return Template(string).render(Context(context or {}))
 
     def __test_active_theme(self):
         theme = Theme.get_active_theme()
@@ -98,7 +98,10 @@ class AdminInterfaceTestCase(TestCase):
         context = Context({})
         theme = templatetags.get_admin_interface_theme(context)
         self.assertEqual(theme.name, 'Django')
-        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
+        rendered = self.__render_template(
+            '{% load admin_interface_tags %}'\
+            '{% get_admin_interface_theme as theme %}'\
+            '{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
 
     def test_templatetags_get_theme_with_request(self):
@@ -108,14 +111,19 @@ class AdminInterfaceTestCase(TestCase):
         })
         theme = templatetags.get_admin_interface_theme(context)
         self.assertEqual(theme.name, 'Django')
-        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_theme as theme %}{{ theme.name }}', context)
+        rendered = self.__render_template(
+            '{% load admin_interface_tags %}'\
+            '{% get_admin_interface_theme as theme %}'\
+            '{{ theme.name }}', context)
         self.assertEqual(rendered, 'Django')
 
     def test_templatetags_get_version(self):
-        context = Context({})
-        version = templatetags.get_admin_interface_version(context)
+        version = templatetags.get_admin_interface_version()
         self.assertEqual(version, __version__)
-        rendered = self.__render_template('{% load admin_interface_tags %}{% get_admin_interface_version as version %}{{ version }}', context)
+        rendered = self.__render_template(
+            '{% load admin_interface_tags %}'\
+            '{% get_admin_interface_version as version %}'\
+            '{{ version }}')
         self.assertEqual(rendered, __version__)
 
     def test_repr(self):
