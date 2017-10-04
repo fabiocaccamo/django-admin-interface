@@ -97,10 +97,7 @@ https://github.com/Ikimea/ckeditor-light-theme
 
 @media (max-width: 767px){
 
-    .django-ckeditor-widget {
-        width: 100% !important;
-    }
-
+    .admin-interface .django-ckeditor-widget,
     .admin-interface .cke {
         width: 100% !important;
     }
@@ -116,5 +113,14 @@ https://github.com/Ikimea/ckeditor-light-theme
 
     .admin-interface .cke_contents {
         height: auto;
+    }
+
+    .admin-interface .tabular .django-ckeditor-widget,
+    .admin-interface .tabular .cke {
+        width: 400px !important;
+    }
+
+    .admin-interface .tabular .cke_contents {
+        height: 90px !important;
     }
 }
