@@ -181,6 +181,11 @@ body.admin-interface .paginator a.showall:visited {
         width: auto;
         padding: 0px;
     }
+
+    /* fix inline horizontal scroll caused by checkbox-row */
+    .admin-interface form .form-row > div.checkbox-row {
+        width: 100%;
+    }
 }
 
 
@@ -265,13 +270,22 @@ body.admin-interface .paginator a.showall:visited {
     text-align:right;
 }
 
+.admin-interface .inline-group .tabular tr td {
+    vertical-align: top;
+}
+
 .admin-interface .inline-group .tabular tr td.delete {
     text-align:right;
     padding-right:15px;
+    vertical-align: top;
+}
+
+.admin-interface .inline-group .tabular tr td input[type="checkbox"] {
+    margin: 7px 0px;
 }
 
 .admin-interface .inline-group .tabular tr td.delete a.inline-deletelink {
-    margin-top:2px;
+    margin-top:4px;
     overflow:hidden;
     text-indent:9999px;
 }
@@ -297,57 +311,76 @@ body.admin-interface .paginator a.showall:visited {
 }
 
 /* improve responsive selector */
-.admin-interface .selector.stacked {
-    width: 480px;
+
+/* fix [stacked, not-stacked] equalize horizontal and vertical select padding for selector (stacked and not) */
+.admin-interface .selector .selector-available select,
+.admin-interface .selector .selector-chosen select {
+    padding: 7px 10px;
+    display: block;
+}
+
+/* fix [not-stacked] selector */
+.admin-interface .selector:not(.stacked) {
+    width: auto;
     margin-right: 10px;
 }
 
-.admin-interface .selector.stacked .selector-chooser {
-    margin-left: calc(50% - 25px);
-}
-
-@media (min-width: 767px) and (max-width: 1124px){
-    .admin-interface .selector {
-        width: 610px;
-        display: block;
-    }
-    .admin-interface .selector .selector-available,
-    .admin-interface .selector .selector-chosen {
-        width: 285px;
-        flex: 0 1 auto;
-    }
-    .admin-interface .selector .selector-filter {
-        display: flex;
-        align-items: center;
-    }
-    .admin-interface .selector .selector-filter label {
-        margin: 0;
-    }
-    .admin-interface .selector .selector-available input {
-        width: auto;
-        flex: 1 1;
-    }
-    .admin-interface .selector select {
-        width: 100%;
-    }
-}
-
-@media (max-width: 767px){
-    .admin-interface .selector.stacked {
-        margin-right: 0px;
-    }
-    .admin-interface .selector.stacked .selector-available select {
-        margin-bottom: 0px;
-    }
-}
-
-/* equalize selectors height by adding the height of the .selector-available filter-bar */
+/* fix [not-stacked] equalize selectors height by adding the height of the .selector-available filter-bar */
 .admin-interface .selector:not(.stacked) .selector-chosen select {
     height: calc(46px + 17.2em) !important;
 }
 
-/* equalize horizontal and vertical select padding */
-.admin-interface .selector .selector-available select,
-.admin-interface .selector .selector-chosen select {
-    padding: 7px 10px;
+@media (max-width: 1024px){
+    .admin-interface .related-widget-wrapper-link + .selector:not(.stacked) {
+        width: 100%;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1124px){
+
+    .admin-interface .selector:not(.stacked) .selector-available,
+    .admin-interface .selector:not(.stacked) .selector-chosen {
+        width: 285px;
+        flex: 0 1 auto;
+    }
+    .admin-interface .selector:not(.stacked) .selector-filter {
+        display: flex;
+        align-items: center;
+    }
+    .admin-interface .selector:not(.stacked) .selector-filter label {
+        margin: 0;
+    }
+    .admin-interface .selector:not(.stacked) .selector-available input {
+        width: auto;
+        flex: 1 1;
+    }
+    .admin-interface .selector:not(.stacked) select {
+        width: 100%;
+    }
+}
+
+/* fix [not-stacked] in tabular inline context */
+.admin-interface .tabular.inline-related .selector:not(.stacked) {
+    width: 795px;
+    float: none;
+    display: inline-block;
+    margin-right: 22px;
+}
+
+.admin-interface .tabular.inline-related .form-row .related-widget-wrapper-link:first-child {
+    float: right;
+    display: inline-block;
+}
+
+/* fix [stacked] in tabular inline context */
+.admin-interface .tabular.inline-related .selector.stacked {
+    width: 480px;
+    float: none;
+    display: inline-block;
+    margin-right: 22px;
+}
+
+/* fix [stacked] chooser align center */
+.admin-interface .selector.stacked .selector-chooser {
+    margin-left:calc(50% - 30px);
 }
