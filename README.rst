@@ -1,4 +1,4 @@
-|Build Status| |codecov| |Code Health| |PyPI version| |Py versions| |License|
+|Build Status| |codecov| |Code Health| |Requirements Status| |PyPI version| |Py versions| |License|
 
 django-admin-interface
 ======================
@@ -126,6 +126,8 @@ Released under **MIT License**.
 .. |codecov| image:: https://codecov.io/gh/fabiocaccamo/django-admin-interface/branch/master/graph/badge.svg
 
 .. |Code Health| image:: https://landscape.io/github/fabiocaccamo/django-admin-interface/master/landscape.svg?style=flat
+
+.. |Requirements Status| image:: https://requires.io/github/fabiocaccamo/django-admin-interface/requirements.svg?branch=master
 
 .. |PyPI version| image:: https://badge.fury.io/py/django-admin-interface.svg
 
