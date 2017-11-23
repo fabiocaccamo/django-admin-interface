@@ -136,19 +136,20 @@ class Theme(models.Model):
         blank=True, default='#000000', help_text='#000000',
         max_length=10, verbose_name='background color')
     related_modal_background_opacity_choices = (
-        (0.1, '10%', ),
-        (0.2, '20%', ),
-        (0.3, '30%', ),
-        (0.4, '40%', ),
-        (0.5, '50%', ),
-        (0.6, '60%', ),
-        (0.7, '70%', ),
-        (0.8, '80%', ),
-        (0.9, '90%', ),
+        ('0.1', '10%', ),
+        ('0.2', '20%', ),
+        ('0.3', '30%', ),
+        ('0.4', '40%', ),
+        ('0.5', '50%', ),
+        ('0.6', '60%', ),
+        ('0.7', '70%', ),
+        ('0.8', '80%', ),
+        ('0.9', '90%', ),
     )
-    related_modal_background_opacity = models.FloatField(
+    related_modal_background_opacity = models.CharField(
+        max_length=5,
         choices=related_modal_background_opacity_choices,
-        default=0.2, help_text='20%', verbose_name='background opacity')
+        default='0.3', help_text='20%', verbose_name='background opacity')
     related_modal_rounded_corners = models.BooleanField(
         default=True, verbose_name='rounded corners')
 
