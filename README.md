@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/fabiocaccamo/django-admin-interface.svg?branch=master)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
 [![codecov](https://codecov.io/gh/fabiocaccamo/django-admin-interface/branch/master/graph/badge.svg)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
 [![Code Health](https://landscape.io/github/fabiocaccamo/django-admin-interface/master/landscape.svg?style=flat)](https://landscape.io/github/fabiocaccamo/django-admin-interface/master)
-[![Requirements Status](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements/?branch=master)
 [![PyPI version](https://badge.fury.io/py/django-admin-interface.svg)](https://badge.fury.io/py/django-admin-interface)
 [![Py versions](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)
 [![License](https://img.shields.io/pypi/l/django-admin-interface.svg)](https://img.shields.io/pypi/l/django-admin-interface.svg)
@@ -19,7 +18,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 
 ## Requirements
 - Python 2.7, 3.4, 3.5, 3.6
-- Django 1.7, 1.8, 1.9, 1.10, 1.11
+- Django 1.7, 1.8, 1.9, 1.10, 1.11, 2.0
 
 ## Installation
 - Run `pip install django-admin-interface`
@@ -28,7 +27,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 INSTALLED_APPS = (
     #...
     'admin_interface',
-    'flat_responsive',
+    'flat_responsive', # only if django version < 2.0
     'flat', # only if django version < 1.9
     'colorfield',
     #...

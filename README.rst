@@ -1,4 +1,4 @@
-|Build Status| |codecov| |Code Health| |Requirements Status| |PyPI version| |Py versions| |License|
+|Build Status| |codecov| |Code Health| |PyPI version| |Py versions| |License|
 
 django-admin-interface
 ======================
@@ -20,13 +20,13 @@ Requirements
 ------------
 
 - Python 2.7, 3.4, 3.5, 3.6
-- Django 1.7, 1.8, 1.9, 1.10, 1.11
+- Django 1.7, 1.8, 1.9, 1.10, 1.11, 2.0
 
 Installation
 ------------
 
 - Run ``pip install django-admin-interface``
-- Add ``admin_interface``, ``flat_responsive``, ``flat`` *(only if django version < 1.9)* and ``colorfield`` to ``settings.INSTALLED_APPS`` **before** ``django.contrib.admin``
+- Add ``admin_interface``, ``flat_responsive`` *(only if django version < 2.0)*, ``flat`` *(only if django version < 1.9)* and ``colorfield`` to ``settings.INSTALLED_APPS`` **before** ``django.contrib.admin``
 - Run ``python manage.py migrate``
 - Run ``python manage.py collectstatic``
 - Restart your application server
@@ -126,8 +126,6 @@ Released under **MIT License**.
 .. |codecov| image:: https://codecov.io/gh/fabiocaccamo/django-admin-interface/branch/master/graph/badge.svg
 
 .. |Code Health| image:: https://landscape.io/github/fabiocaccamo/django-admin-interface/master/landscape.svg?style=flat
-
-.. |Requirements Status| image:: https://requires.io/github/fabiocaccamo/django-admin-interface/requirements.svg?branch=master
 
 .. |PyPI version| image:: https://badge.fury.io/py/django-admin-interface.svg
 
