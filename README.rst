@@ -6,6 +6,9 @@ django-admin-interface
 django-admin-interface is a modern **responsive flat admin interface
 customizable by the admin itself**.
 
+|django-admin-interface_preview|
+---------------------------------
+
 Features
 --------
 
@@ -133,6 +136,8 @@ Released under **MIT License**.
 .. |Py versions| image:: https://img.shields.io/pypi/pyversions/django-admin-interface.svg
 
 .. |License| image:: https://img.shields.io/pypi/l/django-admin-interface.svg
+
+.. |django-admin-interface_preview| image:: https://user-images.githubusercontent.com/1035294/35631521-64b0cab8-06a4-11e8-8f57-c04fdfbb7e8b.gif
 
 .. |django-admin-interface_login| image:: https://cloud.githubusercontent.com/assets/1035294/11240233/55c8d4ba-8df1-11e5-9568-00fdc987ede8.gif
 

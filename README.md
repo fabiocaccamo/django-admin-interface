@@ -8,6 +8,8 @@
 # django-admin-interface
 django-admin-interface is a modern **responsive flat admin interface customizable by the admin itself**.
 
+![django-admin-interface-preview](https://user-images.githubusercontent.com/1035294/35631521-64b0cab8-06a4-11e8-8f57-c04fdfbb7e8b.gif)
+
 ## Features
 - Beautiful default **django-theme**
 - Themes management and customization *(you can **customize admin title, logo and colors**)*
