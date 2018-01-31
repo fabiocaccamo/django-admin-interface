@@ -14,6 +14,7 @@ Features
 - Responsive
 - List filter dropdown *(optional)*
 - ``NEW`` **Related modal** (instead of the old popup window, optional)
+- ``NEW`` **Enviroment label** (development, testing, staging, production)
 - Style optimizations for: ``django-ckeditor``, ``django-modeltranslation``, ``sorl-thumbnail``
 
 Requirements
