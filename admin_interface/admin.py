@@ -15,6 +15,13 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('name', 'active', )
         }),
+        ('Enviroment', {
+            'classes': ('wide', ),
+            'fields': (
+                'env',
+                'env_visible',
+            )
+        }),
         ('Logo', {
             'classes': ('wide', ),
             'fields': (

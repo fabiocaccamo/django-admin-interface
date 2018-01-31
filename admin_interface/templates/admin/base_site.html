@@ -65,3 +65,8 @@ https://github.com/fabiocaccamo/django-admin-interface
     {% endif %}
 </h1>
 {% endblock %}
+
+{% block welcome-msg %}
+{% get_admin_interface_theme as theme %}
+{% if theme.env_visible %}<span class="enviroment-label {{ theme.env }}"></span> - {% endif %}{{ block.super }}<br>
+{% endblock %}

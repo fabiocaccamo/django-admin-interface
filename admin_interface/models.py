@@ -73,6 +73,19 @@ class Theme(models.Model):
         upload_to='admin-interface/favicon/', blank=True,
         help_text='(.ico|.png|.gif - 16x16|32x32 px)', verbose_name='favicon')
 
+    env_choices = (
+        ('development', 'Development', ),
+        ('testing', 'Testing', ),
+        ('staging', 'Staging', ),
+        ('production', 'Production', ),
+    )
+    env = models.CharField(
+        max_length=50,
+        choices=env_choices,
+        default='development', verbose_name='enviroment')
+    env_visible = models.BooleanField(
+        default=True, verbose_name='visible')
+
     css_header_background_color = ColorField(
         blank=True, default='#0C4B33', help_text='#0C4B33',
         max_length=10, verbose_name='background color')
