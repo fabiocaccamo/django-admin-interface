@@ -312,11 +312,18 @@ body.admin-interface .paginator a.showall:visited {
 
 /* improve responsive selector */
 
-/* fix [stacked, not-stacked] equalize horizontal and vertical select padding for selector (stacked and not) */
+/* fix [stacked, not-stacked] equalize horizontal and vertical select padding for selector */
 .admin-interface .selector .selector-available select,
 .admin-interface .selector .selector-chosen select {
     padding: 7px 10px;
     display: block;
+}
+
+/* fix [stacked, not-stacked] select options text overflow */
+.admin-interface .selector .selector-available select option,
+.admin-interface .selector .selector-chosen select option {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* fix [not-stacked] selector */
@@ -330,13 +337,13 @@ body.admin-interface .paginator a.showall:visited {
     height: calc(46px + 17.2em) !important;
 }
 
-@media (max-width: 1024px){
+@media (max-width: 767px){
     .admin-interface .related-widget-wrapper-link + .selector:not(.stacked) {
         width: 100%;
     }
 }
 
-@media (min-width: 767px) and (max-width: 1124px){
+@media (min-width: 768px) and (max-width: 1124px){
 
     .admin-interface .selector:not(.stacked) .selector-available,
     .admin-interface .selector:not(.stacked) .selector-chosen {
