@@ -1,0 +1,11 @@
+/*
+django-tabbed-admin support
+https://github.com/omji/django-tabbed-admin
+*/
+
+@media (max-width: 767px){
+    /* fix horizontal overflow - responsive.css:563 */
+    .admin-interface .ui-tabs .ui-tabs-panel[id^=tabs] .aligned .form-row > div {
+        width: 100%;
+    }
+}

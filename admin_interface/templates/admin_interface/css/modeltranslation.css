@@ -1,65 +1,17 @@
 /*
 django-modeltranslation support
-https://github.com/deschler/django-modeltranslation/pull/313/commits
+https://github.com/deschler/django-modeltranslation
 */
 
 .admin-interface #content h1 select {
-    text-transform:uppercase;
-    margin-left:15px;
+    text-transform: uppercase;
+    margin-left: 15px;
+    min-width: 50px;
 }
 
-.admin-interface .ui-tabs .ui-tabs-nav {
-    padding:10px 0 0 10px;
-}
-
-.admin-interface .ui-tabs .ui-tabs-nav li {
-    margin-left:-1px;
-}
-
-.admin-interface .ui-tabs .ui-tabs-nav li a {
-    outline:none;
-    background-color:#f8f8f8;
-    border:1px solid #eeeeee;
-    border-bottom:none;
-    text-transform:uppercase;
-
-    padding:7px 14px 8px 14px;
-    margin-top:1px;
-}
-
-.admin-interface .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
-.admin-interface .ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
-
-    padding:8px 14px 8px 14px;
-    margin-top:0px;
-    margin-bottom:-1px;
-    font-weight: bold;
-    background-color:#FFFFFF;
-    color:{{ theme.css_module_background_color }};
-
-    border-bottom:1px solid #FFFFFF;
-}
-
-.admin-interface .inline-group .tabular .ui-tabs .ui-tabs-panel {
-    padding:8px;
-}
-
-.admin-interface #changelist .row1:not(.selected):hover,
-.admin-interface #changelist .row2:not(.selected):hover {
-    background:#f9f9f9;
-}
-
-.admin-interface .row2 {
-    background:#fcfcfc;
-}
-
-.admin-interface .row2 .ui-tabs .ui-tabs-nav li a {
-    background-color:#f5f5f5;
-    border:1px solid #ebebeb;
-}
-
-.admin-interface .row2 .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
-.admin-interface .row2 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
-    background-color:#fcfcfc;
-    border-bottom:1px solid #fcfcfc;
+.admin-interface .ui-tabs .ui-tabs-panel[id^=tab_id_] {
+    border: none;
+    border-top: 1px solid #eeeeee;
+    padding: 0;
+    margin-bottom: 0;
 }
