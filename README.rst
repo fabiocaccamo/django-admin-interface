@@ -18,7 +18,11 @@ Features
 - List filter dropdown *(optional)*
 - ``NEW`` **Related modal** (instead of the old popup window, optional)
 - ``NEW`` **Enviroment label** (development, testing, staging, production)
-- Style optimizations for: ``django-ckeditor``, ``django-modeltranslation``, ``sorl-thumbnail``
+- Style optimizations for:
+  - `django-ckeditor`
+  - `django-modeltranslation`
+  - `django-tabbed-admin`
+  - `sorl-thumbnail`
 
 Requirements
 ------------
