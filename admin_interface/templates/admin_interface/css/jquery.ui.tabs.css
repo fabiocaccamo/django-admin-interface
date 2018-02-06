@@ -43,6 +43,14 @@ backward compatibility:
 .admin-interface .ui-tabs {
     padding: 0;
 }
+
+.admin-interface .ui-tabs,
+.admin-interface .ui-tabs .ui-widget-header,
+.admin-interface .ui-tabs .ui-widget-header .ui-state-default {
+    border: none;
+    background: transparent;
+}
+
 .admin-interface .ui-tabs .ui-tabs-nav {
     padding: 10px 0 0 10px;
     border-bottom: none;

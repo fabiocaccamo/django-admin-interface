@@ -308,6 +308,9 @@ body.admin-interface .paginator a.showall:visited {
         width: 100% !important;
         flex: 0 1 auto;
     }
+    .admin-interface .aligned .form-row input[type="file"] {
+        width: 100% !important;
+    }
 }
 
 /* improve responsive selector */
