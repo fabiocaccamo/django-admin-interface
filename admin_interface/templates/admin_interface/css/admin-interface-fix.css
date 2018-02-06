@@ -329,68 +329,7 @@ body.admin-interface .paginator a.showall:visited {
     text-overflow: ellipsis;
 }
 
-/* fix [not-stacked] selector */
-.admin-interface .selector:not(.stacked) {
-    width: auto;
-    margin-right: 10px;
-}
-
 /* fix [not-stacked] equalize selectors height by adding the height of the .selector-available filter-bar */
 .admin-interface .selector:not(.stacked) .selector-chosen select {
     height: calc(46px + 17.2em) !important;
-}
-
-@media (max-width: 767px){
-    .admin-interface .related-widget-wrapper-link + .selector:not(.stacked) {
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1124px){
-
-    .admin-interface .selector:not(.stacked) .selector-available,
-    .admin-interface .selector:not(.stacked) .selector-chosen {
-        width: 285px;
-        flex: 0 1 auto;
-    }
-    .admin-interface .selector:not(.stacked) .selector-filter {
-        display: flex;
-        align-items: center;
-    }
-    .admin-interface .selector:not(.stacked) .selector-filter label {
-        margin: 0;
-    }
-    .admin-interface .selector:not(.stacked) .selector-available input {
-        width: auto;
-        flex: 1 1;
-    }
-    .admin-interface .selector:not(.stacked) select {
-        width: 100%;
-    }
-}
-
-/* fix [not-stacked] in tabular inline context */
-.admin-interface .tabular.inline-related .selector:not(.stacked) {
-    width: 795px;
-    float: none;
-    display: inline-block;
-    margin-right: 22px;
-}
-
-.admin-interface .tabular.inline-related .form-row .related-widget-wrapper-link:first-child {
-    float: right;
-    display: inline-block;
-}
-
-/* fix [stacked] in tabular inline context */
-.admin-interface .tabular.inline-related .selector.stacked {
-    width: 480px;
-    float: none;
-    display: inline-block;
-    margin-right: 22px;
-}
-
-/* fix [stacked] chooser align center */
-.admin-interface .selector.stacked .selector-chooser {
-    margin-left:calc(50% - 30px);
 }
