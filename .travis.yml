@@ -5,15 +5,18 @@ env:
   - TOX_ENV=py27-18
   - TOX_ENV=py27-19
   - TOX_ENV=py27-110
+  - TOX_ENV=py27-111
   - TOX_ENV=py34-17
   - TOX_ENV=py34-18
   - TOX_ENV=py34-19
   - TOX_ENV=py34-110
+  - TOX_ENV=py34-111
   - TOX_ENV=py34-20
   - TOX_ENV=py34-master
   - TOX_ENV=py35-18
   - TOX_ENV=py35-19
   - TOX_ENV=py35-110
+  - TOX_ENV=py35-111
   - TOX_ENV=py35-20
   - TOX_ENV=py35-master
 matrix:
