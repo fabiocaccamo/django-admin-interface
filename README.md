@@ -100,4 +100,4 @@ You can use [django-apptemplates](https://github.com/bittner/django-apptemplates
 ---
 
 ## License
-Released under [MIT License](LICENSE.md).
+Released under [MIT License](LICENSE.txt).
