@@ -12,7 +12,6 @@ env:
   - TOX_ENV=py34-110
   - TOX_ENV=py34-111
   - TOX_ENV=py34-20
-  - TOX_ENV=py34-21
   - TOX_ENV=py35-18
   - TOX_ENV=py35-19
   - TOX_ENV=py35-110
