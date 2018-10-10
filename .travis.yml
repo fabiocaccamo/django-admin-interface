@@ -1,37 +1,60 @@
 language: python
 python: 3.5
 env:
-  - TOX_ENV=py27-17
-  - TOX_ENV=py27-18
-  - TOX_ENV=py27-19
-  - TOX_ENV=py27-110
-  - TOX_ENV=py27-111
-  - TOX_ENV=py34-17
-  - TOX_ENV=py34-18
-  - TOX_ENV=py34-19
-  - TOX_ENV=py34-110
-  - TOX_ENV=py34-111
-  - TOX_ENV=py34-20
-  - TOX_ENV=py35-18
-  - TOX_ENV=py35-19
-  - TOX_ENV=py35-110
-  - TOX_ENV=py35-111
-  - TOX_ENV=py35-20
-  - TOX_ENV=py35-21
-  - TOX_ENV=py35-master
+  - TOX_ENV=py27-dj17
+  - TOX_ENV=py27-dj18
+  - TOX_ENV=py27-dj19
+  - TOX_ENV=py27-dj110
+  - TOX_ENV=py27-dj111
+  - TOX_ENV=py34-dj17
+  - TOX_ENV=py34-dj18
+  - TOX_ENV=py34-dj19
+  - TOX_ENV=py34-dj110
+  - TOX_ENV=py34-dj111
+  - TOX_ENV=py34-dj20
+  - TOX_ENV=py35-dj18
+  - TOX_ENV=py35-dj19
+  - TOX_ENV=py35-dj110
+  - TOX_ENV=py35-dj111
+  - TOX_ENV=py35-dj20
+  - TOX_ENV=py35-dj21
+  - TOX_ENV=py35-djmaster
+  # - TOX_ENV=py36-dj111
+  # - TOX_ENV=py36-dj20
+  # - TOX_ENV=py36-dj21
+  # - TOX_ENV=py36-djmaster
+  # - TOX_ENV=py37-dj20
+  # - TOX_ENV=py37-dj21
+  # - TOX_ENV=py37-djmaster
 matrix:
   include:
     - python: "3.6"
-      env: TOX_ENV=py36-111
+      env: TOX_ENV=py36-dj111
     - python: "3.6"
-      env: TOX_ENV=py36-20
+      env: TOX_ENV=py36-dj20
     - python: "3.6"
-      env: TOX_ENV=py36-21
+      env: TOX_ENV=py36-dj21
     - python: "3.6"
-      env: TOX_ENV=py36-master
+      env: TOX_ENV=py36-djmaster
+    - python: "3.7"
+      env: TOX_ENV=py37-dj20
+      dist: xenial
+      language: python
+      sudo: required
+    - python: "3.7"
+      env: TOX_ENV=py37-dj21
+      dist: xenial
+      language: python
+      sudo: required
+    - python: "3.7"
+      env: TOX_ENV=py37-djmaster
+      dist: xenial
+      language: python
+      sudo: required
   allow_failures:
-    - env: TOX_ENV=py35-master
-    - env: TOX_ENV=py36-master
+    - env: TOX_ENV=py35-djmaster
+    - env: TOX_ENV=py36-djmaster
+    - env: TOX_ENV=py37-djmaster
 install:
   - pip install tox
 script:
