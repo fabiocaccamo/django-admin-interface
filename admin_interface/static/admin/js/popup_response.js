@@ -1,5 +1,5 @@
 /* global opener */
-(function() {
+(function($) {
     'use strict';
 
     function getModalWindowData()
@@ -29,24 +29,24 @@
     // console.log(initData);
     switch (initData.action) {
         case 'change':
-            if (typeof(openerRef.dismissChangeRelatedObjectPopup) == 'function') {
+            if (typeof(openerRef.dismissChangeRelatedObjectPopup) === 'function') {
                 openerRef.dismissChangeRelatedObjectPopup(modalRef, initData.value, initData.obj, initData.new_value);
             }
             break;
         case 'delete':
-            if (typeof(openerRef.dismissDeleteRelatedObjectPopup) == 'function') {
+            if (typeof(openerRef.dismissDeleteRelatedObjectPopup) === 'function') {
                 openerRef.dismissDeleteRelatedObjectPopup(modalRef, initData.value);
             }
             break;
         default:
-            if (typeof(openerRef.dismissAddRelatedObjectPopup) == 'function') {
+            if (typeof(openerRef.dismissAddRelatedObjectPopup) === 'function') {
                 openerRef.dismissAddRelatedObjectPopup(modalRef, initData.value, initData.obj);
             }
-            else if (typeof(openerRef.dismissAddAnotherPopup) == 'function') {
+            else if (typeof(openerRef.dismissAddAnotherPopup) === 'function') {
                 // django 1.7 compatibility
                 openerRef.dismissAddAnotherPopup(modalRef, initData.value, initData.obj);
             }
             break;
     }
-})();
+})(django.jQuery);
 
