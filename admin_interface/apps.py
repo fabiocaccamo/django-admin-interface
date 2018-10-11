@@ -11,7 +11,9 @@ class AdminInterfaceConfig(AppConfig):
 
     def ready(self):
 
+        from admin_interface import settings
         from admin_interface.models import Theme
 
+        settings.check_installed_apps()
         post_migrate.connect(
             Theme.post_migrate_handler, sender=self)

@@ -9,13 +9,25 @@ SECRET_KEY = 'django-admin-interface'
 
 ALLOWED_HOSTS = ['*']
 
+# Application definition
 INSTALLED_APPS = [
-
     'admin_interface',
-    'flat_responsive',
-    'flat', #if django version < 1.9
     'colorfield',
+]
 
+if django.VERSION < (1, 9):
+    # ONLY if django version < 1.9
+    INSTALLED_APPS += [
+        'flat',
+    ]
+
+if django.VERSION < (2, 0):
+    # ONLY if django version < 2.0
+    INSTALLED_APPS += [
+        'flat_responsive',
+    ]
+
+INSTALLED_APPS += [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
