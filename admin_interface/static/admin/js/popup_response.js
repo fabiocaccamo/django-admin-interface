@@ -1,5 +1,5 @@
-/* global opener */
-(function($) {
+(function() {
+
     'use strict';
 
     function getModalWindowData()
@@ -48,5 +48,5 @@
             }
             break;
     }
-})(django.jQuery);
 
+})();

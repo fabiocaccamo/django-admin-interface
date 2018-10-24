@@ -130,4 +130,3 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
 
     })(django.jQuery);
 }
-
