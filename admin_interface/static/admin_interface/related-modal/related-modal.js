@@ -61,7 +61,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                     // create a random parameter and append it to the src url to prevent it
                     // this workaround doesn't work with related lookup url
                     var iframeSrcRandom = String(Math.round(Math.random() * 999999));
-                    if( iframeSrc.indexOf('?') === -1 ){
+                    if (iframeSrc.indexOf('?') === -1) {
                         iframeSrc += '?_modal=' + iframeSrcRandom;
                     } else {
                         iframeSrc += '&_modal=' + iframeSrcRandom;
@@ -86,7 +86,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 {
                     // set current window as iframe opener because
                     // the callback is called on the opener window
-                    iframeEl.load(function(){
+                    iframeEl.on('load', function() {
                         var iframeObj = $(this).get(0);
                         var iframeWindow = iframeObj.contentWindow;
                         iframeWindow.opener = window;
