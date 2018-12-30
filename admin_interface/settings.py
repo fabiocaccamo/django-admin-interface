@@ -35,4 +35,3 @@ def check_installed_apps():
             raise ImproperlyConfigured(
                 '\'flat_responsive\' not needed since django 2.0, '
                 'remove it from settings.INSTALLED_APPS.')
-

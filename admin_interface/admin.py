@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-
+from django.utils.translation import ugettext_lazy as _
 from admin_interface.models import Theme
 
 
@@ -15,14 +15,14 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('name', 'active', )
         }),
-        ('Enviroment', {
+        (_('Enviroment'), {
             'classes': ('wide', ),
             'fields': (
                 'env',
                 'env_visible',
             )
         }),
-        ('Logo', {
+        (_('Logo'), {
             'classes': ('wide', ),
             'fields': (
                 'logo',
@@ -30,11 +30,11 @@ class ThemeAdmin(admin.ModelAdmin):
                 'logo_visible',
             )
         }),
-        ('Favicon', {
+        (_('Favicon'), {
             'classes': ('wide', ),
             'fields': ('favicon', )
         }),
-        ('Title', {
+        (_('Title'), {
             'classes': ('wide', ),
             'fields': (
                 'title',
@@ -42,7 +42,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 'title_visible',
             )
         }),
-        ('Header', {
+        (_('Header'), {
             'classes': ('wide', ),
             'fields': (
                 'css_header_background_color',
@@ -51,7 +51,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 'css_header_link_hover_color',
             )
         }),
-        ('Breadcrumbs / Module headers', {
+        (_('Breadcrumbs / Module headers'), {
             'classes': ('wide', ),
             'fields': (
                 'css_module_background_color',
@@ -61,14 +61,14 @@ class ThemeAdmin(admin.ModelAdmin):
                 'css_module_rounded_corners',
             )
         }),
-        ('Generic Links', {
+        (_('Generic Links'), {
             'classes': ('wide', ),
             'fields': (
                 'css_generic_link_color',
                 'css_generic_link_hover_color',
             )
         }),
-        ('Save Buttons', {
+        (_('Save Buttons'), {
             'classes': ('wide', ),
             'fields': (
                 'css_save_button_background_color',
@@ -76,7 +76,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 'css_save_button_text_color',
             )
         }),
-        ('Delete Buttons', {
+        (_('Delete Buttons'), {
             'classes': ('wide', ),
             'fields': (
                 'css_delete_button_background_color',
@@ -84,7 +84,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 'css_delete_button_text_color',
             )
         }),
-        ('Related Modal', {
+        (_('Related Modal'), {
             'classes': ('wide', ),
             'fields': (
                 'related_modal_active',
@@ -93,16 +93,17 @@ class ThemeAdmin(admin.ModelAdmin):
                 'related_modal_rounded_corners',
             )
         }),
-        ('List Filter', {
+        (_('List Filter'), {
             'classes': ('wide', ),
             'fields': ('list_filter_dropdown', )
         }),
-        ('Recent Actions', {
+        (_('Recent Actions'), {
             'classes': ('wide', ),
             'fields': ('recent_actions_visible', )
         }),
     )
 
     save_on_top = True
+
 
 admin.site.register(Theme, ThemeAdmin)
