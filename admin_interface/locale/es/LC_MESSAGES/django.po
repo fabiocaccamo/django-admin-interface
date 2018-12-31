@@ -1,183 +1,190 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is distributed under the same license as the 
+# django-admin-interface package.
+#
+# Translators:
+# Martin Vuelta <martin.vuelta@softbutterfly.io>, 2018
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-30 18:30-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Project-Id-Version: django-admin-interface\n"
+"Report-Msgid-Bugs-To: <dev@softbutterfly.io>\n"
+"POT-Creation-Date: 2018-12-30 19:13-0500\n"
+"PO-Revision-Date: 2018-12-30 19:13-0500\n"
+"Last-Translator: Martin Vuelta <martin.vuelta@softbutterfly.io>\n"
+"Language-Team: Spanish <dev@softbutterfly.io>\n"
+"Language: Spanish \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin.py:18
+#: admin_interface/admin.py:18
 msgid "Enviroment"
 msgstr "Entorno"
 
-#: admin.py:25
+#: admin_interface/admin.py:25
 msgid "Logo"
 msgstr "Logo"
 
-#: admin.py:33
+#: admin_interface/admin.py:33
 msgid "Favicon"
 msgstr "Favicon"
 
-#: admin.py:37
+#: admin_interface/admin.py:37
 msgid "Title"
 msgstr "Título"
 
-#: admin.py:45
+#: admin_interface/admin.py:45
 msgid "Header"
 msgstr "Encabezado"
 
-#: admin.py:54
+#: admin_interface/admin.py:54
 msgid "Breadcrumbs / Module headers"
 msgstr "Breadcrumbs / Encabezados de módulos"
 
-#: admin.py:64
+#: admin_interface/admin.py:64
 msgid "Generic Links"
 msgstr "Enlaces genéricos"
 
-#: admin.py:71
+#: admin_interface/admin.py:71
 msgid "Save Buttons"
 msgstr "Botones de guardar"
 
-#: admin.py:79
+#: admin_interface/admin.py:79
 msgid "Delete Buttons"
 msgstr "Botones de borrar"
 
-#: admin.py:87
+#: admin_interface/admin.py:87
 msgid "Related Modal"
 msgstr "Modal para objetos relacionados"
 
-#: admin.py:96
+#: admin_interface/admin.py:96
 msgid "List Filter"
 msgstr "Lista de filtros"
 
-#: admin.py:100
+#: admin_interface/admin.py:100
 msgid "Recent Actions"
 msgstr "Acciones recientes"
 
-#: apps.py:11
+#: admin_interface/apps.py:11
 msgid "Admin Interface"
 msgstr "Interfaz de administración"
 
-#: models.py:55
+#: admin_interface/models.py:55
 msgid "name"
 msgstr "Nombre"
 
-#: models.py:58 models.py:221
+#: admin_interface/models.py:58 admin_interface/models.py:221
 msgid "active"
 msgstr "Activo"
 
-#: models.py:64
+#: admin_interface/models.py:64
 msgid "title"
 msgstr "Título"
 
-#: models.py:70
+#: admin_interface/models.py:70
 msgid "title color"
 msgstr "Color de título"
 
-#: models.py:73 models.py:88 models.py:254
+#: admin_interface/models.py:73 admin_interface/models.py:88
+#: admin_interface/models.py:254
 msgid "visible"
 msgstr "Visible"
 
-#: models.py:78
+#: admin_interface/models.py:78
 msgid "Leave blank to use the default Django logo"
 msgstr "Dejar en blanco para usaer el logo por defecto de Django"
 
-#: models.py:79
+#: admin_interface/models.py:79
 msgid "logo"
 msgstr "logo"
 
-#: models.py:85
+#: admin_interface/models.py:85
 msgid "logo color"
 msgstr "color de logo"
 
-#: models.py:94
+#: admin_interface/models.py:94
 msgid "favicon"
 msgstr "favicon"
 
-#: models.py:97
+#: admin_interface/models.py:97
 msgid "Development"
 msgstr "Desarrollo"
 
-#: models.py:98
+#: admin_interface/models.py:98
 msgid "Testing"
 msgstr "Pruebas"
 
-#: models.py:99
+#: admin_interface/models.py:99
 msgid "Staging"
 msgstr "Depliegue"
 
-#: models.py:100
+#: admin_interface/models.py:100
 msgid "Production"
 msgstr "Producción"
 
-#: models.py:106
+#: admin_interface/models.py:106
 msgid "enviroment"
 msgstr "entorno"
 
-#: models.py:116 models.py:141 models.py:182 models.py:201 models.py:227
+#: admin_interface/models.py:116 admin_interface/models.py:141
+#: admin_interface/models.py:182 admin_interface/models.py:201
+#: admin_interface/models.py:227
 msgid "background color"
 msgstr "color de fondo"
 
-#: models.py:122 models.py:147 models.py:194 models.py:213 models.py:217
+#: admin_interface/models.py:122 admin_interface/models.py:147
+#: admin_interface/models.py:194 admin_interface/models.py:213
+#: admin_interface/models.py:217
 msgid "text color"
 msgstr "color de texto"
 
-#: models.py:128 models.py:153 models.py:169
+#: admin_interface/models.py:128 admin_interface/models.py:153
+#: admin_interface/models.py:169
 msgid "link color"
 msgstr "color de enlace"
 
-#: models.py:134 models.py:159 models.py:175
+#: admin_interface/models.py:134 admin_interface/models.py:159
+#: admin_interface/models.py:175
 msgid "link hover color"
 msgstr "color de enlace (hover)"
 
-#: models.py:162 models.py:247
+#: admin_interface/models.py:162 admin_interface/models.py:247
 msgid "rounded corners"
 msgstr "esquinas redondas"
 
-#: models.py:188 models.py:207
+#: admin_interface/models.py:188 admin_interface/models.py:207
 msgid "background hover color"
 msgstr "color de fondo (hover)"
 
-#: models.py:244
+#: admin_interface/models.py:244
 msgid "background opacity"
 msgstr "opacidad de fondo"
 
-#: models.py:251
+#: admin_interface/models.py:251
 msgid "use dropdown"
 msgstr "Usar lista desplegable"
 
-#: models.py:263
+#: admin_interface/models.py:263
 msgid "Theme"
 msgstr "Tema"
 
-#: models.py:264
+#: admin_interface/models.py:264
 msgid "Themes"
 msgstr "Temas"
 
-#: templates/admin/base_site.html:6 templates/admin/base_site.html:66
+#: admin_interface/templates/admin/base_site.html:6
+#: admin_interface/templates/admin/base_site.html:66
 msgid "Django administration"
-msgstr ""
+msgstr "Administración de Django"
 
-# msgid "Django administration"
-# msgstr ""
-#: templates/admin/filter.html:13
-#: templates/admin_interface/dropdown_filter.html:4
+#: admin_interface/templates/admin/filter.html:13
+#: admin_interface/templates/admin_interface/dropdown_filter.html:4
 #, python-format
 msgid " By %(filter_title)s "
 msgstr " Por %(filter_title)s "
 
-#: templates/admin/popup_response.html:3
+#: admin_interface/templates/admin/popup_response.html:3
 msgid "Popup closing..."
 msgstr "Cerando popup..."
