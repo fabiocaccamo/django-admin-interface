@@ -15,7 +15,7 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('name', 'active', )
         }),
-        (_('Enviroment'), {
+        (_('Environment'), {
             'classes': ('wide', ),
             'fields': (
                 'env',

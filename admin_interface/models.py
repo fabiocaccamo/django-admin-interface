@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -90,7 +89,7 @@ class Theme(models.Model):
     favicon = models.FileField(
         upload_to='admin-interface/favicon/',
         blank=True,
-        help_text='(.ico|.png|.gif - 16x16|32x32 px)',
+        help_text=_('(.ico|.png|.gif - 16x16|32x32 px)'),
         verbose_name=_('favicon'))
 
     env_choices = (
