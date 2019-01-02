@@ -20,8 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: admin.py:18
-#, fuzzy
-#| msgid "Enviroment"
 msgid "Environment"
 msgstr "Ambiente"
 
