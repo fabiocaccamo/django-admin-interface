@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-01 21:24-0500\n"
+"POT-Creation-Date: 2019-01-03 15:56-0500\n"
 "PO-Revision-Date: 2018-12-30 19:13-0500\n"
 "Last-Translator: Martin Vuelta <martin.vuelta@softbutterfly.io>\n"
 "Language-Team: Spanish <dev@softbutterfly.io>\n"
@@ -78,6 +78,11 @@ msgstr "Nombre"
 #: models.py:57 models.py:220
 msgid "active"
 msgstr "Activo"
+
+#: models.py:61 templates/admin/base_site.html:6
+#: templates/admin/base_site.html:66
+msgid "Django administration"
+msgstr "Administración de Django"
 
 #: models.py:63
 msgid "title"
@@ -170,10 +175,6 @@ msgstr "Tema"
 #: models.py:263
 msgid "Themes"
 msgstr "Temas"
-
-#: templates/admin/base_site.html:6 templates/admin/base_site.html:66
-msgid "Django administration"
-msgstr "Administración de Django"
 
 #: templates/admin/filter.html:13
 #: templates/admin_interface/dropdown_filter.html:4

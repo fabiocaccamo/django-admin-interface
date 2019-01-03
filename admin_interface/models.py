@@ -58,7 +58,7 @@ class Theme(models.Model):
 
     title = models.CharField(
         max_length=50,
-        default='Django administration',
+        default=_('Django administration'),
         blank=True,
         verbose_name=_('title'))
     title_color = ColorField(
