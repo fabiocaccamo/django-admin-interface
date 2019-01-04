@@ -1,10 +1,9 @@
-# This file is distributed under the same license as the 
+# This file is distributed under the same license as the
 # django-admin-interface package.
 #
 # Translators:
 # Martin Vuelta <martin.vuelta@softbutterfly.io>, 2018
-#
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
