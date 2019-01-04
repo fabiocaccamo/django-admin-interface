@@ -1,0 +1,187 @@
+# This file is distributed under the same license as the 
+# django-admin-interface package.
+#
+# Translators:
+# Martin Vuelta <martin.vuelta@softbutterfly.io>, 2018
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-admin-interface\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-03 15:56-0500\n"
+"PO-Revision-Date: 2018-12-30 19:13-0500\n"
+"Last-Translator: Martin Vuelta <martin.vuelta@softbutterfly.io>\n"
+"Language-Team: Spanish <dev@softbutterfly.io>\n"
+"Language: Spanish \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:18
+msgid "Environment"
+msgstr "Ambiente"
+
+#: admin.py:25
+msgid "Logo"
+msgstr "Logo"
+
+#: admin.py:33
+msgid "Favicon"
+msgstr "Favicon"
+
+#: admin.py:37
+msgid "Title"
+msgstr "Título"
+
+#: admin.py:45
+msgid "Header"
+msgstr "Encabezado"
+
+#: admin.py:54
+msgid "Breadcrumbs / Module headers"
+msgstr "Breadcrumbs / Encabezados de módulos"
+
+#: admin.py:64
+msgid "Generic Links"
+msgstr "Enlaces genéricos"
+
+#: admin.py:71
+msgid "Save Buttons"
+msgstr "Botones de guardar"
+
+#: admin.py:79
+msgid "Delete Buttons"
+msgstr "Botones de borrar"
+
+#: admin.py:87
+msgid "Related Modal"
+msgstr "Modal para objetos relacionados"
+
+#: admin.py:96
+msgid "List Filter"
+msgstr "Lista de filtros"
+
+#: admin.py:100
+msgid "Recent Actions"
+msgstr "Acciones recientes"
+
+#: apps.py:11
+msgid "Admin Interface"
+msgstr "Interfaz de administración"
+
+#: models.py:54
+msgid "name"
+msgstr "Nombre"
+
+#: models.py:57 models.py:220
+msgid "active"
+msgstr "Activo"
+
+#: models.py:61 templates/admin/base_site.html:6
+#: templates/admin/base_site.html:66
+msgid "Django administration"
+msgstr "Administración de Django"
+
+#: models.py:63
+msgid "title"
+msgstr "Título"
+
+#: models.py:69
+msgid "title color"
+msgstr "Color de título"
+
+#: models.py:72 models.py:87 models.py:253
+msgid "visible"
+msgstr "Visible"
+
+#: models.py:77
+msgid "Leave blank to use the default Django logo"
+msgstr "Dejar en blanco para usaer el logo por defecto de Django"
+
+#: models.py:78
+msgid "logo"
+msgstr "logo"
+
+#: models.py:84
+msgid "logo color"
+msgstr "color de logo"
+
+#: models.py:92
+msgid "(.ico|.png|.gif - 16x16|32x32 px)"
+msgstr "Formatos ico, png o gif. Tamaños de 16x16 o 32x32 pixeles"
+
+#: models.py:93
+msgid "favicon"
+msgstr "favicon"
+
+#: models.py:96
+msgid "Development"
+msgstr "Desarrollo"
+
+#: models.py:97
+msgid "Testing"
+msgstr "Pruebas"
+
+#: models.py:98
+msgid "Staging"
+msgstr "Depliegue"
+
+#: models.py:99
+msgid "Production"
+msgstr "Producción"
+
+#: models.py:105
+msgid "enviroment"
+msgstr "entorno"
+
+#: models.py:115 models.py:140 models.py:181 models.py:200 models.py:226
+msgid "background color"
+msgstr "color de fondo"
+
+#: models.py:121 models.py:146 models.py:193 models.py:212 models.py:216
+msgid "text color"
+msgstr "color de texto"
+
+#: models.py:127 models.py:152 models.py:168
+msgid "link color"
+msgstr "color de enlace"
+
+#: models.py:133 models.py:158 models.py:174
+msgid "link hover color"
+msgstr "color de enlace (hover)"
+
+#: models.py:161 models.py:246
+msgid "rounded corners"
+msgstr "esquinas redondas"
+
+#: models.py:187 models.py:206
+msgid "background hover color"
+msgstr "color de fondo (hover)"
+
+#: models.py:243
+msgid "background opacity"
+msgstr "opacidad de fondo"
+
+#: models.py:250
+msgid "use dropdown"
+msgstr "Usar lista desplegable"
+
+#: models.py:262
+msgid "Theme"
+msgstr "Tema"
+
+#: models.py:263
+msgid "Themes"
+msgstr "Temas"
+
+#: templates/admin/filter.html:13
+#: templates/admin_interface/dropdown_filter.html:4
+#, python-format
+msgid " By %(filter_title)s "
+msgstr " Por %(filter_title)s "
+
+#: templates/admin/popup_response.html:3
+msgid "Popup closing..."
+msgstr "Cerando popup..."
