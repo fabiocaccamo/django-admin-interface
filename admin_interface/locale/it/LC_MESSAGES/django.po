@@ -1,0 +1,186 @@
+# This file is distributed under the same license as the
+# django-admin-interface package.
+#
+# Translators:
+# Fabio Caccamo, 2019
+
+msgid ""
+msgstr ""
+"Project-Id-Version: django-admin-interface\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 11:00-0000\n"
+"PO-Revision-Date: 2019-01-04 11:00-0000\n"
+"Last-Translator: Fabio Caccamo\n"
+"Language-Team: Italian\n"
+"Language: Italian \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:18
+msgid "Environment"
+msgstr "Ambiente"
+
+#: admin.py:25
+msgid "Logo"
+msgstr "Logo"
+
+#: admin.py:33
+msgid "Favicon"
+msgstr "Favicon"
+
+#: admin.py:37
+msgid "Title"
+msgstr "Titolo"
+
+#: admin.py:45
+msgid "Header"
+msgstr "Header"
+
+#: admin.py:54
+msgid "Breadcrumbs / Module headers"
+msgstr "Breadcrumbs / Header dei moduli"
+
+#: admin.py:64
+msgid "Generic Links"
+msgstr "Link generici"
+
+#: admin.py:71
+msgid "Save Buttons"
+msgstr "Pulsanti per salvare"
+
+#: admin.py:79
+msgid "Delete Buttons"
+msgstr "Pulsanti per eliminare"
+
+#: admin.py:87
+msgid "Related Modal"
+msgstr "Modale per gli oggetti correlati"
+
+#: admin.py:96
+msgid "List Filter"
+msgstr "Filtro listato"
+
+#: admin.py:100
+msgid "Recent Actions"
+msgstr "Azioni recenti"
+
+#: apps.py:11
+msgid "Admin Interface"
+msgstr "Interfaccia di admin"
+
+#: models.py:54
+msgid "name"
+msgstr "Nome"
+
+#: models.py:57 models.py:220
+msgid "active"
+msgstr "Attivo"
+
+#: models.py:61 templates/admin/base_site.html:6
+#: templates/admin/base_site.html:66
+msgid "Django administration"
+msgstr "Amministrazione di Django"
+
+#: models.py:63
+msgid "title"
+msgstr "Titolo"
+
+#: models.py:69
+msgid "title color"
+msgstr "Colore del titolo"
+
+#: models.py:72 models.py:87 models.py:253
+msgid "visible"
+msgstr "Visibile"
+
+#: models.py:77
+msgid "Leave blank to use the default Django logo"
+msgstr "Lasciare vuoto per usare il logo Django di default"
+
+#: models.py:78
+msgid "logo"
+msgstr "logo"
+
+#: models.py:84
+msgid "logo color"
+msgstr "colore del logo"
+
+#: models.py:92
+msgid "(.ico|.png|.gif - 16x16|32x32 px)"
+msgstr "Formato ico, png o gif. Dimensioni 16x16 o 32x32 px"
+
+#: models.py:93
+msgid "favicon"
+msgstr "favicon"
+
+#: models.py:96
+msgid "Development"
+msgstr "Sviluppo"
+
+#: models.py:97
+msgid "Testing"
+msgstr "Testing"
+
+#: models.py:98
+msgid "Staging"
+msgstr "Staging"
+
+#: models.py:99
+msgid "Production"
+msgstr "Produzione"
+
+#: models.py:105
+msgid "enviroment"
+msgstr "ambiente"
+
+#: models.py:115 models.py:140 models.py:181 models.py:200 models.py:226
+msgid "background color"
+msgstr "colore di sfondo"
+
+#: models.py:121 models.py:146 models.py:193 models.py:212 models.py:216
+msgid "text color"
+msgstr "color del testo"
+
+#: models.py:127 models.py:152 models.py:168
+msgid "link color"
+msgstr "color dei link"
+
+#: models.py:133 models.py:158 models.py:174
+msgid "link hover color"
+msgstr "color dei link in hover"
+
+#: models.py:161 models.py:246
+msgid "rounded corners"
+msgstr "bordi arrotondati"
+
+#: models.py:187 models.py:206
+msgid "background hover color"
+msgstr "colore di sfondo in hover"
+
+#: models.py:243
+msgid "background opacity"
+msgstr "opacità dello sfondo"
+
+#: models.py:250
+msgid "use dropdown"
+msgstr "Usa dropdown"
+
+#: models.py:262
+msgid "Theme"
+msgstr "Tema"
+
+#: models.py:263
+msgid "Themes"
+msgstr "Temi"
+
+#: templates/admin/filter.html:13
+#: templates/admin_interface/dropdown_filter.html:4
+#, python-format
+msgid " By %(filter_title)s "
+msgstr " Per %(filter_title)s "
+
+#: templates/admin/popup_response.html:3
+msgid "Popup closing..."
+msgstr "Chiusura popup..."
