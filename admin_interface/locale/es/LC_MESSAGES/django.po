@@ -3,7 +3,8 @@
 #
 # Translators:
 # Martin Vuelta <martin.vuelta@softbutterfly.io>, 2018
-
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
