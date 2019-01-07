@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-03 15:56-0500\n"
+"POT-Creation-Date: 2019-01-07 11:23-0500\n"
 "PO-Revision-Date: 2018-12-30 19:13-0500\n"
 "Last-Translator: Martin Vuelta <martin.vuelta@softbutterfly.io>\n"
 "Language-Team: Spanish <dev@softbutterfly.io>\n"
@@ -19,51 +19,51 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin.py:18
+#: admin.py:19
 msgid "Environment"
 msgstr "Ambiente"
 
-#: admin.py:25
+#: admin.py:26
 msgid "Logo"
 msgstr "Logo"
 
-#: admin.py:33
+#: admin.py:34
 msgid "Favicon"
 msgstr "Favicon"
 
-#: admin.py:37
+#: admin.py:38
 msgid "Title"
 msgstr "Título"
 
-#: admin.py:45
+#: admin.py:46
 msgid "Header"
 msgstr "Encabezado"
 
-#: admin.py:54
+#: admin.py:55
 msgid "Breadcrumbs / Module headers"
 msgstr "Breadcrumbs / Encabezados de módulos"
 
-#: admin.py:64
+#: admin.py:65
 msgid "Generic Links"
 msgstr "Enlaces genéricos"
 
-#: admin.py:71
+#: admin.py:72
 msgid "Save Buttons"
 msgstr "Botones de guardar"
 
-#: admin.py:79
+#: admin.py:80
 msgid "Delete Buttons"
 msgstr "Botones de borrar"
 
-#: admin.py:87
+#: admin.py:88
 msgid "Related Modal"
 msgstr "Modal para objetos relacionados"
 
-#: admin.py:96
+#: admin.py:97
 msgid "List Filter"
 msgstr "Lista de filtros"
 
-#: admin.py:100
+#: admin.py:101
 msgid "Recent Actions"
 msgstr "Acciones recientes"
 
@@ -92,7 +92,7 @@ msgstr "Título"
 msgid "title color"
 msgstr "Color de título"
 
-#: models.py:72 models.py:87 models.py:253
+#: models.py:72 models.py:87 models.py:108 models.py:253
 msgid "visible"
 msgstr "Visible"
 
@@ -133,8 +133,8 @@ msgid "Production"
 msgstr "Producción"
 
 #: models.py:105
-msgid "enviroment"
-msgstr "entorno"
+msgid "environment"
+msgstr "ambiente"
 
 #: models.py:115 models.py:140 models.py:181 models.py:200 models.py:226
 msgid "background color"

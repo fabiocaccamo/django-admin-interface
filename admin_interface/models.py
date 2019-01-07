@@ -102,10 +102,10 @@ class Theme(models.Model):
         max_length=50,
         choices=env_choices,
         default='development',
-        verbose_name=_('enviroment'))
+        verbose_name=_('environment'))
     env_visible = models.BooleanField(
         default=True,
-        verbose_name='visible')
+        verbose_name=_('visible'))
 
     css_header_background_color = ColorField(
         blank=True,
