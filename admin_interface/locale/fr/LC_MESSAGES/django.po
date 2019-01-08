@@ -1,27 +1,26 @@
-# This file is distributed under the same license as the
-# django-admin-interface package.
-#
-# Translators:
-# Fabio Caccamo, 2019
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: django-admin-interface\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-07 11:23-0500\n"
-"PO-Revision-Date: 2019-01-04 11:00-0000\n"
-"Last-Translator: Fabio Caccamo\n"
-"Language-Team: Italian\n"
-"Language: Italian \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: admin.py:19
 msgid "Environment"
-msgstr "Ambiente"
+msgstr "Environnment"
 
 #: admin.py:26
 msgid "Logo"
@@ -33,72 +32,72 @@ msgstr "Favicon"
 
 #: admin.py:38
 msgid "Title"
-msgstr "Titolo"
+msgstr "Titre"
 
 #: admin.py:46
 msgid "Header"
-msgstr "Header"
+msgstr "Bannière"
 
 #: admin.py:55
 msgid "Breadcrumbs / Module headers"
-msgstr "Breadcrumbs / Header dei moduli"
+msgstr "Fil d'ariane / en-têtes de module"
 
 #: admin.py:65
 msgid "Generic Links"
-msgstr "Link generici"
+msgstr "Liens génériques"
 
 #: admin.py:72
 msgid "Save Buttons"
-msgstr "Pulsanti per salvare"
+msgstr "Boutons sauvegarder"
 
 #: admin.py:80
 msgid "Delete Buttons"
-msgstr "Pulsanti per eliminare"
+msgstr "Boutons supprimer"
 
 #: admin.py:88
 msgid "Related Modal"
-msgstr "Modale per gli oggetti correlati"
+msgstr "Modale pour objet reliés"
 
 #: admin.py:97
 msgid "List Filter"
-msgstr "Filtro listato"
+msgstr "Filtre de liste"
 
 #: admin.py:101
 msgid "Recent Actions"
-msgstr "Azioni recenti"
+msgstr "Actions récentes"
 
 #: apps.py:11
 msgid "Admin Interface"
-msgstr "Interfaccia di admin"
+msgstr "Interface Admin"
 
 #: models.py:54
 msgid "name"
-msgstr "Nome"
+msgstr "nom"
 
 #: models.py:57 models.py:220
 msgid "active"
-msgstr "Attivo"
+msgstr "actif"
 
 #: models.py:61 templates/admin/base_site.html:6
 #: templates/admin/base_site.html:66
 msgid "Django administration"
-msgstr "Amministrazione di Django"
+msgstr "Administration Django"
 
 #: models.py:63
 msgid "title"
-msgstr "Titolo"
+msgstr "titre"
 
 #: models.py:69
 msgid "title color"
-msgstr "Colore del titolo"
+msgstr "couleur du titre"
 
 #: models.py:72 models.py:87 models.py:108 models.py:253
 msgid "visible"
-msgstr "Visibile"
+msgstr "visible"
 
 #: models.py:77
 msgid "Leave blank to use the default Django logo"
-msgstr "Lasciare vuoto per usare il logo Django di default"
+msgstr "Laisser vide pour utiliser le logo Django par défaut"
 
 #: models.py:78
 msgid "logo"
@@ -106,11 +105,11 @@ msgstr "logo"
 
 #: models.py:84
 msgid "logo color"
-msgstr "colore del logo"
+msgstr "couleur du logo"
 
 #: models.py:92
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
-msgstr "Formato ico, png o gif. Dimensioni 16x16 o 32x32 px"
+msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
 
 #: models.py:93
 msgid "favicon"
@@ -118,70 +117,70 @@ msgstr "favicon"
 
 #: models.py:96
 msgid "Development"
-msgstr "Sviluppo"
+msgstr "Développement"
 
 #: models.py:97
 msgid "Testing"
-msgstr "Testing"
+msgstr "Test"
 
 #: models.py:98
 msgid "Staging"
-msgstr "Staging"
+msgstr "Pré-prod"
 
 #: models.py:99
 msgid "Production"
-msgstr "Produzione"
+msgstr "Production"
 
 #: models.py:105
 msgid "environment"
-msgstr "ambiente"
+msgstr "environment"
 
 #: models.py:115 models.py:140 models.py:181 models.py:200 models.py:226
 msgid "background color"
-msgstr "colore di sfondo"
+msgstr "couleur d'arrière-plan"
 
 #: models.py:121 models.py:146 models.py:193 models.py:212 models.py:216
 msgid "text color"
-msgstr "color del testo"
+msgstr "couleur du texte"
 
 #: models.py:127 models.py:152 models.py:168
 msgid "link color"
-msgstr "color dei link"
+msgstr "couleur de lien"
 
 #: models.py:133 models.py:158 models.py:174
 msgid "link hover color"
-msgstr "color dei link in hover"
+msgstr "couleur de lien au survol"
 
 #: models.py:161 models.py:246
 msgid "rounded corners"
-msgstr "bordi arrotondati"
+msgstr "coins arrondis"
 
 #: models.py:187 models.py:206
 msgid "background hover color"
-msgstr "colore di sfondo in hover"
+msgstr "couleur de fond au survol"
 
 #: models.py:243
 msgid "background opacity"
-msgstr "opacità dello sfondo"
+msgstr "opacité de l'arrière-plan"
 
 #: models.py:250
 msgid "use dropdown"
-msgstr "Usa dropdown"
+msgstr "utiliser un menu déroulant"
 
 #: models.py:262
 msgid "Theme"
-msgstr "Tema"
+msgstr "Thème"
 
 #: models.py:263
 msgid "Themes"
-msgstr "Temi"
+msgstr "Thèmes"
 
 #: templates/admin/filter.html:13
 #: templates/admin_interface/dropdown_filter.html:4
 #, python-format
 msgid " By %(filter_title)s "
-msgstr " Per %(filter_title)s "
+msgstr " Par %(filter_title)s "
 
 #: templates/admin/popup_response.html:3
 msgid "Popup closing..."
-msgstr "Chiusura popup..."
+msgstr "Fermeture de la modale..."
