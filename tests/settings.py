@@ -62,11 +62,32 @@ TEMPLATES = [{
     },
 },]
 
-DATABASES = {
-    'default': {
+database_engine = os.environ.get('DATABASE_ENGINE', 'sqlite')
+database_config = {
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': ':memory:',
+    },
+    # 'mysql': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'admin_interface',
+    #     'USER': 'mysql',
+    #     'PASSWORD': 'mysql',
+    #     'HOST': '',
+    #     'PORT': '',
+    # },
+    'postgres': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'admin_interface',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': '',
+        'PORT': '',
     }
+}
+
+DATABASES = {
+    'default': database_config.get(database_engine),
 }
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'admin_interface/public/media/')
