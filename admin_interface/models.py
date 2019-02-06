@@ -28,16 +28,17 @@ class Theme(models.Model):
 
     @staticmethod
     def get_active_theme():
-        objs_active_qs = Theme.objects.filter(active=True)
+        objs_manager = Theme.objects
+        objs_active_qs = objs_manager.filter(active=True)
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)
 
         if objs_active_count == 0:
-            default_obj, default_obj_created = Theme.objects.get_or_create(
-                pk='1', defaults={'active': True})
-            if not default_obj_created:
-                default_obj.set_active()
-            obj = default_obj
+            obj = objs_manager.all().first()
+            if obj:
+                obj.set_active()
+            else:
+                obj = objs_manager.create()
 
         elif objs_active_count == 1:
             obj = objs_active_ls[0]
