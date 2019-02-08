@@ -2,6 +2,7 @@
 [![codecov](https://codecov.io/gh/fabiocaccamo/django-admin-interface/branch/master/graph/badge.svg)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
 [![Code Health](https://landscape.io/github/fabiocaccamo/django-admin-interface/master/landscape.svg?style=flat)](https://landscape.io/github/fabiocaccamo/django-admin-interface/master)
 [![PyPI version](https://badge.fury.io/py/django-admin-interface.svg)](https://badge.fury.io/py/django-admin-interface)
+[![PyPI downloads](https://img.shields.io/pypi/dm/django-admin-interface.svg)](https://img.shields.io/pypi/dm/django-admin-interface.svg)
 [![Py versions](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)
 [![License](https://img.shields.io/pypi/l/django-admin-interface.svg)](https://img.shields.io/pypi/l/django-admin-interface.svg)
 
