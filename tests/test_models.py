@@ -2,29 +2,20 @@
 
 from django.conf import settings
 from django.test import TestCase
-from django.test.client import RequestFactory
-from django.template import Context, Template
 
 import random
 import shutil
 
 from admin_interface.models import Theme
-from admin_interface.templatetags import admin_interface_tags as templatetags
-from admin_interface.version import __version__
 
 
-class AdminInterfaceTestCase(TestCase):
+class AdminInterfaceModelsTestCase(TestCase):
 
     def setUp(self):
-        self.request_factory = RequestFactory()
         pass
 
     def tearDown(self):
         shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
-        pass
-
-    def __render_template(self, string, context=None):
-        return Template(string).render(Context(context or {}))
 
     def __test_active_theme(self):
         theme = Theme.get_active_theme()
@@ -93,40 +84,6 @@ class AdminInterfaceTestCase(TestCase):
                 self.assertEqual(Theme.get_active_theme().pk, theme.pk)
         self.__test_active_theme()
 
-    def test_templatetags_get_theme(self):
-        Theme.objects.all().delete()
-        context = Context({})
-        theme = templatetags.get_admin_interface_theme(context)
-        self.assertEqual(theme.name, 'Django')
-        rendered = self.__render_template(
-            '{% load admin_interface_tags %}'\
-            '{% get_admin_interface_theme as theme %}'\
-            '{{ theme.name }}', context)
-        self.assertEqual(rendered, 'Django')
-
-    def test_templatetags_get_theme_with_request(self):
-        Theme.objects.all().delete()
-        context = Context({
-            'request': self.request_factory.get('/')
-        })
-        theme = templatetags.get_admin_interface_theme(context)
-        self.assertEqual(theme.name, 'Django')
-        rendered = self.__render_template(
-            '{% load admin_interface_tags %}'\
-            '{% get_admin_interface_theme as theme %}'\
-            '{{ theme.name }}', context)
-        self.assertEqual(rendered, 'Django')
-
-    def test_templatetags_get_version(self):
-        version = templatetags.get_admin_interface_version()
-        self.assertEqual(version, __version__)
-        rendered = self.__render_template(
-            '{% load admin_interface_tags %}'\
-            '{% get_admin_interface_version as version %}'\
-            '{{ version }}')
-        self.assertEqual(rendered, __version__)
-
     def test_repr(self):
         theme = Theme.get_active_theme()
         self.assertEqual('{0}'.format(theme), 'Django')
-
