@@ -1,0 +1,17 @@
+{% load static %}
+
+{% if theme.favicon %}
+<link rel="icon" type="image/x-icon" href="{{ theme.favicon.url }}?v={{ version }}" />
+{% if theme.env_visible %}
+<script type="text/javascript" src="{% static 'admin_interface/favico/favico-0.3.10-patched.min.js' %}?v={{ version }}"></script>
+<script type="text/javascript">
+var favicon = new Favico({
+    type: 'circle',
+    bgColor: '{{ theme.env_color }}',
+    textColor: '#FFFFFF',
+    animation: 'none'
+});
+favicon.badge(' ');
+</script>
+{% endif %}
+{% endif %}

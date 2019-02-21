@@ -1,0 +1,7 @@
+{% load static %}
+
+{% if theme.related_modal_active %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}?v={{ version }}" />
+<script type="text/javascript" src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}?v={{ version }}"></script>
+<script type="text/javascript" src="{% static 'admin_interface/related-modal/related-modal.js' %}?v={{ version }}"></script>
+{% endif %}

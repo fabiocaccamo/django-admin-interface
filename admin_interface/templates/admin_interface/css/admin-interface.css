@@ -1,6 +1,6 @@
 .admin-interface #header {
-    background:{{ theme.css_header_background_color }};
-    color:{{ theme.css_header_text_color }};
+    background: {{ theme.css_header_background_color }};
+    color: {{ theme.css_header_text_color }};
 }
 
 .admin-interface .enviroment-label {
@@ -20,19 +20,19 @@
 }
 
 .admin-interface .enviroment-label.development::before {
-    background-color: #e74c3c;
+    background-color: {{ theme.env_colors.development }};
 }
 
 .admin-interface .enviroment-label.testing::before {
-    background-color: #e67e22;
+    background-color: {{ theme.env_colors.testing }};
 }
 
 .admin-interface .enviroment-label.staging::before {
-    background-color: #f1c40f;
+    background-color: {{ theme.env_colors.staging }};
 }
 
 .admin-interface .enviroment-label.production::before {
-    background-color: #2ecc71;
+    background-color: {{ theme.env_colors.production }};
 }
 
 .admin-interface .enviroment-label::after {

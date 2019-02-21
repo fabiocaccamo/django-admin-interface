@@ -93,20 +93,35 @@ class Theme(models.Model):
         help_text=_('(.ico|.png|.gif - 16x16|32x32 px)'),
         verbose_name=_('favicon'))
 
+    envs = (
+        'development',
+        'testing',
+        'staging',
+        'production',
+    )
     env_choices = (
-        ('development', _('Development'), ),
-        ('testing', _('Testing'), ),
-        ('staging', _('Staging'), ),
-        ('production', _('Production'), ),
+        (envs[0], _('Development'), ),
+        (envs[1], _('Testing'), ),
+        (envs[2], _('Staging'), ),
+        (envs[3], _('Production'), ),
     )
     env = models.CharField(
         max_length=50,
         choices=env_choices,
-        default='development',
+        default=env_choices[0][0],
         verbose_name=_('environment'))
     env_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))
+    env_colors = {
+        envs[0]: '#e74c3c',
+        envs[1]: '#e67e22',
+        envs[2]: '#f1c40f',
+        envs[3]: '#2ecc71',
+    }
+    @property
+    def env_color(self):
+        return Theme.env_colors.get(self.env, '')
 
     css_header_background_color = ColorField(
         blank=True,
