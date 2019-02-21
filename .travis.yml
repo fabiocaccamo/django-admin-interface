@@ -1,4 +1,5 @@
 language: python
+cache: pip
 python: 3.5
 env:
   - TOX_ENV=py27-dj17-sqlite
