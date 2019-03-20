@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 16:12+0000\n"
+"POT-Creation-Date: 2019-03-20 14:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,11 +58,11 @@ msgstr "Boutons supprimer"
 msgid "Related Modal"
 msgstr "Modale pour objet reliés"
 
-#: admin_interface/admin.py:99
+#: admin_interface/admin.py:100
 msgid "List Filter"
 msgstr "Filtre de liste"
 
-#: admin_interface/admin.py:103
+#: admin_interface/admin.py:104
 msgid "Recent Actions"
 msgstr "Actions récentes"
 
@@ -90,10 +90,8 @@ msgstr "titre"
 
 #: admin_interface/models.py:71 admin_interface/models.py:86
 #: admin_interface/models.py:106
-#, fuzzy
-#| msgid "logo color"
 msgid "color"
-msgstr "couleur du logo"
+msgstr "couleur"
 
 #: admin_interface/models.py:74 admin_interface/models.py:89
 #: admin_interface/models.py:260
@@ -121,14 +119,16 @@ msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
 msgstr ""
+"(rouge: #E74C3C, orange: #E67E22, jaune: #F1C40F, vert: #2ECC71, bleu: "
+"#3498DB)"
 
 #: admin_interface/models.py:109
 msgid "visible in header (marker and name)"
-msgstr ""
+msgstr "visible dans l’en-tête (marqueur et nom)"
 
 #: admin_interface/models.py:112
 msgid "visible in favicon (marker)"
-msgstr ""
+msgstr "visible dans la favicon (marqueur)"
 
 #: admin_interface/models.py:119 admin_interface/models.py:144
 #: admin_interface/models.py:185 admin_interface/models.py:204
@@ -166,7 +166,7 @@ msgstr "opacité de l'arrière-plan"
 
 #: admin_interface/models.py:253
 msgid "close button visible"
-msgstr ""
+msgstr "bouton fermer visible"
 
 #: admin_interface/models.py:257
 msgid "use dropdown"
