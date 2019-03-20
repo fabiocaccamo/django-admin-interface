@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 
 from django.db import models
@@ -247,6 +248,9 @@ class Theme(models.Model):
     related_modal_rounded_corners = models.BooleanField(
         default=True,
         verbose_name=_('rounded corners'))
+    related_modal_close_button_visible = models.BooleanField(
+        default=True,
+        verbose_name=_('close button visible'))
 
     list_filter_dropdown = models.BooleanField(
         default=False,

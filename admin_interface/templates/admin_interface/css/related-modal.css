@@ -3,36 +3,54 @@ related modal + magnific popup customization
 https://github.com/dimsemenov/Magnific-Popup
 */
 .admin-interface .related-modal.mfp-bg {
-    background-color:{{ theme.related_modal_background_color }};
+    background-color: {{ theme.related_modal_background_color }};
     opacity: {{ theme.related_modal_background_opacity }};
 }
 
 .admin-interface .related-modal .mfp-content {
     height: 100%;
-    overflow: hidden;
-    {% if theme.related_modal_rounded_corners %}
-    border-radius: 4px;
-    {% endif %}
     -webkit-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.2);
 }
 
 .admin-interface .related-modal .mfp-container {
-    padding: 90px 90px 90px 90px;
+    padding: 80px 80px 80px 80px;
 }
 
 .admin-interface .related-modal__nested .mfp-container {
-    padding: 30px 60px 30px 60px;
+    padding: 40px 80px 40px 80px;
 }
 
 @media (max-width:640px){
     .admin-interface .related-modal .mfp-container {
-        padding: 60px 15px 60px 15px;
+        padding: 80px 20px 80px 20px;
     }
     .admin-interface .related-modal__nested .mfp-container {
-        padding: 30px 30px 30px 30px;
+        padding: 40px 40px 40px 40px;
     }
+}
+
+@media (max-height:640px){
+    .admin-interface .related-modal .mfp-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .admin-interface .related-modal__nested .mfp-container {
+        padding: 40px 40px 40px 40px;
+    }
+}
+
+.admin-interface .related-modal .related-modal-iframe-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+    {% if theme.related_modal_rounded_corners %}
+    border-radius: 4px;
+    {% endif %}
 }
 
 .admin-interface .related-modal #related-modal-iframe {
@@ -47,4 +65,20 @@ https://github.com/dimsemenov/Magnific-Popup
     margin: 0 auto;
     padding: 0;
     display: block;
+}
+
+.admin-interface .related-modal .mfp-close {
+    width: 40px;
+    height: 40px;
+    opacity: 1.0;
+    color: rgba(0, 0, 0, 0.4);
+    {% if not theme.related_modal_close_button_visible %}
+    display: none;
+    {% endif %}
+}
+
+.admin-interface .related-modal .mfp-close:hover,
+.admin-interface .related-modal .mfp-close:active {
+    color: rgba(0, 0, 0, 0.6);
+    top: 0;
 }

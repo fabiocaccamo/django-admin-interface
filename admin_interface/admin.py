@@ -94,6 +94,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 'related_modal_background_color',
                 'related_modal_background_opacity',
                 'related_modal_rounded_corners',
+                'related_modal_close_button_visible',
             )
         }),
         (_('List Filter'), {

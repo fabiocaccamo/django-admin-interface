@@ -78,7 +78,10 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 }
 
                 // build the iframe html
-                var iframeHTML = '<iframe id="related-modal-iframe" name="' + iframeName + '" src="' + iframeSrc + '"></iframe>';
+                var iframeHTML = '<div class="related-modal-iframe-container">' +
+                                    '<iframe id="related-modal-iframe" name="' + iframeName + '" src="' + iframeSrc + '"></iframe>' +
+                                '</div>';
+
                 // create the iframe jquery element
                 var iframeEl = $(iframeHTML);
 
@@ -105,6 +108,8 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 // open the popup using magnific popup
                 $.magnificPopup.open({
                     mainClass: iframeInternalModalClass,
+                    showCloseBtn: true,
+                    closeBtnInside: true,
                     items: {
                         src: iframeEl,
                         type: 'inline'
