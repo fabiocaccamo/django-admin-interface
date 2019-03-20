@@ -67,7 +67,7 @@ class Theme(models.Model):
         default='#F5DD5D',
         help_text='#F5DD5D',
         max_length=10,
-        verbose_name=_('title color'))
+        verbose_name=_('color'))
     title_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))
@@ -82,7 +82,7 @@ class Theme(models.Model):
         default='#FFFFFF',
         help_text='#FFFFFF',
         max_length=10,
-        verbose_name=_('logo color'))
+        verbose_name=_('color'))
     logo_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))
@@ -93,35 +93,22 @@ class Theme(models.Model):
         help_text=_('(.ico|.png|.gif - 16x16|32x32 px)'),
         verbose_name=_('favicon'))
 
-    envs = (
-        'development',
-        'testing',
-        'staging',
-        'production',
-    )
-    env_choices = (
-        (envs[0], _('Development'), ),
-        (envs[1], _('Testing'), ),
-        (envs[2], _('Staging'), ),
-        (envs[3], _('Production'), ),
-    )
-    env = models.CharField(
+    env_name = models.CharField(
+        blank=True,
         max_length=50,
-        choices=env_choices,
-        default=env_choices[0][0],
-        verbose_name=_('environment'))
-    env_visible = models.BooleanField(
+        verbose_name=_('name'))
+    env_color = ColorField(
+        blank=True,
+        default='#E74C3C',
+        help_text=_('(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)'),
+        max_length=10,
+        verbose_name=_('color'))
+    env_visible_in_header = models.BooleanField(
         default=True,
-        verbose_name=_('visible'))
-    env_colors = {
-        envs[0]: '#e74c3c',
-        envs[1]: '#e67e22',
-        envs[2]: '#f1c40f',
-        envs[3]: '#2ecc71',
-    }
-    @property
-    def env_color(self):
-        return Theme.env_colors.get(self.env, '')
+        verbose_name=_('visible in header (marker and name)'))
+    env_visible_in_favicon = models.BooleanField(
+        default=True,
+        verbose_name=_('visible in favicon (marker)'))
 
     css_header_background_color = ColorField(
         blank=True,

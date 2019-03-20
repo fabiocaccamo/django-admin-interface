@@ -11,7 +11,7 @@
     display: inline-block;
     width: 8px;
     height: 8px;
-    background-color: #CCCCCC;
+    background-color: {{ theme.env_color }};
     border-radius: 100%;
     margin-right: 6px;
     box-sizing: border-box;
@@ -19,44 +19,12 @@
     -webkit-box-sizing: border-box;
 }
 
-.admin-interface .enviroment-label.development::before {
-    background-color: {{ theme.env_colors.development }};
-}
-
-.admin-interface .enviroment-label.testing::before {
-    background-color: {{ theme.env_colors.testing }};
-}
-
-.admin-interface .enviroment-label.staging::before {
-    background-color: {{ theme.env_colors.staging }};
-}
-
-.admin-interface .enviroment-label.production::before {
-    background-color: {{ theme.env_colors.production }};
-}
-
 .admin-interface .enviroment-label::after {
-    content: "";
-}
-
-.admin-interface .enviroment-label.development::after {
-    content: "development";
-}
-
-.admin-interface .enviroment-label.testing::after {
-    content: "testing";
-}
-
-.admin-interface .enviroment-label.staging::after {
-    content: "staging";
-}
-
-.admin-interface .enviroment-label.production::after {
-    content: "production";
+    content: "{{ theme.env_name }}";
 }
 
 .admin-interface #branding h1 {
-    color:{{ theme.title_color }};
+    color: {{ theme.title_color }};
 }
 
 .admin-interface #branding h1 .logo.default {

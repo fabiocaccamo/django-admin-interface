@@ -19,8 +19,10 @@ class ThemeAdmin(admin.ModelAdmin):
         (_('Environment'), {
             'classes': ('wide', ),
             'fields': (
-                'env',
-                'env_visible',
+                'env_name',
+                'env_color',
+                'env_visible_in_header',
+                'env_visible_in_favicon',
             )
         }),
         (_('Logo'), {
