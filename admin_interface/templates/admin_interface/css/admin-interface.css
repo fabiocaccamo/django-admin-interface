@@ -3,10 +3,10 @@
     color: {{ theme.css_header_text_color }};
 }
 
-.admin-interface .enviroment-label {
+.admin-interface .environment-label {
 }
 
-.admin-interface .enviroment-label::before {
+.admin-interface .environment-label::before {
     content: "";
     display: inline-block;
     width: 8px;
@@ -19,7 +19,7 @@
     -webkit-box-sizing: border-box;
 }
 
-.admin-interface .enviroment-label::after {
+.admin-interface .environment-label::after {
     content: "{{ theme.env_name }}";
 }
 
