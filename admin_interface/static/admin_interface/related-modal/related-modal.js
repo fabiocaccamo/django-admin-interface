@@ -78,12 +78,10 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 }
 
                 // build the iframe html
-                var iframeHTML = '<div class="related-modal-iframe-container">' +
-                                    '<iframe id="related-modal-iframe" name="' + iframeName + '" src="' + iframeSrc + '"></iframe>' +
-                                '</div>';
-
-                // create the iframe jquery element
-                var iframeEl = $(iframeHTML);
+                var iframeHTML = '<iframe id="related-modal-iframe" name="' + iframeName + '" src="' + iframeSrc + '"></iframe>';
+                var modalHTML = '<div class="related-modal-iframe-container">' + iframeHTML + '</div>';
+                var modalEl = $(modalHTML);
+                var iframeEl = modalEl.find('#related-modal-iframe');
 
                 if (e.data.lookup === true)
                 {
@@ -111,7 +109,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                     showCloseBtn: true,
                     closeBtnInside: true,
                     items: {
-                        src: iframeEl,
+                        src: modalEl,
                         type: 'inline'
                     }
                 });
