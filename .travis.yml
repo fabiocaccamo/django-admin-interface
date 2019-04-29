@@ -2,7 +2,7 @@ language: python
 dist: xenial
 sudo: required
 cache: pip
-python: 3.6
+python: 3.5
 env:
   - TOX_ENV=py27-dj17-sqlite
   - TOX_ENV=py27-dj17-postgres
