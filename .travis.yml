@@ -1,6 +1,8 @@
 language: python
+dist: xenial
+sudo: required
 cache: pip
-python: 3.5
+python: 3.6
 env:
   - TOX_ENV=py27-dj17-sqlite
   - TOX_ENV=py27-dj17-postgres
@@ -38,56 +40,27 @@ env:
   - TOX_ENV=py35-dj21-postgres
   - TOX_ENV=py35-dj22-sqlite
   - TOX_ENV=py35-dj22-postgres
+  - TOX_ENV=py36-dj111-sqlite
+  - TOX_ENV=py36-dj111-postgres
+  - TOX_ENV=py36-dj20-sqlite
+  - TOX_ENV=py36-dj20-postgres
+  - TOX_ENV=py36-dj21-sqlite
+  - TOX_ENV=py36-dj21-postgres
+  - TOX_ENV=py36-dj22-sqlite
+  - TOX_ENV=py36-dj22-postgres
+  - TOX_ENV=py36-djmaster-sqlite
+  - TOX_ENV=py36-djmaster-postgres
+  - TOX_ENV=py37-dj111-sqlite
+  - TOX_ENV=py37-dj111-postgres
+  - TOX_ENV=py37-dj20-sqlite
+  - TOX_ENV=py37-dj20-postgres
+  - TOX_ENV=py37-dj21-sqlite
+  - TOX_ENV=py37-dj21-postgres
+  - TOX_ENV=py37-dj22-sqlite
+  - TOX_ENV=py37-dj22-postgres
+  - TOX_ENV=py37-djmaster-sqlite
+  - TOX_ENV=py37-djmaster-postgres
 matrix:
-  include:
-    - python: "3.6"
-      env:
-        - TOX_ENV=py36-dj111-sqlite
-        - TOX_ENV=py36-dj111-postgres
-    - python: "3.6"
-      env:
-        - TOX_ENV=py36-dj20-sqlite
-        - TOX_ENV=py36-dj20-postgres
-    - python: "3.6"
-      env:
-        - TOX_ENV=py36-dj21-sqlite
-        - TOX_ENV=py36-dj21-postgres
-    - python: "3.6"
-      env:
-        - TOX_ENV=py36-dj22-sqlite
-        - TOX_ENV=py36-dj22-postgres
-    - python: "3.6"
-      env:
-        - TOX_ENV=py36-djmaster-sqlite
-        - TOX_ENV=py36-djmaster-postgres
-    - python: "3.7"
-      env:
-        - TOX_ENV=py37-dj20-sqlite
-        - TOX_ENV=py37-dj20-postgres
-      dist: xenial
-      language: python
-      sudo: required
-    - python: "3.7"
-      env:
-        - TOX_ENV=py37-dj21-sqlite
-        - TOX_ENV=py37-dj21-postgres
-      dist: xenial
-      language: python
-      sudo: required
-    - python: "3.7"
-      env:
-        - TOX_ENV=py37-dj22-sqlite
-        - TOX_ENV=py37-dj22-postgres
-      dist: xenial
-      language: python
-      sudo: required
-    - python: "3.7"
-      env:
-        - TOX_ENV=py37-djmaster-sqlite
-        - TOX_ENV=py37-djmaster-postgres
-      dist: xenial
-      language: python
-      sudo: required
   allow_failures:
     - env:
       - TOX_ENV=py36-djmaster-sqlite
@@ -103,4 +76,3 @@ before_script:
   - psql -c 'create database admin_interface;' -U postgres
 script:
   - tox -e $TOX_ENV
-sudo: false
