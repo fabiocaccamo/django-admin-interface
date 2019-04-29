@@ -10,6 +10,8 @@ class ThemeAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'active', )
     list_editable = ('active', )
+    list_per_page = 100
+    show_full_result_count = False
 
     fieldsets = (
         (None, {
