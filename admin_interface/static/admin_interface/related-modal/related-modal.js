@@ -118,17 +118,31 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             }
 
             // listen click events on related links
+            function presentRelatedObjectModalOnClickOn(selector, lookup) {
+                var data = {
+                    lookup:(lookup === true ? true : false)
+                };
+                var el = $(selector);
+                el.removeAttr('onclick');
+                el.unbind('click');
+                el.click(data, presentRelatedObjectModal);
+            }
 
             // django 1.7 compatibility
-            $('a.add-another').removeAttr('onclick');
-            $('a.add-another').click({ lookup:false }, presentRelatedObjectModal);
+            // $('a.add-another').removeAttr('onclick').click({ lookup:false }, presentRelatedObjectModal);
+            presentRelatedObjectModalOnClickOn('a.add-another');
 
             // django 1.8 and above
-            $('a.related-widget-wrapper-link').click({ lookup:false }, presentRelatedObjectModal);
+            // $('a.related-widget-wrapper-link').click({ lookup:false }, presentRelatedObjectModal);
+            presentRelatedObjectModalOnClickOn('a.related-widget-wrapper-link');
 
             // raw_id_fields support
-            $('a.related-lookup').unbind('click');
-            $('a.related-lookup').click({ lookup:true }, presentRelatedObjectModal);
+            // $('a.related-lookup').unbind('click').click({ lookup:true }, presentRelatedObjectModal);
+            presentRelatedObjectModalOnClickOn('a.related-lookup', true);
+
+            // django-dynamic-raw-id support - #61
+            // https://github.com/lincolnloop/django-dynamic-raw-id
+            presentRelatedObjectModalOnClickOn('a.dynamic_raw_id-related-lookup', true);
         });
 
     })(django.jQuery);
