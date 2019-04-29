@@ -36,6 +36,8 @@ env:
   - TOX_ENV=py35-dj20-postgres
   - TOX_ENV=py35-dj21-sqlite
   - TOX_ENV=py35-dj21-postgres
+  - TOX_ENV=py35-dj22-sqlite
+  - TOX_ENV=py35-dj22-postgres
 matrix:
   include:
     - python: "3.6"
@@ -52,6 +54,10 @@ matrix:
         - TOX_ENV=py36-dj21-postgres
     - python: "3.6"
       env:
+        - TOX_ENV=py36-dj22-sqlite
+        - TOX_ENV=py36-dj22-postgres
+    - python: "3.6"
+      env:
         - TOX_ENV=py36-djmaster-sqlite
         - TOX_ENV=py36-djmaster-postgres
     - python: "3.7"
@@ -65,6 +71,13 @@ matrix:
       env:
         - TOX_ENV=py37-dj21-sqlite
         - TOX_ENV=py37-dj21-postgres
+      dist: xenial
+      language: python
+      sudo: required
+    - python: "3.7"
+      env:
+        - TOX_ENV=py37-dj22-sqlite
+        - TOX_ENV=py37-dj22-postgres
       dist: xenial
       language: python
       sudo: required
