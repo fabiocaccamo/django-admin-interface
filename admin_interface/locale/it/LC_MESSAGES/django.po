@@ -69,7 +69,7 @@ msgstr "Azioni recenti"
 
 #: admin_interface/apps.py:11
 msgid "Admin Interface"
-msgstr "Interfaccia di admin"
+msgstr "Interfaccia di amministrazione"
 
 #: admin_interface/models.py:56 admin_interface/models.py:100
 msgid "name"
