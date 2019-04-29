@@ -2,6 +2,7 @@
 
 from django import template, VERSION
 
+from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
 from admin_interface.models import Theme
 from admin_interface.version import __version__
 
@@ -15,18 +16,10 @@ else:
 
 @simple_tag(takes_context=True)
 def get_admin_interface_theme(context):
-    theme = None
-    request = context.get('request', None)
-
-    if request:
-        theme = getattr(request, 'admin_interface_theme', None)
-
+    theme = get_cached_active_theme()
     if not theme:
         theme = Theme.get_active_theme()
-
-    if request:
-        request.admin_interface_theme = theme
-
+        set_cached_active_theme(theme)
     return theme
 
 

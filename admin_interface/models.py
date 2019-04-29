@@ -9,20 +9,25 @@ from django.utils.translation import ugettext_lazy as _
 
 from colorfield.fields import ColorField
 
+from admin_interface.cache import del_cached_active_theme
+
 
 @python_2_unicode_compatible
 class Theme(models.Model):
 
     @staticmethod
     def post_migrate_handler(**kwargs):
+        del_cached_active_theme()
         Theme.get_active_theme()
 
     @staticmethod
     def post_delete_handler(**kwargs):
+        del_cached_active_theme()
         Theme.get_active_theme()
 
     @staticmethod
     def post_save_handler(instance, **kwargs):
+        del_cached_active_theme()
         if instance.active:
             Theme.objects.exclude(pk=instance.pk).update(active=False)
         Theme.get_active_theme()
