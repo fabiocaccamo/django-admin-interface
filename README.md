@@ -18,6 +18,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - List filter dropdown *(optional)*
 - `NEW` **Related modal** *(instead of the old popup window, optional)*
 - `NEW` **Environment name/marker**
+- `NEW` **Language chooser**
 - Compatibility / Style optimizations for:
   - `django-ckeditor`
   - `django-dynamic-raw-id`
