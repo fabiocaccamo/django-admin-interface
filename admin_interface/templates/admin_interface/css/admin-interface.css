@@ -23,6 +23,20 @@
     content: "{{ theme.env_name }}";
 }
 
+.admin-interface .language-chooser {
+    display: inline-block;
+    float: right;
+    margin-left: 20px;
+}
+
+.admin-interface .language-chooser-hidden-form {
+    display: none;
+}
+
+.admin-interface .language-chooser-select-form {
+    display: inline-block;
+}
+
 .admin-interface #branding h1 {
     color: {{ theme.title_color }};
 }

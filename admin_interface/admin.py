@@ -27,6 +27,12 @@ class ThemeAdmin(admin.ModelAdmin):
                 'env_visible_in_favicon',
             )
         }),
+        (_('Language chooser'), {
+            'classes': ('wide', ),
+            'fields': (
+                'language_chooser_active',
+            )
+        }),
         (_('Logo'), {
             'classes': ('wide', ),
             'fields': (

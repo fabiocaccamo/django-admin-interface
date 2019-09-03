@@ -1,0 +1,18 @@
+{% load admin_interface_tags %}
+
+<div class="language-chooser">
+    {% for language in languages %}
+    <form class="language-chooser-hidden-form" id="language-chooser-hidden-form-{{ language.code }}" action="{{ language.activation_url }}" method="POST">
+        {% csrf_token %}
+        <input name="language" type="hidden" value="{{ language.code }}" />
+    </form>
+    {% endfor %}
+    <form class="language-chooser-select-form">
+        {% csrf_token %}
+        <select name="language" onchange="document.getElementById(String('language-chooser-hidden-form-' + this.value)).submit();">
+            {% for language in languages %}
+            <option value="{{ language.code }}" {% if language.active %}selected{% endif %}>{{ language.code|upper }}</option>
+            {% endfor %}
+        </select>
+    </form>
+</div>

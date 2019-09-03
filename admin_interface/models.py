@@ -127,6 +127,10 @@ class Theme(models.Model):
         default=True,
         verbose_name=_('visible in favicon (marker)'))
 
+    language_chooser_active = models.BooleanField(
+        default=True,
+        verbose_name=_('active'))
+
     css_header_background_color = ColorField(
         blank=True,
         default='#0C4B33',
