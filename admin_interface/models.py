@@ -130,6 +130,15 @@ class Theme(models.Model):
     language_chooser_active = models.BooleanField(
         default=True,
         verbose_name=_('active'))
+    language_chooser_display_choices = (
+        ('code', _('code'), ),
+        ('name', _('name'), ),
+    )
+    language_chooser_display = models.CharField(
+        max_length=10,
+        choices=language_chooser_display_choices,
+        default='code',
+        verbose_name=_('display'))
 
     css_header_background_color = ColorField(
         blank=True,
