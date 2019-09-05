@@ -54,15 +54,14 @@ def get_admin_interface_languages(context):
     for language in settings.LANGUAGES:
         lang_code = language[0].lower()
         lang_name = language[1].title()
-        with translation.override(lang_code):
-            lang_data = {
-                'code': lang_code,
-                'name': lang_name,
-                'default': bool(lang_code == default_lang_code),
-                'active': bool(lang_code == current_lang_code),
-                'activation_url': '{}?next=/{}{}'.format(
-                    set_language_url, lang_code, admin_nolang_url)
-            }
+        lang_data = {
+            'code': lang_code,
+            'name': lang_name,
+            'default': lang_code == default_lang_code,
+            'active': lang_code == current_lang_code,
+            'activation_url': '{}?next=/{}{}'.format(
+                set_language_url, lang_code, admin_nolang_url)
+        }
         langs_data.append(lang_data)
     return langs_data
 
