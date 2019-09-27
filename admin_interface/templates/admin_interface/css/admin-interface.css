@@ -3,10 +3,6 @@
     color: {{ theme.css_header_text_color }};
 }
 
-.select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
-	background-color: {{ theme.css_header_background_color }};
-}
-
 .admin-interface .environment-label {
 }
 
@@ -272,4 +268,8 @@
     {% if theme.css_module_rounded_corners %}
     border-radius:4px;
     {% endif %}
+}
+
+.admin-interface .select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
+    background-color: {{ theme.css_header_background_color }};
 }
