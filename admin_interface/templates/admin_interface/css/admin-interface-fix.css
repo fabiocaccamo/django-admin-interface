@@ -135,6 +135,10 @@ body.admin-interface .paginator a.showall:visited {
     margin-left: 5px;
 }
 
+.admin-interface .file-thumbnail > a {
+    display: inline-block;
+}
+
 .admin-interface .aligned p.file-upload {
     display:table;
 }
