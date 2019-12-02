@@ -37,6 +37,7 @@ setup(
         'django-colorfield >= 0.1, < 1.0',
         'django-flat-theme >= 1.0, < 2.0',
         'django-flat-responsive >= 1.0, < 3.0',
+        'six >= 1.9.0, < 2.0.0',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -50,6 +51,7 @@ setup(
         'Framework :: Django :: 2.0',
         'Framework :: Django :: 2.1',
         'Framework :: Django :: 2.2',
+        'Framework :: Django :: 3.0',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
@@ -61,6 +63,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Topic :: Software Development :: Build Tools',
     ],
     license='MIT',

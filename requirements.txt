@@ -1,0 +1,4 @@
+django-colorfield
+django-flat-theme
+django-flat-responsive
+six>=1.9.0

@@ -2,14 +2,16 @@
 
 from __future__ import unicode_literals
 
-from django.db import models
-from django.db.models.signals import post_delete, post_save, pre_save
-from django.utils.encoding import python_2_unicode_compatible, force_text
-from django.utils.translation import ugettext_lazy as _
+from admin_interface.cache import del_cached_active_theme
 
 from colorfield.fields import ColorField
 
-from admin_interface.cache import del_cached_active_theme
+from django.db import models
+from django.db.models.signals import post_delete, post_save, pre_save
+from django.utils.encoding import force_text
+from django.utils.translation import ugettext_lazy as _
+
+from six import python_2_unicode_compatible
 
 
 @python_2_unicode_compatible
