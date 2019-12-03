@@ -1,3 +1,5 @@
+/** global: django */
+
 if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
     (function($) {
         'use strict';
@@ -14,5 +16,5 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
                 return false;
             });
         });
-    })(django.jQuery);
+    }(django.jQuery));
 }

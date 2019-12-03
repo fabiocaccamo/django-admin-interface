@@ -13,7 +13,7 @@
             openerRef = windowRef.parent;
             modalRef = {
                 name: openerRef.id_to_windowname(widgetName),
-                close: function(){
+                close: function() {
                     openerRef.dismissRelatedObjectModal();
                 }
             };
@@ -49,4 +49,4 @@
             break;
     }
 
-})();
+}());

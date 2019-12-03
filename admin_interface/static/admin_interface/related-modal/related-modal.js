@@ -1,3 +1,5 @@
+/** global: django */
+
 if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
 {
     (function($) {
@@ -39,7 +41,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 var linkEl = $(this);
 
                 var href = (linkEl.attr('href') || '');
-                if (href == '') {
+                if (href === '') {
                     return;
                 }
 
@@ -99,7 +101,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
 
                 // if the current window is inside an iframe, it means that it is already in a modal,
                 // append an additional css class to the modal to offer more customization
-                if (window.top != window.self) {
+                if (window.top !== window.self) {
                     iframeInternalModalClass += ' related-modal__nested';
                 }
 
@@ -145,5 +147,5 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             presentRelatedObjectModalOnClickOn('a.dynamic_raw_id-related-lookup', true);
         });
 
-    })(django.jQuery);
+    }(django.jQuery));
 }
