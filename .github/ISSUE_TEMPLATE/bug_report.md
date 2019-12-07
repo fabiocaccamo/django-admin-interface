@@ -13,6 +13,9 @@ assignees: fabiocaccamo
 **Django version**
 ?
 
+**Package version**
+?
+
 **Current behavior (bug description)**
 ?
 
