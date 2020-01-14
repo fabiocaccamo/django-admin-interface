@@ -1,9 +1,15 @@
-[![Build Status](https://travis-ci.org/fabiocaccamo/django-admin-interface.svg?branch=master)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/21cb657283c04e70b56fb935277a1ad1)](https://www.codacy.com/app/fabiocaccamo/django-admin-interface)
-[![PyPI version](https://badge.fury.io/py/django-admin-interface.svg)](https://badge.fury.io/py/django-admin-interface)
-[![PyPI downloads](https://img.shields.io/pypi/dm/django-admin-interface.svg)](https://img.shields.io/pypi/dm/django-admin-interface.svg)
-[![Py versions](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)](https://img.shields.io/pypi/pyversions/django-admin-interface.svg)
-[![License](https://img.shields.io/pypi/l/django-admin-interface.svg)](https://img.shields.io/pypi/l/django-admin-interface.svg)
+[![Python Versions](https://img.shields.io/pypi/pyversions/django-admin-interface.svg?color=3776AB&logo=python&logoColor=white)](https://www.python.org/)
+[![Django Versions](https://img.shields.io/pypi/djversions/django-admin-interface?color=0C4B33&logo=django&logoColor=white&label=django)](https://www.djangoproject.com/)
+
+[![PyPI Version](https://img.shields.io/pypi/v/django-admin-interface.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/django-admin-interface.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
+[![Stars](https://img.shields.io/github/stars/fabiocaccamo/django-admin-interface?logo=github)](https://github.com/fabiocaccamo/django-admin-interface/)
+[![License](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/master/LICENSE.txt)
+
+[![Travis Build Status](https://img.shields.io/travis/fabiocaccamo/django-admin-interface?logo=travis&label=build)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
+[![Codecov Coverage](https://img.shields.io/codecov/c/gh/fabiocaccamo/django-admin-interface?logo=codecov)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
+[![Codacy Code Quality Grade](https://img.shields.io/codacy/grade/0dbd5cc2089f4dce80a0e49e6822be3c?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/django-admin-interface)
+[![Requirements Status](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements/?branch=master)
 
 # django-admin-interface
 django-admin-interface is a modern **responsive flat admin interface customizable by the admin itself**.
@@ -24,10 +30,6 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
   - `django-modeltranslation`
   - `django-tabbed-admin`
   - `sorl-thumbnail`
-
-## Requirements
-- Python 2.7, 3.4, 3.5, 3.6, 3.7, 3.8
-- Django 1.7, 1.8, 1.9, 1.10, 1.11, 2.0, 2.1, 2.2, 3.0
 
 ## Installation
 - Run `pip install django-admin-interface`
