@@ -39,7 +39,7 @@ https://github.com/fabiocaccamo/django-admin-interface
 {% get_admin_interface_version as version %}
 {# https://github.com/elky/django-flat-responsive#important-note #}
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}?v={{ version }}" />
+<link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}?v={{ version }}">
 {% include "admin_interface/favicon.html" %}
 {% include "admin_interface/related-modal.html" %}
 {% endblock %}
@@ -51,9 +51,9 @@ https://github.com/fabiocaccamo/django-admin-interface
 <h1 id="site-name">
     {% if theme.logo_visible %}
         {% if theme.logo %}
-        <img class="logo" style="display:none;" src="{{ theme.logo.url }}" {% if theme.logo.width %}width="{{ theme.logo.width }}"{% endif %} {% if theme.logo.height %}height="{{ theme.logo.height }}"{% endif %} />
+        <img class="logo" style="display:none;" src="{{ theme.logo.url }}" {% if theme.logo.width %}width="{{ theme.logo.width }}"{% endif %} {% if theme.logo.height %}height="{{ theme.logo.height }}"{% endif %}>
         {% else %}
-        <img class="logo default" style="display:none;" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="104" height="36" />
+        <img class="logo default" style="display:none;" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="104" height="36">
         {% endif %}
     {% endif %}
     {% if theme.title_visible %}
