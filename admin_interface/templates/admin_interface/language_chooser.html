@@ -5,7 +5,7 @@
     {% for language in languages %}
     <form class="language-chooser-hidden-form" id="language-chooser-hidden-form-{{ language.code }}" action="{{ language.activation_url }}" method="POST">
         {% csrf_token %}
-        <input name="language" type="hidden" value="{{ language.code }}" />
+        <input name="language" type="hidden" value="{{ language.code }}">
     </form>
     {% endfor %}
     <form class="language-chooser-select-form">
