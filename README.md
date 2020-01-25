@@ -9,6 +9,7 @@
 [![Travis Build Status](https://img.shields.io/travis/fabiocaccamo/django-admin-interface?logo=travis&label=build)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
 [![Codecov Coverage](https://img.shields.io/codecov/c/gh/fabiocaccamo/django-admin-interface?logo=codecov)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
 [![Codacy Code Quality Grade](https://img.shields.io/codacy/grade/0dbd5cc2089f4dce80a0e49e6822be3c?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/django-admin-interface)
+[![Code Climate Maintainability](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/django-admin-interface?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/django-admin-interface/)
 [![Requirements Status](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements/?branch=master)
 
 # django-admin-interface
