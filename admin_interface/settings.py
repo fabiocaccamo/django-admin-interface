@@ -23,9 +23,6 @@ def check_installed_app(app, app_dj_version_limit):
 
 
 def check_installed_apps():
-    dj_version = django.VERSION
-    installed_apps = settings.INSTALLED_APPS
-
     check_installed_app('colorfield', (4, 0))
     check_installed_app('flat', (1, 9))
     check_installed_app('flat_responsive', (2, 0))
