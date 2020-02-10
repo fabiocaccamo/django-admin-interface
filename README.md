@@ -46,6 +46,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     #...
 )
+
+X_FRAME_OPTIONS='SAMEORIGIN' # only if django version >= 3.0
 ```
 - Run ``python manage.py migrate``
 - Run ``python manage.py collectstatic``
