@@ -1,4 +1,4 @@
-sudo: required
+os: linux
 language: python
 python: 3.5
 cache: pip
@@ -39,7 +39,7 @@ env:
   - TOX_ENV=py35-dj21-postgres
   # - TOX_ENV=py35-dj22-sqlite
   - TOX_ENV=py35-dj22-postgres
-matrix:
+jobs:
   include:
     - python: "3.6"
       env: TOX_ENV=py36-dj111-sqlite
