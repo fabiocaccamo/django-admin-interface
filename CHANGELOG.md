@@ -4,11 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.12.1) - 2020-02-21
+-   Updated `.travis` config.
+-   Fixed custom django admin header. #75
+-   Bumped `django-colorfield` version to `0.2.0`.
+-   Added `tr` language.
+-   Removed hard-coded favicon type.
+-   Improved code-quality.
+
 ## [0.12.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.12.0) - 2019-12-02
--   Added python 3.8 and django 3.0 compatibility.
+-   Added `python 3.8` and `django 3.0` compatibility.
 
 ## [0.11.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.11.2) - 2019-09-27
--   Fixed select2 background color.
+-   Fixed `select2` background color.
 
 ## [0.11.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.11.1) - 2019-09-04
 -   Added language chooser display option.
@@ -20,20 +28,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Fixed broken migration on postgres/windows. #52
 
 ## [0.10.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.10.4) - 2019-03-29
--   Added django 2.2 to tox and travis.
+-   Added `django 2.2` to `tox` and `travis`.
 -   Fixed admin duplicated count query.
 -   Added admin theme caching to remove duplicated queries. #19
--   Added django-dynamic-raw-id support. #61
--   Updated app title italian localization.
+-   Added `django-dynamic-raw-id` support. #61
+-   Updated `it` localization.
 
 ## [0.10.3](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.10.3) - 2019-03-28
 -   Fixed idempotent deploy support. #40
 
 ## [0.10.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.10.2) - 2019-03-22
--   Fixed raw-id-field whith django-admin-interface. #58
+-   Fixed `raw-id-field` whith `django-admin-interface`. #58
 
 ## [0.10.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.10.1) - 2019-03-20
--   Updated french localization.
+-   Updated `fr` localization.
 
 ## [0.10.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.10.0) - 2019-02-21
 -   Updated messages.
