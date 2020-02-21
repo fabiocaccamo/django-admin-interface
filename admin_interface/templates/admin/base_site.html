@@ -57,7 +57,7 @@ https://github.com/fabiocaccamo/django-admin-interface
         {% endif %}
     {% endif %}
     {% if theme.title_visible %}
-    <span>{% if theme.title %}{% trans theme.title %}{% else %}{% trans 'Django administration' %}{% endif %}</span>
+    <span>{% if theme.title %}{% trans theme.title %}{% else %}{{ site_header|default:_('Django administration') }}{% endif %}</span>
     {% endif %}
 </h1>
 {% endblock %}
