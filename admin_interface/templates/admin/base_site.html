@@ -19,6 +19,7 @@ https://github.com/fabiocaccamo/django-admin-interface
 {% include "admin_interface/css/list-filter-dropdown.css" %}
 {% include "admin_interface/css/recent-actions.css" %}
 {% include "admin_interface/css/related-modal.css" %}
+{% include "admin_interface/css/menu.css" %}
 {% include "admin_interface/css/jquery.ui.tabs.css" %}
 {% include "admin_interface/css/modeltranslation.css" %}
 {% include "admin_interface/css/sorl-thumbnail.css" %}
@@ -69,4 +70,29 @@ https://github.com/fabiocaccamo/django-admin-interface
     {% include "admin_interface/language_chooser.html" %}
 {% endif %}
 {% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}"></span> - {% endif %}{{ block.super }}<br>
+{% endblock %}
+
+{% block nav-global %}
+{% if not is_popup %}
+{% get_admin_interface_menu as menu %}
+{% if menu %}
+<div id="menu">
+    <div class="singlelink"><a href="{% url 'admin:index' %}">Dashboard</a></div>
+    {% for app in menu %}
+    {% if app.has_module_perms %}
+    <div class="dropdown">
+        <button class="dropbtn">{{ app.name }}</button>
+        <div class="dropdown-content">
+            {% for model in app.models %}
+            {% if model.perms.view or model.perms.change %}
+            <a href="{{ model.admin_url }}">{{ model.name }}</a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+{% endif %}
 {% endblock %}

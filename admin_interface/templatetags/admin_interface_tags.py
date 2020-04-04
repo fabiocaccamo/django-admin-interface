@@ -2,11 +2,14 @@
 
 import django
 from django import template, VERSION
+from django.apps import apps
 from django.conf import settings
 if django.VERSION < (1, 10):
     from django.core.urlresolvers import NoReverseMatch, reverse
 else:
     from django.urls import NoReverseMatch, reverse
+from django.contrib import admin
+from django.contrib.admin.sites import all_sites
 from django.utils import translation
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
@@ -78,3 +81,14 @@ def get_admin_interface_theme(context):
 @simple_tag(takes_context=False)
 def get_admin_interface_version():
     return __version__
+
+
+@simple_tag(takes_context=True)
+def get_admin_interface_menu(context):
+    request = context['request']
+    if request.user and request.user.is_staff:
+        current_app = request.current_app if hasattr(request, 'current_app') else 'admin'  # Fallback on default admin for WSGI requests from not-admin views
+        for admin_site in all_sites:
+            if admin_site.name == current_app:
+                return admin_site.get_app_list(request)
+    return []
