@@ -16,5 +16,5 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
                 return false;
             });
         });
-    }(django.jQuery));
+    })(django.jQuery);
 }

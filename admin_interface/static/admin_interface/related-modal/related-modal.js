@@ -147,5 +147,5 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             presentRelatedObjectModalOnClickOn('a.dynamic_raw_id-related-lookup', true);
         });
 
-    }(django.jQuery));
+    })(django.jQuery);
 }
