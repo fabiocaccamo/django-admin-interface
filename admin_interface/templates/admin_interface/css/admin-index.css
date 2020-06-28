@@ -1,0 +1,97 @@
+.admin-interface .breadcrumbs {
+    position:sticky;
+    top:86px;
+    z-index:100000
+}
+
+.admin-interface .dropdown-menu{
+    position:sticky;
+    top:49px;
+    z-index:1000000;
+    display:block;
+    background-color:{{ theme.css_header_background_color }};
+    padding:0 40px;
+    cursor:pointer
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__item,
+.admin-interface .dropdown-menu .dropdown-menu__item:link,
+.admin-interface .dropdown-menu .dropdown-menu__item:visited {
+    color:#fff;
+    display:inline-block;
+    padding:10px;
+    position:relative
+    background-color: {{ theme.css_save_button_background_color }};
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__link.dropdown-menu__link--active,
+.admin-interface .dropdown-menu .dropdown-menu__link:link.dropdown-menu__link--active,
+.admin-interface .dropdown-menu .dropdown-menu__link:visited.dropdown-menu__link--active {
+    background-color: {{ theme.css_save_button_background_color }};
+    text-decoration: underline;
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__item.dropdown-menu__item--active,
+.admin-interface .dropdown-menu .dropdown-menu__item:link.dropdown-menu__item--active,
+.admin-interface .dropdown-menu .dropdown-menu__item:visited.dropdown-menu__item--active {
+    background-color: {{ theme.css_save_button_background_color }};
+    text-decoration: underline;
+}
+
+
+
+.admin-interface .dropdown-menu .dropdown-menu__item .dropdown-menu__item--active,
+.admin-interface .dropdown-menu .dropdown-menu__item:link .dropdown-menu__item--active,
+.admin-interface .dropdown-menu .dropdown-menu__item:visited .dropdown-menu__item--active{
+    background-color: {{ theme.css_save_button_background_color }};
+    text-decoration:underline
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__item:hover,
+.admin-interface .dropdown-menu .dropdown-menu__item:link:hover,
+.admin-interface .dropdown-menu .dropdown-menu__item:visited:hover{
+    background-color: {{ theme.css_header_background_color }};
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__item:hover .dropdown-menu__drop,
+.admin-interface .dropdown-menu .dropdown-menu__item:link:hover .dropdown-menu__drop,
+.admin-interface .dropdown-menu .dropdown-menu__item:visited:hover .dropdown-menu__drop{
+    display:block
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__drop{
+    position:absolute;
+    left:0;
+    top:100%;
+    display:none;
+    background-color: {{ theme.css_header_background_color }};
+    min-width:150px
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__link,
+.admin-interface .dropdown-menu .dropdown-menu__link:link,
+.admin-interface .dropdown-menu .dropdown-menu__link:visited{
+    color:#fff;
+    display:block;
+    padding:10px
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__link:hover,
+.admin-interface .dropdown-menu .dropdown-menu__link:link:hover,
+.admin-interface .dropdown-menu .dropdown-menu__link:visited:hover{
+    background-color:{{ theme.css_save_button_background_color }};
+}
+
+.admin-interface .dropdown-menu .dropdown-menu__link .dropdown-menu__link--active,
+.admin-interface .dropdown-menu .dropdown-menu__link:link .dropdown-menu__link--active,
+.admin-interface .dropdown-menu .dropdown-menu__link:visited .dropdown-menu__link--active{
+    background-color: {{ theme.css_save_button_background_color }};
+    text-decoration:underline
+}
+
+#header{
+    position:sticky;
+    top:0;
+    z-index:100000;
+    height:29px
+}
