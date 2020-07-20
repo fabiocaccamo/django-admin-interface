@@ -271,5 +271,6 @@
 }
 
 .admin-interface .select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
-    background-color: {{ theme.css_header_background_color }};
+    background-color: {{ theme.css_module_background_color }};
+    color: {{ theme.css_module_text_color }};
 }
