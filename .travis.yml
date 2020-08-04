@@ -73,6 +73,10 @@ jobs:
     - python: "3.6"
       env: TOX_ENV=py36-dj30-postgres
     - python: "3.6"
+      env: TOX_ENV=py36-dj31-sqlite
+    - python: "3.6"
+      env: TOX_ENV=py36-dj31-postgres
+    - python: "3.6"
       env: TOX_ENV=py36-djmaster-sqlite
     - python: "3.6"
       env: TOX_ENV=py36-djmaster-postgres
@@ -93,6 +97,10 @@ jobs:
     - python: "3.7"
       env: TOX_ENV=py37-dj30-postgres
     - python: "3.7"
+      env: TOX_ENV=py37-dj31-sqlite
+    - python: "3.7"
+      env: TOX_ENV=py37-dj31-postgres
+    - python: "3.7"
       env: TOX_ENV=py37-djmaster-sqlite
     - python: "3.7"
       env: TOX_ENV=py37-djmaster-postgres
@@ -104,6 +112,10 @@ jobs:
       env: TOX_ENV=py38-dj30-sqlite
     - python: "3.8"
       env: TOX_ENV=py38-dj30-postgres
+    - python: "3.8"
+      env: TOX_ENV=py38-dj31-sqlite
+    - python: "3.8"
+      env: TOX_ENV=py38-dj31-postgres
     - python: "3.8"
       env: TOX_ENV=py38-djmaster-sqlite
     - python: "3.8"
