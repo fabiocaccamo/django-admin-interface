@@ -240,10 +240,13 @@ body.admin-interface .paginator a.showall:visited {
 /* begin fix lateral padding to align text with field labels */
 .admin-interface .module h2,
 .admin-interface.dashboard .module caption,
+.admin-interface.dashboard .module th,
 .admin-interface .module.filtered h2,
-.admin-interface .inline-group h2 {
-    padding-left:10px;
-    padding-right:10px;
+.admin-interface .inline-group h2,
+.admin-interface #nav-sidebar .module caption,
+.admin-interface #nav-sidebar .module th {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /* end fix */
 
@@ -336,4 +339,99 @@ body.admin-interface .paginator a.showall:visited {
 /* fix [not-stacked] equalize selectors height by adding the height of the .selector-available filter-bar */
 .admin-interface .selector:not(.stacked) .selector-chosen select {
     height: calc(46px + 17.2em) !important;
+}
+
+/* fix nav-sidebar (added in django 3.1.0) */
+.admin-interface #toggle-nav-sidebar {
+    top: 11px;
+    left: 0;
+    z-index: 20;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 40px;
+    margin-top: 11px;
+    margin-right: 10px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    border: 1px solid #eaeaea;
+    border-left: none;
+    outline: none;
+    -webkit-box-shadow: 4px 2px 8px -4px #DBDBDB;
+    -moz-box-shadow: 4px 2px 8px -4px #DBDBDB;
+    box-shadow: 4px 2px 8px -4px #DBDBDB;
+}
+
+.admin-interface .toggle-nav-sidebar::before {
+    margin-top: -2px;
+}
+
+/* hide nav-sidebar below 1280px to prevent horizontal overflow issues */
+@media (max-width:1279px) {
+    .admin-interface #nav-sidebar,
+    .admin-interface #toggle-nav-sidebar {
+        display: none;
+    }
+}
+
+.admin-interface #nav-sidebar {
+    flex: 0 0 320px;
+    left: -320px;
+    margin-left: -360px;
+    box-sizing: border-box;
+    padding: 18px 40px 40px 0px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+}
+
+@media (min-width:1280px) {
+    .admin-interface #main.shifted > #toggle-nav-sidebar {
+        left: 359px;
+    }
+    .admin-interface #main.shifted > #nav-sidebar {
+        left: 0px;
+        margin-left: 0;
+    }
+    .admin-interface.change-list:not(.popup) #main.shifted > .content,
+    .admin-interface.change-form:not(.popup) #main.shifted > .content {
+        max-width: calc(100% - 360px);
+    }
+}
+
+/* fix related-widget when the nav-sidebar is collapsed */
+@media (max-width:1100px) {
+    .admin-interface.change-form #main .related-widget-wrapper {
+        clear: left;
+        margin-top: 5px;
+    }
+    .admin-interface.change-form #main .related-widget-wrapper + .help {
+        margin-top: 10px;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* fix related-widget when the nav-sidebar is expanded */
+@media (min-width:1280px) and (max-width:1480px) {
+    .admin-interface.change-form:not(.popup) .related-widget-wrapper {
+        clear: left;
+        margin-top: 5px;
+    }
+    .admin-interface.change-form #main.shifted .related-widget-wrapper + .help {
+        margin-top: 10px;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.admin-interface #nav-sidebar .current-app .section:link,
+.admin-interface #nav-sidebar .current-app .section:visited {
+    color: #FFFFCC;
+    font-weight: normal;
+}
+
+.admin-interface #nav-sidebar .current-model {
+    background: #FFFFCC;
 }

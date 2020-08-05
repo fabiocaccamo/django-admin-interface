@@ -250,6 +250,8 @@
 /* begin fix issue #11 - Inline border bottom should not be rounded */
 .admin-interface .module h2,
 .admin-interface.dashboard .module caption,
+.admin-interface #nav-sidebar .module th,
+.admin-interface #nav-sidebar .module caption,
 .admin-interface .module.filtered h2 {
     {% if theme.css_module_rounded_corners %}
     border-radius:4px;
@@ -273,4 +275,18 @@
 .admin-interface .select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
     background-color: {{ theme.css_module_background_color }};
     color: {{ theme.css_module_text_color }};
+}
+
+.admin-interface #toggle-nav-sidebar {
+    {% if theme.css_module_rounded_corners %}
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    {% endif %}
+    color: {{ theme.css_generic_link_color }};
+}
+
+.admin-interface #toggle-nav-sidebar:focus,
+.admin-interface #toggle-nav-sidebar:hover,
+.admin-interface #toggle-nav-sidebar:active {
+    color: {{ theme.css_generic_link_hover_color }};
 }
