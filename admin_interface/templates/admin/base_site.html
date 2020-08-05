@@ -68,5 +68,5 @@ https://github.com/fabiocaccamo/django-admin-interface
     {% get_admin_interface_languages as languages %}
     {% include "admin_interface/language_chooser.html" %}
 {% endif %}
-{% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}"></span> - {% endif %}{{ block.super }}<br>
+{% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}"></span><br>{% endif %}{{ block.super }}<br>
 {% endblock %}
