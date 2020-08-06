@@ -4,6 +4,7 @@
 [![](https://img.shields.io/pypi/v/django-admin-interface.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
 [![](https://pepy.tech/badge/django-admin-interface)](https://pepy.tech/project/django-admin-interface)
 [![](https://img.shields.io/github/stars/fabiocaccamo/django-admin-interface?logo=github)](https://github.com/fabiocaccamo/django-admin-interface/)
+[![](https://badges.pufler.dev/visits/fabiocaccamo/django-admin-interface?label=views&color=blue)](https://badges.pufler.dev)
 [![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/master/LICENSE.txt)
 
 [![](https://img.shields.io/travis/fabiocaccamo/django-admin-interface?logo=travis&label=build)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
