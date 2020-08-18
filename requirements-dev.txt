@@ -1,0 +1,3 @@
+codecov
+coverage
+tox
