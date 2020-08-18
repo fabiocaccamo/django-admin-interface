@@ -83,6 +83,7 @@
 }
 
 .admin-interface #branding h1 img.logo {
+    max-width: 400px;
     max-height:100px;
     margin-top:10px;
     margin-bottom:10px;
