@@ -3,6 +3,12 @@
     color: {{ theme.css_header_text_color }};
 }
 
+.admin-interface #header + #main {
+    {% if theme.css_header_background_color != theme.css_module_background_color %}
+    border-top: 10px solid {{ theme.css_module_background_color }};
+    {% endif %}
+}
+
 .admin-interface .environment-label {
 }
 
