@@ -369,13 +369,13 @@ body.admin-interface .paginator a.showall:visited {
 
 /* fix nav-sidebar (added in django 3.1.0) */
 .admin-interface #toggle-nav-sidebar {
-    top: 11px;
+    top: 10px;
     left: 0;
     z-index: 20;
     flex: 0 0 30px;
     width: 30px;
-    height: 40px;
-    margin-top: 11px;
+    height: 45px;
+    margin-top: 10px;
     margin-right: 10px;
     background-color: #FFFFFF;
     font-size: 16px;
