@@ -1,0 +1,29 @@
+/*
+django-json-widget support
+https://github.com/jmrivas86/django-json-widget
+*/
+
+.admin-interface div.jsoneditor {
+    border: 1px solid {{ theme.css_module_background_color }};
+    {% if theme.css_module_rounded_corners %}
+    border-radius: 4px;
+    overflow: hidden;
+    {% endif %}
+}
+
+.admin-interface div.jsoneditor-menu {
+    background-color: {{ theme.css_module_background_color }};
+    border-bottom: 1px solid {{ theme.css_module_background_color }};
+}
+
+.admin-interface div.jsoneditor-menu a.jsoneditor-poweredBy {
+    color: {{ theme.css_module_link_color }};
+}
+
+.admin-interface div.jsoneditor-contextmenu ul li button.jsoneditor-selected,
+.admin-interface div.jsoneditor-contextmenu ul li button.jsoneditor-selected:focus,
+.admin-interface div.jsoneditor-contextmenu ul li button.jsoneditor-selected:hover {
+    background-color: #FFFFCC;
+    color: #000000;
+    font-weight: bold;
+}

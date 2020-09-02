@@ -29,6 +29,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Compatibility / Style optimizations for:
   - `django-ckeditor`
   - `django-dynamic-raw-id`
+  - `django-json-widget`
   - `django-modeltranslation`
   - `django-tabbed-admin`
   - `sorl-thumbnail`
