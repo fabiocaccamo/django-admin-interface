@@ -3,7 +3,6 @@
 import django
 from django.apps import AppConfig
 from django.db.models.signals import post_migrate
-from django.utils.translation import ugettext_lazy as _
 if django.VERSION < (2, 0):
     from django.utils.translation import ugettext_lazy as _
 else:
