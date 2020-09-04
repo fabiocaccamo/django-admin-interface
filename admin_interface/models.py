@@ -6,10 +6,15 @@ from admin_interface.cache import del_cached_active_theme
 
 from colorfield.fields import ColorField
 
+import django
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
-from django.utils.encoding import force_text
-from django.utils.translation import ugettext_lazy as _
+if django.VERSION < (2, 0):
+    from django.utils.encoding import force_text as force_str
+    from django.utils.translation import ugettext_lazy as _
+else:
+    from django.utils.encoding import force_str
+    from django.utils.translation import gettext_lazy as _
 
 from six import python_2_unicode_compatible
 
@@ -301,7 +306,7 @@ class Theme(models.Model):
         verbose_name_plural = _('Themes')
 
     def __str__(self):
-        return force_text(self.name)
+        return force_str(self.name)
 
 
 post_delete.connect(Theme.post_delete_handler, sender=Theme)

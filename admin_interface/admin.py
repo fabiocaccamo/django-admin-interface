@@ -2,8 +2,12 @@
 
 from admin_interface.models import Theme
 
+import django
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
+if django.VERSION < (2, 0):
+    from django.utils.translation import ugettext_lazy as _
+else:
+    from django.utils.translation import gettext_lazy as _
 
 
 class ThemeAdmin(admin.ModelAdmin):
