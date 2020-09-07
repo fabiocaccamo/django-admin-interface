@@ -185,6 +185,14 @@
     color:{{ theme.css_generic_link_hover_color }};
 }
 
+.admin-interface thead th a,
+.admin-interface thead th a:link,
+.admin-interface thead th a:visited,
+.admin-interface thead th a:focus,
+.admin-interface thead th a:hover {
+    color: #666666;
+}
+
 .admin-interface .button,
 .admin-interface input[type=submit],
 .admin-interface input[type=button],
