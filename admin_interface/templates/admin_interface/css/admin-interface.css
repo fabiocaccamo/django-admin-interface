@@ -274,9 +274,25 @@
     color:{{ theme.css_generic_link_hover_color }};
 }
 
+.admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:focus,
+.admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+.admin-interface .module.filtered #changelist-filter li a:focus,
+.admin-interface .module.filtered #changelist-filter li a:hover {
+    color: #666;
+    text-decoration: none;
+}
+
 .admin-interface .module.filtered #changelist-filter li.selected a,
+.admin-interface .module.filtered #changelist-filter li.selected a:link,
+.admin-interface .module.filtered #changelist-filter li.selected a:visited,
+.admin-interface .module.filtered #changelist-filter li.selected a:focus,
 .admin-interface .module.filtered #changelist-filter li.selected a:hover {
-    color: {{ theme.css_generic_link_color }};
+    /* color: #666; */
+    color: {{ theme.css_generic_link_hover_color }};
 }
 
 /* begin fix issue #11 - Inline border bottom should not be rounded */
