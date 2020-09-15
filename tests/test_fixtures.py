@@ -17,6 +17,10 @@ class AdminInterfaceFixturesTestCase(TestCase):
     def __load_theme(self, theme_name):
         call_command('loaddata', 'admin_interface_theme_%s.json' % (theme_name, ))
 
+    def test_import_initial_data(self):
+        call_command('loaddata', 'initial_data.json')
+        self.assertEqual(Theme.objects.count(), 1);
+
     def test_import_all(self):
         self.__load_theme('django')
         self.__load_theme('bootstrap')
