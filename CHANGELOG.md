@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.13.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.13.4) - 2020-??-??
+## [0.13.5](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.13.5) - 2020-09-15
+-  Fixed loaddata error with initial_data.json fixture. #97
+-  Fixed tests warning (admin.W411).
+-  Fixed changelist thead links color.
+-  Fixed changelist filter links hover color.
+
+## [0.13.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.13.4) - 2020-09-04
 -  Added conditional imports to avoid Django deprecation warnings. #92
 -  Changed admin header content vertical align to top.
 
