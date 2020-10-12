@@ -9,6 +9,7 @@
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
 {% get_admin_interface_version as version %}
+{% get_current_language as current_lang %}
 <style type="text/css">
 /*
 django-admin-interface {{ version }}
@@ -26,12 +27,18 @@ https://github.com/fabiocaccamo/django-admin-interface
 {% include "admin_interface/css/ckeditor.css" %}
 {% include "admin_interface/css/tinymce.css" %}
 {% include "admin_interface/css/json-widget.css" %}
+{% include "admin_interface/css/rtl.css" %}
 
 {% if theme.css %}
     {{ theme.css|safe }}
 {% endif %}
 
 </style>
+
+{% if current_lang == 'fa' %}
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />
+{% endif %}
+
 {% endblock %}
 
 {% block blockbots %}
