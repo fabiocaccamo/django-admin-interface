@@ -106,7 +106,7 @@ msgstr "نمایان"
 
 #: admin_interface/models.py:95
 msgid "Leave blank to use the default Django logo"
-msgstr "Laisser vide pour utiliser le logo Django par défaut"
+msgstr "برای نمایش لوگوی پیش فرض، خالی بگذارید."
 
 #: admin_interface/models.py:96
 msgid "logo"
