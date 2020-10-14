@@ -91,6 +91,12 @@
     display:inline-block !important; /* override inline display:none; */
 }
 
+@media (max-width:400px) {
+    .admin-interface #branding h1 img.logo {
+        max-width: 100%;
+    }
+}
+
 .admin-interface #branding h1 span {
     display: inline-block;
     margin-bottom: 5px;
@@ -250,6 +256,7 @@ body.admin-interface .paginator a.showall:visited {
 .admin-interface .module.filtered #changelist-filter {
     border-bottom-left-radius:4px;
     border-bottom-right-radius:4px;
+    min-width: 200px;
 }
 
 .admin-interface .module.filtered #changelist-filter h2 {
@@ -419,6 +426,9 @@ body.admin-interface .paginator a.showall:visited {
     .admin-interface #main.shifted > #nav-sidebar {
         left: 0px;
         margin-left: 0;
+    }
+    .admin-interface #main:not(.shifted) > .content {
+        max-width: 100%;
     }
     .admin-interface.change-list:not(.popup) #main.shifted > .content,
     .admin-interface.change-form:not(.popup) #main.shifted > .content {
