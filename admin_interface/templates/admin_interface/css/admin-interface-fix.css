@@ -71,7 +71,6 @@
 }
 /* end login fix*/
 
-
 .admin-interface #header {
     height:auto;
     min-height:40px;
@@ -213,6 +212,7 @@ body.admin-interface .paginator a.showall:visited {
     .admin-interface form .form-row p.file-upload .clearable-file-input {
         display: block;
         margin-top: 10px;
+        margin-left: 0;
         margin-bottom: -10px;
     }
 
@@ -367,17 +367,6 @@ body.admin-interface .paginator a.showall:visited {
     background-color:#AAAAAA;
 }
 
-/* fix textarea horizontal scroll on Firefox */
-@media (max-width: 767px){
-    .admin-interface .aligned .form-row textarea {
-        width: 100% !important;
-        flex: 0 1 auto;
-    }
-    .admin-interface .aligned .form-row input[type="file"] {
-        width: 100% !important;
-    }
-}
-
 /* improve responsive selector */
 
 /* fix [stacked, not-stacked] equalize horizontal and vertical select padding for selector */
@@ -466,34 +455,6 @@ body.admin-interface .paginator a.showall:visited {
     }
 }
 
-/* fix related-widget when the nav-sidebar is collapsed */
-@media (max-width:1100px) {
-    .admin-interface.change-form #main .related-widget-wrapper {
-        clear: left;
-        margin-top: 5px;
-    }
-    .admin-interface.change-form #main .related-widget-wrapper + .help {
-        margin-top: 10px;
-        margin-left: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
-/* fix related-widget when the nav-sidebar is expanded */
-@media (min-width:1280px) and (max-width:1480px) {
-    .admin-interface.change-form:not(.popup) .related-widget-wrapper {
-        clear: left;
-        margin-top: 5px;
-    }
-    .admin-interface.change-form #main.shifted .related-widget-wrapper + .help {
-        margin-top: 10px;
-        margin-left: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 .admin-interface #nav-sidebar .current-app .section:link,
 .admin-interface #nav-sidebar .current-app .section:visited {
     color: #FFFFCC;
@@ -502,4 +463,83 @@ body.admin-interface .paginator a.showall:visited {
 
 .admin-interface #nav-sidebar .current-model {
     background: #FFFFCC;
+}
+
+/* fixed related widget and select2 */
+.admin-interface .aligned .form-row .related-widget-wrapper {
+    white-space: nowrap;
+}
+
+.admin-interface .aligned .form-row .related-widget-wrapper .select2-container ~ .related-widget-wrapper-link {
+    margin-left: 0;
+    padding: 4px 8px 6px 8px;
+}
+
+.admin-interface .aligned .form-row .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
+    margin-left: 5px !important;
+}
+
+/* fixed time widget header border radius */
+.admin-interface .clockbox.module h2 {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+@media (max-width: 767px) {
+
+    /* fixed changelist search size when there are search results and .quiet is visible */
+    .admin-interface #changelist-search label img {
+        margin-top: 7px;
+    }
+
+    .admin-interface #changelist-search .quiet {
+        margin: 0 0 0 10px;
+        align-self: center;
+        flex-basis: content;
+    }
+
+    /* fixed responsive widgets */
+    .admin-interface .aligned.collapsed .form-row {
+        display: none;
+    }
+
+    .admin-interface .aligned .form-row > div {
+        display: flex;
+        max-width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-interface .aligned .form-row .help {
+        margin-left: 0;
+    }
+
+    .admin-interface .aligned .form-row .checkbox-row label {
+        margin: 10px 0 0 0;
+        padding: 0;
+    }
+
+    .admin-interface .aligned .form-row input[type="file"],
+    .admin-interface .aligned .form-row input[type="text"],
+    .admin-interface .aligned .form-row input[type="email"] {
+        width: 100%;
+    }
+
+    /* fix textarea horizontal scroll on Firefox */
+    .admin-interface .aligned .form-row textarea {
+        width: 100% !important;
+        flex: 0 1 auto;
+    }
+
+    .admin-interface .aligned .form-row .datetime input[type="text"] {
+        width: 50%;
+    }
+
+    .admin-interface .aligned .form-row span + .file-upload {
+        margin-top: 10px;
+    }
+
+    .admin-interface .aligned .form-row .file-upload input[type="file"] {
+        margin-top: 5px;
+    }
 }
