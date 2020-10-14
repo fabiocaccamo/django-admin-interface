@@ -305,6 +305,23 @@ body.admin-interface .paginator a.showall:visited {
 }
 /* end fix */
 
+/* begin fix tabular inlines horizontal scroll */
+.admin-interface .inline-related.tabular fieldset.module {
+    display: block;
+    overflow-x: scroll;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+}
+.admin-interface .inline-related.tabular fieldset.module h2 {
+    position: sticky;
+    left: 0;
+}
+.admin-interface .inline-related.tabular fieldset.module table tbody tr {
+    position: relative;
+}
+/* end fix */
+
 .admin-interface .inline-related h3 {
     padding:6px 10px;
 }
