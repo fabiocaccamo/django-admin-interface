@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.6](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.13.6) - 2020-10-14
+-  Added persian language. #98
+-  Fixed logo max-width on small screens.
+-  Fixed content max-width when nav-sidebar is collapsed.
+-  Fixed changelist max-width on medium screens.
+
 ## [0.13.5](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.13.5) - 2020-09-15
 -  Fixed loaddata error with initial_data.json fixture. #97
 -  Fixed tests warning (admin.W411).
