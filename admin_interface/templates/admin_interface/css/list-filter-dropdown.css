@@ -8,7 +8,7 @@ list-filter-dropdown
 }
 
 .admin-interface .list-filter-dropdown select {
-    background-color:#FFFFFF;
-    width:90%;
-    margin-right:5%;
+    background-color: #FFFFFF;
+    width: calc(100% - 30px);
+    margin-right: 15px;
 }
