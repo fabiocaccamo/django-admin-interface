@@ -1,3 +1,7 @@
+.admin-interface {
+    overflow-x: hidden;
+}
+
 /* fix login */
 .admin-interface.login #container {
     width: 100%;
