@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.7](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.13.7) - 2020-10-14
+-  Improved responsive widgets style.
+-  Prevented body horizontal scroll.
+-  Fixed tabular inline horizontal scroll.
+-  Fixed changelist filter min-width.
+-  Fixed changelist and toolbar theme rounded corners.
+-  Fixed calendar and timelist buttons theme color.
+-  Fixed list filter select size.
+-  Fixed content max-width with `django >= 3.1`.
+
 ## [0.13.6](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.13.6) - 2020-10-14
 -  Added persian language. #98
 -  Fixed logo max-width on small screens.
