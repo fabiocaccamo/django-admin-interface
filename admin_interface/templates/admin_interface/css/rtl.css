@@ -1,9 +1,9 @@
-[dir="rtl"] * {
+[dir="rtl"] .admin-interface,
+[dir="rtl"] .admin-interface * {
     font-family: 'Vazir', sans-serif !important;
 }
 
-
-[dir="rtl"] .main .toggle-nav-sidebar.sticky {
+[dir="rtl"] .admin-interface .main .toggle-nav-sidebar.sticky {
     left: auto !important;
     right: 0px !important;
     margin-right: 0px !important;
@@ -17,18 +17,17 @@
     box-shadow: -4px 2px 8px -2px #DBDBDB !important;
 }
 
-
-[dir="rtl"] .admin-interface #main.shifted>#toggle-nav-sidebar {
+[dir="rtl"] .admin-interface #main.shifted > #toggle-nav-sidebar {
     right: 359px !important;
 }
 
-[dir="rtl"] .admin-interface #main>#nav-sidebar {
+[dir="rtl"] .admin-interface #main > #nav-sidebar {
     margin-right: -360px !important;
     margin-left: 0px !important;
     right: -320px !important;
 }
 
-[dir="rtl"] .admin-interface #main.shifted>#nav-sidebar {
+[dir="rtl"] .admin-interface #main.shifted > #nav-sidebar {
     border-left: 1px solid #eaeaea;
     margin-right: 0px !important;
     padding: 40px 0px 40px 40px !important;
