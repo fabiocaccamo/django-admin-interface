@@ -346,3 +346,13 @@
 .admin-interface #toggle-nav-sidebar:active {
     color: {{ theme.css_generic_link_hover_color }};
 }
+
+.admin-interface .calendar td.selected a,
+.admin-interface .calendar td a:active,
+.admin-interface .calendar td a:focus,
+.admin-interface .calendar td a:hover,
+.admin-interface .timelist a:active,
+.admin-interface .timelist a:focus,
+.admin-interface .timelist a:hover {
+    background: {{ theme.css_module_background_color }};
+}
