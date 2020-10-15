@@ -289,7 +289,7 @@ class Theme(models.Model):
         verbose_name=_('close button visible'))
 
     list_filter_dropdown = models.BooleanField(
-        default=False,
+        default=True,
         verbose_name=_('use dropdown'))
     recent_actions_visible = models.BooleanField(
         default=True,
