@@ -282,12 +282,6 @@
     color:{{ theme.css_generic_link_hover_color }};
 }
 
-.admin-interface .module.filtered #toolbar {
-    {% if theme.css_module_rounded_corners %}
-    border-radius: 4px;
-    {% endif %}
-}
-
 .admin-interface .module.filtered #changelist-filter {
     {% if theme.css_module_rounded_corners %}
     border-bottom-left-radius: 4px;

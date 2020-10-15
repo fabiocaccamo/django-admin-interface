@@ -485,19 +485,29 @@ body.admin-interface .paginator a.showall:visited {
     border-bottom-right-radius: 0;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
+    .admin-interface #changelist-search #searchbar {
+        padding: 2px 5px 3px 5px;
+    }
+}
 
+@media (max-width: 1024px) {
+    .admin-interface #changelist #toolbar {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
     /* fixed changelist search size when there are search results and .quiet is visible */
     .admin-interface #changelist-search label img {
         margin-top: 7px;
     }
-
     .admin-interface #changelist-search .quiet {
         margin: 0 0 0 10px;
         align-self: center;
         flex-basis: content;
     }
+}
 
+@media (max-width: 767px) {
     /* fixed responsive widgets */
     .admin-interface .aligned.collapsed .form-row {
         display: none;
