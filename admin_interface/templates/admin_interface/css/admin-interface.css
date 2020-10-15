@@ -282,6 +282,21 @@
     color:{{ theme.css_generic_link_hover_color }};
 }
 
+/* list-filter sticky */
+{% if theme.list_filter_sticky %}
+@media (min-width: 768px) {
+    .admin-interface .module.filtered #changelist-filter {
+        position: sticky;
+        top: 40px;
+    }
+    /* feature not available for django < 3.1.2 */
+    .admin-interface .module.filtered #toolbar + #changelist-filter {
+        position: absolute;
+        top: 0px;
+    }
+}
+{% endif %}
+
 .admin-interface .module.filtered #changelist-filter {
     {% if theme.css_module_rounded_corners %}
     border-bottom-left-radius: 4px;

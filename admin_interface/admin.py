@@ -112,7 +112,10 @@ class ThemeAdmin(admin.ModelAdmin):
         }),
         (_('List Filter'), {
             'classes': ('wide', ),
-            'fields': ('list_filter_dropdown', )
+            'fields': (
+                'list_filter_dropdown',
+                'list_filter_sticky',
+            )
         }),
         (_('Recent Actions'), {
             'classes': ('wide', ),

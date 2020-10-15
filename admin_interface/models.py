@@ -291,6 +291,10 @@ class Theme(models.Model):
     list_filter_dropdown = models.BooleanField(
         default=True,
         verbose_name=_('use dropdown'))
+    list_filter_sticky = models.BooleanField(
+        default=True,
+        verbose_name=_('sticky position'))
+
     recent_actions_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))
