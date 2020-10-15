@@ -485,10 +485,9 @@ body.admin-interface .paginator a.showall:visited {
     border-bottom-right-radius: 0;
 }
 
-@media (min-width: 1024px) {
-    .admin-interface #changelist-search #searchbar {
-        padding: 2px 5px 3px 5px;
-    }
+/* fix searchbar overriden padding */
+.admin-interface #changelist #changelist-search #searchbar {
+    padding: 2px 5px 3px 5px;
 }
 
 @media (max-width: 1024px) {
@@ -498,7 +497,7 @@ body.admin-interface .paginator a.showall:visited {
     }
     /* fixed changelist search size when there are search results and .quiet is visible */
     .admin-interface #changelist-search label img {
-        margin-top: 7px;
+        margin-top: 2px;
     }
     .admin-interface #changelist-search .quiet {
         margin: 0 0 0 10px;
