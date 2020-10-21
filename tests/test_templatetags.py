@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django.test import TestCase
+from __future__ import unicode_literals
+
+from django.test import override_settings, TestCase
 from django.test.client import RequestFactory
 from django.template import Context, Template
 
@@ -19,6 +21,63 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
 
     def __render_template(self, string, context=None):
         return Template(string).render(Context(context or {}))
+
+    def test_get_admin_interface_languages(self):
+        context = Context({
+            'request': self.request_factory.get('/en/admin/'),
+        })
+        languages = templatetags.get_admin_interface_languages(context)
+        expected_languages = [
+            {'code': 'en', 'name': 'English', 'default': True, 'active': True, 'activation_url': '/i18n/setlang/?next=/en/admin/'},
+            {'code': 'it', 'name': 'Italian', 'default': False, 'active': False, 'activation_url': '/i18n/setlang/?next=/it/admin/'}
+        ]
+        self.assertEqual(len(languages), len(expected_languages))
+        self.assertEqual(languages[0], expected_languages[0])
+        self.assertEqual(languages[1], expected_languages[1])
+
+    @override_settings(
+        USE_I18N = False,
+    )
+    def test_get_admin_interface_languages_with_i18n_disabled(self):
+        context = Context({
+            'request': self.request_factory.get('/en/admin/'),
+        })
+        languages = templatetags.get_admin_interface_languages(context)
+        self.assertEqual(languages, None)
+
+    @override_settings(
+        ROOT_URLCONF = 'tests.urls_without_i18n_patterns',
+    )
+    def test_get_admin_interface_languages_without_i18n_url_patterns(self):
+        context = Context({
+            'request': self.request_factory.get('/en/admin/'),
+        })
+        languages = templatetags.get_admin_interface_languages(context)
+        self.assertEqual(languages, None)
+
+    @override_settings(
+        LANGUAGES = (
+            ('en', 'English'),
+        ),
+    )
+    def test_get_admin_interface_languages_without_multiple_languages(self):
+        context = Context({
+            'request': self.request_factory.get('/en/admin/'),
+        })
+        languages = templatetags.get_admin_interface_languages(context)
+        self.assertEqual(languages, None)
+
+    def test_get_admin_interface_languages_without_request(self):
+        context = Context({})
+        languages = templatetags.get_admin_interface_languages(context)
+        self.assertEqual(languages, None)
+
+    def test_get_admin_interface_languages_without_language_prefix_in_url(self):
+        context = Context({
+            'request': self.request_factory.get('/admin/'),
+        })
+        languages = templatetags.get_admin_interface_languages(context)
+        self.assertEqual(languages, None)
 
     def test_get_theme(self):
         Theme.objects.all().delete()
