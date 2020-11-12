@@ -288,6 +288,7 @@
     .admin-interface .module.filtered #changelist-filter {
         position: sticky;
         top: 40px;
+        float: right;
     }
     /* feature not available for django < 3.1.2 */
     .admin-interface .module.filtered #toolbar + #changelist-filter {
