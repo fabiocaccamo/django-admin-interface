@@ -406,6 +406,7 @@ body.admin-interface .paginator a.showall:visited {
     -webkit-box-shadow: 4px 2px 8px -4px #DBDBDB;
     -moz-box-shadow: 4px 2px 8px -4px #DBDBDB;
     box-shadow: 4px 2px 8px -4px #DBDBDB;
+    transition: left .3s;
 }
 
 .admin-interface .toggle-nav-sidebar::before {
@@ -436,6 +437,7 @@ body.admin-interface .paginator a.showall:visited {
     border-top: none;
     border-bottom: none;
     border-left: none;
+    transition: left .3s, margin-left .3s;
 }
 
 @media (min-width:1280px) {
