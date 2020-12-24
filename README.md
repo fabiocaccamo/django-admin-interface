@@ -38,6 +38,11 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Run `pip install django-admin-interface`
 - Add `admin_interface`, `flat_responsive`, `flat` and `colorfield` to `settings.INSTALLED_APPS` **before** `django.contrib.admin`
 ```python
+
+import os                                          // you need to import this package to run the following command.
+STATIC_DIR = os.path.join(BASE_DIR,'static')         // Before running this command, you must create your static directory under your project directory. This variable will have                                                            a path of the static folder, which you have created for your project.
+STATIC_ROOT = STATIC_DIR                            // This variable will be required to store all the static files of our library into your static directory.
+
 INSTALLED_APPS = (
     #...
     'admin_interface',
