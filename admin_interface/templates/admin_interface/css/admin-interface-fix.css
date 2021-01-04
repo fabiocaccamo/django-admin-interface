@@ -311,7 +311,7 @@ body.admin-interface .paginator a.showall:visited {
 
 /* begin fix tabular inlines horizontal scroll */
 .admin-interface .inline-related.tabular fieldset.module {
-    display: block;
+    display: contents;
     overflow-x: scroll;
     width: 100%;
     white-space: nowrap;
