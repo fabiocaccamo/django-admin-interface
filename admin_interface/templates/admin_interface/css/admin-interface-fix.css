@@ -122,12 +122,6 @@
     padding: 0 1px;
 }
 
-/*
-#changelist table tbody tr.selected {
-    background-color:#FFFFCC;
-}
-*/
-
 .admin-interface #changelist .paginator {
     margin-top:-1px; /* merge 2 borders into 1 */
     line-height:42px;
@@ -455,16 +449,6 @@ body.admin-interface .paginator a.showall:visited {
     .admin-interface.change-form:not(.popup) #main.shifted > #nav-sidebar + .content {
         max-width: calc(100% - 360px);
     }
-}
-
-.admin-interface #nav-sidebar .current-app .section:link,
-.admin-interface #nav-sidebar .current-app .section:visited {
-    color: #FFFFCC;
-    font-weight: normal;
-}
-
-.admin-interface #nav-sidebar .current-model {
-    background: #FFFFCC;
 }
 
 /* fixed related widget and select2 */

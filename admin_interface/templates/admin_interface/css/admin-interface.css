@@ -100,6 +100,20 @@
     border-bottom-color:rgba(255, 255, 255, 0.5);
 }
 
+.admin-interface #nav-sidebar .current-app .section:link,
+.admin-interface #nav-sidebar .current-app .section:visited {
+    color: {{ theme.css_module_link_color }};
+    font-weight: normal;
+}
+
+.admin-interface #nav-sidebar .current-model {
+    background: #FFFFCC;
+}
+
+.admin-interface #changelist table tbody tr.selected {
+    background-color: #FFFFCC;
+}
+
 .admin-interface .module h2,
 .admin-interface .module caption,
 .admin-interface .module.filtered h2 {
