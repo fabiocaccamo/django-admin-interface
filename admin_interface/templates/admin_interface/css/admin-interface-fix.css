@@ -451,8 +451,8 @@ body.admin-interface .paginator a.showall:visited {
     .admin-interface #main:not(.shifted) > .content {
         max-width: 100%;
     }
-    .admin-interface.change-list:not(.popup) #main.shifted > .content,
-    .admin-interface.change-form:not(.popup) #main.shifted > .content {
+    .admin-interface.change-list:not(.popup) #main.shifted > #nav-sidebar + .content,
+    .admin-interface.change-form:not(.popup) #main.shifted > #nav-sidebar + .content {
         max-width: calc(100% - 360px);
     }
 }
