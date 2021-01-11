@@ -1,3 +1,27 @@
+:root {
+    --admin-interface-title-color: {{ theme.title_color }};
+    --admin-interface-logo-color: {{ theme.logo_color }};
+    --admin-interface-env-color: {{ theme.env_color }};
+    --admin-interface-header-background-color: {{ theme.css_header_background_color }};
+    --admin-interface-header-text-color: {{ theme.css_header_text_color }};
+    --admin-interface-header-link-color: {{ theme.css_header_link_color }};
+    --admin-interface-header-link_hover-color: {{ theme.css_header_link_hover_color }};
+    --admin-interface-module-background-color: {{ theme.css_module_background_color }};
+    --admin-interface-module-text-color: {{ theme.css_module_text_color }};
+    --admin-interface-module-link-color: {{ theme.css_module_link_color }};
+    --admin-interface-module-link-hover-color: {{ theme.css_module_link_hover_color }};
+    --admin-interface-generic-link-color: {{ theme.css_generic_link_color }};
+    --admin-interface-generic-link-hover-color: {{ theme.css_generic_link_hover_color }};
+    --admin-interface-save-button-background-color: {{ theme.css_save_button_background_color }};
+    --admin-interface-save-button-background-hover-color: {{ theme.css_save_button_background_hover_color }};
+    --admin-interface-save-button-text-color: {{ theme.css_save_button_text_color }};
+    --admin-interface-delete-button-background-color: {{ theme.css_delete_button_background_color }};
+    --admin-interface-delete-button-background-hover-color: {{ theme.css_delete_button_background_hover_color }};
+    --admin-interface-delete-button-text-color: {{ theme.css_delete_button_text_color }};
+    --admin-interface-related-modal-background-color: {{ theme.related_modal_background_color }};
+    --admin-interface-related-modal-background-opacity: {{ theme.related_modal_background_opacity }};
+}
+
 .admin-interface #header {
     background: {{ theme.css_header_background_color }};
     color: {{ theme.css_header_text_color }};
