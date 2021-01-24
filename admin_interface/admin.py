@@ -121,6 +121,10 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': ('recent_actions_visible', )
         }),
+        (_('Action Buttons'), {
+            'classes': ('wide', ),
+            'fields': ('action_buttons_sticky', )
+        }),
     )
 
     save_on_top = True

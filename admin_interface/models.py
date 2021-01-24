@@ -299,6 +299,10 @@ class Theme(models.Model):
         default=True,
         verbose_name=_('visible'))
 
+    action_buttons_sticky = models.BooleanField(
+        default=False,
+        verbose_name=_('sticky position'))
+
     def set_active(self):
         self.active = True
         self.save()
