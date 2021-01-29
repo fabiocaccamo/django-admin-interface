@@ -42,7 +42,7 @@ def get_admin_interface_languages(context):
     if not request:
         return None
     full_path = request.get_full_path()
-    admin_nolang_url = re.sub(r'^\/([\w]{2})([\-\_]{1}[\w]{2})?\/', '/', full_path)
+    admin_nolang_url = re.sub(r'^\/([\w]{2})([\-\_]{1}[\w]{2,4})?\/', '/', full_path)
     if admin_nolang_url == full_path:
         # ImproperlyConfigured - must include admin urls using i18n_patterns:
         # from django.conf.urls.i18n import i18n_patterns
