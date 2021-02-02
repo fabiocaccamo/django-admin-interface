@@ -412,11 +412,11 @@ body.admin-interface .paginator a.showall:visited {
     max-width: 100%;
 }
 
-.admin-interface.sticky-action-buttons.change-form:not(.popup) #main > #nav-sidebar + .content {
+.admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content {
     padding-bottom: 4rem;
 }
 
-.admin-interface.sticky-action-buttons.change-form:not(.popup) #main > #nav-sidebar + .content .submit-row {
+.admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content form fieldset + .submit-row {
     width: 100%;
     max-width: calc(100% - 28px);
     bottom: 0;
@@ -463,7 +463,7 @@ body.admin-interface .paginator a.showall:visited {
         max-width: calc(100% - 360px);
     }
 
-    .admin-interface.sticky-action-buttons.change-form:not(.popup) #main.shifted > #nav-sidebar + .content .submit-row {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main.shifted > #nav-sidebar + .content .submit-row {
         max-width: calc(100% - 388px);
         right: 0;
         bottom: 0;
@@ -557,11 +557,11 @@ body.admin-interface .paginator a.showall:visited {
         margin-top: 5px;
     }
 
-    .admin-interface.sticky-action-buttons.change-form:not(.popup) #main > #nav-sidebar + .content {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content {
         padding-bottom: 12rem;
     }
 
-    .admin-interface.sticky-action-buttons.change-form:not(.popup) #main > #nav-sidebar + .content .submit-row {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content .submit-row {
         max-width: calc(100% - 20px);
     }
 }

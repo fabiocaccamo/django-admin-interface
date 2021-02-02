@@ -110,6 +110,13 @@ class ThemeAdmin(admin.ModelAdmin):
                 'related_modal_close_button_visible',
             )
         }),
+        (_('Form Controls'), {
+            'classes': ('wide', ),
+            'fields': (
+                'form_submit_sticky',
+                'form_pagination_sticky',
+            )
+        }),
         (_('List Filter'), {
             'classes': ('wide', ),
             'fields': (
@@ -120,10 +127,6 @@ class ThemeAdmin(admin.ModelAdmin):
         (_('Recent Actions'), {
             'classes': ('wide', ),
             'fields': ('recent_actions_visible', )
-        }),
-        (_('Action Buttons'), {
-            'classes': ('wide', ),
-            'fields': ('action_buttons_sticky', )
         }),
     )
 
