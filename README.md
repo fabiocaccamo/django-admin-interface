@@ -77,7 +77,7 @@ Run ``python manage.py loaddata admin_interface_theme_foundation.json``
 Run ``python manage.py loaddata admin_interface_theme_uswds.json``
 
 ### Add more themes
-You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add :
+You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add:
 
 1. Export your exact theme as fixture using the `dumpdata` admin command:
 ``python manage.py dumpdata admin_interface.Theme --indent 4 -o admin_interface_theme_{{name}}.json --pks=N``
@@ -87,6 +87,32 @@ You can add a theme you've created through the admin to this repository by [send
 3. Remove the `"pk"` from the fixture and make sure the `active` field is set to `true` *(in this way a theme is automatically activated when installed)*.
 
 4. Edit the section above to document your theme.
+
+### Add theme support to third-party libraries
+You can add **theme support to existing third-party libraries** using the following **css variables**:
+
+- `--admin-interface-title-color`
+- `--admin-interface-logo-color`
+- `--admin-interface-env-color`
+- `--admin-interface-header-background-color:`
+- `--admin-interface-header-text-color`
+- `--admin-interface-header-link-color`
+- `--admin-interface-header-link_hover-color`
+- `--admin-interface-module-background-color`
+- `--admin-interface-module-text-color`
+- `--admin-interface-module-link-color`
+- `--admin-interface-module-link-hover-color`
+- `--admin-interface-generic-link-color`
+- `--admin-interface-generic-link-hover-color`
+- `--admin-interface-save-button-background-color`
+- `--admin-interface-save-button-background-hover-color`
+- `--admin-interface-save-button-text-color`
+- `--admin-interface-delete-button-background-color`
+- `--admin-interface-delete-button-background-hover-color`
+- `--admin-interface-delete-button-text-color`
+- `--admin-interface-related-modal-background-color`
+- `--admin-interface-related-modal-background-opacity`
+
 
 ## Screenshots
 ###### Admin login
