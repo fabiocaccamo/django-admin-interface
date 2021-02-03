@@ -412,11 +412,13 @@ body.admin-interface .paginator a.showall:visited {
     max-width: 100%;
 }
 
-.admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content {
+.admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content,
+.admin-interface.sticky-pagination.change-list:not(.popup) #main > #nav-sidebar + .content {
     padding-bottom: 4rem;
 }
 
-.admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content form fieldset + .submit-row {
+.admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content form fieldset + .submit-row,
+.admin-interface.sticky-pagination.change-list:not(.popup) #main > #nav-sidebar + .content form .results + .paginator {
     width: 100%;
     max-width: calc(100% - 28px);
     bottom: 0;
@@ -463,7 +465,8 @@ body.admin-interface .paginator a.showall:visited {
         max-width: calc(100% - 360px);
     }
 
-    .admin-interface.sticky-submit.change-form:not(.popup) #main.shifted > #nav-sidebar + .content .submit-row {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main.shifted > #nav-sidebar + .content form fieldset + .submit-row,
+    .admin-interface.sticky-pagination.change-list:not(.popup) #main.shifted > #nav-sidebar + .content form .results + .paginator {
         max-width: calc(100% - 388px);
         right: 0;
         bottom: 0;
@@ -557,11 +560,13 @@ body.admin-interface .paginator a.showall:visited {
         margin-top: 5px;
     }
 
-    .admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content,
+    .admin-interface.sticky-pagination.change-form:not(.popup) #main > #nav-sidebar + .content {
         padding-bottom: 12rem;
     }
 
-    .admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content .submit-row {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main > #nav-sidebar + .content .submit-row,
+    .admin-interface.sticky-pagination.change-list:not(.popup) #main > #nav-sidebar + .content form .results + .paginator {
         max-width: calc(100% - 20px);
     }
 }

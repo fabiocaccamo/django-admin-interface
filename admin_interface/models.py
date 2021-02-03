@@ -302,7 +302,6 @@ class Theme(models.Model):
     form_submit_sticky = models.BooleanField(
         default=False,
         verbose_name=_('sticky submit'))
-    
     form_pagination_sticky = models.BooleanField(
         default=False,
         verbose_name=_('sticky pagination'))
