@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.15.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.15.0) - 2021-02-03
+-  Added sticky form controls and pagination options. #110
+-  Added support to 4-digit language code in language chooser. #111
+-  Added theme css variables for third-party libraries.
+-  Fixed app module section link hover color.
+
 ## [0.14.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.14.2) - 2021-01-04
 -  Fixed tabular inline scroll bar. #101
 -  Fixed module header selected link color. #102
