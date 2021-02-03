@@ -299,6 +299,13 @@ class Theme(models.Model):
         default=True,
         verbose_name=_('visible'))
 
+    form_submit_sticky = models.BooleanField(
+        default=False,
+        verbose_name=_('sticky submit'))
+    form_pagination_sticky = models.BooleanField(
+        default=False,
+        verbose_name=_('sticky pagination'))
+
     def set_active(self):
         self.active = True
         self.save()
