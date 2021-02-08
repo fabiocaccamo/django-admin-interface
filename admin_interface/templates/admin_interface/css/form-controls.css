@@ -41,7 +41,7 @@
 }
 
 @media (min-width:1280px) {
-    .admin-interface.sticky-pagination.change-list:not(.popup) .shifted .paginator {
+    .admin-interface.sticky-pagination.change-list:not(.popup) #main.shifted > #nav-sidebar + .content .paginator {
         width: calc(100% - 359px);
     }
 }
@@ -89,7 +89,7 @@
 }
 
 @media (min-width:1280px) {
-    .admin-interface.sticky-submit.change-form:not(.popup) .shifted .submit-row:last-of-type {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main.shifted > #nav-sidebar + .content .submit-row:last-of-type {
         width: calc(100% - 359px);
     }
 }
