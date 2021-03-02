@@ -64,7 +64,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    z-index: 5;
+    z-index: 10;
 }
 @media (min-width:768px) {
     .admin-interface .language-chooser {
@@ -332,11 +332,13 @@
         position: sticky;
         top: 40px;
         float: right;
+        z-index: 30;
     }
     /* feature not available for django < 3.1.2 */
     .admin-interface .module.filtered #toolbar + #changelist-filter {
         position: absolute;
         top: 0px;
+        z-index: 30;
     }
 }
 {% endif %}

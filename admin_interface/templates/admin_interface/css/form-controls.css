@@ -9,7 +9,7 @@
     position: fixed;
     bottom: 0;
     right: 0;
-    z-index: 1100;
+    z-index: 40;
     box-sizing: border-box;
     padding-left: 15px;
     padding-right: 15px;
@@ -58,7 +58,7 @@
         position: fixed;
         bottom: 0;
         right: 0;
-        z-index: 1100;
+        z-index: 40;
         box-sizing: border-box;
         padding-left: 15px;
         padding-right: 15px;
