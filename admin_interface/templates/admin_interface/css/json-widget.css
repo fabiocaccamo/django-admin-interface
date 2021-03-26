@@ -23,7 +23,7 @@ https://github.com/jmrivas86/django-json-widget
 .admin-interface div.jsoneditor-contextmenu ul li button.jsoneditor-selected,
 .admin-interface div.jsoneditor-contextmenu ul li button.jsoneditor-selected:focus,
 .admin-interface div.jsoneditor-contextmenu ul li button.jsoneditor-selected:hover {
-    background-color: #FFFFCC;
+    background-color: {{ theme.css_module_background_selected_color }};
     color: #000000;
     font-weight: bold;
 }

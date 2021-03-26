@@ -126,7 +126,7 @@
 
 .admin-interface #nav-sidebar .current-app .section:link,
 .admin-interface #nav-sidebar .current-app .section:visited {
-    color: {{ theme.css_module_link_color }};
+    color: {{ theme.css_module_link_selected_color }};
     font-weight: normal;
 }
 
@@ -136,11 +136,11 @@
 }
 
 .admin-interface #nav-sidebar .current-model {
-    background: #FFFFCC;
+    background: {{ theme.css_module_background_selected_color }};
 }
 
 .admin-interface #changelist table tbody tr.selected {
-    background-color: #FFFFCC;
+    background-color: {{ theme.css_module_background_selected_color }};
 }
 
 .admin-interface .module h2,

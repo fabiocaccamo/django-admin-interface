@@ -71,8 +71,10 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': (
                 'css_module_background_color',
+                'css_module_background_selected_color',
                 'css_module_text_color',
                 'css_module_link_color',
+                'css_module_link_selected_color',
                 'css_module_link_hover_color',
                 'css_module_rounded_corners',
             )
