@@ -145,6 +145,9 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             // django-dynamic-raw-id support - #61
             // https://github.com/lincolnloop/django-dynamic-raw-id
             presentRelatedObjectModalOnClickOn('a.dynamic_raw_id-related-lookup', true);
+
+            // show_change_link=True support
+            presentRelatedObjectModalOnClickOn('a.inlinechangelink');
         });
 
     })(django.jQuery);
