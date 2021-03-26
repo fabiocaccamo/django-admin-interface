@@ -164,6 +164,12 @@ body.admin-interface .paginator a.showall:visited {
     margin-left: 5px;
 }
 
+.admin-interface .inline-group .inlinechangelink {
+    background-size: contain;
+    padding-left: 15px;
+    margin-left: 10px;
+}
+
 .admin-interface .file-thumbnail > a {
     display: inline-block;
 }
