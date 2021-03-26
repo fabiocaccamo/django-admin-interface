@@ -130,6 +130,10 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 el.click(data, presentRelatedObjectModal);
             }
 
+            // assign functions to global variables
+            window.presentRelatedObjectModal = presentRelatedObjectModal;
+            window.presentRelatedObjectModalOnClickOn = presentRelatedObjectModalOnClickOn;
+
             // django 1.7 compatibility
             // $('a.add-another').removeAttr('onclick').click({ lookup:false }, presentRelatedObjectModal);
             presentRelatedObjectModalOnClickOn('a.add-another');
