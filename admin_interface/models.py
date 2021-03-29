@@ -178,6 +178,12 @@ class Theme(models.Model):
         help_text='#44B78B',
         max_length=10,
         verbose_name=_('background color'))
+    css_module_background_selected_color = ColorField(
+        blank=True,
+        default='#FFFFCC',
+        help_text='#FFFFCC',
+        max_length=10,
+        verbose_name=_('background selected color'))
     css_module_text_color = ColorField(
         blank=True,
         default='#FFFFFF',
@@ -190,6 +196,12 @@ class Theme(models.Model):
         help_text='#FFFFFF',
         max_length=10,
         verbose_name=_('link color'))
+    css_module_link_selected_color = ColorField(
+        blank=True,
+        default='#FFFFFF',
+        help_text='#FFFFFF',
+        max_length=10,
+        verbose_name=_('link selected color'))
     css_module_link_hover_color = ColorField(
         blank=True,
         default='#C9F0DD',
