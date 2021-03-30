@@ -171,8 +171,8 @@ As everyone knows open-source projects takes up a lot of time that is unpaid. :m
 
 If you are using this package in commercial project(s), please consider the idea to become a sponsor or donating once:
 
-- ![GitHub Sponsor](https://github.com/sponsors/fabiocaccamo)
-- ![PayPal](https://www.paypal.me/fabiocaccamo)
+- [GitHub Sponsor](https://github.com/sponsors/fabiocaccamo)
+- [PayPal](https://www.paypal.me/fabiocaccamo)
 - BTC: bc1q2t0pv8z3udpyuvfnx5kskhqdad4dcvtfuzmvjw
 - ETH: 0x8B55Fb7798b5A9F797A4455C00821B6e53daca74
 
