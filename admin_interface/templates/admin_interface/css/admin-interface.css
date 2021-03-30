@@ -7,8 +7,10 @@
     --admin-interface-header-link-color: {{ theme.css_header_link_color }};
     --admin-interface-header-link_hover-color: {{ theme.css_header_link_hover_color }};
     --admin-interface-module-background-color: {{ theme.css_module_background_color }};
+    --admin-interface-module-background-selected-color: {{ theme.css_module_background_selected_color }};
     --admin-interface-module-text-color: {{ theme.css_module_text_color }};
     --admin-interface-module-link-color: {{ theme.css_module_link_color }};
+    --admin-interface-module-link-selected-color: {{ theme.css_module_link_selected_color }};
     --admin-interface-module-link-hover-color: {{ theme.css_module_link_hover_color }};
     --admin-interface-generic-link-color: {{ theme.css_generic_link_color }};
     --admin-interface-generic-link-hover-color: {{ theme.css_generic_link_hover_color }};

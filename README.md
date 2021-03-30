@@ -101,8 +101,10 @@ You can add **theme support to existing third-party libraries** using the follow
 - `--admin-interface-header-link-color`
 - `--admin-interface-header-link_hover-color`
 - `--admin-interface-module-background-color`
+- `--admin-interface-module-background-selected-color`
 - `--admin-interface-module-text-color`
 - `--admin-interface-module-link-color`
+- `--admin-interface-module-link-selected-color`
 - `--admin-interface-module-link-hover-color`
 - `--admin-interface-generic-link-color`
 - `--admin-interface-generic-link-hover-color`
