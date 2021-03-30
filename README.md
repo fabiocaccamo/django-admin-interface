@@ -163,6 +163,19 @@ Released under [MIT License](LICENSE.txt).
 
 ---
 
+## Supporting
+
+I would like to spend more time on this project, especially to improve it and adding new features.
+
+As everyone knows open-source projects takes up a lot of time that is unpaid. :money_with_wings:
+
+If you are using this package in commercial project(s), please consider the idea to become a sponsor or donating once:
+
+- ![GitHub Sponsor](https://github.com/sponsors/fabiocaccamo)
+- ![PayPal](https://www.paypal.me/fabiocaccamo)
+- BTC: bc1q2t0pv8z3udpyuvfnx5kskhqdad4dcvtfuzmvjw
+- ETH: 0x8B55Fb7798b5A9F797A4455C00821B6e53daca74
+
 ## See also
 
 - [`django-colorfield`](https://github.com/fabiocaccamo/django-colorfield) - simple color field for models with a nice color-picker in the admin. 🎨
