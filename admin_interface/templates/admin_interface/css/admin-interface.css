@@ -275,7 +275,7 @@
 .admin-interface input[type=submit].default:active,
 .admin-interface input[type=submit].default:focus,
 .admin-interface input[type=submit].default:hover,
-.delete-confirmation form .cancel-link:hover {
+.admin-interface.delete-confirmation form .cancel-link:hover {
     background:{{ theme.css_save_button_background_hover_color }};
     color:{{ theme.css_save_button_text_color }};
     outline: none;
@@ -283,13 +283,13 @@
 
 .admin-interface .submit-row a.deletelink:link,
 .admin-interface .submit-row a.deletelink:visited,
-.delete-confirmation form input[type="submit"] {
+.admin-interface.delete-confirmation form input[type="submit"] {
     background:{{ theme.css_delete_button_background_color }};
     color:{{ theme.css_delete_button_text_color }};
 }
 
 .admin-interface .submit-row a.deletelink:hover,
-.delete-confirmation form input[type="submit"]:hover {
+.admin-interface.delete-confirmation form input[type="submit"]:hover {
     background:{{ theme.css_delete_button_background_hover_color }};
     color:{{ theme.css_delete_button_text_color }};
 }
