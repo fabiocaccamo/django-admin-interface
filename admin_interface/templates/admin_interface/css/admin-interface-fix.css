@@ -123,6 +123,10 @@
     padding: 0 1px;
 }
 
+.admin-interface #changelist .actions .button {
+    margin-left: 8px;
+}
+
 .admin-interface #changelist .paginator {
     margin-top:-1px; /* merge 2 borders into 1 */
     line-height:42px;
