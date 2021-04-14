@@ -72,8 +72,9 @@
 /* end login fix*/
 
 .admin-interface #header {
-    height:auto;
-    min-height:40px;
+    height: auto;
+    min-height: 55px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: start;
