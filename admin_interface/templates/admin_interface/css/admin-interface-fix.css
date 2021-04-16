@@ -123,8 +123,11 @@
     padding: 0 1px;
 }
 
-.admin-interface #changelist .actions .button {
-    margin-left: 8px;
+@media (min-width: 1024px) {
+    .admin-interface #changelist .actions .button,
+    .admin-interface #changelist .actions .action-counter {
+        margin-left: 8px;
+    }
 }
 
 .admin-interface #changelist .paginator {
@@ -484,6 +487,18 @@ body.admin-interface .paginator a.showall:visited {
 /* fix searchbar overriden padding */
 .admin-interface #changelist #changelist-search #searchbar {
     padding: 2px 5px 3px 5px;
+}
+
+@media (min-width: 1024px) {
+    .admin-interface #changelist #changelist-search #searchbar,
+    .admin-interface #changelist #changelist-search input[type="submit"],
+    .admin-interface #changelist #changelist-search .quiet {
+        margin-left: 8px;
+    }
+    .admin-interface #changelist #changelist-search label img {
+        vertical-align: text-top;
+        margin-right: 0px;
+    }
 }
 
 @media (max-width: 1024px) {
