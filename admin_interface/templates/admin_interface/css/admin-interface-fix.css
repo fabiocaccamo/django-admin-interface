@@ -472,6 +472,12 @@ body.admin-interface .paginator a.showall:visited {
     margin-left: 12px !important;
 }
 
+@media (min-width: 768px) {
+    .admin-interface.change-form select {
+        min-width: 200px;
+    }
+}
+
 /* fixed time widget header border radius */
 .admin-interface .clockbox.module h2 {
     border-bottom-left-radius: 0;
