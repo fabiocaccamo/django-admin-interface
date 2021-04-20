@@ -466,6 +466,8 @@ body.admin-interface .paginator a.showall:visited {
     white-space: nowrap;
 }
 /* end fix */
+
+.admin-interface .related-widget-wrapper select + .related-widget-wrapper-link,
 .admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
     margin-left: 12px !important;
 }
