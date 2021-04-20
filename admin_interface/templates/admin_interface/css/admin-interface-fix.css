@@ -310,16 +310,12 @@ body.admin-interface .paginator a.showall:visited {
 }
 /* end fix */
 
-/* begin fix issue #10 - Related widget broken in long tabular inline */
-.admin-interface .inline-group .tabular .related-widget-wrapper {
-    white-space:nowrap;
-}
-/* end fix */
-
 /* begin fix tabular inlines horizontal scroll */
+.admin-interface .inline-related.tabular {
+    overflow-x: scroll;
+}
 .admin-interface .inline-related.tabular fieldset.module {
     display: contents;
-    overflow-x: scroll;
     width: 100%;
     white-space: nowrap;
     position: relative;
