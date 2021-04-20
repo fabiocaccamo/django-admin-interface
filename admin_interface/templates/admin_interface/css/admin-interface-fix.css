@@ -465,17 +465,13 @@ body.admin-interface .paginator a.showall:visited {
 }
 
 /* fixed related widget and select2 */
-.admin-interface .aligned .form-row .related-widget-wrapper {
+/* begin fix issue #10 - Related widget broken in long tabular inline */
+.admin-interface .related-widget-wrapper {
     white-space: nowrap;
 }
-
-.admin-interface .aligned .form-row .related-widget-wrapper .select2-container ~ .related-widget-wrapper-link {
-    margin-left: 0;
-    padding: 4px 8px 6px 8px;
-}
-
-.admin-interface .aligned .form-row .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
-    margin-left: 5px !important;
+/* end fix */
+.admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
+    margin-left: 12px !important;
 }
 
 /* fixed time widget header border radius */
