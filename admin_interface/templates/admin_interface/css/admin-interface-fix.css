@@ -474,8 +474,18 @@ body.admin-interface .paginator a.showall:visited {
 
 @media (min-width: 768px) {
     .admin-interface.change-form select {
+        min-width: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .admin-interface.change-form select {
         min-width: 200px;
     }
+}
+
+.admin-interface.change-form .inline-related.tabular select {
+    min-width: auto !important;
 }
 
 /* fixed time widget header border radius */
