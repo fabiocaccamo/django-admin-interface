@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.16.2) - 2021-04-23
+-  Added `python 3.9` and `django 3.2` to CI.
+-  Added `FileExtensionValidator` to `logo` and `favicon` fields. #112
+-  Fixed `models.W042` warning on `django 3.2`.
+-  Fixed header `min-height`.
+-  Fixed selects `min-width`.
+-  Fixed changelist search, actions and submit button horizontal margins.
+-  Fixed related widget wrapper margin/padding with normal select and in inlines.
+-  Fixed tabular inlines horizontal scroll.
+
 ## [0.16.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.16.1) - 2021-04-07
 -  Fixed style of "Delete" and "Save" buttons in the delete confirmation page. #123
 -  Overridden dark-mode css variables introduced in `django 3.2`. #124
