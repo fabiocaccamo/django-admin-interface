@@ -7,6 +7,11 @@ from admin_interface.cache import del_cached_active_theme
 from colorfield.fields import ColorField
 
 import django
+if django.VERSION >= (1, 11):
+    from django.core.validators import FileExtensionValidator
+else:
+    FileExtensionValidator = lambda allowed_extensions: None
+
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
 if django.VERSION < (2, 0):
@@ -99,6 +104,8 @@ class Theme(models.Model):
     logo = models.FileField(
         upload_to='admin-interface/logo/',
         blank=True,
+        validators=[FileExtensionValidator(
+            allowed_extensions=['gif', 'jpg', 'jpeg', 'png', 'svg'])],
         help_text=_('Leave blank to use the default Django logo'),
         verbose_name=_('logo'))
     logo_color = ColorField(
@@ -114,6 +121,8 @@ class Theme(models.Model):
     favicon = models.FileField(
         upload_to='admin-interface/favicon/',
         blank=True,
+        validators=[FileExtensionValidator(
+            allowed_extensions=['gif', 'ico', 'jpg', 'jpeg', 'png', 'svg'])],
         help_text=_('(.ico|.png|.gif - 16x16|32x32 px)'),
         verbose_name=_('favicon'))
 
