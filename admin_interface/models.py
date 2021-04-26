@@ -3,23 +3,12 @@
 from __future__ import unicode_literals
 
 from admin_interface.cache import del_cached_active_theme
+from admin_interface.compat import FileExtensionValidator, force_str, gettext_lazy as _
 
 from colorfield.fields import ColorField
 
-import django
-if django.VERSION >= (1, 11):
-    from django.core.validators import FileExtensionValidator
-else:
-    FileExtensionValidator = lambda allowed_extensions: None
-
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
-if django.VERSION < (2, 0):
-    from django.utils.encoding import force_text as force_str
-    from django.utils.translation import ugettext_lazy as _
-else:
-    from django.utils.encoding import force_str
-    from django.utils.translation import gettext_lazy as _
 
 from six import python_2_unicode_compatible
 
