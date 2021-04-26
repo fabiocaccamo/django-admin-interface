@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.16.3](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.16.3) - 2021-04-26
+-  Added `compat` module.
+-  Added missing `0021_file_extension_validator` migration. #126
+-  Formatted migrations.
+
 ## [0.16.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.16.2) - 2021-04-23
 -  Added `python 3.9` and `django 3.2` to CI.
 -  Added `FileExtensionValidator` to `logo` and `favicon` fields. #112
