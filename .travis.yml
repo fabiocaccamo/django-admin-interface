@@ -152,6 +152,8 @@ jobs:
       env: TOX_ENV=py39-djmaster-sqlite
     - python: "3.9"
       env: TOX_ENV=py39-djmaster-postgres
+    - python: "3.9"
+      env: TOX_ENV=checkmigrations
   allow_failures:
     - env: TOX_ENV=py36-djmaster-sqlite
     - env: TOX_ENV=py36-djmaster-postgres
