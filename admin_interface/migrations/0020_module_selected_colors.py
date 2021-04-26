@@ -1,10 +1,18 @@
-import colorfield.fields
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
+
 from django.db import migrations
 from django.db.models import F
 
+import colorfield.fields
+
+
 def default_link_selected(apps, schema_editor):
     Theme = apps.get_model("admin_interface", "Theme")
-    Theme.objects.update(css_module_link_selected_color=F('css_module_link_color'))
+    Theme.objects.update(
+        css_module_link_selected_color=F('css_module_link_color'))
+
 
 class Migration(migrations.Migration):
 
@@ -16,12 +24,22 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='theme',
             name='css_module_background_selected_color',
-            field=colorfield.fields.ColorField(blank=True, default='#FFFFCC', help_text='#FFFFCC', max_length=10, verbose_name='background selected color'),
+            field=colorfield.fields.ColorField(
+                blank=True,
+                default='#FFFFCC',
+                help_text='#FFFFCC',
+                max_length=10,
+                verbose_name='background selected color'),
         ),
         migrations.AddField(
             model_name='theme',
             name='css_module_link_selected_color',
-            field=colorfield.fields.ColorField(blank=True, default='#FFFFFF', help_text='#FFFFFF', max_length=10, verbose_name='link selected color'),
+            field=colorfield.fields.ColorField(
+                blank=True,
+                default='#FFFFFF',
+                help_text='#FFFFFF',
+                max_length=10,
+                verbose_name='link selected color'),
         ),
         migrations.RunPython(default_link_selected),
     ]

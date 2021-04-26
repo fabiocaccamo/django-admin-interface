@@ -15,11 +15,21 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='theme',
             name='env',
-            field=models.CharField(choices=[('development', 'Development'), ('testing', 'Testing'), ('staging', 'Staging'), ('production', 'Production')], default='development', max_length=50, verbose_name='enviroment'),
+            field=models.CharField(
+                choices=[
+                    ('development', 'Development'),
+                    ('testing', 'Testing'),
+                    ('staging', 'Staging'),
+                    ('production', 'Production')],
+                default='development',
+                max_length=50,
+                verbose_name='enviroment'),
         ),
         migrations.AddField(
             model_name='theme',
             name='env_visible',
-            field=models.BooleanField(default=True, verbose_name='visible'),
+            field=models.BooleanField(
+                default=True,
+                verbose_name='visible'),
         ),
     ]

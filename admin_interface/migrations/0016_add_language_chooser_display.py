@@ -15,6 +15,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='theme',
             name='language_chooser_display',
-            field=models.CharField(choices=[('code', 'code'), ('name', 'name')], default='code', max_length=10, verbose_name='display'),
+            field=models.CharField(
+                choices=[
+                    ('code', 'code'),
+                    ('name', 'name')
+                ],
+                default='code',
+                max_length=10,
+                verbose_name='display'),
         ),
     ]
