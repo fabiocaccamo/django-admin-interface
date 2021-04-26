@@ -42,7 +42,7 @@
 
 @media (min-width:1280px) {
     .admin-interface.sticky-pagination.change-list:not(.popup) #main.shifted > #nav-sidebar + .content .paginator {
-        width: calc(100% - 359px);
+        width: calc(100% - 360px);
     }
 }
 
@@ -66,7 +66,7 @@
         text-overflow: ellipsis;
         border-radius: 0;
         border-top: 1px solid #EEEEEE;
-        border-bottom: none;
+        border-bottom: none !important;
         margin: 0;
     }
 
