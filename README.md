@@ -51,7 +51,9 @@ INSTALLED_APPS = (
     #...
 )
 
-X_FRAME_OPTIONS='SAMEORIGIN' # only if django version >= 3.0
+# only if django version >= 3.0
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+SILENCED_SYSTEM_CHECKS = ['security.W019']
 ```
 - Run ``python manage.py migrate``
 - Run ``python manage.py collectstatic``
