@@ -23,6 +23,7 @@
 }
 
 .admin-interface.login #header {
+    min-height: auto;
     padding: 10px 30px;
     line-height: 30px;
     align-items: flex-start;
@@ -40,7 +41,6 @@
 
 .admin-interface.login #header #branding h1 img.logo+span {
     display: block;
-    margin-bottom: 5px;
 }
 
 .admin-interface.login #login-form {
@@ -77,12 +77,12 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
 }
 
 @media (max-width:1024px) {
     .admin-interface #header {
-        align-items: flex-start;
+        align-items: center;
     }
 }
 
@@ -103,11 +103,26 @@
 
 .admin-interface #branding h1 span {
     display: inline-block;
-    margin-bottom: 5px;
 }
 
 .admin-interface #branding h1 img.logo+span {
     white-space:nowrap;
+}
+
+.admin-interface #user-tools {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.admin-interface #user-tools br {
+    display: none;
+}
+@media (max-width: 768px) {
+    .admin-interface #user-tools br {
+        display: block;
+    }
 }
 
 .admin-interface fieldset.collapse {
