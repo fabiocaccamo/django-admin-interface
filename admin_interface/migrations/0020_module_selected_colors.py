@@ -10,7 +10,8 @@ import colorfield.fields
 
 def default_link_selected(apps, schema_editor):
     Theme = apps.get_model("admin_interface", "Theme")
-    Theme.objects.update(
+    db_alias = schema_editor.connection.alias
+    Theme.objects.using(db_alias).update(
         css_module_link_selected_color=F('css_module_link_color'))
 
 
