@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.16.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.16.4) - 2021-09-04
 -  Fixed `0020_module_selected_colors` migration for multiple dbs. #132
+-  Fixed sticky pagination `width` and `border-bottom`.
+-  Fixed inlines vertical overlow.
+-  Improved header elements vertical alignment.
 
 ## [0.16.3](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.16.3) - 2021-04-26
 -  Added `compat` module.
