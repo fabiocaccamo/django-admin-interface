@@ -38,6 +38,8 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': (
                 'logo',
+                'logo_max_width',
+                'logo_max_height',
                 'logo_color',
                 'logo_visible',
             )

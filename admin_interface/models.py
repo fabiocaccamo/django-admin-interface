@@ -103,6 +103,14 @@ class Theme(models.Model):
         help_text='#FFFFFF',
         max_length=10,
         verbose_name=_('color'))
+    logo_max_width = models.PositiveSmallIntegerField(
+        blank=True,
+        default=400,
+        verbose_name=_('max width'))
+    logo_max_height = models.PositiveSmallIntegerField(
+        blank=True,
+        default=100,
+        verbose_name=_('max height'))
     logo_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))
