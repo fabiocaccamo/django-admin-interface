@@ -12,4 +12,6 @@ else:
 if django.VERSION >= (1, 11):
     from django.core.validators import FileExtensionValidator
 else:
-    FileExtensionValidator = lambda allowed_extensions: None
+    def FileExtensionValidator(*args, **kwargs):
+        def noop(*args, **kwargs):
+            pass
