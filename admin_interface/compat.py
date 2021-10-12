@@ -15,3 +15,4 @@ else:
     def FileExtensionValidator(*args, **kwargs):
         def noop(*args, **kwargs):
             pass
+        return noop
