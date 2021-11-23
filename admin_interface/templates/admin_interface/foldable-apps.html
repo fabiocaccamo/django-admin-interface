@@ -1,0 +1,6 @@
+{% load static %}
+
+{% if theme.foldable_apps %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin_interface/foldable-apps/foldable-apps.css' %}?v={{ version }}">
+<script type="text/javascript" src="{% static 'admin_interface/foldable-apps/foldable-apps.js' %}?v={{ version }}"></script>
+{% endif %}

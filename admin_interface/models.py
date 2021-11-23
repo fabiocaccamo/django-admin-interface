@@ -313,6 +313,10 @@ class Theme(models.Model):
         default=True,
         verbose_name=_('sticky position'))
 
+    foldable_apps = models.BooleanField(
+        default=True,
+        verbose_name=_('foldable apps'))
+
     recent_actions_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))

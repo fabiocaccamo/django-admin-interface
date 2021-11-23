@@ -51,10 +51,11 @@ https://github.com/fabiocaccamo/django-admin-interface
 <link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}?v={{ version }}">
 <link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive_rtl.css' %}?v={{ version }}" />
 {% include "admin_interface/favicon.html" %}
+{% include "admin_interface/foldable-apps.html" %}
 {% include "admin_interface/related-modal.html" %}
 {% endblock %}
 
-{% block bodyclass %}admin-interface flat-theme {% get_admin_interface_theme as theme %}{% if theme.name %}{{ theme.name|slugify }}-theme{% endif %}{% if theme.form_submit_sticky %} sticky-submit {% endif %}{% if theme.form_pagination_sticky %} sticky-pagination {% endif %}{% endblock %}
+{% block bodyclass %}admin-interface flat-theme {% get_admin_interface_theme as theme %}{% if theme.name %}{{ theme.name|slugify }}-theme{% endif %}{% if theme.foldable_apps %} foldable-apps {% endif %}{% if theme.form_submit_sticky %} sticky-submit {% endif %}{% if theme.form_pagination_sticky %} sticky-pagination {% endif %}{% endblock %}
 
 {% block branding %}
 {% get_admin_interface_theme as theme %}

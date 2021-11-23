@@ -1,0 +1,70 @@
+.admin-interface.foldable-apps [class^="app-"].module {
+    visibility: hidden;
+}
+
+.admin-interface.foldable-apps [class^="app-"].module.foldable-apps-ready {
+    visibility: visible;
+}
+
+.admin-interface.foldable-apps [class^="app-"].module > table > caption {
+    position: relative;
+    z-index: 0;
+    /* pointer-events: none; */
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.admin-interface.foldable-apps [class^="app-"].module > table > caption > a {
+    display: inline-block;
+    /* pointer-events: all !important; */
+    margin-right: 30px;
+}
+
+.admin-interface.foldable-apps [class^="app-"].module > table > caption::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: auto;
+    height: 100%;
+    content: "−";
+    font-size: 16px;
+    font-weight: lighter;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    pointer-events: all !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .admin-interface.foldable-apps [class^="app-"].module > table > caption::after {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.admin-interface.foldable-apps [class^="app-"].module > table {
+    display: table;
+    width: 100%;
+}
+
+.admin-interface.foldable-apps [class^="app-"].module.collapsed {
+    margin-bottom: 10px;
+}
+
+.admin-interface.foldable-apps [class^="app-"].module.collapsed > table > caption::after {
+    content: "+";
+}
+
+.admin-interface.foldable-apps [class^="app-"].module.collapsed > table > tbody {
+    display: none;
+}

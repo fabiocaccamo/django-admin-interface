@@ -100,6 +100,12 @@ class ThemeAdmin(admin.ModelAdmin):
                 'css_delete_button_text_color',
             )
         }),
+        (_('Navigation Bar'), {
+            'classes': ('wide', ),
+            'fields': (
+                'foldable_apps',
+            )
+        }),
         (_('Related Modal'), {
             'classes': ('wide', ),
             'fields': (
