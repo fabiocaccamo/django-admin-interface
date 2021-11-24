@@ -26,6 +26,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Environment name/marker
 - Language chooser
 - List filter dropdown
+- `NEW` **Foldable apps** *(accordions in the navigation bar)*
 - `NEW` **List filter sticky**
 - `NEW` **Form controls sticky** *(pagination and save/delete buttons)*
 - Compatibility / Style optimizations for:
