@@ -269,10 +269,6 @@ class Theme(models.Model):
         max_length=10,
         verbose_name=_('text color'))
 
-    css = models.TextField(
-        blank=True,
-        verbose_name=_('text color'))
-
     related_modal_active = models.BooleanField(
         default=True,
         verbose_name=_('active'))

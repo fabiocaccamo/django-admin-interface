@@ -27,7 +27,6 @@
             "css_delete_button_background_color": "#BA2121",
             "css_delete_button_background_hover_color": "#A41515",
             "css_delete_button_text_color": "#FFFFFF",
-            "css": "",
             "related_modal_active": true,
             "related_modal_background_color": "#000000",
             "related_modal_background_opacity": 0.2,
