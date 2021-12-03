@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Amir Ajorloo <amirajorloo@gmail.com>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-admin-interface\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-12 19:23+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
+"Language-Team: Farsi <LL@li.org>\n"
+"Language: Farsi"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: admin_interface/admin.py:21
+msgid "Environment"
+msgstr "محیط"
+
+#: admin_interface/admin.py:30
+msgid "Language chooser"
+msgstr "انتخاب زبان"
+
+#: admin_interface/admin.py:37
+msgid "Logo"
+msgstr "لوگو"
+
+#: admin_interface/admin.py:45
+msgid "Favicon"
+msgstr "آیکون تب"
+
+#: admin_interface/admin.py:49
+msgid "Title"
+msgstr "عنوان"
+
+#: admin_interface/admin.py:57
+msgid "Header"
+msgstr "هدر"
+
+#: admin_interface/admin.py:66
+msgid "Breadcrumbs / Module headers"
+msgstr "مسیر صفحه"
+
+#: admin_interface/admin.py:76
+msgid "Generic Links"
+msgstr "لینک‌های عمومی"
+
+#: admin_interface/admin.py:83
+msgid "Save Buttons"
+msgstr "دکمه‌های ذخیره"
+
+#: admin_interface/admin.py:91
+msgid "Delete Buttons"
+msgstr "دکمه‌های حذف"
+
+#: admin_interface/admin.py:99
+msgid "Related Modal"
+msgstr "مدل‌های مرتبط"
+
+#: admin_interface/admin.py:109
+msgid "List Filter"
+msgstr "فیلتر‌های لیست"
+
+#: admin_interface/admin.py:113
+msgid "Recent Actions"
+msgstr "فعالیت‌های اخیر"
+
+#: admin_interface/apps.py:11
+msgid "Admin Interface"
+msgstr "ظاهر ادمین"
+
+#: admin_interface/models.py:72 admin_interface/models.py:116
+#: admin_interface/models.py:135
+msgid "name"
+msgstr "نام"
+
+#: admin_interface/models.py:75 admin_interface/models.py:132
+#: admin_interface/models.py:253
+msgid "active"
+msgstr "فعال"
+
+#: admin_interface/models.py:79
+#: admin_interface/templates/admin/base_site.html:6
+#: admin_interface/templates/admin/base_site.html:60
+msgid "Django administration"
+msgstr "مدیریت جنگو"
+
+#: admin_interface/models.py:81
+msgid "title"
+msgstr "عنوان"
+
+#: admin_interface/models.py:87 admin_interface/models.py:102
+#: admin_interface/models.py:122
+msgid "color"
+msgstr "رنگ"
+
+#: admin_interface/models.py:90 admin_interface/models.py:105
+#: admin_interface/models.py:289
+msgid "visible"
+msgstr "نمایان"
+
+#: admin_interface/models.py:95
+msgid "Leave blank to use the default Django logo"
+msgstr "برای نمایش لوگوی پیش فرض، خالی بگذارید."
+
+#: admin_interface/models.py:96
+msgid "logo"
+msgstr "لوگو"
+
+#: admin_interface/models.py:110
+msgid "(.ico|.png|.gif - 16x16|32x32 px)"
+msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
+
+#: admin_interface/models.py:111
+msgid "favicon"
+msgstr "آیکون تب"
+
+#: admin_interface/models.py:120
+msgid ""
+"(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
+"#3498DB)"
+msgstr ""
+"(قرمز: #E74C3C, نارنجی: #E67E22, زرد: #F1C40F, سبز: #2ECC71, آبی: "
+"#3498DB)"
+
+#: admin_interface/models.py:125
+msgid "visible in header (marker and name)"
+msgstr "نمایان در هدر"
+
+#: admin_interface/models.py:128
+msgid "visible in favicon (marker)"
+msgstr "نمایان در آیکون تب"
+
+#: admin_interface/models.py:134
+msgid "code"
+msgstr "کد"
+
+#: admin_interface/models.py:141
+msgid "display"
+msgstr "نمایش"
+
+#: admin_interface/models.py:148 admin_interface/models.py:173
+#: admin_interface/models.py:214 admin_interface/models.py:233
+#: admin_interface/models.py:259
+msgid "background color"
+msgstr "رنگ پس‌زمینه"
+
+#: admin_interface/models.py:154 admin_interface/models.py:179
+#: admin_interface/models.py:226 admin_interface/models.py:245
+#: admin_interface/models.py:249
+msgid "text color"
+msgstr "رنگ متن"
+
+#: admin_interface/models.py:160 admin_interface/models.py:185
+#: admin_interface/models.py:201
+msgid "link color"
+msgstr "رنگ لینک"
+
+#: admin_interface/models.py:166 admin_interface/models.py:191
+#: admin_interface/models.py:207
+msgid "link hover color"
+msgstr "رنگ لینک در حالت هاور"
+
+#: admin_interface/models.py:194 admin_interface/models.py:279
+msgid "rounded corners"
+msgstr "گوشه‌های خمیده"
+
+#: admin_interface/models.py:220 admin_interface/models.py:239
+msgid "background hover color"
+msgstr "رنگ پس‌زمینه در حالت هاور"
+
+#: admin_interface/models.py:276
+msgid "background opacity"
+msgstr "شفافیت بکگراند"
+
+#: admin_interface/models.py:282
+msgid "close button visible"
+msgstr "دکمه بستن نمایان باشد"
+
+#: admin_interface/models.py:286
+msgid "use dropdown"
+msgstr "استفاده از دراپ داون"
+
+#: admin_interface/models.py:298
+msgid "Theme"
+msgstr "تم"
+
+#: admin_interface/models.py:299
+msgid "Themes"
+msgstr "تم‌ها"
+
+#: admin_interface/templates/admin/filter.html:13
+#: admin_interface/templates/admin_interface/dropdown_filter.html:4
+#, python-format
+msgid " By %(filter_title)s "
+msgstr " توسط %(filter_title)s "
+
+#: admin_interface/templates/admin/popup_response.html:3
+msgid "Popup closing..."
+msgstr "پاپ آپ در حال بسته شدن..."

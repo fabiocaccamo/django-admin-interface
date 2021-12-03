@@ -9,6 +9,7 @@
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
 {% get_admin_interface_version as version %}
+{% get_current_language as current_lang %}
 <style type="text/css">
 /*
 django-admin-interface {{ version }}
@@ -16,6 +17,7 @@ https://github.com/fabiocaccamo/django-admin-interface
 */
 {% include "admin_interface/css/admin-interface.css" %}
 {% include "admin_interface/css/admin-interface-fix.css" %}
+{% include "admin_interface/css/form-controls.css" %}
 {% include "admin_interface/css/list-filter-dropdown.css" %}
 {% include "admin_interface/css/recent-actions.css" %}
 {% include "admin_interface/css/related-modal.css" %}
@@ -25,12 +27,14 @@ https://github.com/fabiocaccamo/django-admin-interface
 {% include "admin_interface/css/tabbed-admin.css" %}
 {% include "admin_interface/css/ckeditor.css" %}
 {% include "admin_interface/css/tinymce.css" %}
+{% include "admin_interface/css/json-widget.css" %}
+{% include "admin_interface/css/rtl.css" %}
+</style>
 
-{% if theme.css %}
-    {{ theme.css|safe }}
+{% if current_lang == 'fa' %}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.2/dist/font-face.css" />
 {% endif %}
 
-</style>
 {% endblock %}
 
 {% block blockbots %}
@@ -39,12 +43,25 @@ https://github.com/fabiocaccamo/django-admin-interface
 {% get_admin_interface_version as version %}
 {# https://github.com/elky/django-flat-responsive#important-note #}
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}?v={{ version }}">
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}?v={{ version }}">
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive_rtl.css' %}?v={{ version }}" />
 {% include "admin_interface/favicon.html" %}
+{% include "admin_interface/foldable-apps.html" %}
 {% include "admin_interface/related-modal.html" %}
 {% endblock %}
 
-{% block bodyclass %}admin-interface flat-theme {% get_admin_interface_theme as theme %}{% if theme.name %}{{ theme.name|slugify }}-theme{% endif %}{% endblock %}
+{% block extrahead %}
+{{ block.super }}
+{% endblock %}
+
+{% block bodyclass %}
+{% get_admin_interface_theme as theme %}
+flat-theme admin-interface
+{% if theme.name %} {{ theme.name|slugify }}-theme {% endif %}
+{% if theme.foldable_apps %} foldable-apps {% endif %}
+{% if theme.form_submit_sticky %} sticky-submit {% endif %}
+{% if theme.form_pagination_sticky %} sticky-pagination {% endif %}
+{% endblock %}
 
 {% block branding %}
 {% get_admin_interface_theme as theme %}
@@ -68,5 +85,5 @@ https://github.com/fabiocaccamo/django-admin-interface
     {% get_admin_interface_languages as languages %}
     {% include "admin_interface/language_chooser.html" %}
 {% endif %}
-{% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}"></span> - {% endif %}{{ block.super }}<br>
+{% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}"></span><br>{% endif %}{{ block.super }}<br>
 {% endblock %}

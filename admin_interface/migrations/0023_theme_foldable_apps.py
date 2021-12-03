@@ -8,15 +8,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('admin_interface', '0014_name_unique'),
+        ('admin_interface', '0022_add_logo_max_width_and_height'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='theme',
-            name='language_chooser_active',
-            field=models.BooleanField(
-                default=True,
-                verbose_name='active'),
+            name='foldable_apps',
+            field=models.BooleanField(default=True, verbose_name='foldable apps'),
         ),
     ]

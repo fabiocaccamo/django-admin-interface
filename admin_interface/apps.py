@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
+from admin_interface.compat import gettext_lazy as _
+
 from django.apps import AppConfig
 from django.db.models.signals import post_migrate
-from django.utils.translation import gettext_lazy as _
 
 
 class AdminInterfaceConfig(AppConfig):
 
     name = 'admin_interface'
     verbose_name = _('Admin Interface')
+    default_auto_field = 'django.db.models.AutoField'
 
     def ready(self):
 

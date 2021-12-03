@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from admin_interface.compat import gettext_lazy as _
 from admin_interface.models import Theme
 
 from django.contrib import admin
-from django.utils.translation import gettext_lazy as _
 
 
 class ThemeAdmin(admin.ModelAdmin):
@@ -38,6 +38,8 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': (
                 'logo',
+                'logo_max_width',
+                'logo_max_height',
                 'logo_color',
                 'logo_visible',
             )
@@ -67,8 +69,10 @@ class ThemeAdmin(admin.ModelAdmin):
             'classes': ('wide', ),
             'fields': (
                 'css_module_background_color',
+                'css_module_background_selected_color',
                 'css_module_text_color',
                 'css_module_link_color',
+                'css_module_link_selected_color',
                 'css_module_link_hover_color',
                 'css_module_rounded_corners',
             )
@@ -96,6 +100,12 @@ class ThemeAdmin(admin.ModelAdmin):
                 'css_delete_button_text_color',
             )
         }),
+        (_('Navigation Bar'), {
+            'classes': ('wide', ),
+            'fields': (
+                'foldable_apps',
+            )
+        }),
         (_('Related Modal'), {
             'classes': ('wide', ),
             'fields': (
@@ -106,9 +116,19 @@ class ThemeAdmin(admin.ModelAdmin):
                 'related_modal_close_button_visible',
             )
         }),
+        (_('Form Controls'), {
+            'classes': ('wide', ),
+            'fields': (
+                'form_submit_sticky',
+                'form_pagination_sticky',
+            )
+        }),
         (_('List Filter'), {
             'classes': ('wide', ),
-            'fields': ('list_filter_dropdown', )
+            'fields': (
+                'list_filter_dropdown',
+                'list_filter_sticky',
+            )
         }),
         (_('Recent Actions'), {
             'classes': ('wide', ),

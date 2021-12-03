@@ -1,0 +1,34 @@
+[dir="rtl"] .admin-interface,
+[dir="rtl"] .admin-interface * {
+    font-family: 'Vazir', sans-serif !important;
+}
+
+[dir="rtl"] .admin-interface .main .toggle-nav-sidebar.sticky {
+    left: auto !important;
+    right: 0px !important;
+    margin-right: 0px !important;
+    margin-left: 10px;
+    border: 1px solid #eaeaea !important;
+    border-right: none !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    box-shadow: -4px 2px 8px -2px #DBDBDB !important;
+}
+
+[dir="rtl"] .admin-interface #main.shifted > #toggle-nav-sidebar {
+    right: 359px !important;
+}
+
+[dir="rtl"] .admin-interface #main > #nav-sidebar {
+    margin-right: -360px !important;
+    margin-left: 0px !important;
+    right: -320px !important;
+}
+
+[dir="rtl"] .admin-interface #main.shifted > #nav-sidebar {
+    border-left: 1px solid #eaeaea;
+    margin-right: 0px !important;
+    padding: 40px 0px 40px 40px !important;
+}

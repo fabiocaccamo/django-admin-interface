@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import unicode_literals
+
 import django
 import os
 
@@ -58,6 +60,7 @@ TEMPLATES = [{
         'context_processors': [
             'django.contrib.auth.context_processors.auth',
             'django.contrib.messages.context_processors.messages',
+            'django.template.context_processors.request',
         ]
     },
 },]
@@ -89,6 +92,15 @@ database_config = {
 DATABASES = {
     'default': database_config.get(database_engine),
 }
+
+USE_I18N = True
+LANGUAGES = (
+    ('en', 'English', ),
+    ('it', 'Italian', ),
+)
+LANGUAGE_CODE = 'en'
+
+ROOT_URLCONF = 'tests.urls'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'admin_interface/public/media/')
 MEDIA_URL = '/media/'

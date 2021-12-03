@@ -4,6 +4,7 @@
 [![](https://img.shields.io/pypi/v/django-admin-interface.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
 [![](https://pepy.tech/badge/django-admin-interface)](https://pepy.tech/project/django-admin-interface)
 [![](https://img.shields.io/github/stars/fabiocaccamo/django-admin-interface?logo=github)](https://github.com/fabiocaccamo/django-admin-interface/)
+[![](https://badges.pufler.dev/visits/fabiocaccamo/django-admin-interface?label=visitors&color=blue)](https://badges.pufler.dev)
 [![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/master/LICENSE.txt)
 
 [![](https://img.shields.io/travis/fabiocaccamo/django-admin-interface?logo=travis&label=build)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
@@ -21,13 +22,17 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Beautiful default **django-theme**
 - Themes management and customization *(you can **customize admin title, logo and colors**)*
 - Responsive
-- List filter dropdown *(optional)*
-- `NEW` **Related modal** *(instead of the old popup window, optional)*
-- `NEW` **Environment name/marker**
-- `NEW` **Language chooser**
+- Related modal *(instead of the old popup window)*
+- Environment name/marker
+- Language chooser
+- List filter dropdown
+- `NEW` **Foldable apps** *(accordions in the navigation bar)*
+- `NEW` **List filter sticky**
+- `NEW` **Form controls sticky** *(pagination and save/delete buttons)*
 - Compatibility / Style optimizations for:
   - `django-ckeditor`
   - `django-dynamic-raw-id`
+  - `django-json-widget`
   - `django-modeltranslation`
   - `django-tabbed-admin`
   - `sorl-thumbnail`
@@ -47,7 +52,9 @@ INSTALLED_APPS = (
     #...
 )
 
-X_FRAME_OPTIONS='SAMEORIGIN' # only if django version >= 3.0
+# only if django version >= 3.0
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+SILENCED_SYSTEM_CHECKS = ['security.W019']
 ```
 - Run ``python manage.py migrate``
 - Run ``python manage.py collectstatic``
@@ -75,7 +82,7 @@ Run ``python manage.py loaddata admin_interface_theme_foundation.json``
 Run ``python manage.py loaddata admin_interface_theme_uswds.json``
 
 ### Add more themes
-You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add :
+You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add:
 
 1. Export your exact theme as fixture using the `dumpdata` admin command:
 ``python manage.py dumpdata admin_interface.Theme --indent 4 -o admin_interface_theme_{{name}}.json --pks=N``
@@ -85,6 +92,34 @@ You can add a theme you've created through the admin to this repository by [send
 3. Remove the `"pk"` from the fixture and make sure the `active` field is set to `true` *(in this way a theme is automatically activated when installed)*.
 
 4. Edit the section above to document your theme.
+
+### Add theme support to third-party libraries
+You can add **theme support to existing third-party libraries** using the following **css variables**:
+
+- `--admin-interface-title-color`
+- `--admin-interface-logo-color`
+- `--admin-interface-env-color`
+- `--admin-interface-header-background-color:`
+- `--admin-interface-header-text-color`
+- `--admin-interface-header-link-color`
+- `--admin-interface-header-link_hover-color`
+- `--admin-interface-module-background-color`
+- `--admin-interface-module-background-selected-color`
+- `--admin-interface-module-text-color`
+- `--admin-interface-module-link-color`
+- `--admin-interface-module-link-selected-color`
+- `--admin-interface-module-link-hover-color`
+- `--admin-interface-generic-link-color`
+- `--admin-interface-generic-link-hover-color`
+- `--admin-interface-save-button-background-color`
+- `--admin-interface-save-button-background-hover-color`
+- `--admin-interface-save-button-text-color`
+- `--admin-interface-delete-button-background-color`
+- `--admin-interface-delete-button-background-hover-color`
+- `--admin-interface-delete-button-text-color`
+- `--admin-interface-related-modal-background-color`
+- `--admin-interface-related-modal-background-opacity`
+
 
 ## Screenshots
 ###### Admin login
@@ -104,7 +139,60 @@ You can add a theme you've created through the admin to this repository by [send
 
 You can use [django-apptemplates](https://github.com/bittner/django-apptemplates), then add `{% extends "admin_interface:admin/base_site.html" %}` to your `base_site.html`
 
----
+## Testing
+```bash
+# create python virtual environment
+virtualenv testing_django_admin_interface
+
+# activate virtualenv
+cd testing_django_admin_interface && . bin/activate
+
+# clone repo
+git clone https://github.com/fabiocaccamo/django-admin-interface.git src && cd src
+
+# install dependencies
+pip install -r requirements.txt
+
+# run tests
+tox
+# or
+python setup.py test
+# or
+python -m django test --settings "tests.settings"
+```
 
 ## License
 Released under [MIT License](LICENSE.txt).
+
+---
+
+## Supporting
+
+I would like to spend more time on this project, especially to improve it and adding new features.
+
+As everyone knows open-source projects takes up a lot of time that is unpaid. :money_with_wings:
+
+If you are using this package in commercial project(s), please consider the idea to become a sponsor or donating once:
+
+- [GitHub Sponsor](https://github.com/sponsors/fabiocaccamo)
+- [PayPal](https://www.paypal.me/fabiocaccamo)
+- BTC: bc1q2t0pv8z3udpyuvfnx5kskhqdad4dcvtfuzmvjw
+- ETH: 0x8B55Fb7798b5A9F797A4455C00821B6e53daca74
+
+## See also
+
+- [`django-colorfield`](https://github.com/fabiocaccamo/django-colorfield) - simple color field for models with a nice color-picker in the admin. 🎨
+
+- [`django-extra-settings`](https://github.com/fabiocaccamo/django-extra-settings) - config and manage typed extra settings using just the django admin. ⚙️
+
+- [`django-maintenance-mode`](https://github.com/fabiocaccamo/django-maintenance-mode) - shows a 503 error page when maintenance-mode is on. 🚧 🛠️
+
+- [`django-redirects`](https://github.com/fabiocaccamo/django-redirects) - redirects with full control. ↪️
+
+- [`django-treenode`](https://github.com/fabiocaccamo/django-treenode) - probably the best abstract model / admin for your tree based stuff. 🌳
+
+- [`python-benedict`](https://github.com/fabiocaccamo/python-benedict) - dict subclass with keylist/keypath support, I/O shortcuts (base64, csv, json, pickle, plist, query-string, toml, xml, yaml) and many utilities. 📘
+
+- [`python-codicefiscale`](https://github.com/fabiocaccamo/python-codicefiscale) - encode/decode Italian fiscal codes - codifica/decodifica del Codice Fiscale. 🇮🇹 💳
+
+- [`python-fsutil`](https://github.com/fabiocaccamo/python-fsutil) - file-system utilities for lazy devs. 🧟‍♂️

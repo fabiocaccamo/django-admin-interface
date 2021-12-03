@@ -1,7 +1,7 @@
 {% load static %}
 
 {% if theme.favicon %}
-<link rel="icon" href="{{ theme.favicon.url }}?v={{ version }}">
+<link rel="icon" href="{{ theme.favicon.url }}">
 {% if theme.env_visible_in_favicon %}
 <script type="text/javascript" src="{% static 'admin_interface/favico/favico-0.3.10-patched.min.js' %}?v={{ version }}"></script>
 <script type="text/javascript">

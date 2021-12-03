@@ -130,6 +130,10 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 el.click(data, presentRelatedObjectModal);
             }
 
+            // assign functions to global variables
+            window.presentRelatedObjectModal = presentRelatedObjectModal;
+            window.presentRelatedObjectModalOnClickOn = presentRelatedObjectModalOnClickOn;
+
             // django 1.7 compatibility
             // $('a.add-another').removeAttr('onclick').click({ lookup:false }, presentRelatedObjectModal);
             presentRelatedObjectModalOnClickOn('a.add-another');
@@ -145,6 +149,9 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             // django-dynamic-raw-id support - #61
             // https://github.com/lincolnloop/django-dynamic-raw-id
             presentRelatedObjectModalOnClickOn('a.dynamic_raw_id-related-lookup', true);
+
+            // show_change_link=True support
+            presentRelatedObjectModalOnClickOn('a.inlinechangelink');
         });
 
     })(django.jQuery);

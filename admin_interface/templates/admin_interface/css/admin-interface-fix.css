@@ -1,77 +1,126 @@
+.admin-interface {
+    overflow-x: hidden;
+}
+
+/* fix login */
 .admin-interface.login #container {
-    width:320px;
-    margin:90px auto;
-    box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    -webkit-box-sizing:border-box;
+    width: 100%;
+    max-width: 360px;
+    margin: 15px auto;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .admin-interface.login #content {
-    padding:15px 30px 10px 30px;
+    padding: 15px 30px 30px 30px;
 }
 
-@media (max-width:767px){
-
+@media (min-width:768px){
     .admin-interface.login #container {
-        margin:0px auto;
-    }
-
-    .admin-interface.login #content {
-        padding:20px 30px 30px 30px;
+        margin: 90px auto;
     }
 }
 
 .admin-interface.login #header {
-    padding:15px 30px 10px;
-    line-height:30px;
+    min-height: auto;
+    padding: 10px 30px;
+    line-height: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-.admin-interface.login #branding h1 {
+.admin-interface.login #header #branding h1 {
     margin-right:0;
 }
 
-.admin-interface.login #branding h1 img.logo {
-    max-width:100%;
-    margin-right:0;
+.admin-interface.login #header #branding h1 img.logo {
+    max-width: 100%;
+    margin-right: 0;
 }
 
 .admin-interface.login #header #branding h1 img.logo+span {
-    display:block;
-    margin-bottom: 5px;
+    display: block;
+}
+
+.admin-interface.login #login-form {
+    display: flex;
+    flex-direction: column;
 }
 
 .admin-interface.login .submit-row {
-    padding-left:0;
-    text-align:right;
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 0;
+    padding-left: 0;
+    text-align: right;
 }
 
-@media (max-width:767px){
-    .admin-interface.login .submit-row label {
-        display:none;
-    }
-    .admin-interface.login .submit-row {
-        float: left;
-        width: 100%;
-        margin-top: 20px;
-        margin-bottom: 30px;
-    }
+.admin-interface.login .submit-row label {
+    display: none;
 }
+
+.admin-interface.login .submit-row input[type="submit"] {
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.admin-interface.login #footer {
+    display: none;
+}
+/* end login fix*/
 
 .admin-interface #header {
-    height:auto;
-    min-height:40px;
+    height: auto;
+    min-height: 55px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width:1024px) {
+    .admin-interface #header {
+        align-items: center;
+    }
 }
 
 .admin-interface #branding h1 img.logo {
-    max-height:100px;
     margin-top:10px;
     margin-bottom:10px;
     margin-right:15px;
     display:inline-block !important; /* override inline display:none; */
 }
 
+@media (max-width:400px) {
+    .admin-interface #branding h1 img.logo {
+        max-width: 100%;
+    }
+}
+
+.admin-interface #branding h1 span {
+    display: inline-block;
+}
+
 .admin-interface #branding h1 img.logo+span {
     white-space:nowrap;
+}
+
+.admin-interface #user-tools {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.admin-interface #user-tools br {
+    display: none;
+}
+@media (max-width: 768px) {
+    .admin-interface #user-tools br {
+        display: block;
+    }
 }
 
 .admin-interface fieldset.collapse {
@@ -87,11 +136,12 @@
     padding: 0 1px;
 }
 
-/*
-#changelist table tbody tr.selected {
-    background-color:#FFFFCC;
+@media (min-width: 1024px) {
+    .admin-interface #changelist .actions .button,
+    .admin-interface #changelist .actions .action-counter {
+        margin-left: 8px;
+    }
 }
-*/
 
 .admin-interface #changelist .paginator {
     margin-top:-1px; /* merge 2 borders into 1 */
@@ -135,6 +185,12 @@ body.admin-interface .paginator a.showall:visited {
     margin-left: 5px;
 }
 
+.admin-interface .inline-group .inlinechangelink {
+    background-size: contain;
+    padding-left: 15px;
+    margin-left: 10px;
+}
+
 .admin-interface .file-thumbnail > a {
     display: inline-block;
 }
@@ -149,7 +205,6 @@ body.admin-interface .paginator a.showall:visited {
 
 .admin-interface form .form-row p.file-upload .clearable-file-input {
     display:inline-block;
-    margin-left:
 }
 
 .admin-interface form .form-row p.file-upload .clearable-file-input label {
@@ -177,6 +232,7 @@ body.admin-interface .paginator a.showall:visited {
     .admin-interface form .form-row p.file-upload .clearable-file-input {
         display: block;
         margin-top: 10px;
+        margin-left: 0;
         margin-bottom: -10px;
     }
 
@@ -217,13 +273,18 @@ body.admin-interface .paginator a.showall:visited {
 
 /* LIST FILTER */
 .admin-interface .module.filtered h2 {
-    border-bottom-left-radius:0;
-    border-bottom-right-radius:0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .admin-interface .module.filtered #changelist-filter {
-    border-bottom-left-radius:4px;
-    border-bottom-right-radius:4px;
+    min-width: 240px;
+}
+
+@media (max-width: 1024px) {
+    .admin-interface .module.filtered #changelist-filter {
+        min-width: 200px;
+    }
 }
 
 .admin-interface .module.filtered #changelist-filter h2 {
@@ -240,10 +301,13 @@ body.admin-interface .paginator a.showall:visited {
 /* begin fix lateral padding to align text with field labels */
 .admin-interface .module h2,
 .admin-interface.dashboard .module caption,
+.admin-interface.dashboard .module th,
 .admin-interface .module.filtered h2,
-.admin-interface .inline-group h2 {
-    padding-left:10px;
-    padding-right:10px;
+.admin-interface .inline-group h2,
+.admin-interface #nav-sidebar .module caption,
+.admin-interface #nav-sidebar .module th {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /* end fix */
 
@@ -259,9 +323,23 @@ body.admin-interface .paginator a.showall:visited {
 }
 /* end fix */
 
-/* begin fix issue #10 - Related widget broken in long tabular inline */
-.admin-interface .inline-group .tabular .related-widget-wrapper {
-    white-space:nowrap;
+/* begin fix tabular inlines horizontal scroll */
+.admin-interface .inline-related.tabular {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.admin-interface .inline-related.tabular fieldset.module {
+    display: contents;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+}
+.admin-interface .inline-related.tabular fieldset.module h2 {
+    position: sticky;
+    left: 0;
+}
+.admin-interface .inline-related.tabular fieldset.module table tbody tr {
+    position: relative;
 }
 /* end fix */
 
@@ -306,17 +384,6 @@ body.admin-interface .paginator a.showall:visited {
     background-color:#AAAAAA;
 }
 
-/* fix textarea horizontal scroll on Firefox */
-@media (max-width: 767px){
-    .admin-interface .aligned .form-row textarea {
-        width: 100% !important;
-        flex: 0 1 auto;
-    }
-    .admin-interface .aligned .form-row input[type="file"] {
-        width: 100% !important;
-    }
-}
-
 /* improve responsive selector */
 
 /* fix [stacked, not-stacked] equalize horizontal and vertical select padding for selector */
@@ -336,4 +403,187 @@ body.admin-interface .paginator a.showall:visited {
 /* fix [not-stacked] equalize selectors height by adding the height of the .selector-available filter-bar */
 .admin-interface .selector:not(.stacked) .selector-chosen select {
     height: calc(46px + 17.2em) !important;
+}
+
+/* fix nav-sidebar (added in django 3.1.0) */
+.admin-interface #toggle-nav-sidebar {
+    top: 10px;
+    left: 0;
+    z-index: 20;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 45px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    border: 1px solid #eaeaea;
+    border-left: none;
+    outline: none;
+    -webkit-box-shadow: 4px 2px 8px -4px #DBDBDB;
+    -moz-box-shadow: 4px 2px 8px -4px #DBDBDB;
+    box-shadow: 4px 2px 8px -4px #DBDBDB;
+    /*transition: left .3s;*/
+}
+
+.admin-interface .toggle-nav-sidebar::before {
+    margin-top: -2px;
+}
+
+.admin-interface .main > #nav-sidebar + .content,
+.admin-interface .main.shifted > #nav-sidebar + .content {
+    max-width: 100%;
+}
+
+/* hide nav-sidebar below 1280px to prevent horizontal overflow issues */
+@media (max-width:1279px) {
+    .admin-interface #nav-sidebar,
+    .admin-interface #toggle-nav-sidebar {
+        display: none;
+    }
+}
+
+.admin-interface #nav-sidebar {
+    flex: 0 0 320px;
+    left: -320px;
+    margin-left: -360px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 40px 40px 40px 0px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    /*transition: left .3s, margin-left .3s;*/
+}
+
+@media (min-width:1280px) {
+    .admin-interface #main.shifted > #toggle-nav-sidebar {
+        left: 359px;
+    }
+    .admin-interface #main.shifted > #nav-sidebar {
+        left: 0px;
+        margin-left: 0;
+    }
+    .admin-interface #main:not(.shifted) > .content {
+        max-width: 100%;
+    }
+    .admin-interface.change-list:not(.popup) #main.shifted > #nav-sidebar + .content,
+    .admin-interface.change-form:not(.popup) #main.shifted > #nav-sidebar + .content {
+        max-width: calc(100% - 360px);
+    }
+}
+
+/* fixed related widget and select2 */
+/* begin fix issue #10 - Related widget broken in long tabular inline */
+.admin-interface .related-widget-wrapper {
+    white-space: nowrap;
+}
+/* end fix */
+
+.admin-interface .related-widget-wrapper select + .related-widget-wrapper-link,
+.admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
+    margin-left: 12px !important;
+}
+
+@media (min-width: 768px) {
+    .admin-interface.change-form select {
+        min-width: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .admin-interface.change-form select {
+        min-width: 200px;
+    }
+}
+
+.admin-interface.change-form .inline-related.tabular select {
+    min-width: auto !important;
+}
+
+/* fixed time widget header border radius */
+.admin-interface .clockbox.module h2 {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* fix searchbar overriden padding */
+.admin-interface #changelist #changelist-search #searchbar {
+    padding: 2px 5px 3px 5px;
+}
+
+@media (min-width: 1024px) {
+    .admin-interface #changelist #changelist-search #searchbar,
+    .admin-interface #changelist #changelist-search input[type="submit"],
+    .admin-interface #changelist #changelist-search .quiet {
+        margin-left: 8px;
+    }
+    .admin-interface #changelist #changelist-search label img {
+        vertical-align: text-top;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .admin-interface #changelist #toolbar {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+    /* fixed changelist search size when there are search results and .quiet is visible */
+    .admin-interface #changelist-search label img {
+        margin-top: 2px;
+    }
+    .admin-interface #changelist-search .quiet {
+        margin: 0 0 0 10px;
+        align-self: center;
+        flex-basis: content;
+    }
+}
+
+@media (max-width: 767px) {
+    /* fixed responsive widgets */
+    .admin-interface .aligned.collapsed .form-row {
+        display: none;
+    }
+
+    .admin-interface .aligned .form-row > div {
+        display: flex;
+        max-width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-interface .aligned .form-row .help {
+        margin-left: 0;
+    }
+
+    .admin-interface .aligned .form-row .checkbox-row label {
+        margin: 10px 0 0 0;
+        padding: 0;
+    }
+
+    .admin-interface .aligned .form-row input[type="file"],
+    .admin-interface .aligned .form-row input[type="text"],
+    .admin-interface .aligned .form-row input[type="email"] {
+        width: 100%;
+    }
+
+    /* fix textarea horizontal scroll on Firefox */
+    .admin-interface .aligned .form-row textarea {
+        width: 100% !important;
+        flex: 0 1 auto;
+    }
+
+    .admin-interface .aligned .form-row .datetime input[type="text"] {
+        width: 50%;
+    }
+
+    .admin-interface .aligned .form-row span + .file-upload {
+        margin-top: 10px;
+    }
+
+    .admin-interface .aligned .form-row .file-upload input[type="file"] {
+        margin-top: 5px;
+    }
 }

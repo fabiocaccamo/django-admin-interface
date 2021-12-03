@@ -3,13 +3,12 @@
 from __future__ import unicode_literals
 
 from admin_interface.cache import del_cached_active_theme
+from admin_interface.compat import FileExtensionValidator, force_str, gettext_lazy as _
 
 from colorfield.fields import ColorField
 
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
-from django.utils.encoding import force_str
-from django.utils.translation import gettext_lazy as _
 
 from six import python_2_unicode_compatible
 
@@ -94,6 +93,8 @@ class Theme(models.Model):
     logo = models.FileField(
         upload_to='admin-interface/logo/',
         blank=True,
+        validators=[FileExtensionValidator(
+            allowed_extensions=['gif', 'jpg', 'jpeg', 'png', 'svg'])],
         help_text=_('Leave blank to use the default Django logo'),
         verbose_name=_('logo'))
     logo_color = ColorField(
@@ -102,6 +103,14 @@ class Theme(models.Model):
         help_text='#FFFFFF',
         max_length=10,
         verbose_name=_('color'))
+    logo_max_width = models.PositiveSmallIntegerField(
+        blank=True,
+        default=400,
+        verbose_name=_('max width'))
+    logo_max_height = models.PositiveSmallIntegerField(
+        blank=True,
+        default=100,
+        verbose_name=_('max height'))
     logo_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))
@@ -109,6 +118,8 @@ class Theme(models.Model):
     favicon = models.FileField(
         upload_to='admin-interface/favicon/',
         blank=True,
+        validators=[FileExtensionValidator(
+            allowed_extensions=['gif', 'ico', 'jpg', 'jpeg', 'png', 'svg'])],
         help_text=_('(.ico|.png|.gif - 16x16|32x32 px)'),
         verbose_name=_('favicon'))
 
@@ -173,6 +184,12 @@ class Theme(models.Model):
         help_text='#44B78B',
         max_length=10,
         verbose_name=_('background color'))
+    css_module_background_selected_color = ColorField(
+        blank=True,
+        default='#FFFFCC',
+        help_text='#FFFFCC',
+        max_length=10,
+        verbose_name=_('background selected color'))
     css_module_text_color = ColorField(
         blank=True,
         default='#FFFFFF',
@@ -185,6 +202,12 @@ class Theme(models.Model):
         help_text='#FFFFFF',
         max_length=10,
         verbose_name=_('link color'))
+    css_module_link_selected_color = ColorField(
+        blank=True,
+        default='#FFFFFF',
+        help_text='#FFFFFF',
+        max_length=10,
+        verbose_name=_('link selected color'))
     css_module_link_hover_color = ColorField(
         blank=True,
         default='#C9F0DD',
@@ -246,10 +269,6 @@ class Theme(models.Model):
         max_length=10,
         verbose_name=_('text color'))
 
-    css = models.TextField(
-        blank=True,
-        verbose_name=_('text color'))
-
     related_modal_active = models.BooleanField(
         default=True,
         verbose_name=_('active'))
@@ -284,11 +303,26 @@ class Theme(models.Model):
         verbose_name=_('close button visible'))
 
     list_filter_dropdown = models.BooleanField(
-        default=False,
+        default=True,
         verbose_name=_('use dropdown'))
+    list_filter_sticky = models.BooleanField(
+        default=True,
+        verbose_name=_('sticky position'))
+
+    foldable_apps = models.BooleanField(
+        default=True,
+        verbose_name=_('foldable apps'))
+
     recent_actions_visible = models.BooleanField(
         default=True,
         verbose_name=_('visible'))
+
+    form_submit_sticky = models.BooleanField(
+        default=False,
+        verbose_name=_('sticky submit'))
+    form_pagination_sticky = models.BooleanField(
+        default=False,
+        verbose_name=_('sticky pagination'))
 
     def set_active(self):
         self.active = True
