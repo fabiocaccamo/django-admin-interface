@@ -7,7 +7,7 @@
 [![](https://badges.pufler.dev/visits/fabiocaccamo/django-admin-interface?label=visitors&color=blue)](https://badges.pufler.dev)
 [![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/master/LICENSE.txt)
 
-[![](https://img.shields.io/travis/fabiocaccamo/django-admin-interface?logo=travis&label=build)](https://travis-ci.org/fabiocaccamo/django-admin-interface)
+[![](https://img.shields.io/github/workflow/status/fabiocaccamo/django-admin-interface/Python%20package?label=build&logo=github)](https://github.com/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codecov/c/gh/fabiocaccamo/django-admin-interface?logo=codecov)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codacy/grade/21cb657283c04e70b56fb935277a1ad1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/django-admin-interface?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/django-admin-interface/)
@@ -152,6 +152,7 @@ git clone https://github.com/fabiocaccamo/django-admin-interface.git src && cd s
 
 # install dependencies
 pip install -r requirements.txt
+pip install -r requirements-test.txt
 
 # run tests
 tox
@@ -176,8 +177,6 @@ If you are using this package in commercial project(s), please consider the idea
 
 - [GitHub Sponsor](https://github.com/sponsors/fabiocaccamo)
 - [PayPal](https://www.paypal.me/fabiocaccamo)
-- BTC: bc1q2t0pv8z3udpyuvfnx5kskhqdad4dcvtfuzmvjw
-- ETH: 0x8B55Fb7798b5A9F797A4455C00821B6e53daca74
 
 ## See also
 

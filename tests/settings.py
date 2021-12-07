@@ -89,6 +89,12 @@ database_config = {
     }
 }
 
+github_workflow = os.environ.get('GITHUB_WORKFLOW')
+if github_workflow:
+    database_config['postgres']['NAME'] = 'postgres'
+    database_config['postgres']['HOST'] = '127.0.0.1'
+    database_config['postgres']['PORT'] = '5432'
+
 DATABASES = {
     'default': database_config.get(database_engine),
 }
