@@ -5,23 +5,30 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
 
-def check_installed_app(app, app_dj_version_limit):
+def check_installed_app(app, max_dj_version=None):
     dj_version = django.VERSION
     installed_apps = settings.INSTALLED_APPS
-    if dj_version < app_dj_version_limit:
+    if max_dj_version is None:
         if app not in installed_apps:
             raise ImproperlyConfigured(
-                '\'{}\' needed before django {}.{}, '
+                '\'{}\' is required, '
                 'add it to settings.INSTALLED_APPS.'.format(
-                    app, *app_dj_version_limit))
+                    app))
+    elif dj_version < max_dj_version:
+        if app not in installed_apps:
+            raise ImproperlyConfigured(
+                '\'{}\' is required before django {}.{}, '
+                'add it to settings.INSTALLED_APPS.'.format(
+                    app, *max_dj_version))
     else:
         if app in installed_apps:
             raise ImproperlyConfigured(
-                '\'{}\' not needed since django {}.{}, '
+                '\'{}\' is no more required since django {}.{}, '
                 'remove it from settings.INSTALLED_APPS.'.format(
-                    app, *app_dj_version_limit))
+                    app, *max_dj_version))
 
 
 def check_installed_apps():
-    check_installed_app('flat', (1, 9))
-    check_installed_app('flat_responsive', (2, 0))
+    check_installed_app('colorfield')
+    check_installed_app('flat', max_dj_version=(1, 9))
+    check_installed_app('flat_responsive', max_dj_version=(2, 0))
