@@ -18,6 +18,8 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 
 ![django-admin-interface-preview](https://user-images.githubusercontent.com/1035294/35631521-64b0cab8-06a4-11e8-8f57-c04fdfbb7e8b.gif)
 
+---
+
 ## Features
 - Beautiful default **django-theme**
 - Themes management and customization *(you can **customize admin title, logo and colors**)*
@@ -36,6 +38,8 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
   - `django-modeltranslation`
   - `django-tabbed-admin`
   - `sorl-thumbnail`
+
+---
 
 ## Installation
 - Run `pip install django-admin-interface`
@@ -65,6 +69,8 @@ SILENCED_SYSTEM_CHECKS = ['security.W019']
 - Run ``python manage.py migrate`` *(add* ``--fake-initial`` *if you are upgrading from 0.1.0 version)*
 - Run ``python manage.py collectstatic --clear``
 - Restart your application server
+
+---
 
 ## Optional themes
 This package ships with optional themes as fixtures, they can be installed using the [loaddata admin command](https://docs.djangoproject.com/en/1.11/ref/django-admin/#django-admin-loaddata). Optional themes are activated on installation.
@@ -120,6 +126,7 @@ You can add **theme support to existing third-party libraries** using the follow
 - `--admin-interface-related-modal-background-color`
 - `--admin-interface-related-modal-background-opacity`
 
+---
 
 ## Screenshots
 ###### Admin login
@@ -134,10 +141,49 @@ You can add **theme support to existing third-party libraries** using the follow
 ###### Admin theme customization
 ![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11240250/7350d942-8df1-11e5-9b28-f2f54c333cdc.gif)
 
+---
+
 ## FAQ
-- #### I already have a custom `base_site.html`, how can I make it work?
+
+### Custom `base-site.html`
+> I already have a custom `base_site.html`, how can I make it work?
 
 You can use [django-apptemplates](https://github.com/bittner/django-apptemplates), then add `{% extends "admin_interface:admin/base_site.html" %}` to your `base_site.html`
+
+### Language Chooser not showing
+> I have enabled the **Language Chooser**, but it is not visible in the admin, what should I do?
+
+You must configure multilanguage `settings` and `urls` correctly:
+```python
+LANGUAGES = (
+  ('en', _('English')),
+  ('it', _('Italiano')),
+  ('fr', _('Française')),
+  # more than one language is expected here
+)
+LANGUAGE_CODE = 'en'
+USE_I18N = True
+MIDDLEWARE = [
+  # ...
+  'django.middleware.locale.LocaleMiddleware',
+  # ...
+]
+```
+
+```python
+from django.conf.urls.i18n import i18n_patterns
+from django.contrib import admin
+from django.urls import include, path
+
+# ...
+
+urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
+]
+urlpatterns += i18n_patterns(path('admin/', admin.site.urls))
+```
+
+---
 
 ## Testing
 ```bash
@@ -162,21 +208,12 @@ python setup.py test
 python -m django test --settings "tests.settings"
 ```
 
+---
+
 ## License
 Released under [MIT License](LICENSE.txt).
 
 ---
-
-## Supporting
-
-I would like to spend more time on this project, especially to improve it and adding new features.
-
-As everyone knows open-source projects takes up a lot of time that is unpaid. :money_with_wings:
-
-If you are using this package in commercial project(s), please consider the idea to become a sponsor or donating once:
-
-- [GitHub Sponsor](https://github.com/sponsors/fabiocaccamo)
-- [PayPal](https://www.paypal.me/fabiocaccamo)
 
 ## See also
 
