@@ -1,4 +1,4 @@
-name: Python package
+name: Test package
 
 on:
   - push
@@ -32,7 +32,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'
-        
+
     - name: Install psycopg2 prerequisites
       run: sudo apt-get install libpq-dev
 
