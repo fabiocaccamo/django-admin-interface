@@ -40,7 +40,7 @@ INSTALLED_APPS += [
 if django.VERSION < (2, 0):
     MIDDLEWARE_CLASSES = [
         'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django.contrib.messages.middleware.MessageMiddleware'
+        'django.contrib.messages.middleware.MessageMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
     ]
