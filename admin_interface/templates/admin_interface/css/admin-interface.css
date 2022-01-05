@@ -137,6 +137,10 @@
     color: {{ theme.title_color }};
 }
 
+.admin-interface #branding h1 a {
+    color: inherit;
+}
+
 .admin-interface #branding h1 .logo.default {
     background-color: transparent;
     background-repeat: no-repeat;
