@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.18.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.18.4) - 2022-01-05
+-  Added official django 4.0 support.
+-  Added link to admin home page on logo and title. #147
+-  Fixed collapsed inlines rounded bottom borders.
+-  Fixed missing comma in tests settings `MIDDLEWARE_CLASSES`. #145
+
 ## [0.18.3](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.18.3) - 2021-12-07
 -  Added official python 3.10 support.
 -  Replaced travis with GitHub action workflow. #142
