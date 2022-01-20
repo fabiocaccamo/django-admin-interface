@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-19 22:45-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: admin.py:21
+msgid "Environment"
+msgstr "Ambiente"
+
+#: admin.py:30
+msgid "Language chooser"
+msgstr "Seletor de idioma"
+
+#: admin.py:37
+msgid "Logo"
+msgstr "Logo"
+
+#: admin.py:47
+msgid "Favicon"
+msgstr "Favicon"
+
+#: admin.py:51
+msgid "Title"
+msgstr "Título"
+
+#: admin.py:59
+msgid "Header"
+msgstr "Cabeçalho"
+
+#: admin.py:68
+msgid "Breadcrumbs / Module headers"
+msgstr "Cabeçalhos de módulo"
+
+#: admin.py:80
+msgid "Generic Links"
+msgstr "Links Genéricos"
+
+#: admin.py:87
+msgid "Save Buttons"
+msgstr "Botões Salvar"
+
+#: admin.py:95
+msgid "Delete Buttons"
+msgstr "Botões Deletar"
+
+#: admin.py:103
+msgid "Navigation Bar"
+msgstr "Barra de Navegação"
+
+#: admin.py:109
+msgid "Related Modal"
+msgstr "Modal Relacionado"
+
+#: admin.py:119
+msgid "Form Controls"
+msgstr "Controles de Formulário"
+
+#: admin.py:126
+msgid "List Filter"
+msgstr "Filtro de lista"
+
+#: admin.py:133
+msgid "Recent Actions"
+msgstr "Ações recentes"
+
+#: apps.py:12
+msgid "Admin Interface"
+msgstr "Interface do administrador"
+
+#: models.py:73 models.py:129 models.py:148
+msgid "name"
+msgstr "nome"
+
+#: models.py:76 models.py:145 models.py:274
+msgid "active"
+msgstr "ativo"
+
+#: models.py:80 templates/admin/base_site.html:6
+#: templates/admin/base_site.html:78
+msgid "Django administration"
+msgstr "Administrção do Django"
+
+#: models.py:82
+msgid "title"
+msgstr "título"
+
+#: models.py:88 models.py:105 models.py:135
+msgid "color"
+msgstr "cor"
+
+#: models.py:91 models.py:116 models.py:318
+msgid "visible"
+msgstr "visível"
+
+#: models.py:98
+msgid "Leave blank to use the default Django logo"
+msgstr "Deixe em branco para usar o logotipo padrão do Django"
+
+#: models.py:99
+msgid "logo"
+msgstr "logo"
+
+#: models.py:109
+msgid "max width"
+msgstr "largura máxima"
+
+#: models.py:113
+msgid "max height"
+msgstr "altura máxima"
+
+#: models.py:123
+msgid "(.ico|.png|.gif - 16x16|32x32 px)"
+msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
+
+#: models.py:124
+msgid "favicon"
+msgid "favicon"
+msgstr ""
+
+#: models.py:133
+msgid ""
+"(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
+"#3498DB)"
+msgstr ""
+"(vermelho: #E74C3C, laranja: #E67E22, amarelo: #F1C40F, verde: #2ECC71, azul: "
+"#3498DB)"
+
+#: models.py:138
+msgid "visible in header (marker and name)"
+msgstr "visível no cabeçalho (marcador e nome)"
+
+#: models.py:141
+msgid "visible in favicon (marker)"
+msgstr "visível no favicon (marcador)"
+
+#: models.py:147
+msgid "code"
+msgstr "código"
+
+#: models.py:154
+msgid "display"
+msgstr "exibição"
+
+#: models.py:161 models.py:186 models.py:239 models.py:258 models.py:280
+msgid "background color"
+msgstr "cor de fundo"
+
+#: models.py:167 models.py:198 models.py:251 models.py:270
+msgid "text color"
+msgstr "cor do texto"
+
+#: models.py:173 models.py:204 models.py:226
+msgid "link color"
+msgstr "cor do link"
+
+#: models.py:179 models.py:216 models.py:232
+msgid "link hover color"
+msgstr "cor de foco do link"
+
+#: models.py:192
+msgid "background selected color"
+msgstr "cor de fundo selecionada"
+
+#: models.py:210
+msgid "link selected color"
+msgstr "link cor selecionada"
+
+#: models.py:219 models.py:300
+msgid "rounded corners"
+msgstr "cantos arredondados"
+
+#: models.py:245 models.py:264
+msgid "background hover color"
+msgstr "cor de fundo do foco"
+
+#: models.py:297
+msgid "background opacity"
+msgstr "opacidade de fundo"
+
+#: models.py:303
+msgid "close button visible"
+msgstr "botão fechar visível"
+
+#: models.py:307
+msgid "use dropdown"
+msgstr "usar menu suspenso"
+
+#: models.py:310
+msgid "sticky position"
+msgstr "sticky position"
+
+#: models.py:314
+msgid "foldable apps"
+msgstr "aplicativos dobráveis"
+
+#: models.py:322
+msgid "sticky submit"
+msgstr "envio fixo"
+
+#: models.py:325
+msgid "sticky pagination"
+msgstr "paginação fixa"
+
+#: models.py:334
+msgid "Theme"
+msgstr "Tema"
+
+#: models.py:335
+msgid "Themes"
+msgstr "Temas"
+
+#: templates/admin/filter.html:13
+#: templates/admin_interface/dropdown_filter.html:4
+#, python-format
+msgid " By %(filter_title)s "
+msgstr " por %(filter_title)s "
+
+#: templates/admin/popup_response.html:3
+msgid "Popup closing..."
+msgstr "Pop-up fechando..."
