@@ -28,11 +28,11 @@ msgstr "Seletor de idioma"
 
 #: admin.py:37
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: admin.py:47
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: admin.py:51
 msgid "Title"
@@ -113,7 +113,7 @@ msgstr "Deixe em branco para usar o logotipo padrão do Django"
 
 #: models.py:99
 msgid "logo"
-msgstr ""
+msgstr "logo"
 
 #: models.py:109
 msgid "max width"
@@ -125,9 +125,10 @@ msgstr "altura máxima"
 
 #: models.py:123
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
-msgstr ""
+msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
 
 #: models.py:124
+msgid "favicon"
 msgid "favicon"
 msgstr ""
 
@@ -136,6 +137,8 @@ msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
 msgstr ""
+"(vermelho: #E74C3C, laranja: #E67E22, amarelo: #F1C40F, verde: #2ECC71, azul: "
+"#3498DB)"
 
 #: models.py:138
 msgid "visible in header (marker and name)"
