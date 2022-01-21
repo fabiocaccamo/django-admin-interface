@@ -108,6 +108,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 // open the popup using magnific popup
                 $.magnificPopup.open({
                     mainClass: iframeInternalModalClass,
+                    fixedContentPos: false,
                     showCloseBtn: true,
                     closeBtnInside: true,
                     items: {
