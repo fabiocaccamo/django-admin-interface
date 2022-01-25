@@ -93,7 +93,7 @@ msgstr "ativo"
 #: models.py:80 templates/admin/base_site.html:6
 #: templates/admin/base_site.html:78
 msgid "Django administration"
-msgstr "Administrção do Django"
+msgstr "Administração do Django"
 
 #: models.py:82
 msgid "title"
@@ -202,7 +202,7 @@ msgstr "usar menu suspenso"
 
 #: models.py:310
 msgid "sticky position"
-msgstr "sticky position"
+msgstr "posição sticky"
 
 #: models.py:314
 msgid "foldable apps"
