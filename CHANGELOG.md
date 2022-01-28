@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.18.5](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.18.5) - 2022-01-21
+-  Added portuguese brazil (`pt_BR`) localization by [leandromsd](https://github.com/leandromsd). #149
+-  Fixed body scroll reset to top when opening related modal. #150
+
 ## [0.18.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.18.4) - 2022-01-05
 -  Added official django 4.0 support.
 -  Added link to admin home page on logo and title. #147

@@ -2,16 +2,15 @@
 [![](https://img.shields.io/pypi/djversions/django-admin-interface?color=0C4B33&logo=django&logoColor=white&label=django)](https://www.djangoproject.com/)
 
 [![](https://img.shields.io/pypi/v/django-admin-interface.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
-[![](https://pepy.tech/badge/django-admin-interface)](https://pepy.tech/project/django-admin-interface)
+[![](https://pepy.tech/badge/django-admin-interface/month)](https://pepy.tech/project/django-admin-interface)
 [![](https://img.shields.io/github/stars/fabiocaccamo/django-admin-interface?logo=github)](https://github.com/fabiocaccamo/django-admin-interface/)
 [![](https://badges.pufler.dev/visits/fabiocaccamo/django-admin-interface?label=visitors&color=blue)](https://badges.pufler.dev)
 [![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/master/LICENSE.txt)
 
-[![](https://img.shields.io/github/workflow/status/fabiocaccamo/django-admin-interface/Python%20package?label=build&logo=github)](https://github.com/fabiocaccamo/django-admin-interface)
+[![](https://img.shields.io/github/workflow/status/fabiocaccamo/django-admin-interface/Test%20package?label=build&logo=github)](https://github.com/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codecov/c/gh/fabiocaccamo/django-admin-interface?logo=codecov)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codacy/grade/21cb657283c04e70b56fb935277a1ad1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/django-admin-interface?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/django-admin-interface/)
-[![](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements.svg?branch=master)](https://requires.io/github/fabiocaccamo/django-admin-interface/requirements/?branch=master)
 
 # django-admin-interface
 django-admin-interface is a modern **responsive flat admin interface customizable by the admin itself**.

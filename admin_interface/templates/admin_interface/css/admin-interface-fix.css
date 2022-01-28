@@ -26,7 +26,7 @@
     min-height: auto;
     padding: 10px 30px;
     line-height: 30px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
 }
 
@@ -35,7 +35,6 @@
 }
 
 .admin-interface.login #header #branding h1 img.logo {
-    max-width: 100%;
     margin-right: 0;
 }
 
@@ -82,7 +81,7 @@
 
 @media (max-width:1024px) {
     .admin-interface #header {
-        align-items: center;
+        align-items: start;
     }
 }
 
@@ -91,12 +90,6 @@
     margin-bottom:10px;
     margin-right:15px;
     display:inline-block !important; /* override inline display:none; */
-}
-
-@media (max-width:400px) {
-    .admin-interface #branding h1 img.logo {
-        max-width: 100%;
-    }
 }
 
 .admin-interface #branding h1 span {
