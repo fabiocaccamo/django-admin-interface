@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-19 22:45-0300\n"
+"POT-Creation-Date: 2022-01-28 10:01-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr "ativo"
 #: models.py:80 templates/admin/base_site.html:6
 #: templates/admin/base_site.html:78
 msgid "Django administration"
-msgstr "Administrção do Django"
+msgstr "Administração do Django"
 
 #: models.py:82
 msgid "title"
@@ -129,16 +129,15 @@ msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
 
 #: models.py:124
 msgid "favicon"
-msgid "favicon"
-msgstr ""
+msgstr "favicon"
 
 #: models.py:133
 msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
 msgstr ""
-"(vermelho: #E74C3C, laranja: #E67E22, amarelo: #F1C40F, verde: #2ECC71, azul: "
-"#3498DB)"
+"(vermelho: #E74C3C, laranja: #E67E22, amarelo: #F1C40F, verde: #2ECC71, "
+"azul: #3498DB)"
 
 #: models.py:138
 msgid "visible in header (marker and name)"
@@ -202,7 +201,7 @@ msgstr "usar menu suspenso"
 
 #: models.py:310
 msgid "sticky position"
-msgstr "sticky position"
+msgstr "posição sticky"
 
 #: models.py:314
 msgid "foldable apps"
