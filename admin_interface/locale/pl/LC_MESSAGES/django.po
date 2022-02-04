@@ -115,7 +115,7 @@ msgstr "logo"
 
 #: admin_interface/models.py:110
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
-msgstr "Format pliku: .ico, .png, .gif; wymiary: 16 x 16 lub 32 x 32 px).
+msgstr "(Format pliku: .ico, .png, .gif; wymiary: 16 x 16 lub 32 x 32 px)."
 
 #: admin_interface/models.py:111
 msgid "favicon"
