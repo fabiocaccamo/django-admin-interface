@@ -10,26 +10,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('admin_interface', '0002_add_related_modal'),
+        ("admin_interface", "0002_add_related_modal"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='theme',
-            name='logo_color',
+            model_name="theme",
+            name="logo_color",
             field=colorfield.fields.ColorField(
                 blank=True,
-                default='#FFFFFF',
-                help_text='#FFFFFF',
+                default="#FFFFFF",
+                help_text="#FFFFFF",
                 max_length=10,
-                verbose_name='logo color'),
+                verbose_name="logo color",
+            ),
         ),
         migrations.AlterField(
-            model_name='theme',
-            name='logo',
+            model_name="theme",
+            name="logo",
             field=models.FileField(
                 blank=True,
-                help_text='(leave blank to use the default Django logo)',
-                upload_to='admin-interface/logo/'),
+                help_text="(leave blank to use the default Django logo)",
+                upload_to="admin-interface/logo/",
+            ),
         ),
     ]

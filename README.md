@@ -11,6 +11,7 @@
 [![](https://img.shields.io/codecov/c/gh/fabiocaccamo/django-admin-interface?logo=codecov)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codacy/grade/21cb657283c04e70b56fb935277a1ad1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/django-admin-interface?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/django-admin-interface/)
+[![](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # django-admin-interface
 django-admin-interface is a modern **responsive flat admin interface customizable by the admin itself**.
@@ -46,27 +47,27 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 ```python
 INSTALLED_APPS = (
     #...
-    'admin_interface',
-    'flat_responsive', # only if django version < 2.0
-    'flat', # only if django version < 1.9
-    'colorfield',
+    "admin_interface",
+    "flat_responsive", # only if django version < 2.0
+    "flat", # only if django version < 1.9
+    "colorfield",
     #...
-    'django.contrib.admin',
+    "django.contrib.admin",
     #...
 )
 
 # only if django version >= 3.0
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-SILENCED_SYSTEM_CHECKS = ['security.W019']
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
 ```
-- Run ``python manage.py migrate``
-- Run ``python manage.py collectstatic``
+- Run `python manage.py migrate`
+- Run `python manage.py collectstatic`
 - Restart your application server
 
 #### Upgrade
 - Run `pip install django-admin-interface --upgrade`
-- Run ``python manage.py migrate`` *(add* ``--fake-initial`` *if you are upgrading from 0.1.0 version)*
-- Run ``python manage.py collectstatic --clear``
+- Run `python manage.py migrate` *(add* `--fake-initial` *if you are upgrading from 0.1.0 version)*
+- Run `python manage.py collectstatic --clear`
 - Restart your application server
 
 ---
@@ -75,26 +76,26 @@ SILENCED_SYSTEM_CHECKS = ['security.W019']
 This package ships with optional themes as fixtures, they can be installed using the [loaddata admin command](https://docs.djangoproject.com/en/1.11/ref/django-admin/#django-admin-loaddata). Optional themes are activated on installation.
 
 ##### [Django](https://www.djangoproject.com/) theme (default):
-Run ``python manage.py loaddata admin_interface_theme_django.json``
+Run `python manage.py loaddata admin_interface_theme_django.json`
 
 ##### [Bootstrap](http://getbootstrap.com/) theme:
-Run ``python manage.py loaddata admin_interface_theme_bootstrap.json``
+Run `python manage.py loaddata admin_interface_theme_bootstrap.json`
 
 ##### [Foundation](http://foundation.zurb.com/) theme:
-Run ``python manage.py loaddata admin_interface_theme_foundation.json``
+Run `python manage.py loaddata admin_interface_theme_foundation.json`
 
 ##### [U.S. Web Design Standards](https://standards.usa.gov/) theme:
-Run ``python manage.py loaddata admin_interface_theme_uswds.json``
+Run `python manage.py loaddata admin_interface_theme_uswds.json`
 
 ### Add more themes
 You can add a theme you've created through the admin to this repository by [sending us a PR](http://makeapullrequest.com/). Here are the steps to follow to add:
 
 1. Export your exact theme as fixture using the `dumpdata` admin command:
-``python manage.py dumpdata admin_interface.Theme --indent 4 -o admin_interface_theme_{{name}}.json --pks=N``
+`python manage.py dumpdata admin_interface.Theme --indent 4 -o admin_interface_theme_{{name}}.json --pks=N`
 
 2. Copy the generated json file into the fixtures folder *(making sure its name starts with* `admin_interface_theme_` *to avoid clashes with fixtures that might be provided by other third party apps)*.
 
-3. Remove the `"pk"` from the fixture and make sure the `active` field is set to `true` *(in this way a theme is automatically activated when installed)*.
+3. Remove the `pk` from the fixture and make sure the `active` field is set to `true` *(in this way a theme is automatically activated when installed)*.
 
 4. Edit the section above to document your theme.
 
@@ -155,17 +156,17 @@ You can use [django-apptemplates](https://github.com/bittner/django-apptemplates
 You must configure multilanguage `settings` and `urls` correctly:
 ```python
 LANGUAGES = (
-  ('en', _('English')),
-  ('it', _('Italiano')),
-  ('fr', _('Française')),
-  # more than one language is expected here
+    ("en", _("English")),
+    ("it", _("Italiano")),
+    ("fr", _("Française")),
+    # more than one language is expected here
 )
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = "en"
 USE_I18N = True
 MIDDLEWARE = [
-  # ...
-  'django.middleware.locale.LocaleMiddleware',
-  # ...
+    # ...
+    "django.middleware.locale.LocaleMiddleware",
+    # ...
 ]
 ```
 
@@ -177,9 +178,9 @@ from django.urls import include, path
 # ...
 
 urlpatterns = [
-    path('i18n/', include('django.conf.urls.i18n')),
+    path("i18n/", include("django.conf.urls.i18n")),
 ]
-urlpatterns += i18n_patterns(path('admin/', admin.site.urls))
+urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
 ```
 
 ---

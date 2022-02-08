@@ -15,7 +15,6 @@ from six import python_2_unicode_compatible
 
 @python_2_unicode_compatible
 class Theme(models.Model):
-
     @staticmethod
     def post_migrate_handler(**kwargs):
         del_cached_active_theme()
@@ -67,272 +66,323 @@ class Theme(models.Model):
         return obj
 
     name = models.CharField(
-        unique=True,
-        max_length=50,
-        default='Django',
-        verbose_name=_('name'))
-    active = models.BooleanField(
-        default=True,
-        verbose_name=_('active'))
+        unique=True, max_length=50, default="Django", verbose_name=_("name")
+    )
+    active = models.BooleanField(default=True, verbose_name=_("active"))
 
     title = models.CharField(
         max_length=50,
-        default=_('Django administration'),
+        default=_("Django administration"),
         blank=True,
-        verbose_name=_('title'))
+        verbose_name=_("title"),
+    )
     title_color = ColorField(
         blank=True,
-        default='#F5DD5D',
-        help_text='#F5DD5D',
+        default="#F5DD5D",
+        help_text="#F5DD5D",
         max_length=10,
-        verbose_name=_('color'))
-    title_visible = models.BooleanField(
-        default=True,
-        verbose_name=_('visible'))
+        verbose_name=_("color"),
+    )
+    title_visible = models.BooleanField(default=True, verbose_name=_("visible"))
 
     logo = models.FileField(
-        upload_to='admin-interface/logo/',
+        upload_to="admin-interface/logo/",
         blank=True,
-        validators=[FileExtensionValidator(
-            allowed_extensions=['gif', 'jpg', 'jpeg', 'png', 'svg'])],
-        help_text=_('Leave blank to use the default Django logo'),
-        verbose_name=_('logo'))
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=["gif", "jpg", "jpeg", "png", "svg"]
+            )
+        ],
+        help_text=_("Leave blank to use the default Django logo"),
+        verbose_name=_("logo"),
+    )
     logo_color = ColorField(
         blank=True,
-        default='#FFFFFF',
-        help_text='#FFFFFF',
+        default="#FFFFFF",
+        help_text="#FFFFFF",
         max_length=10,
-        verbose_name=_('color'))
+        verbose_name=_("color"),
+    )
     logo_max_width = models.PositiveSmallIntegerField(
-        blank=True,
-        default=400,
-        verbose_name=_('max width'))
+        blank=True, default=400, verbose_name=_("max width")
+    )
     logo_max_height = models.PositiveSmallIntegerField(
-        blank=True,
-        default=100,
-        verbose_name=_('max height'))
-    logo_visible = models.BooleanField(
-        default=True,
-        verbose_name=_('visible'))
+        blank=True, default=100, verbose_name=_("max height")
+    )
+    logo_visible = models.BooleanField(default=True, verbose_name=_("visible"))
 
     favicon = models.FileField(
-        upload_to='admin-interface/favicon/',
+        upload_to="admin-interface/favicon/",
         blank=True,
-        validators=[FileExtensionValidator(
-            allowed_extensions=['gif', 'ico', 'jpg', 'jpeg', 'png', 'svg'])],
-        help_text=_('(.ico|.png|.gif - 16x16|32x32 px)'),
-        verbose_name=_('favicon'))
+        validators=[
+            FileExtensionValidator(
+                allowed_extensions=["gif", "ico", "jpg", "jpeg", "png", "svg"]
+            )
+        ],
+        help_text=_("(.ico|.png|.gif - 16x16|32x32 px)"),
+        verbose_name=_("favicon"),
+    )
 
-    env_name = models.CharField(
-        blank=True,
-        max_length=50,
-        verbose_name=_('name'))
+    env_name = models.CharField(blank=True, max_length=50, verbose_name=_("name"))
     env_color = ColorField(
         blank=True,
-        default='#E74C3C',
-        help_text=_('(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)'),
+        default="#E74C3C",
+        help_text=_(
+            "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)"
+        ),
         max_length=10,
-        verbose_name=_('color'))
+        verbose_name=_("color"),
+    )
     env_visible_in_header = models.BooleanField(
-        default=True,
-        verbose_name=_('visible in header (marker and name)'))
+        default=True, verbose_name=_("visible in header (marker and name)")
+    )
     env_visible_in_favicon = models.BooleanField(
-        default=True,
-        verbose_name=_('visible in favicon (marker)'))
+        default=True, verbose_name=_("visible in favicon (marker)")
+    )
 
     language_chooser_active = models.BooleanField(
-        default=True,
-        verbose_name=_('active'))
+        default=True, verbose_name=_("active")
+    )
     language_chooser_display_choices = (
-        ('code', _('code'), ),
-        ('name', _('name'), ),
+        (
+            "code",
+            _("code"),
+        ),
+        (
+            "name",
+            _("name"),
+        ),
     )
     language_chooser_display = models.CharField(
         max_length=10,
         choices=language_chooser_display_choices,
-        default='code',
-        verbose_name=_('display'))
+        default="code",
+        verbose_name=_("display"),
+    )
 
     css_header_background_color = ColorField(
         blank=True,
-        default='#0C4B33',
-        help_text='#0C4B33',
+        default="#0C4B33",
+        help_text="#0C4B33",
         max_length=10,
-        verbose_name=_('background color'))
+        verbose_name=_("background color"),
+    )
     css_header_text_color = ColorField(
         blank=True,
-        default='#44B78B',
-        help_text='#44B78B',
+        default="#44B78B",
+        help_text="#44B78B",
         max_length=10,
-        verbose_name=_('text color'))
+        verbose_name=_("text color"),
+    )
     css_header_link_color = ColorField(
         blank=True,
-        default='#FFFFFF',
-        help_text='#FFFFFF',
+        default="#FFFFFF",
+        help_text="#FFFFFF",
         max_length=10,
-        verbose_name=_('link color'))
+        verbose_name=_("link color"),
+    )
     css_header_link_hover_color = ColorField(
         blank=True,
-        default='#C9F0DD',
-        help_text='#C9F0DD',
+        default="#C9F0DD",
+        help_text="#C9F0DD",
         max_length=10,
-        verbose_name=_('link hover color'))
+        verbose_name=_("link hover color"),
+    )
 
     css_module_background_color = ColorField(
         blank=True,
-        default='#44B78B',
-        help_text='#44B78B',
+        default="#44B78B",
+        help_text="#44B78B",
         max_length=10,
-        verbose_name=_('background color'))
+        verbose_name=_("background color"),
+    )
     css_module_background_selected_color = ColorField(
         blank=True,
-        default='#FFFFCC',
-        help_text='#FFFFCC',
+        default="#FFFFCC",
+        help_text="#FFFFCC",
         max_length=10,
-        verbose_name=_('background selected color'))
+        verbose_name=_("background selected color"),
+    )
     css_module_text_color = ColorField(
         blank=True,
-        default='#FFFFFF',
-        help_text='#FFFFFF',
+        default="#FFFFFF",
+        help_text="#FFFFFF",
         max_length=10,
-        verbose_name=_('text color'))
+        verbose_name=_("text color"),
+    )
     css_module_link_color = ColorField(
         blank=True,
-        default='#FFFFFF',
-        help_text='#FFFFFF',
+        default="#FFFFFF",
+        help_text="#FFFFFF",
         max_length=10,
-        verbose_name=_('link color'))
+        verbose_name=_("link color"),
+    )
     css_module_link_selected_color = ColorField(
         blank=True,
-        default='#FFFFFF',
-        help_text='#FFFFFF',
+        default="#FFFFFF",
+        help_text="#FFFFFF",
         max_length=10,
-        verbose_name=_('link selected color'))
+        verbose_name=_("link selected color"),
+    )
     css_module_link_hover_color = ColorField(
         blank=True,
-        default='#C9F0DD',
-        help_text='#C9F0DD',
+        default="#C9F0DD",
+        help_text="#C9F0DD",
         max_length=10,
-        verbose_name=_('link hover color'))
+        verbose_name=_("link hover color"),
+    )
     css_module_rounded_corners = models.BooleanField(
-        default=True,
-        verbose_name=_('rounded corners'))
+        default=True, verbose_name=_("rounded corners")
+    )
 
     css_generic_link_color = ColorField(
         blank=True,
-        default='#0C3C26',
-        help_text='#0C3C26',
+        default="#0C3C26",
+        help_text="#0C3C26",
         max_length=10,
-        verbose_name=_('link color'))
+        verbose_name=_("link color"),
+    )
     css_generic_link_hover_color = ColorField(
         blank=True,
-        default='#156641',
-        help_text='#156641',
+        default="#156641",
+        help_text="#156641",
         max_length=10,
-        verbose_name=_('link hover color'))
+        verbose_name=_("link hover color"),
+    )
 
     css_save_button_background_color = ColorField(
         blank=True,
-        default='#0C4B33',
-        help_text='#0C4B33',
+        default="#0C4B33",
+        help_text="#0C4B33",
         max_length=10,
-        verbose_name=_('background color'))
+        verbose_name=_("background color"),
+    )
     css_save_button_background_hover_color = ColorField(
         blank=True,
-        default='#0C3C26',
-        help_text='#0C3C26',
+        default="#0C3C26",
+        help_text="#0C3C26",
         max_length=10,
-        verbose_name=_('background hover color'))
+        verbose_name=_("background hover color"),
+    )
     css_save_button_text_color = ColorField(
         blank=True,
-        default='#FFFFFF',
-        help_text='#FFFFFF',
+        default="#FFFFFF",
+        help_text="#FFFFFF",
         max_length=10,
-        verbose_name=_('text color'))
+        verbose_name=_("text color"),
+    )
 
     css_delete_button_background_color = ColorField(
         blank=True,
-        default='#BA2121',
-        help_text='#BA2121',
+        default="#BA2121",
+        help_text="#BA2121",
         max_length=10,
-        verbose_name=_('background color'))
+        verbose_name=_("background color"),
+    )
     css_delete_button_background_hover_color = ColorField(
         blank=True,
-        default='#A41515',
-        help_text='#A41515',
+        default="#A41515",
+        help_text="#A41515",
         max_length=10,
-        verbose_name=_('background hover color'))
+        verbose_name=_("background hover color"),
+    )
     css_delete_button_text_color = ColorField(
         blank=True,
-        default='#FFFFFF',
-        help_text='#FFFFFF',
+        default="#FFFFFF",
+        help_text="#FFFFFF",
         max_length=10,
-        verbose_name=_('text color'))
+        verbose_name=_("text color"),
+    )
 
-    related_modal_active = models.BooleanField(
-        default=True,
-        verbose_name=_('active'))
+    related_modal_active = models.BooleanField(default=True, verbose_name=_("active"))
     related_modal_background_color = ColorField(
         blank=True,
-        default='#000000',
-        help_text='#000000',
+        default="#000000",
+        help_text="#000000",
         max_length=10,
-        verbose_name=_('background color'))
+        verbose_name=_("background color"),
+    )
     related_modal_background_opacity_choices = (
-        ('0.1', '10%', ),
-        ('0.2', '20%', ),
-        ('0.3', '30%', ),
-        ('0.4', '40%', ),
-        ('0.5', '50%', ),
-        ('0.6', '60%', ),
-        ('0.7', '70%', ),
-        ('0.8', '80%', ),
-        ('0.9', '90%', ),
+        (
+            "0.1",
+            "10%",
+        ),
+        (
+            "0.2",
+            "20%",
+        ),
+        (
+            "0.3",
+            "30%",
+        ),
+        (
+            "0.4",
+            "40%",
+        ),
+        (
+            "0.5",
+            "50%",
+        ),
+        (
+            "0.6",
+            "60%",
+        ),
+        (
+            "0.7",
+            "70%",
+        ),
+        (
+            "0.8",
+            "80%",
+        ),
+        (
+            "0.9",
+            "90%",
+        ),
     )
     related_modal_background_opacity = models.CharField(
         max_length=5,
         choices=related_modal_background_opacity_choices,
-        default='0.3',
-        help_text='20%',
-        verbose_name=_('background opacity'))
+        default="0.3",
+        help_text="20%",
+        verbose_name=_("background opacity"),
+    )
     related_modal_rounded_corners = models.BooleanField(
-        default=True,
-        verbose_name=_('rounded corners'))
+        default=True, verbose_name=_("rounded corners")
+    )
     related_modal_close_button_visible = models.BooleanField(
-        default=True,
-        verbose_name=_('close button visible'))
+        default=True, verbose_name=_("close button visible")
+    )
 
     list_filter_dropdown = models.BooleanField(
-        default=True,
-        verbose_name=_('use dropdown'))
+        default=True, verbose_name=_("use dropdown")
+    )
     list_filter_sticky = models.BooleanField(
-        default=True,
-        verbose_name=_('sticky position'))
+        default=True, verbose_name=_("sticky position")
+    )
 
-    foldable_apps = models.BooleanField(
-        default=True,
-        verbose_name=_('foldable apps'))
+    foldable_apps = models.BooleanField(default=True, verbose_name=_("foldable apps"))
 
     recent_actions_visible = models.BooleanField(
-        default=True,
-        verbose_name=_('visible'))
+        default=True, verbose_name=_("visible")
+    )
 
     form_submit_sticky = models.BooleanField(
-        default=False,
-        verbose_name=_('sticky submit'))
+        default=False, verbose_name=_("sticky submit")
+    )
     form_pagination_sticky = models.BooleanField(
-        default=False,
-        verbose_name=_('sticky pagination'))
+        default=False, verbose_name=_("sticky pagination")
+    )
 
     def set_active(self):
         self.active = True
         self.save()
 
     class Meta:
-        app_label = 'admin_interface'
+        app_label = "admin_interface"
 
-        verbose_name = _('Theme')
-        verbose_name_plural = _('Themes')
+        verbose_name = _("Theme")
+        verbose_name_plural = _("Themes")
 
     def __str__(self):
         return force_str(self.name)

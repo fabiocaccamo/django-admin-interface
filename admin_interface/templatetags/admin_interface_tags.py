@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import django
-from django import template, VERSION
+
+from django import template
 from django.conf import settings
-if django.VERSION < (1, 10):
-    from django.core.urlresolvers import NoReverseMatch, reverse
-else:
-    from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
+from admin_interface.compat import NoReverseMatch, reverse
 from admin_interface.models import Theme
 from admin_interface.version import __version__
 
@@ -18,7 +16,7 @@ import re
 
 register = template.Library()
 
-if VERSION < (1, 9):
+if django.VERSION < (1, 9):
     simple_tag = register.assignment_tag
 else:
     simple_tag = register.simple_tag
@@ -33,16 +31,16 @@ def get_admin_interface_languages(context):
         # less than 2 languages
         return None
     try:
-        set_language_url = reverse('set_language')
+        set_language_url = reverse("set_language")
     except NoReverseMatch:
         # ImproperlyConfigured - must include i18n urls:
         # urlpatterns += [url(r'^i18n/', include('django.conf.urls.i18n')),]
         return None
-    request = context.get('request', None)
+    request = context.get("request", None)
     if not request:
         return None
     full_path = request.get_full_path()
-    admin_nolang_url = re.sub(r'^\/([\w]{2})([\-\_]{1}[\w]{2,4})?\/', '/', full_path)
+    admin_nolang_url = re.sub(r"^\/([\w]{2})([\-\_]{1}[\w]{2,4})?\/", "/", full_path)
     if admin_nolang_url == full_path:
         # ImproperlyConfigured - must include admin urls using i18n_patterns:
         # from django.conf.urls.i18n import i18n_patterns
@@ -55,12 +53,13 @@ def get_admin_interface_languages(context):
         lang_code = language[0].lower()
         lang_name = language[1].title()
         lang_data = {
-            'code': lang_code,
-            'name': lang_name,
-            'default': lang_code == default_lang_code,
-            'active': lang_code == current_lang_code,
-            'activation_url': '{}?next=/{}{}'.format(
-                set_language_url, lang_code, admin_nolang_url)
+            "code": lang_code,
+            "name": lang_name,
+            "default": lang_code == default_lang_code,
+            "active": lang_code == current_lang_code,
+            "activation_url": "{}?next=/{}{}".format(
+                set_language_url, lang_code, admin_nolang_url
+            ),
         }
         langs_data.append(lang_data)
     return langs_data
