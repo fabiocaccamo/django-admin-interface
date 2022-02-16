@@ -8,7 +8,6 @@ from django.template import Context, Template
 
 from admin_interface.models import Theme
 from admin_interface.templatetags import admin_interface_tags as templatetags
-from admin_interface.version import __version__
 
 
 class AdminInterfaceTemplateTagsTestCase(TestCase):
@@ -123,13 +122,3 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             context,
         )
         self.assertEqual(rendered, "Django")
-
-    def test_get_version(self):
-        version = templatetags.get_admin_interface_version()
-        self.assertEqual(version, __version__)
-        rendered = self.__render_template(
-            "{% load admin_interface_tags %}"
-            "{% get_admin_interface_version as version %}"
-            "{{ version }}"
-        )
-        self.assertEqual(rendered, __version__)
