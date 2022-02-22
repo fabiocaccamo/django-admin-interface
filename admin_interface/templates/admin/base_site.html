@@ -8,13 +8,9 @@
 
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
-{% get_admin_interface_version as version %}
+{% get_admin_interface_nocache as version_md5_cache %}
 {% get_current_language as current_lang %}
 <style type="text/css">
-/*
-django-admin-interface {{ version }}
-https://github.com/fabiocaccamo/django-admin-interface
-*/
 {% include "admin_interface/css/admin-interface.css" %}
 {% include "admin_interface/css/admin-interface-fix.css" %}
 {% include "admin_interface/css/form-controls.css" %}
@@ -40,11 +36,11 @@ https://github.com/fabiocaccamo/django-admin-interface
 {% block blockbots %}
 {{ block.super }}
 {% get_admin_interface_theme as theme %}
-{% get_admin_interface_version as version %}
+{% get_admin_interface_nocache as version_md5_cache %}
 {# https://github.com/elky/django-flat-responsive#important-note #}
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}?v={{ version }}">
-<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive_rtl.css' %}?v={{ version }}" />
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}?nocache={{ version_md5_cache }}">
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive_rtl.css' %}?nocache={{ version_md5_cache }}">
 {% include "admin_interface/favicon.html" %}
 {% include "admin_interface/foldable-apps.html" %}
 {% include "admin_interface/related-modal.html" %}

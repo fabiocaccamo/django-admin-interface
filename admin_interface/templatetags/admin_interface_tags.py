@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import re
+import hashlib
 import django
 
 from django import template
@@ -11,7 +12,6 @@ from admin_interface.compat import NoReverseMatch, reverse
 from admin_interface.models import Theme
 from admin_interface.version import __version__
 
-import re
 
 
 register = template.Library()
@@ -77,3 +77,14 @@ def get_admin_interface_theme(context):
 @simple_tag(takes_context=False)
 def get_admin_interface_version():
     return __version__
+
+
+def hash_string(text):
+    hash_object = hashlib.md5(text.encode())
+    md5_hash = hash_object.hexdigest()
+    return md5_hash
+
+
+@simple_tag(takes_context=False)
+def get_admin_interface_nocache():
+    return hash_string(__version__)

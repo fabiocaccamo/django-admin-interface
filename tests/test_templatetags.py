@@ -8,6 +8,7 @@ from django.template import Context, Template
 
 from admin_interface.models import Theme
 from admin_interface.templatetags import admin_interface_tags as templatetags
+from admin_interface.templatetags.admin_interface_tags import hash_string
 from admin_interface.version import __version__
 
 
@@ -133,3 +134,15 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             "{{ version }}"
         )
         self.assertEqual(rendered, __version__)
+
+    def test_get_version_nocache(self):
+        hash_from_tag = templatetags.get_admin_interface_nocache()
+        hash_manual = hash_string(__version__)
+        self.assertEqual(hash_from_tag, hash_manual)
+
+        rendered = self.__render_template(
+            "{% load admin_interface_tags %}"
+            "{% get_admin_interface_nocache as version_md5_hash %}"
+            "{{ version_md5_hash }}"
+        )
+        self.assertEqual(rendered, hash_manual)
