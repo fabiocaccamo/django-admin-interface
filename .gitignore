@@ -56,3 +56,5 @@ docs/_build/
 target/
 screenshots
 TODO.txt
+
+.idea/
