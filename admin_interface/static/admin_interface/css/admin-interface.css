@@ -1,0 +1,440 @@
+@media (prefers-color-scheme: dark) {
+    :root .admin-interface {
+        --primary: #79aec8;
+        --secondary: #417690;
+        --accent: #f5dd5d;
+        --primary-fg: #fff;
+        --body-fg: #333;
+        --body-bg: #fff;
+        --body-quiet-color: #666;
+        --body-loud-color: #000;
+        --header-color: #ffc;
+        --header-branding-color: var(--accent);
+        --header-bg: var(--secondary);
+        --header-link-color: var(--primary-fg);
+        --breadcrumbs-fg: #c4dce8;
+        --breadcrumbs-link-fg: var(--body-bg);
+        --breadcrumbs-bg: var(--primary);
+        --link-fg: #447e9b;
+        --link-hover-color: #036;
+        --link-selected-fg: #5b80b2;
+        --hairline-color: #e8e8e8;
+        --border-color: #ccc;
+        --error-fg: #ba2121;
+        --message-success-bg: #dfd;
+        --message-warning-bg: #ffc;
+        --message-error-bg: #ffefef;
+        --darkened-bg: #f8f8f8;
+        --selected-bg: #e4e4e4;
+        --selected-row: #ffc;
+        --button-fg: #fff;
+        --button-bg: var(--primary);
+        --button-hover-bg: #609ab6;
+        --default-button-bg: var(--secondary);
+        --default-button-hover-bg: #205067;
+        --close-button-bg: #888;
+        --close-button-hover-bg: #747474;
+        --delete-button-bg: #ba2121;
+        --delete-button-hover-bg: #a41515;
+        --object-tools-fg: var(--button-fg);
+        --object-tools-bg: var(--close-button-bg);
+        --object-tools-hover-bg: var(--close-button-hover-bg);
+    }
+}
+
+.admin-interface #header {
+    background: var(--admin-interface-header-background-color);
+    color: var(--admin-interface-header-text-color);
+}
+
+.admin-interface #header + #main {
+    border-top: var(--admin-interface-main-border-top);
+}
+
+.admin-interface .environment-label {
+}
+
+.admin-interface .environment-label::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--admin-interface-env-color);
+    border-radius: 100%;
+    margin-right: 6px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.admin-interface .environment-label::after {
+    content: " - ";
+}
+
+@media (max-width: 1024px) {
+    .admin-interface .environment-label::after {
+        content: "";
+    }
+}
+
+.admin-interface .language-chooser {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .admin-interface .language-chooser {
+        right: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .admin-interface .language-chooser {
+        position: static;
+        float: right;
+        margin-left: 20px;
+    }
+}
+
+.admin-interface .language-chooser-hidden-form {
+    display: none;
+}
+
+.admin-interface .language-chooser-select-form {
+    display: inline-block;
+}
+
+.admin-interface #branding h1,
+.admin-interface.login #header h1,
+.admin-interface.login #header h1 a {
+    color: var(--admin-interface-title-color);
+}
+
+.admin-interface #branding h1 a {
+    color: inherit;
+}
+
+.admin-interface #branding h1 .logo.default {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 104px 36px;
+    background-image: var(--admin-interface-logo-default-background-image);
+}
+
+.admin-interface #branding h1 img.logo,
+.admin-interface.login #header #branding h1 img.logo {
+    max-width: var(--admin-interface-log-max-width);
+    max-height: var(--admin-interface-log-max-height);
+}
+
+.admin-interface #header #user-tools a {
+    color: var(--admin-interface-header-link-color);
+}
+
+.admin-interface #header #user-tools a:hover,
+.admin-interface #header #user-tools a:active {
+    color: var(--admin-interface-header-link_hover-color);
+    border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.admin-interface #nav-sidebar .current-app .section:link,
+.admin-interface #nav-sidebar .current-app .section:visited {
+    color: var(--admin-interface-module-link-selected-color);
+    font-weight: normal;
+}
+
+.admin-interface #nav-sidebar .current-app .section:focus,
+.admin-interface #nav-sidebar .current-app .section:hover {
+    color: var(--admin-interface-module-link-hover-color);
+}
+
+.admin-interface #nav-sidebar .current-model {
+    background: var(--admin-interface-module-background-selected-color);
+}
+
+.admin-interface #changelist table tbody tr.selected {
+    background-color: var(--admin-interface-module-background-selected-color);
+}
+
+.admin-interface .module h2,
+.admin-interface .module caption,
+.admin-interface .module.filtered h2 {
+    background: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
+}
+
+.admin-interface .module a.section:link,
+.admin-interface .module a.section:visited {
+    color: var(--admin-interface-module-link-color);
+}
+
+.admin-interface .module a.section:active,
+.admin-interface .module a.section:hover {
+    color: var(--admin-interface-module-link-hover-color);
+}
+
+.admin-interface div.breadcrumbs {
+    background: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
+}
+
+.admin-interface div.breadcrumbs a {
+    color: var(--admin-interface-module-link-color);
+}
+
+.admin-interface div.breadcrumbs a:active,
+.admin-interface div.breadcrumbs a:focus,
+.admin-interface div.breadcrumbs a:hover {
+    color: var(--admin-interface-module-link-hover-color);
+}
+
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle {
+    color: var(--admin-interface-module-link-color);
+}
+
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle:hover,
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle:active {
+    color: var(--admin-interface-module-link-hover-color);
+}
+
+.admin-interface fieldset.collapse a.collapse-toggle {
+    color: var(--admin-interface-module-link-color);
+}
+
+.admin-interface fieldset.collapse a.collapse-toggle:hover,
+.admin-interface fieldset.collapse a.collapse-toggle:active {
+    color: var(--admin-interface-module-link-hover-color);
+}
+
+.admin-interface .inline-group h2 {
+    background: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
+}
+
+.admin-interface .selector .selector-chosen h2 {
+    border-color: var(--admin-interface-module-background-color);
+    background: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
+}
+
+.admin-interface .selector .selector-available h2,
+.admin-interface .selector .selector-chosen h2 {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.admin-interface .selector a.selector-chooseall:focus,
+.admin-interface .selector a.selector-chooseall:hover,
+.admin-interface .selector a.selector-clearall:focus,
+.admin-interface .selector a.selector-clearall:hover {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface a:link,
+.admin-interface a:visited {
+    color: var(--admin-interface-generic-link-color);
+}
+
+.admin-interface a:hover {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface thead th a,
+.admin-interface thead th a:link,
+.admin-interface thead th a:visited,
+.admin-interface thead th a:focus,
+.admin-interface thead th a:hover {
+    color: #666666;
+}
+
+.admin-interface .button,
+.admin-interface input[type=submit],
+.admin-interface input[type=button],
+.admin-interface .submit-row input,
+.admin-interface a.button {
+    background: var(--admin-interface-save-button-background-color);
+    color: var(--admin-interface-save-button-text-color);
+}
+
+.admin-interface .button:active,
+.admin-interface .button:focus,
+.admin-interface .button:hover,
+.admin-interface input[type=submit]:active,
+.admin-interface input[type=submit]:focus,
+.admin-interface input[type=submit]:hover,
+.admin-interface input[type=button]:active,
+.admin-interface input[type=button]:focus,
+.admin-interface input[type=button]:hover {
+    background: var(--admin-interface-save-button-background-hover-color);
+    color: var(--admin-interface-save-button-text-color);
+    outline: none;
+}
+
+.admin-interface .button.default,
+.admin-interface input[type=submit].default,
+.admin-interface .submit-row input.default {
+    background: var(--admin-interface-save-button-background-color);
+    color: var(--admin-interface-save-button-text-color);
+    outline: none;
+}
+
+.admin-interface .button.default:active,
+.admin-interface .button.default:focus,
+.admin-interface .button.default:hover,
+.admin-interface input[type=submit].default:active,
+.admin-interface input[type=submit].default:focus,
+.admin-interface input[type=submit].default:hover,
+.admin-interface.delete-confirmation form .cancel-link:hover {
+    background: var(--admin-interface-save-button-background-hover-color);
+    color: var(--admin-interface-save-button-text-color);
+    outline: none;
+}
+
+.admin-interface .submit-row a.deletelink:link,
+.admin-interface .submit-row a.deletelink:visited,
+.admin-interface.delete-confirmation form input[type="submit"] {
+    background: var(--admin-interface-delete-button-background-color);
+    color: var(--admin-interface-delete-button-text-color);
+}
+
+.admin-interface .submit-row a.deletelink:hover,
+.admin-interface.delete-confirmation form input[type="submit"]:hover {
+    background: var(--admin-interface-delete-button-background-hover-color);
+    color: var(--admin-interface-delete-button-text-color);
+}
+
+.admin-interface .paginator a,
+.admin-interface .paginator a:link,
+.admin-interface .paginator a:visited,
+.admin-interface .paginator .this-page {
+    border-radius: var(--admin-interface-module-border-radius);
+}
+
+.admin-interface .paginator a,
+.admin-interface .paginator a:link,
+.admin-interface .paginator a:visited {
+    background-color: #FFFFFF;
+    color: var(--admin-interface-generic-link-color);
+}
+
+.admin-interface .paginator a:hover,
+.admin-interface .paginator a:active {
+    background-color: #F8F8F8;
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface .paginator .this-page {
+    background-color: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-link-color);
+}
+
+.admin-interface .paginator a.showall,
+.admin-interface .paginator a.showall:link,
+.admin-interface .paginator a.showall:visited {
+    color: var(--admin-interface-generic-link-color);
+}
+
+.admin-interface .paginator a.showall:hover,
+.admin-interface .paginator a.showall:active {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+/* list-filter sticky */
+@media (min-width: 768px) {
+    .admin-interface.list-filter-sticky .module.filtered #changelist-filter {
+        position: sticky;
+        top: 40px;
+        float: right;
+        z-index: 30;
+    }
+
+    /* feature not available for django < 3.1.2 */
+    .admin-interface.list-filter-sticky .module.filtered #toolbar + #changelist-filter {
+        position: absolute;
+        top: 0px;
+        z-index: 30;
+    }
+}
+
+.admin-interface .module.filtered #changelist-filter {
+    border-bottom-left-radius: var(--admin-interface-module-border-radius);
+    border-bottom-right-radius: var(--admin-interface-module-border-radius);
+}
+
+.admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:focus,
+.admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+.admin-interface .module.filtered #changelist-filter li a:focus,
+.admin-interface .module.filtered #changelist-filter li a:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+.admin-interface .module.filtered #changelist-filter li.selected a,
+.admin-interface .module.filtered #changelist-filter li.selected a:link,
+.admin-interface .module.filtered #changelist-filter li.selected a:visited,
+.admin-interface .module.filtered #changelist-filter li.selected a:focus,
+.admin-interface .module.filtered #changelist-filter li.selected a:hover {
+    /* color: #666; */
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+/* begin fix issue #11 - Inline border bottom should not be rounded */
+.admin-interface .module h2,
+.admin-interface.dashboard .module caption,
+.admin-interface #nav-sidebar .module th,
+.admin-interface #nav-sidebar .module caption,
+.admin-interface .module.filtered h2 {
+    border-radius: var(--admin-interface-module-border-radius);
+}
+
+.admin-interface .inline-group h2 {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.admin-interface .module.collapse.collapsed h2 {
+    /* fix collapsed inlines rounded bottom borders */
+    border-bottom-left-radius: var(--admin-interface-module-border-radius);
+    border-bottom-right-radius: var(--admin-interface-module-border-radius);
+}
+
+/* end fix */
+
+.admin-interface #content-related {
+    border-radius: var(--admin-interface-module-border-radius);
+}
+
+.admin-interface .select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
+    background-color: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
+}
+
+.admin-interface #toggle-nav-sidebar {
+    border-top-right-radius: var(--admin-interface-module-border-radius);
+    border-bottom-right-radius: var(--admin-interface-module-border-radius);
+    color: var(--admin-interface-generic-link-color);
+}
+
+.admin-interface #toggle-nav-sidebar:focus,
+.admin-interface #toggle-nav-sidebar:hover,
+.admin-interface #toggle-nav-sidebar:active {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface .calendar td.selected a,
+.admin-interface .calendar td a:active,
+.admin-interface .calendar td a:focus,
+.admin-interface .calendar td a:hover,
+.admin-interface .timelist a:active,
+.admin-interface .timelist a:focus,
+.admin-interface .timelist a:hover {
+    background: var(--admin-interface-module-background-color);
+}
