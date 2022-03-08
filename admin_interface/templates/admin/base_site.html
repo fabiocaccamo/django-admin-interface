@@ -39,6 +39,8 @@
 
         {% if theme.css_header_background_color != theme.css_module_background_color %}
             --admin-interface-main-border-top: 10px solid var(--admin-interface-module-background-color);
+        {% else %}
+            --admin-interface-main-border-top: 0px;
         {% endif %}
 
         {% if theme.logo_max_width > 0 %}
@@ -49,21 +51,30 @@
 
         {% if theme.logo_max_height > 0 %}
             --admin-interface-log-max-height: {{ theme.logo_max_height }}px;
+        {% else %}
+            --admin-interface-log-max-height: unset;
         {% endif %}
 
         {% if theme.related_modal_rounded_corners %}
             --admin-interface-related-modal-border-radius: 4px;
+        {% else %}
+            --admin-interface-related-modal-border-radius: 0px;
         {% endif %}
 
         {% if theme.css_module_rounded_corners %}
             --admin-interface-module-border-radius: 4px;
-            --admin-interface-border-radius-0px: 0px;
             --admin-interface-jsoneditor-border-radius: var(--admin-interface-module-border-radius);
             --admin-interface-jsoneditor-overflow: hidden;
+        {% else %}
+            --admin-interface-module-border-radius: 0px;
+            --admin-interface-jsoneditor-border-radius: var(--admin-interface-module-border-radius);
+            --admin-interface-jsoneditor-overflow: unset;
         {% endif %}
 
         {% if not theme.related_modal_close_button_visible %}
             --admin-interface-related-modal-close-button-display: none;
+        {% else %}
+            --admin-interface-related-modal-close-button-display: unset;
         {% endif %}
         }
     </style>

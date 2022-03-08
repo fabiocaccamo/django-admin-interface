@@ -223,8 +223,8 @@
 
 .admin-interface .selector .selector-available h2,
 .admin-interface .selector .selector-chosen h2 {
-    border-bottom-left-radius: var(--admin-interface-border-radius-0px);
-    border-bottom-right-radius: var(--admin-interface-border-radius-0px);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .admin-interface .selector a.selector-chooseall:focus,
@@ -379,8 +379,8 @@
 }
 
 .admin-interface .inline-group h2 {
-    border-bottom-left-radius: var(--admin-interface-border-radius-0px);
-    border-bottom-right-radius: var(--admin-interface-border-radius-0px);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .admin-interface .module.collapse.collapsed h2 {
