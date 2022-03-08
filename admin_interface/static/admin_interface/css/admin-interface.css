@@ -343,6 +343,23 @@
     color: var(--admin-interface-generic-link-hover-color);
 }
 
+/* list-filter sticky */
+@media (min-width: 768px) {
+    .admin-interface.list-filter-sticky .module.filtered #changelist-filter {
+        position: sticky;
+        top: 40px;
+        float: right;
+        z-index: 30;
+    }
+
+    /* feature not available for django < 3.1.2 */
+    .admin-interface.list-filter-sticky .module.filtered #toolbar + #changelist-filter {
+        position: absolute;
+        top: 0px;
+        z-index: 30;
+    }
+}
+
 .admin-interface .module.filtered #changelist-filter {
     border-bottom-left-radius: var(--admin-interface-module-border-radius);
     border-bottom-right-radius: var(--admin-interface-module-border-radius);
