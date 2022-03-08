@@ -31,6 +31,21 @@
         padding-left: 30px;
         padding-right: 30px;
     }
+
+    /* list-filter sticky */
+    .admin-interface.list-filter-sticky .module.filtered #changelist-filter {
+        position: sticky;
+        top: 40px;
+        float: right;
+        z-index: 30;
+    }
+
+    /* feature not available for django < 3.1.2 */
+    .admin-interface.list-filter-sticky .module.filtered #toolbar + #changelist-filter {
+        position: absolute;
+        top: 0px;
+        z-index: 30;
+    }
 }
 
 @media (min-width:1024px) {

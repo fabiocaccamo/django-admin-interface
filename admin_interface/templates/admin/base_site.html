@@ -66,25 +66,6 @@
             --admin-interface-related-modal-close-button-display: none;
         {% endif %}
         }
-
-        /* list-filter sticky */
-        {%  if  theme.list_filter_sticky  %}
-            @media (min-width: 768px) {
-                .admin-interface .module.filtered #changelist-filter {
-                    position: sticky;
-                    top: 40px;
-                    float: right;
-                    z-index: 30;
-                }
-
-                /* feature not available for django < 3.1.2 */
-                .admin-interface .module.filtered #toolbar + #changelist-filter {
-                    position: absolute;
-                    top: 0px;
-                    z-index: 30;
-                }
-            }
-        {%  endif  %}
     </style>
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/admin-interface.css' %}?v={{ version_md5_cache }}">
@@ -144,6 +125,7 @@ flat-theme admin-interface
 {% if theme.foldable_apps %} foldable-apps {% endif %}
 {% if theme.form_submit_sticky %} sticky-submit {% endif %}
 {% if theme.form_pagination_sticky %} sticky-pagination {% endif %}
+{% if theme.list_filter_sticky %} list-filter-sticky {% endif %}
 {% endblock %}
 
 {% block branding %}
