@@ -12,7 +12,6 @@ sponsor_url = "https://github.com/sponsors/fabiocaccamo/"
 twitter_url = "https://twitter.com/fabiocaccamo"
 package_name = "django-admin-interface"
 package_url = "{}/{}".format(github_url, package_name)
-package_issues_url = "{}/issues".format(github_url)
 package_path = os.path.abspath(os.path.dirname(__file__))
 long_description_file_path = os.path.join(package_path, "README.md")
 long_description_content_type = "text/markdown"
@@ -39,8 +38,8 @@ setup(
     url=package_url,
     download_url="{}/archive/{}.tar.gz".format(package_url, __version__),
     project_urls={
-        "Documentation": package_url,
-        "Issues": package_issues_url,
+        "Documentation": "{}#readme".format(package_url),
+        "Issues": "{}/issues".format(package_url),
         "Funding": sponsor_url,
         "Twitter": twitter_url,
     },
