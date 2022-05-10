@@ -1,13 +1,10 @@
 .admin-interface.dashboard #content {
+    width: auto;
     max-width: 600px;
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .admin-interface.dashboard #content #recent-actions-module {
     display: none;
-}
-
-.admin-interface.dashboard #content {
-    width: auto;
 }
