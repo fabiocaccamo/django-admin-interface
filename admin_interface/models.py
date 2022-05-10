@@ -144,14 +144,8 @@ class Theme(models.Model):
         default=True, verbose_name=_("active")
     )
     language_chooser_display_choices = (
-        (
-            "code",
-            _("code"),
-        ),
-        (
-            "name",
-            _("name"),
-        ),
+        ("code", _("code")),
+        ("name", _("name")),
     )
     language_chooser_display = models.CharField(
         max_length=10,
@@ -303,42 +297,15 @@ class Theme(models.Model):
         verbose_name=_("background color"),
     )
     related_modal_background_opacity_choices = (
-        (
-            "0.1",
-            "10%",
-        ),
-        (
-            "0.2",
-            "20%",
-        ),
-        (
-            "0.3",
-            "30%",
-        ),
-        (
-            "0.4",
-            "40%",
-        ),
-        (
-            "0.5",
-            "50%",
-        ),
-        (
-            "0.6",
-            "60%",
-        ),
-        (
-            "0.7",
-            "70%",
-        ),
-        (
-            "0.8",
-            "80%",
-        ),
-        (
-            "0.9",
-            "90%",
-        ),
+        ("0.1", "10%"),
+        ("0.2", "20%"),
+        ("0.3", "30%"),
+        ("0.4", "40%"),
+        ("0.5", "50%"),
+        ("0.6", "60%"),
+        ("0.7", "70%"),
+        ("0.8", "80%"),
+        ("0.9", "90%"),
     )
     related_modal_background_opacity = models.CharField(
         max_length=5,
