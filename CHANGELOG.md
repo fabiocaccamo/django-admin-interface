@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.19.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.19.1) - 2022-05-14
+-  [css] Fixed dashboard alignment when recent-actions are not visible.
+
 ## [0.19.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.19.0) - 2022-03-08
 -  Converted dynamic inline CSS to external static CSS using CSS variables. #157 #93 (thanks to [@Mustafa-Abu-Ghazy](https://github.com/Mustafa-Abu-Ghazy))
 
