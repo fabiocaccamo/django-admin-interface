@@ -18,12 +18,7 @@ jobs:
         uses: ffurrer2/extract-release-notes@v1
 
       - name: Create release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
           body: ${{ steps.extract-release-notes.outputs.release_notes }}
+          token: ${{ secrets.WORKFLOWS_CREATE_RELEASE_TOKEN }}
