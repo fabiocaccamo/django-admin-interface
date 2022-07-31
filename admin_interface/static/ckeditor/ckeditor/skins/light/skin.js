@@ -49,7 +49,7 @@ CKEDITOR.skin.name = 'husky';
 // the complete list:
 // http://docs.ckeditor.com/#!/api/CKEDITOR.env
 //
-// Internet explorer is an expection and the browser version is also accepted
+// Internet explorer is an exception and the browser version is also accepted
 // (ie7, ie8, ie9, ie10), as well as a special name for IE in Quirks mode (iequirks).
 //
 // The available browser specific files must be set separately for editor.css
