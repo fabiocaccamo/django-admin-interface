@@ -80,7 +80,7 @@ def get_admin_interface_version():
 
 
 def hash_string(text):
-    hash_object = hashlib.md5(text.encode())
+    hash_object = hashlib.md5(text.encode(), usedforsecurity=False)
     md5_hash = hash_object.hexdigest()
     return md5_hash
 
