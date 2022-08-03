@@ -80,9 +80,9 @@ def get_admin_interface_version():
 
 
 def hash_string(text):
-    hash_object = hashlib.md5(text.encode())
-    md5_hash = hash_object.hexdigest()
-    return md5_hash
+    hash_object = hashlib.sha224(text.encode())
+    sha224_hash = hash_object.hexdigest()
+    return sha224_hash
 
 
 @simple_tag(takes_context=False)
