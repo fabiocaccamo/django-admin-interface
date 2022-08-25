@@ -148,8 +148,18 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             // https://github.com/lincolnloop/django-dynamic-raw-id
             presentRelatedObjectModalOnClickOn('a.dynamic_raw_id-related-lookup', true);
 
-            // show_change_link=True support
-            presentRelatedObjectModalOnClickOn('a.inlinechangelink');
+            // django-streamfield support
+            // https://github.com/raagin/django-streamfield/
+            presentRelatedObjectModalOnClickOn('.streamfield_app a.stream-btn[href*="_popup=1"]');
+            // Vanilla js for catching the click during capture phase for anticipating Vue.js listener.
+            document.addEventListener('click', function(event) {
+                // console.log('click intercepted before Vue.');
+                if (event.target.matches('.streamfield_app a.stream-btn[href*="_popup=1"]')) {
+                    event.stopImmediatePropagation();
+                    event.preventDefault();
+                    $(event.target).trigger('click');
+                }
+            }, { capture: true });
         });
 
     })(django.jQuery);

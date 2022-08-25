@@ -37,6 +37,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
   - `django-json-widget`
   - `django-modeltranslation`
   - `django-tabbed-admin`
+  - `django-streamfield`
   - `sorl-thumbnail`
 
 ---
