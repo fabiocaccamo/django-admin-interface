@@ -136,15 +136,12 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             window.presentRelatedObjectModalOnClickOn = presentRelatedObjectModalOnClickOn;
 
             // django 1.7 compatibility
-            // $('a.add-another').removeAttr('onclick').click({ lookup:false }, presentRelatedObjectModal);
             presentRelatedObjectModalOnClickOn('a.add-another');
 
             // django 1.8 and above
-            // $('a.related-widget-wrapper-link').click({ lookup:false }, presentRelatedObjectModal);
             presentRelatedObjectModalOnClickOn('a.related-widget-wrapper-link');
 
             // raw_id_fields support
-            // $('a.related-lookup').unbind('click').click({ lookup:true }, presentRelatedObjectModal);
             presentRelatedObjectModalOnClickOn('a.related-lookup', true);
 
             // django-dynamic-raw-id support - #61
