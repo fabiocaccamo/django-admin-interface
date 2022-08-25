@@ -100,31 +100,48 @@ You can add a theme you've created through the admin to this repository by [send
 4. Edit the section above to document your theme.
 
 ### Add theme support to third-party libraries
-You can add **theme support to existing third-party libraries** using the following **css variables**:
+You can add **theme support to existing third-party libraries** using the following **CSS variables**:
 
-- `--admin-interface-title-color`
-- `--admin-interface-logo-color`
-- `--admin-interface-env-color`
-- `--admin-interface-header-background-color:`
+#### Header
+
+- `--admin-interface-header-background-color`
 - `--admin-interface-header-text-color`
 - `--admin-interface-header-link-color`
 - `--admin-interface-header-link_hover-color`
+- `--admin-interface-title-color`
+- `--admin-interface-env-color`
+
+#### Logo
+
+- `--admin-interface-logo-color`
+- `--admin-interface-logo-default-background-image`
+- `--admin-interface-logo-max-width`
+- `--admin-interface-logo-max-height`
+
+#### Modules / Links
 - `--admin-interface-module-background-color`
 - `--admin-interface-module-background-selected-color`
+- `--admin-interface-module-border-radius`
 - `--admin-interface-module-text-color`
 - `--admin-interface-module-link-color`
 - `--admin-interface-module-link-selected-color`
 - `--admin-interface-module-link-hover-color`
 - `--admin-interface-generic-link-color`
 - `--admin-interface-generic-link-hover-color`
+
+#### Buttons
 - `--admin-interface-save-button-background-color`
 - `--admin-interface-save-button-background-hover-color`
 - `--admin-interface-save-button-text-color`
 - `--admin-interface-delete-button-background-color`
 - `--admin-interface-delete-button-background-hover-color`
 - `--admin-interface-delete-button-text-color`
+
+#### Related Modal
 - `--admin-interface-related-modal-background-color`
 - `--admin-interface-related-modal-background-opacity`
+- `--admin-interface-related-modal-border-radius`
+- `--admin-interface-related-modal-close-button-display`
 
 ---
 
