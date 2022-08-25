@@ -44,15 +44,15 @@
         {% endif %}
 
         {% if theme.logo_max_width > 0 %}
-            --admin-interface-log-max-width: min({{ theme.logo_max_width }}px, 100%);
+            --admin-interface-logo-max-width: min({{ theme.logo_max_width }}px, 100%);
         {% else %}
-            --admin-interface-log-max-width: 100%;
+            --admin-interface-logo-max-width: 100%;
         {% endif %}
 
         {% if theme.logo_max_height > 0 %}
-            --admin-interface-log-max-height: {{ theme.logo_max_height }}px;
+            --admin-interface-logo-max-height: {{ theme.logo_max_height }}px;
         {% else %}
-            --admin-interface-log-max-height: unset;
+            --admin-interface-logo-max-height: unset;
         {% endif %}
 
         {% if theme.related_modal_rounded_corners %}

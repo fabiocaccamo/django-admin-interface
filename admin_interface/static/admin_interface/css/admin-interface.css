@@ -127,8 +127,8 @@
 
 .admin-interface #branding h1 img.logo,
 .admin-interface.login #header #branding h1 img.logo {
-    max-width: var(--admin-interface-log-max-width);
-    max-height: var(--admin-interface-log-max-height);
+    max-width: var(--admin-interface-logo-max-width);
+    max-height: var(--admin-interface-logo-max-height);
 }
 
 .admin-interface #header #user-tools a {
