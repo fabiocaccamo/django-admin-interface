@@ -176,7 +176,7 @@ You must configure multilanguage `settings` and `urls` correctly:
 LANGUAGES = (
     ("en", _("English")),
     ("it", _("Italiano")),
-    ("fr", _("Française")),
+    ("fr", _("Français")),
     # more than one language is expected here
 )
 LANGUAGE_CODE = "en"
