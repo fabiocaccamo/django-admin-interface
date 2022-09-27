@@ -28,10 +28,11 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Environment name/marker
 - Language chooser
 - List filter dropdown
-- `NEW` **Foldable apps** *(accordions in the navigation bar)*
-- `NEW` **List filter sticky**
-- `NEW` **Form controls sticky** *(pagination and save/delete buttons)*
-- Compatibility / Style optimizations for:
+- Foldable apps *(accordions in the navigation bar)*
+- Collapsible fieldsets can have their initial state be expanded
+- List filter sticky
+- Form controls sticky *(pagination and save/delete buttons)*
+- Compatibility / style optimizations for:
   - `django-ckeditor`
   - `django-dynamic-raw-id`
   - `django-json-widget`
@@ -64,6 +65,18 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 - Run `python manage.py migrate`
 - Run `python manage.py collectstatic`
 - Restart your application server
+
+#### Optional features
+
+To make a fieldset start expanded with a `Hide` button to collapse:
+```python
+    fieldsets = [
+        ("Section title", {
+            "classes": ("collapse", "initial-show"),
+            "fields": (...),
+        }),
+    ]
+```
 
 #### Upgrade
 - Run `pip install django-admin-interface --upgrade`
