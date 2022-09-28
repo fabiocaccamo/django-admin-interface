@@ -29,7 +29,8 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Language chooser
 - List filter dropdown
 - Foldable apps *(accordions in the navigation bar)*
-- Collapsible fieldsets can have their initial state be expanded
+- [Collapsible fieldsets](https://docs.djangoproject.com/en/4.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets)
+  can have their initial state expanded instead of collapsed
 - List filter sticky
 - Form controls sticky *(pagination and save/delete buttons)*
 - Compatibility / style optimizations for:
@@ -72,7 +73,7 @@ To make a fieldset start expanded with a `Hide` button to collapse:
 ```python
     fieldsets = [
         ("Section title", {
-            "classes": ("collapse", "initial-show"),
+            "classes": ("collapse", "expanded"),
             "fields": (...),
         }),
     ]

@@ -14,7 +14,7 @@
                 link.className = 'collapse-toggle';
                 link.href = '#';
                 // changed: can opt into starting visible
-                if (elem.classList.contains('initial-show')) {
+                if (elem.classList.contains('expanded')) {
                   link.textContent = gettext('Hide');
                 } else {
                   link.textContent = gettext('Show');
