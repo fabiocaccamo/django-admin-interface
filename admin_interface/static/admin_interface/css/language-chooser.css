@@ -1,0 +1,29 @@
+.admin-interface .language-chooser {
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .admin-interface .language-chooser {
+        right: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .admin-interface .language-chooser {
+        position: static;
+        float: right;
+        margin-left: 20px;
+    }
+}
+
+.admin-interface .language-chooser-hidden-form {
+    display: none;
+}
+
+.admin-interface .language-chooser-select-form {
+    display: inline-block;
+}
