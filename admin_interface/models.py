@@ -143,6 +143,16 @@ class Theme(models.Model):
     language_chooser_active = models.BooleanField(
         default=True, verbose_name=_("active")
     )
+    language_chooser_control_choices = (
+        ("default-select", _("Default Select")),
+        ("minimal-select", _("Minimal Select")),
+    )
+    language_chooser_control = models.CharField(
+        max_length=20,
+        choices=language_chooser_control_choices,
+        default="default-select",
+        verbose_name=_("control"),
+    )
     language_chooser_display_choices = (
         ("code", _("code")),
         ("name", _("name")),

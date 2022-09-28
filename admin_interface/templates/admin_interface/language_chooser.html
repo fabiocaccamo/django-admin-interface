@@ -1,7 +1,7 @@
 {% load admin_interface_tags %}
 
 {% if languages %}
-<div class="language-chooser">
+<div class="language-chooser {% if theme.language_chooser_control == 'minimal-select' %}minimal {% endif %}">
     {% for language in languages %}
     <form class="language-chooser-hidden-form" id="language-chooser-hidden-form-{{ language.code }}" action="{{ language.activation_url }}" method="POST">
         {% csrf_token %}

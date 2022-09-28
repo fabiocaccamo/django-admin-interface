@@ -15,15 +15,65 @@
 @media (min-width: 1024px) {
     .admin-interface .language-chooser {
         position: static;
-        float: right;
         margin-left: 20px;
     }
 }
 
-.admin-interface .language-chooser-hidden-form {
+.admin-interface .language-chooser .language-chooser-hidden-form {
     display: none;
 }
 
-.admin-interface .language-chooser-select-form {
+.admin-interface .language-chooser .language-chooser-select-form {
     display: inline-block;
+    position: relative;
+    z-index: 0;
+}
+
+.admin-interface .language-chooser select {
+    width: auto;
+    min-width: auto;
+}
+
+.admin-interface .language-chooser.minimal .language-chooser-select-form::after {
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    border: solid var(--admin-interface-header-text-color);
+    border-width: 0px 0px 1px 1px;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    pointer-events: none;
+    margin-top: -4px;
+}
+
+.admin-interface .language-chooser.minimal .language-chooser-select-form:hover select {
+    border-bottom: 1px solid transparent;
+    color: var(--admin-interface-header-link-hover-color);
+}
+
+.admin-interface .language-chooser.minimal select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0;
+    color: var(--admin-interface-header-link-color);
+    cursor: pointer;
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    height: auto;
+    margin: 0;
+    padding: 0 12px 0 0;
+}
+
+@-moz-document url-prefix() {
+    .admin-interface .language-chooser.minimal select {
+        text-indent: -1px !important;
+    }
 }

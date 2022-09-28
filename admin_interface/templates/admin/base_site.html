@@ -165,9 +165,15 @@ flat-theme admin-interface
 
 {% block welcome-msg %}
 {% get_admin_interface_theme as theme %}
+{% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}">{{ theme.env_name }}</span><br>{% endif %}{{ block.super }}<br>
+{{ block.super }}
+{% endblock %}
+
+{% block userlinks %}
+{{ block.super }}
+{% get_admin_interface_theme as theme %}
 {% if theme.language_chooser_active %}
     {% get_admin_interface_languages as languages %}
     {% include "admin_interface/language_chooser.html" %}
 {% endif %}
-{% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}">{{ theme.env_name }}</span><br>{% endif %}{{ block.super }}<br>
 {% endblock %}

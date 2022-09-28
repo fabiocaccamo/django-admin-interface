@@ -45,6 +45,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 "classes": ("wide",),
                 "fields": (
                     "language_chooser_active",
+                    "language_chooser_control",
                     "language_chooser_display",
                 ),
             },
