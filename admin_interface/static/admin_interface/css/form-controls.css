@@ -16,7 +16,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     border-radius: 0;
-    border-top: 1px solid #EEEEEE;
+    border-top: 1px solid #EEEEEE !important;
     border-bottom: none;
     margin: 0;
 }
