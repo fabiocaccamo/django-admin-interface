@@ -82,13 +82,15 @@
           href="{% static 'admin_interface/css/admin-interface.css' %}?v={{ version_md5_cache }}">
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/admin-interface-fix.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css" href="{% static 'admin_interface/css/form-controls.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'admin_interface/css/language-chooser.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin_interface/css/form-controls.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin_interface/css/language-chooser.css' %}?v={{ version_md5_cache }}">
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/list-filter-dropdown.css' %}?v={{ version_md5_cache }}">
     {% if not theme.recent_actions_visible %}
-        <link rel="stylesheet" type="text/css"
-              href="{% static 'admin_interface/css/recent-actions.css' %}?v={{ version_md5_cache }}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin_interface/css/recent-actions.css' %}?v={{ version_md5_cache }}"/>
     {% endif %}
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/related-modal.css' %}?v={{ version_md5_cache }}"/>
@@ -106,7 +108,8 @@
           href="{% static 'admin_interface/css/tinymce.css' %}?v={{ version_md5_cache }}"/>
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/json-widget.css' %}?v={{ version_md5_cache }}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'admin_interface/css/rtl.css' %}?v={{ version_md5_cache }}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'admin_interface/css/rtl.css' %}?v={{ version_md5_cache }}"/>
 
 
 {% if current_lang == 'fa' %}
