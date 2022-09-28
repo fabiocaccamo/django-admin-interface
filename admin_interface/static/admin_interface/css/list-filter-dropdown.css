@@ -16,3 +16,7 @@ list-filter-dropdown
     width: calc(100% - 30px);
     margin-right: 15px;
 }
+
+.admin-interface.list-filter-highlight .list-filter-dropdown h3.active + div select {
+    font-weight: bold;
+}

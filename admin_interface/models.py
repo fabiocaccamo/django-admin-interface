@@ -331,6 +331,9 @@ class Theme(models.Model):
         default=True, verbose_name=_("close button visible")
     )
 
+    list_filter_highlight = models.BooleanField(
+        default=True, verbose_name=_("highlight active")
+    )
     list_filter_dropdown = models.BooleanField(
         default=True, verbose_name=_("use dropdown")
     )

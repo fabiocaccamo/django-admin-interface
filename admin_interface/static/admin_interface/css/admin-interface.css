@@ -388,12 +388,25 @@
     text-decoration: none;
 }
 
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter h3.active {
+    font-weight: bold;
+}
+
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:link,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:visited,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:focus,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:hover {
+    background: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
+}
+
 .admin-interface .module.filtered #changelist-filter li.selected a,
 .admin-interface .module.filtered #changelist-filter li.selected a:link,
 .admin-interface .module.filtered #changelist-filter li.selected a:visited,
 .admin-interface .module.filtered #changelist-filter li.selected a:focus,
 .admin-interface .module.filtered #changelist-filter li.selected a:hover {
-    /* color: #666; */
     color: var(--admin-interface-generic-link-hover-color);
 }
 
