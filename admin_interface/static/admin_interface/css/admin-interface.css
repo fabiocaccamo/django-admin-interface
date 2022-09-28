@@ -137,7 +137,7 @@
 
 .admin-interface #header #user-tools a:hover,
 .admin-interface #header #user-tools a:active {
-    color: var(--admin-interface-header-link_hover-color);
+    color: var(--admin-interface-header-link-hover-color);
     border-bottom-color: rgba(255, 255, 255, 0.5);
 }
 
