@@ -347,9 +347,17 @@
 @media (min-width: 768px) {
     .admin-interface.list-filter-sticky .module.filtered #changelist-filter {
         position: sticky;
-        top: 40px;
+        top: 30px;
         float: right;
         z-index: 30;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 100%;
+        max-height: calc(100vh - 60px);
+    }
+    .admin-interface.list-filter-sticky.sticky-pagination .module.filtered #changelist-filter {
+        max-height: calc(100vh - 125px);
     }
 
     /* feature not available for django < 3.1.2 */
@@ -357,12 +365,15 @@
         position: absolute;
         top: 0px;
         z-index: 30;
+        max-height: calc(100vh - 105px);
+    }
+    .admin-interface.list-filter-sticky.sticky-pagination .module.filtered #toolbar + #changelist-filter {
+        max-height: calc(100vh - 170px);
     }
 }
 
 .admin-interface .module.filtered #changelist-filter {
-    border-bottom-left-radius: var(--admin-interface-module-border-radius);
-    border-bottom-right-radius: var(--admin-interface-module-border-radius);
+    border-radius: var(--admin-interface-module-border-radius);
 }
 
 .admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:focus,
