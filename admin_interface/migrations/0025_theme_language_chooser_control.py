@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
                     ("default-select", "Default Select"),
                     ("minimal-select", "Minimal Select"),
                 ],
-                default="select",
+                default="default-select",
                 max_length=20,
                 verbose_name="control",
             ),
