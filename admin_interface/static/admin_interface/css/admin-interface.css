@@ -388,12 +388,35 @@
     text-decoration: none;
 }
 
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter h3.active {
+    font-weight: bold;
+}
+
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected {
+    color: var(--admin-interface-module-text-color);
+    background: var(--admin-interface-module-background-color);
+    margin-left: -10px;
+    padding-left: 5px;
+    margin-right: -10px;
+    border-left: 5px solid var(--admin-interface-module-background-color);
+    border-right: 5px solid var(--admin-interface-module-background-color);
+    border-radius: var(--admin-interface-module-border-radius);
+}
+
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:link,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:visited,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:focus,
+.admin-interface.list-filter-highlight .module.filtered #changelist-filter ul.active li.selected a:hover {
+    background: inherit;
+    color: inherit;
+}
+
 .admin-interface .module.filtered #changelist-filter li.selected a,
 .admin-interface .module.filtered #changelist-filter li.selected a:link,
 .admin-interface .module.filtered #changelist-filter li.selected a:visited,
 .admin-interface .module.filtered #changelist-filter li.selected a:focus,
 .admin-interface .module.filtered #changelist-filter li.selected a:hover {
-    /* color: #666; */
     color: var(--admin-interface-generic-link-hover-color);
 }
 

@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <div class="list-filter-dropdown">
-    <h3>{% blocktrans with title as filter_title %} By {{ filter_title }} {% endblocktrans %}</h3>
+    <h3 {% if spec.lookup_val or spec.value %}class="active"{% endif %}>{% blocktrans with title as filter_title %} By {{ filter_title }} {% endblocktrans %}</h3>
     <div align="right">
         <select onChange="javascript:window.location = this.options[this.selectedIndex].value;">
         {% for choice in choices %}

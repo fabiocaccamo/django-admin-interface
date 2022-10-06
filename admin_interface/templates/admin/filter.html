@@ -8,10 +8,10 @@
 
 {% else %}
 
-    {# Use the default list filter template -> https://github.com/django/django/blob/master/django/contrib/admin/templates/admin/filter.html #}
+    {# Use a changed default list filter template -> https://github.com/django/django/blob/master/django/contrib/admin/templates/admin/filter.html #}
 
-    <h3>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h3>
-    <ul>
+    <h3 {% if spec.lookup_val or spec.value %}class="active"{% endif %}>{% blocktrans with filter_title=title %} By {{ filter_title }} {% endblocktrans %}</h3>
+    <ul {% if spec.lookup_val or spec.value %}class="active"{% endif %}>
     {% for choice in choices %}
         <li{% if choice.selected %} class="selected"{% endif %}>
         <a href="{{ choice.query_string|iriencode }}">{{ choice.display }}</a></li>
@@ -19,4 +19,3 @@
     </ul>
 
 {% endif %}
-
