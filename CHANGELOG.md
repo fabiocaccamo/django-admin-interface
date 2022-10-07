@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.21.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.21.0) - 2022-10-06
+-  Add language chooser control option (default select, minimal select). #136
+-  Add option to make active list filters more visible. #174 (by [@merwok](https://github.com/merwok) in #178)
+-  Add support for collapsible fieldsets that start expanded. #173 (by [@merwok](https://github.com/merwok) in #177)
+-  [js] Fix modal window not closing on save with `django >= 4.0`. #169
+-  [css] Move `language-chooser` style to its own CSS file.
+-  [css] Fix sticky list filter scrolling. #175
+-  [css] Fix paginator missing `border-top` on mobile.
+
 ## [0.20.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.20.0) - 2022-08-25
 -  Add `django-streamfield` compatibility.
 
