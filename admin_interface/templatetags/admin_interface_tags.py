@@ -104,5 +104,9 @@ def admin_interface_clear_filter_qs(changelist, list_filter):
 @simple_tag()
 def admin_interface_filter_display(changelist, list_filter):
     title = list_filter.title
-    value = next(c for c in list_filter.choices(changelist) if c['selected'])
-    return '{}: {}'.format(title.capitalize(), value['display'])
+    choices = [c for c in list_filter.choices(changelist) if c['selected']]
+    try:
+        value = choices[0]['display']
+    except (IndexError, KeyError):
+        value = '...'
+    return '{}: {}'.format(title.capitalize(), value)
