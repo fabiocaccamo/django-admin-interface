@@ -340,6 +340,9 @@ class Theme(models.Model):
     list_filter_sticky = models.BooleanField(
         default=True, verbose_name=_("sticky position")
     )
+    list_filter_quick_remove = models.BooleanField(
+        default=True, verbose_name=_("quick remove")
+    )
 
     foldable_apps = models.BooleanField(default=True, verbose_name=_("foldable apps"))
 

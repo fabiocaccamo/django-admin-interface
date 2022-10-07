@@ -376,6 +376,15 @@
     border-radius: var(--admin-interface-module-border-radius);
 }
 
+.admin-interface .module.filtered #changelist-filter .changelist-filter-clear a {
+    font-size: 13px;
+    margin: .3em 0;
+    padding: 0 15px;
+    text-transform: capitalize;
+}
+
+.admin-interface .module.filtered #changelist-filter .changelist-filter-clear a:focus,
+.admin-interface .module.filtered #changelist-filter .changelist-filter-clear a:hover,
 .admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:focus,
 .admin-interface .module.filtered #changelist-filter #changelist-filter-clear a:hover {
     color: #666;
