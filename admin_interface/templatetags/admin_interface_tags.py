@@ -105,4 +105,4 @@ def admin_interface_clear_filter_qs(changelist, list_filter):
 def admin_interface_filter_display(changelist, list_filter):
     title = list_filter.title
     value = next(c for c in list_filter.choices(changelist) if c['selected'])
-    return '{}: {}'.format(title, value['display'])
+    return '{}: {}'.format(title.capitalize(), value['display'])
