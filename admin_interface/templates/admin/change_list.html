@@ -6,17 +6,19 @@
         {% if cl.has_filters %}
           <div id="changelist-filter">
             <h2>{% translate 'Filter' %}</h2>
-            {% get_admin_interface_setting "list_filter_quick_remove" as list_filter_quick_remove %}
-            {% if list_filter_quick_remove %}
-            {% for spec in cl.filter_specs %}
-            {% if spec.lookup_val or spec.value %}
-            <div class="changelist-filter-clear"><a href="{% admin_interface_clear_filter_qs cl spec %}">{% admin_interface_filter_display cl spec %} &#10006;</a></div>
+            {% if cl.has_active_filters %}
+            {% get_admin_interface_setting "list_filter_removal_links" as list_filter_removal_links %}
+            {% if list_filter_removal_links %}
+             {% for spec in cl.filter_specs %}{% admin_interface_filter_removal_link cl spec %}{% endfor %}
+             <h3 id="changelist-filter-clear">
+               <a href="{{ cl.clear_all_filters_qs }}">{% translate "Clear all filters" %} &#10006;</a>
+             </h3>
+             {% else %}
+             <h3 id="changelist-filter-clear">
+               <a href="{{ cl.clear_all_filters_qs }}">&#10006; {% translate "Clear all filters" %}</a>
+             </h3>
             {% endif %}
-            {% endfor %}
             {% endif %}
-            {% if cl.has_active_filters %}<h3 id="changelist-filter-clear">
-              <a href="{{ cl.clear_all_filters_qs }}">{% translate "Clear all filters" %} &#10006;</a>
-            </h3>{% endif %}
             {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
           </div>
         {% endif %}

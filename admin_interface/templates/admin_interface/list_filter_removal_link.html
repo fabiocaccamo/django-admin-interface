@@ -1,0 +1,6 @@
+{% load admin_interface_tags %}
+{% if spec.lookup_val or spec.value %}
+  <div class="changelist-filter-clear"><a href="{% admin_interface_clear_filter_qs cl spec %}">
+    {{ title|capfirst }}: <span>{{ selected_value }}</span> &#10006;
+  </a></div>
+{% endif %}

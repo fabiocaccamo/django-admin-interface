@@ -166,7 +166,7 @@ class ThemeAdmin(admin.ModelAdmin):
                     "list_filter_highlight",
                     "list_filter_dropdown",
                     "list_filter_sticky",
-                    "list_filter_quick_remove",
+                    "list_filter_removal_links",
                 ),
             },
         ),

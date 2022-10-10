@@ -6,6 +6,7 @@ import re
 
 from django import template
 from django.conf import settings
+from django.template.loader import get_template
 from django.utils import translation
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
@@ -102,11 +103,19 @@ def admin_interface_clear_filter_qs(changelist, list_filter):
 
 
 @simple_tag()
-def admin_interface_filter_display(changelist, list_filter):
+def admin_interface_filter_removal_link(changelist, list_filter):
+    tpl = get_template('admin_interface/list_filter_removal_link.html')
     title = list_filter.title
+
     choices = [c for c in list_filter.choices(changelist) if c['selected']]
     try:
         value = choices[0]['display']
     except (IndexError, KeyError):
         value = '...'
-    return '{}: {}'.format(title.capitalize(), value)
+
+    return tpl.render({
+        'cl': changelist,
+        'spec': list_filter,
+        'selected_value': value,
+        'title': title,
+    })
