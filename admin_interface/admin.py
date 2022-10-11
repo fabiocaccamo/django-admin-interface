@@ -163,8 +163,10 @@ class ThemeAdmin(admin.ModelAdmin):
             {
                 "classes": ("wide",),
                 "fields": (
+                    "list_filter_highlight",
                     "list_filter_dropdown",
                     "list_filter_sticky",
+                    "list_filter_removal_links",
                 ),
             },
         ),

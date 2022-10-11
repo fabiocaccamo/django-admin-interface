@@ -6,6 +6,7 @@ import re
 
 from django import template
 from django.conf import settings
+from django.template.loader import get_template
 from django.utils import translation
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
@@ -65,13 +66,19 @@ def get_admin_interface_languages(context):
     return langs_data
 
 
-@simple_tag(takes_context=True)
-def get_admin_interface_theme(context):
+@simple_tag()
+def get_admin_interface_theme():
     theme = get_cached_active_theme()
     if not theme:
         theme = Theme.get_active_theme()
         set_cached_active_theme(theme)
     return theme
+
+
+@simple_tag()
+def get_admin_interface_setting(setting):
+    theme = get_admin_interface_theme()
+    return getattr(theme, setting)
 
 
 @simple_tag(takes_context=False)
@@ -88,3 +95,27 @@ def hash_string(text):
 @simple_tag(takes_context=False)
 def get_admin_interface_nocache():
     return hash_string(__version__)
+
+
+@simple_tag()
+def admin_interface_clear_filter_qs(changelist, list_filter):
+    return changelist.get_query_string(remove=list_filter.expected_parameters())
+
+
+@simple_tag()
+def admin_interface_filter_removal_link(changelist, list_filter):
+    tpl = get_template('admin_interface/list_filter_removal_link.html')
+    title = list_filter.title
+
+    choices = [c for c in list_filter.choices(changelist) if c['selected']]
+    try:
+        value = choices[0]['display']
+    except (IndexError, KeyError):
+        value = '...'
+
+    return tpl.render({
+        'cl': changelist,
+        'spec': list_filter,
+        'selected_value': value,
+        'title': title,
+    })

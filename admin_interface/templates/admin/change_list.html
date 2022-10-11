@@ -1,0 +1,25 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_list admin_interface_tags %}
+{# copied from django 4.0.7 #}
+
+      {% block filters %}
+        {% if cl.has_filters %}
+          <div id="changelist-filter">
+            <h2>{% translate 'Filter' %}</h2>
+            {% if cl.has_active_filters %}
+            {% get_admin_interface_setting "list_filter_removal_links" as list_filter_removal_links %}
+            {% if list_filter_removal_links %}
+             {% for spec in cl.filter_specs %}{% admin_interface_filter_removal_link cl spec %}{% endfor %}
+             <h3 id="changelist-filter-clear">
+               <a href="{{ cl.clear_all_filters_qs }}">{% translate "Clear all filters" %} &#10006;</a>
+             </h3>
+             {% else %}
+             <h3 id="changelist-filter-clear">
+               <a href="{{ cl.clear_all_filters_qs }}">&#10006; {% translate "Clear all filters" %}</a>
+             </h3>
+            {% endif %}
+            {% endif %}
+            {% for spec in cl.filter_specs %}{% admin_list_filter cl spec %}{% endfor %}
+          </div>
+        {% endif %}
+      {% endblock %}

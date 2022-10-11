@@ -102,20 +102,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
     def test_get_theme(self):
         Theme.objects.all().delete()
         context = Context({})
-        theme = templatetags.get_admin_interface_theme(context)
-        self.assertEqual(theme.name, "Django")
-        rendered = self.__render_template(
-            "{% load admin_interface_tags %}"
-            "{% get_admin_interface_theme as theme %}"
-            "{{ theme.name }}",
-            context,
-        )
-        self.assertEqual(rendered, "Django")
-
-    def test_get_theme_with_request(self):
-        Theme.objects.all().delete()
-        context = Context({"request": self.request_factory.get("/")})
-        theme = templatetags.get_admin_interface_theme(context)
+        theme = templatetags.get_admin_interface_theme()
         self.assertEqual(theme.name, "Django")
         rendered = self.__render_template(
             "{% load admin_interface_tags %}"
