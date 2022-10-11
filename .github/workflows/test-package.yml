@@ -28,10 +28,24 @@ jobs:
      
     outputs:
       matrix: ${{ steps.create_matrix.outputs.matrix }}
-        
-  test:
-  
+
+
+  lint:
+
+    runs-on: ubuntu-latest
     needs: prepare
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Check migrations
+      run: |
+        tox -e migrations
+
+
+  test:
+
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
