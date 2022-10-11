@@ -43,8 +43,9 @@ jobs:
       with:
         cache: 'pip'
 
-    - name: Install tox
+    - name: Install tools needed
       run: |
+        sudo apt install gettext
         pip install pip --upgrade
         pip install tox
 
