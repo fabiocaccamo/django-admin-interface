@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-11 18:10+0000\n"
+"POT-Creation-Date: 2022-10-11 14:29-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,7 +231,8 @@ msgstr "position adhérente (sticky)"
 
 #: admin_interface/models.py:345
 msgid "quick remove links for active filters at top of sidebar"
-msgstr "liens de suppression pour les filtres actifs en haut de la barre latérale"
+msgstr ""
+"liens de suppression pour les filtres actifs en haut de la barre latérale"
 
 #: admin_interface/models.py:348
 msgid "foldable apps"
@@ -257,8 +258,9 @@ msgstr "Thèmes"
 msgid "Filter"
 msgstr "Filtre"
 
+#. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html:14
-#: admin_interface/templates/admin/change_list.html:18
+#: admin_interface/templates/admin/change_list.html:19
 msgid "Clear all filters"
 msgstr ""
 
