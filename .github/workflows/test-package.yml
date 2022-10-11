@@ -52,6 +52,11 @@ jobs:
       run: |
         tox -e migrations
 
+    - name: Check translations
+      run: |
+        tox -e translations
+
+
 
   test:
 
