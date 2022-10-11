@@ -38,6 +38,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        cache: 'pip'
+
+    - name: Install tox
+      run: |
+        pip install pip --upgrade
+        pip install tox
+
     - name: Check migrations
       run: |
         tox -e migrations
