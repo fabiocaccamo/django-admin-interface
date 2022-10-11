@@ -101,6 +101,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
 
     def test_get_theme(self):
         Theme.objects.all().delete()
+        context = Context({})
         theme = templatetags.get_admin_interface_theme()
         self.assertEqual(theme.name, "Django")
         rendered = self.__render_template(
