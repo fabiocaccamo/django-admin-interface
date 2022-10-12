@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.22.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.22.0) - 2022-10-12
+-  Add CI checks for migrations and translations. #184 (by [@merwok](https://github.com/merwok) in #186)
+-  Add option for list filter quick remove. #181 (by [@merwok](https://github.com/merwok) in #183)
+-  [css] Fix left/right scrolling broken with django-import-export. #165
+-  [html] Fix duplicated welcome message. #185
+
 ## [0.21.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.21.0) - 2022-10-06
 -  Add language chooser control option (default select, minimal select). #136
 -  Add option to make active list filters more visible. #174 (by [@merwok](https://github.com/merwok) in #178)
