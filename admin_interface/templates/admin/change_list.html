@@ -15,6 +15,7 @@
              </h3>
              {% else %}
              <h3 id="changelist-filter-clear">
+               {# Translators: don't translate this, the django catalog already contains it #}
                <a href="{{ cl.clear_all_filters_qs }}">&#10006; {% translate "Clear all filters" %}</a>
              </h3>
             {% endif %}

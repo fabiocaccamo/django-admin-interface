@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-04 09:18+0000\n"
+"POT-Creation-Date: 2022-10-11 14:29-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,109 +18,125 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: admin_interface/admin.py:21
+#: admin_interface/admin.py:31
 msgid "Environment"
-msgstr "Environnment"
+msgstr "Environnement"
 
-#: admin_interface/admin.py:30
+#: admin_interface/admin.py:43
 msgid "Language chooser"
-msgstr ""
+msgstr "Sélecteur de langue"
 
-#: admin_interface/admin.py:37
+#: admin_interface/admin.py:54
 msgid "Logo"
 msgstr "Logo"
 
-#: admin_interface/admin.py:45
+#: admin_interface/admin.py:66
 msgid "Favicon"
 msgstr "Favicon"
 
-#: admin_interface/admin.py:49
+#: admin_interface/admin.py:68
 msgid "Title"
 msgstr "Titre"
 
-#: admin_interface/admin.py:57
+#: admin_interface/admin.py:79
 msgid "Header"
 msgstr "Bannière"
 
-#: admin_interface/admin.py:66
+#: admin_interface/admin.py:91
 msgid "Breadcrumbs / Module headers"
 msgstr "Fil d'ariane / en-têtes de module"
 
-#: admin_interface/admin.py:76
+#: admin_interface/admin.py:106
 msgid "Generic Links"
 msgstr "Liens génériques"
 
-#: admin_interface/admin.py:83
+#: admin_interface/admin.py:116
 msgid "Save Buttons"
 msgstr "Boutons sauvegarder"
 
-#: admin_interface/admin.py:91
+#: admin_interface/admin.py:127
 msgid "Delete Buttons"
 msgstr "Boutons supprimer"
 
-#: admin_interface/admin.py:99
+#: admin_interface/admin.py:137
+msgid "Navigation Bar"
+msgstr "Barre de navigation"
+
+#: admin_interface/admin.py:139
 msgid "Related Modal"
 msgstr "Modale pour objet reliés"
 
-#: admin_interface/admin.py:109
+#: admin_interface/admin.py:152
+msgid "Form Controls"
+msgstr "Contrôles de formulaires"
+
+#: admin_interface/admin.py:162
 msgid "List Filter"
 msgstr "Filtre de liste"
 
-#: admin_interface/admin.py:113
+#: admin_interface/admin.py:174
 msgid "Recent Actions"
 msgstr "Actions récentes"
 
-#: admin_interface/apps.py:11
+#: admin_interface/apps.py:12
 msgid "Admin Interface"
 msgstr "Interface Admin"
 
-#: admin_interface/models.py:72 admin_interface/models.py:116
-#: admin_interface/models.py:135
+#: admin_interface/models.py:69 admin_interface/models.py:126
+#: admin_interface/models.py:158
 msgid "name"
 msgstr "nom"
 
-#: admin_interface/models.py:75 admin_interface/models.py:132
-#: admin_interface/models.py:253
+#: admin_interface/models.py:71 admin_interface/models.py:144
+#: admin_interface/models.py:301
 msgid "active"
 msgstr "actif"
 
-#: admin_interface/models.py:79
+#: admin_interface/models.py:75
 #: admin_interface/templates/admin/base_site.html:6
-#: admin_interface/templates/admin/base_site.html:60
+#: admin_interface/templates/admin/base_site.html:163
 msgid "Django administration"
 msgstr "Administration Django"
 
-#: admin_interface/models.py:81
+#: admin_interface/models.py:77
 msgid "title"
 msgstr "titre"
 
-#: admin_interface/models.py:87 admin_interface/models.py:102
-#: admin_interface/models.py:122
+#: admin_interface/models.py:84 admin_interface/models.py:104
+#: admin_interface/models.py:134
 msgid "color"
 msgstr "couleur"
 
-#: admin_interface/models.py:90 admin_interface/models.py:105
-#: admin_interface/models.py:289
+#: admin_interface/models.py:86 admin_interface/models.py:112
+#: admin_interface/models.py:351
 msgid "visible"
 msgstr "visible"
 
-#: admin_interface/models.py:95
+#: admin_interface/models.py:96
 msgid "Leave blank to use the default Django logo"
 msgstr "Laisser vide pour utiliser le logo Django par défaut"
 
-#: admin_interface/models.py:96
+#: admin_interface/models.py:97
 msgid "logo"
 msgstr "logo"
 
+#: admin_interface/models.py:107
+msgid "max width"
+msgstr "largeur max"
+
 #: admin_interface/models.py:110
+msgid "max height"
+msgstr "hauteur max"
+
+#: admin_interface/models.py:122
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
 msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
 
-#: admin_interface/models.py:111
+#: admin_interface/models.py:123
 msgid "favicon"
 msgstr "favicon"
 
-#: admin_interface/models.py:120
+#: admin_interface/models.py:131
 msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
@@ -128,71 +144,125 @@ msgstr ""
 "(rouge: #E74C3C, orange: #E67E22, jaune: #F1C40F, vert: #2ECC71, bleu: "
 "#3498DB)"
 
-#: admin_interface/models.py:125
+#: admin_interface/models.py:137
 msgid "visible in header (marker and name)"
 msgstr "visible dans l’en-tête (marqueur et nom)"
 
-#: admin_interface/models.py:128
+#: admin_interface/models.py:140
 msgid "visible in favicon (marker)"
 msgstr "visible dans la favicon (marqueur)"
 
-#: admin_interface/models.py:134
+#: admin_interface/models.py:147
+msgid "Default Select"
+msgstr ""
+
+#: admin_interface/models.py:148
+msgid "Minimal Select"
+msgstr ""
+
+#: admin_interface/models.py:154
+msgid "control"
+msgstr "contrôle"
+
+#: admin_interface/models.py:157
 msgid "code"
-msgstr ""
+msgstr "code"
 
-#: admin_interface/models.py:141
+#: admin_interface/models.py:164
 msgid "display"
-msgstr ""
+msgstr "affichage"
 
-#: admin_interface/models.py:148 admin_interface/models.py:173
-#: admin_interface/models.py:214 admin_interface/models.py:233
-#: admin_interface/models.py:259
+#: admin_interface/models.py:172 admin_interface/models.py:201
+#: admin_interface/models.py:262 admin_interface/models.py:284
+#: admin_interface/models.py:307
 msgid "background color"
 msgstr "couleur d'arrière-plan"
 
-#: admin_interface/models.py:154 admin_interface/models.py:179
-#: admin_interface/models.py:226 admin_interface/models.py:245
-#: admin_interface/models.py:249
+#: admin_interface/models.py:179 admin_interface/models.py:215
+#: admin_interface/models.py:276 admin_interface/models.py:298
 msgid "text color"
 msgstr "couleur du texte"
 
-#: admin_interface/models.py:160 admin_interface/models.py:185
-#: admin_interface/models.py:201
+#: admin_interface/models.py:186 admin_interface/models.py:222
+#: admin_interface/models.py:247
 msgid "link color"
 msgstr "couleur de lien"
 
-#: admin_interface/models.py:166 admin_interface/models.py:191
-#: admin_interface/models.py:207
+#: admin_interface/models.py:193 admin_interface/models.py:236
+#: admin_interface/models.py:254
 msgid "link hover color"
 msgstr "couleur de lien au survol"
 
-#: admin_interface/models.py:194 admin_interface/models.py:279
+#: admin_interface/models.py:208
+msgid "background selected color"
+msgstr "couleur d'arrière-plan choisi"
+
+#: admin_interface/models.py:229
+msgid "link selected color"
+msgstr "couleur de lien choisi"
+
+#: admin_interface/models.py:239 admin_interface/models.py:328
 msgid "rounded corners"
 msgstr "coins arrondis"
 
-#: admin_interface/models.py:220 admin_interface/models.py:239
+#: admin_interface/models.py:269 admin_interface/models.py:291
 msgid "background hover color"
 msgstr "couleur de fond au survol"
 
-#: admin_interface/models.py:276
+#: admin_interface/models.py:325
 msgid "background opacity"
 msgstr "opacité de l'arrière-plan"
 
-#: admin_interface/models.py:282
+#: admin_interface/models.py:331
 msgid "close button visible"
 msgstr "bouton fermer visible"
 
-#: admin_interface/models.py:286
+#: admin_interface/models.py:335
+msgid "highlight active"
+msgstr "mise en valeur active"
+
+#: admin_interface/models.py:338
 msgid "use dropdown"
 msgstr "utiliser un menu déroulant"
 
-#: admin_interface/models.py:298
+#: admin_interface/models.py:341
+msgid "sticky position"
+msgstr "position adhérente (sticky)"
+
+#: admin_interface/models.py:345
+msgid "quick remove links for active filters at top of sidebar"
+msgstr ""
+"liens de suppression pour les filtres actifs en haut de la barre latérale"
+
+#: admin_interface/models.py:348
+msgid "foldable apps"
+msgstr "apps repliables"
+
+#: admin_interface/models.py:355
+msgid "sticky submit"
+msgstr "envoi adhérent (sticky)"
+
+#: admin_interface/models.py:358
+msgid "sticky pagination"
+msgstr "pagination adhérente (sticky)"
+
+#: admin_interface/models.py:368
 msgid "Theme"
 msgstr "Thème"
 
-#: admin_interface/models.py:299
+#: admin_interface/models.py:369
 msgid "Themes"
 msgstr "Thèmes"
+
+#: admin_interface/templates/admin/change_list.html:8
+msgid "Filter"
+msgstr "Filtre"
+
+#. Translators: don't translate this, the django catalog already contains it
+#: admin_interface/templates/admin/change_list.html:14
+#: admin_interface/templates/admin/change_list.html:19
+msgid "Clear all filters"
+msgstr ""
 
 #: admin_interface/templates/admin/filter.html:13
 #: admin_interface/templates/admin_interface/dropdown_filter.html:4
