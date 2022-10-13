@@ -484,3 +484,9 @@
 .admin-interface .timelist a:hover {
     background: var(--admin-interface-module-background-color);
 }
+
+.admin-interface .calendarbox .calendarnav-previous,
+.admin-interface .calendarbox .calendarnav-next {
+    transition: none;
+    filter: invert(100%);
+}
