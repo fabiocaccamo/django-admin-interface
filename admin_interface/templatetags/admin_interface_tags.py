@@ -107,7 +107,7 @@ def admin_interface_filter_removal_link(changelist, list_filter):
     tpl = get_template('admin_interface/list_filter_removal_link.html')
     title = list_filter.title
 
-    choices = [c for c in list_filter.choices(changelist) if c['selected']]
+    choices = [c for c in list_filter.choices(changelist) if c.get("selected")]
     try:
         value = choices[0]['display']
     except (IndexError, KeyError):
