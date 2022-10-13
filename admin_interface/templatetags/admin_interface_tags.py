@@ -104,18 +104,21 @@ def admin_interface_clear_filter_qs(changelist, list_filter):
 
 @simple_tag()
 def admin_interface_filter_removal_link(changelist, list_filter):
-    tpl = get_template('admin_interface/list_filter_removal_link.html')
+    template = get_template("admin_interface/list_filter_removal_link.html")
     title = list_filter.title
-
-    choices = [c for c in list_filter.choices(changelist) if c.get("selected")]
+    choices = [
+        choice for choice in list_filter.choices(changelist) if choice.get("selected")
+    ]
     try:
-        value = choices[0]['display']
+        value = choices[0]["display"]
     except (IndexError, KeyError):
-        value = '...'
+        value = "..."
 
-    return tpl.render({
-        'cl': changelist,
-        'spec': list_filter,
-        'selected_value': value,
-        'title': title,
-    })
+    return template.render(
+        {
+            "cl": changelist,
+            "spec": list_filter,
+            "selected_value": value,
+            "title": title,
+        }
+    )
