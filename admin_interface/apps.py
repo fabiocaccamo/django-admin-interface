@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from admin_interface.compat import gettext_lazy as _
-
 from django.apps import AppConfig
 from django.db.models.signals import post_migrate
+
+from admin_interface.compat import gettext_lazy as _
 
 
 class AdminInterfaceConfig(AppConfig):

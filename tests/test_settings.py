@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 import django
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
-from django.test import override_settings, TestCase
+from django.test import TestCase, override_settings
 
 from admin_interface.settings import check_installed_apps
 

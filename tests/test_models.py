@@ -2,11 +2,11 @@
 
 from __future__ import unicode_literals
 
-from django.conf import settings
-from django.test import TestCase
-
 import random
 import shutil
+
+from django.conf import settings
+from django.test import TestCase
 
 from admin_interface.models import Theme
 
@@ -21,7 +21,7 @@ class AdminInterfaceModelsTestCase(TestCase):
     def __test_active_theme(self):
         theme = Theme.get_active_theme()
         print(theme)
-        self.assertTrue(theme != None)
+        self.assertTrue(theme is not None)
         self.assertTrue(theme.active)
         self.assertEqual(Theme.objects.filter(active=True).count(), 1)
 

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from django.contrib import admin
+
 from admin_interface.compat import gettext_lazy as _
 from admin_interface.models import Theme
-
-from django.contrib import admin
 
 
 class ThemeAdmin(admin.ModelAdmin):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import django
 import hashlib
 import re
 
+import django
 from django import template
 from django.conf import settings
 from django.template.loader import get_template
@@ -13,7 +13,6 @@ from admin_interface.cache import get_cached_active_theme, set_cached_active_the
 from admin_interface.compat import NoReverseMatch, reverse
 from admin_interface.models import Theme
 from admin_interface.version import __version__
-
 
 register = template.Library()
 

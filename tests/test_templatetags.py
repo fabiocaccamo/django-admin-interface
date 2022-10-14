@@ -2,9 +2,9 @@
 
 from __future__ import unicode_literals
 
-from django.test import override_settings, TestCase
-from django.test.client import RequestFactory
 from django.template import Context, Template
+from django.test import TestCase, override_settings
+from django.test.client import RequestFactory
 
 from admin_interface.models import Theme
 from admin_interface.templatetags import admin_interface_tags as templatetags

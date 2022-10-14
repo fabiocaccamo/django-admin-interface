@@ -2,9 +2,8 @@
 
 from __future__ import unicode_literals
 
-from django.db import migrations, models
-
 import colorfield.fields
+from django.db import migrations, models
 
 
 class Migration(migrations.Migration):

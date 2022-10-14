@@ -2,9 +2,9 @@
 
 from __future__ import unicode_literals
 
-from admin_interface.compat import FileExtensionValidator
-
 from django.db import migrations, models
+
+from admin_interface.compat import FileExtensionValidator
 
 
 class Migration(migrations.Migration):

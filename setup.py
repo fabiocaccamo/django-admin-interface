@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import find_packages, setup
+import os
+import sys
 
-import os, sys
+from setuptools import find_packages, setup
 
 exec(open("admin_interface/version.py").read())
 

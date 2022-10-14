@@ -2,15 +2,14 @@
 
 from __future__ import unicode_literals
 
-from admin_interface.cache import del_cached_active_theme
-from admin_interface.compat import FileExtensionValidator, force_str, gettext_lazy as _
-
 from colorfield.fields import ColorField
-
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
-
 from six import python_2_unicode_compatible
+
+from admin_interface.cache import del_cached_active_theme
+from admin_interface.compat import FileExtensionValidator, force_str
+from admin_interface.compat import gettext_lazy as _
 
 
 @python_2_unicode_compatible
@@ -341,8 +340,8 @@ class Theme(models.Model):
         default=True, verbose_name=_("sticky position")
     )
     list_filter_removal_links = models.BooleanField(
-        default=False, verbose_name=_(
-            "quick remove links for active filters at top of sidebar")
+        default=False,
+        verbose_name=_("quick remove links for active filters at top of sidebar"),
     )
 
     foldable_apps = models.BooleanField(default=True, verbose_name=_("foldable apps"))
