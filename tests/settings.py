@@ -114,6 +114,8 @@ LANGUAGES = (
 )
 LANGUAGE_CODE = "en"
 
+LOCALE_PATHS = (os.path.join(BASE_DIR, "admin_interface/locale/"),)
+
 ROOT_URLCONF = "tests.urls"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "admin_interface/public/media/")
