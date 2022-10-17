@@ -104,14 +104,13 @@ DATABASES = {
 
 USE_I18N = True
 LANGUAGES = (
-    (
-        "en",
-        "English",
-    ),
-    (
-        "it",
-        "Italian",
-    ),
+    ("en", "English"),
+    ("es", "Español"),
+    ("fr", "Français"),
+    ("it", "Italiano"),
+    ("pl", "Polski"),
+    ("pt-br", "Português"),
+    ("tr", "Türk"),
 )
 LANGUAGE_CODE = "en"
 
