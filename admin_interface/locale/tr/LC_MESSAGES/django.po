@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-11 14:29-0400\n"
+"POT-Creation-Date: 2022-10-17 07:29-0500\n"
 "PO-Revision-Date: 2020-01-29 04:53+0300\n"
 "Last-Translator: Ishak Okutan <ishak.oktn@gmail.com>\n"
 "Language-Team: \n"
@@ -83,63 +83,63 @@ msgstr "Son İşlemler"
 msgid "Admin Interface"
 msgstr "Yönetici Arayüzü"
 
-#: admin_interface/models.py:69 admin_interface/models.py:126
-#: admin_interface/models.py:158
+#: admin_interface/models.py:68 admin_interface/models.py:125
+#: admin_interface/models.py:157
 msgid "name"
 msgstr "adı"
 
-#: admin_interface/models.py:71 admin_interface/models.py:144
-#: admin_interface/models.py:301
+#: admin_interface/models.py:70 admin_interface/models.py:143
+#: admin_interface/models.py:300
 msgid "active"
 msgstr "aktif"
 
-#: admin_interface/models.py:75
+#: admin_interface/models.py:74
 #: admin_interface/templates/admin/base_site.html:6
-#: admin_interface/templates/admin/base_site.html:163
+#: admin_interface/templates/admin/base_site.html:165
 msgid "Django administration"
 msgstr "Django yönetimi"
 
-#: admin_interface/models.py:77
+#: admin_interface/models.py:76
 msgid "title"
 msgstr "başlık"
 
-#: admin_interface/models.py:84 admin_interface/models.py:104
-#: admin_interface/models.py:134
+#: admin_interface/models.py:83 admin_interface/models.py:103
+#: admin_interface/models.py:133
 msgid "color"
 msgstr "renk"
 
-#: admin_interface/models.py:86 admin_interface/models.py:112
-#: admin_interface/models.py:351
+#: admin_interface/models.py:85 admin_interface/models.py:111
+#: admin_interface/models.py:350
 msgid "visible"
 msgstr "göster"
 
-#: admin_interface/models.py:96
+#: admin_interface/models.py:95
 msgid "Leave blank to use the default Django logo"
 msgstr "Varsayılan Django logosunu kullanmak için boş bırakın"
 
-#: admin_interface/models.py:97
+#: admin_interface/models.py:96
 msgid "logo"
 msgstr "logo"
 
-#: admin_interface/models.py:107
+#: admin_interface/models.py:106
 msgid "max width"
 msgstr ""
 
-#: admin_interface/models.py:110
+#: admin_interface/models.py:109
 msgid "max height"
 msgstr ""
 
-#: admin_interface/models.py:122
+#: admin_interface/models.py:121
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
 msgstr ""
 "(favicon simgesi, png veya (GIF 16x16) veya (32x32) piksel boyutlarında "
 "olmalıdır)"
 
-#: admin_interface/models.py:123
+#: admin_interface/models.py:122
 msgid "favicon"
 msgstr "favicon"
 
-#: admin_interface/models.py:131
+#: admin_interface/models.py:130
 msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
@@ -147,116 +147,116 @@ msgstr ""
 "(kırmızı: # E74C3C, turuncu: # E67E22, sarı: # F1C40F, yeşil: # 2ECC71, "
 "mavi: # 3498DB)"
 
-#: admin_interface/models.py:137
+#: admin_interface/models.py:136
 msgid "visible in header (marker and name)"
 msgstr "üst kısım da görünsün (yuvarlak işaret ve ad)"
 
-#: admin_interface/models.py:140
+#: admin_interface/models.py:139
 msgid "visible in favicon (marker)"
 msgstr "favicon’da görünsün (yuvarlak işaret)"
 
-#: admin_interface/models.py:147
+#: admin_interface/models.py:146
 msgid "Default Select"
 msgstr ""
 
-#: admin_interface/models.py:148
+#: admin_interface/models.py:147
 msgid "Minimal Select"
 msgstr ""
 
-#: admin_interface/models.py:154
+#: admin_interface/models.py:153
 msgid "control"
 msgstr ""
 
-#: admin_interface/models.py:157
+#: admin_interface/models.py:156
 msgid "code"
 msgstr "kod"
 
-#: admin_interface/models.py:164
+#: admin_interface/models.py:163
 msgid "display"
 msgstr "görüntüle"
 
-#: admin_interface/models.py:172 admin_interface/models.py:201
-#: admin_interface/models.py:262 admin_interface/models.py:284
-#: admin_interface/models.py:307
+#: admin_interface/models.py:171 admin_interface/models.py:200
+#: admin_interface/models.py:261 admin_interface/models.py:283
+#: admin_interface/models.py:306
 msgid "background color"
 msgstr "arka plan rengi"
 
-#: admin_interface/models.py:179 admin_interface/models.py:215
-#: admin_interface/models.py:276 admin_interface/models.py:298
+#: admin_interface/models.py:178 admin_interface/models.py:214
+#: admin_interface/models.py:275 admin_interface/models.py:297
 msgid "text color"
 msgstr "metin rengi"
 
-#: admin_interface/models.py:186 admin_interface/models.py:222
-#: admin_interface/models.py:247
+#: admin_interface/models.py:185 admin_interface/models.py:221
+#: admin_interface/models.py:246
 msgid "link color"
 msgstr "bağlantı rengi"
 
-#: admin_interface/models.py:193 admin_interface/models.py:236
-#: admin_interface/models.py:254
+#: admin_interface/models.py:192 admin_interface/models.py:235
+#: admin_interface/models.py:253
 msgid "link hover color"
 msgstr "bağlantı üzerine gelindiğindeki rengi"
 
-#: admin_interface/models.py:208
+#: admin_interface/models.py:207
 #, fuzzy
 #| msgid "background color"
 msgid "background selected color"
 msgstr "arka plan rengi"
 
-#: admin_interface/models.py:229
+#: admin_interface/models.py:228
 #, fuzzy
 #| msgid "link color"
 msgid "link selected color"
 msgstr "bağlantı rengi"
 
-#: admin_interface/models.py:239 admin_interface/models.py:328
+#: admin_interface/models.py:238 admin_interface/models.py:327
 msgid "rounded corners"
 msgstr "köşeleri ovalleştir"
 
-#: admin_interface/models.py:269 admin_interface/models.py:291
+#: admin_interface/models.py:268 admin_interface/models.py:290
 msgid "background hover color"
 msgstr "arka planın üzerine gelindiğindeki renk"
 
-#: admin_interface/models.py:325
+#: admin_interface/models.py:324
 msgid "background opacity"
 msgstr "arka plan şeffaflığı"
 
-#: admin_interface/models.py:331
+#: admin_interface/models.py:330
 msgid "close button visible"
 msgstr "kapat düğmesi görünsün"
 
-#: admin_interface/models.py:335
+#: admin_interface/models.py:334
 msgid "highlight active"
 msgstr ""
 
-#: admin_interface/models.py:338
+#: admin_interface/models.py:337
 msgid "use dropdown"
 msgstr "açılır listeyi kullan"
 
-#: admin_interface/models.py:341
+#: admin_interface/models.py:340
 msgid "sticky position"
 msgstr ""
 
-#: admin_interface/models.py:345
+#: admin_interface/models.py:344
 msgid "quick remove links for active filters at top of sidebar"
 msgstr ""
 
-#: admin_interface/models.py:348
+#: admin_interface/models.py:347
 msgid "foldable apps"
 msgstr ""
 
-#: admin_interface/models.py:355
+#: admin_interface/models.py:354
 msgid "sticky submit"
 msgstr ""
 
-#: admin_interface/models.py:358
+#: admin_interface/models.py:357
 msgid "sticky pagination"
 msgstr ""
 
-#: admin_interface/models.py:368
+#: admin_interface/models.py:367
 msgid "Theme"
 msgstr "Tema"
 
-#: admin_interface/models.py:369
+#: admin_interface/models.py:368
 msgid "Themes"
 msgstr "Temalar"
 
