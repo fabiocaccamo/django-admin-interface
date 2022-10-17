@@ -1,5 +1,5 @@
 codecov
 coverage
-pre-commit == 2.20.0
+pre-commit
 psycopg2
 tox
