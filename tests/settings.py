@@ -109,7 +109,7 @@ LANGUAGES = (
     ("fr", "Français"),
     ("it", "Italiano"),
     ("pl", "Polski"),
-    ("pt-br", "Português"),
+    ("pt_br", "Português"),
     ("tr", "Türk"),
 )
 LANGUAGE_CODE = "en"
