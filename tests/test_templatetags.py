@@ -38,11 +38,46 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
                 "activation_url": "/i18n/setlang/?next=/en/admin/",
             },
             {
+                "code": "es",
+                "name": "Español",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/es/admin/",
+            },
+            {
+                "code": "fr",
+                "name": "Français",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/fr/admin/",
+            },
+            {
                 "code": "it",
-                "name": "Italian",
+                "name": "Italiano",
                 "default": False,
                 "active": False,
                 "activation_url": "/i18n/setlang/?next=/it/admin/",
+            },
+            {
+                "code": "pl",
+                "name": "Polski",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/pl/admin/",
+            },
+            {
+                "code": "pt-BR",
+                "name": "Português",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/pt-br/admin/",
+            },
+            {
+                "code": "tr",
+                "name": "Türk",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/tr/admin/",
             },
         ]
         self.assertEqual(len(languages), len(expected_languages))
