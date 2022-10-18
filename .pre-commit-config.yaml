@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
 
-  - repo: https://github.com/ambv/black
+  - repo: https://github.com/psf/black
     rev: 22.10.0
     hooks:
       - id: black
@@ -14,8 +14,8 @@ repos:
       - id: isort
         args: ["--profile", "black"]
 
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.9.2
+  - repo: https://github.com/PyCQA/flake8
+    rev: 5.0.4
     hooks:
       - id: flake8
         exclude: "setup.py"
