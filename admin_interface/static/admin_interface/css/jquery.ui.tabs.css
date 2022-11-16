@@ -210,7 +210,7 @@ backward compatibility:
 }
 
 .admin-interface .inline-group .tabular tr td {
-    vertical-align: bottom;
+    vertical-align: top;
 }
 
 .admin-interface .inline-group .tabular tr.has_original td.original,
