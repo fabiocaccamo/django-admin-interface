@@ -6,12 +6,15 @@ import random
 import shutil
 
 from django.conf import settings
-from django.test import TestCase
+from django.test import TestCase, TransactionTestCase
+from unittest.mock import patch, Mock
+from unittest import expectedFailure
 
 from admin_interface.models import Theme
 
-
 class AdminInterfaceModelsTestCase(TestCase):
+    
+
     def setUp(self):
         pass
 
@@ -84,6 +87,12 @@ class AdminInterfaceModelsTestCase(TestCase):
                 theme.set_active()
                 self.assertEqual(Theme.get_active_theme().pk, theme.pk)
         self.__test_active_theme()
+
+    def test_use_db_defined_in_kwargs(self, get_active_theme):
+        Theme.objects.all().delete()
+        theme_1 = Theme.objects.create(name="Custom 1", active=True)
+        kwargs = {"db" : "default"}
+        Theme.get_active_theme(**kwargs)
 
     def test_repr(self):
         theme = Theme.get_active_theme()

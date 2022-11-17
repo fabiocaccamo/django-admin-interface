@@ -29,7 +29,10 @@ class Theme(models.Model):
 
         del_cached_active_theme()
         if instance.active:
-            Theme.objects.using(kwargs["using"]).exclude(pk=instance.pk).update(
+            objs_manager = Theme.objects
+            if "using" in kwargs:
+                objs_manager = objs_manager.using(kwargs["using"])
+            objs_manager.exclude(pk=instance.pk).update(
                 active=False
             )
         Theme.get_active_theme(**kwargs)
