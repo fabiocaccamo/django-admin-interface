@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 import random
 import shutil
 from unittest import expectedFailure
-from unittest.mock import Mock, patch
 
 from django.conf import settings
 from django.test import TestCase, TransactionTestCase
