@@ -32,9 +32,7 @@ class Theme(models.Model):
             objs_manager = Theme.objects
             if "using" in kwargs:
                 objs_manager = objs_manager.using(kwargs["using"])
-            objs_manager.exclude(pk=instance.pk).update(
-                active=False
-            )
+            objs_manager.exclude(pk=instance.pk).update(active=False)
         Theme.get_active_theme(**kwargs)
 
     @staticmethod

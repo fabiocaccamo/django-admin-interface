@@ -4,17 +4,16 @@ from __future__ import unicode_literals
 
 import random
 import shutil
+from unittest import expectedFailure
+from unittest.mock import Mock, patch
 
 from django.conf import settings
 from django.test import TestCase, TransactionTestCase
-from unittest.mock import patch, Mock
-from unittest import expectedFailure
 
 from admin_interface.models import Theme
 
-class AdminInterfaceModelsTestCase(TestCase):
-    
 
+class AdminInterfaceModelsTestCase(TestCase):
     def setUp(self):
         pass
 
@@ -91,7 +90,7 @@ class AdminInterfaceModelsTestCase(TestCase):
     def test_use_db_defined_in_kwargs(self, get_active_theme):
         Theme.objects.all().delete()
         theme_1 = Theme.objects.create(name="Custom 1", active=True)
-        kwargs = {"db" : "default"}
+        kwargs = {"db": "default"}
         Theme.get_active_theme(**kwargs)
 
     def test_repr(self):
