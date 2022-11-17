@@ -93,7 +93,7 @@ class AdminInterfaceModelsTestCase(TestCase):
 
 
 class AdminInterfaceModelsMultiDBTestCase(TransactionTestCase):
-    databases= ["default", "replica"]
+    databases = ["default", "replica"]
 
     def setUp(self):
         pass
@@ -103,11 +103,11 @@ class AdminInterfaceModelsMultiDBTestCase(TransactionTestCase):
 
     def test_get_theme_from_default_db(self):
         Theme.get_active_theme()
-    
+
     def test_get_theme_from_replica_db(self):
         kwargs = {"using": "replica"}
         replica_theme = Theme.get_active_theme(**kwargs)
-        assert "Default" not in replica_theme.name 
+        assert "Default" not in replica_theme.name
 
     def test_db_are_isolated(self):
         Theme.objects.using("replica").create(name="Replica Active", active=True)

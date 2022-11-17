@@ -110,7 +110,7 @@ replica_engine = "postgres_2" if database_engine == "postgres" else database_eng
 
 DATABASES = {
     "default": database_config.get(database_engine),
-    "replica" :  database_config.get(replica_engine)
+    "replica": database_config.get(replica_engine),
 }
 
 USE_I18N = True
