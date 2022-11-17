@@ -90,13 +90,13 @@ class AdminInterfaceModelsTestCase(TestCase):
     def test_use_db_defined_in_kwargs(self):
         Theme.objects.all().delete()
         theme_1 = Theme.objects.create(name="Custom 1", active=True)
-        kwargs = {"using" : "default"}
+        kwargs = {"using": "default"}
         Theme.get_active_theme(**kwargs)
 
     @expectedFailure
     def test_fail_for_wrong_db_defined_in_kwargs(self):
         Theme.objects.all().delete()
-        kwargs = {"using" : "other"}
+        kwargs = {"using": "other"}
         Theme.get_active_theme(**kwargs)
 
     def test_repr(self):
