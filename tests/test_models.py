@@ -87,18 +87,36 @@ class AdminInterfaceModelsTestCase(TestCase):
                 self.assertEqual(Theme.get_active_theme().pk, theme.pk)
         self.__test_active_theme()
 
-    def test_use_db_defined_in_kwargs(self):
-        Theme.objects.all().delete()
-        theme_1 = Theme.objects.create(name="Custom 1", active=True)
-        kwargs = {"using": "default"}
-        Theme.get_active_theme(**kwargs)
-
-    @expectedFailure
-    def test_fail_for_wrong_db_defined_in_kwargs(self):
-        Theme.objects.all().delete()
-        kwargs = {"using": "other"}
-        Theme.get_active_theme(**kwargs)
-
     def test_repr(self):
         theme = Theme.get_active_theme()
         self.assertEqual("{0}".format(theme), "Django")
+
+
+class AdminInterfaceModelsMultiDBTestCase(TransactionTestCase):
+    databases= ["default", "replica"]
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
+
+    def test_get_theme_from_default_db(self):
+        Theme.get_active_theme()
+    
+    def test_get_theme_from_replica_db(self):
+        kwargs = {"using": "replica"}
+        replica_theme = Theme.get_active_theme(**kwargs)
+        assert "Default" not in replica_theme.name 
+
+    def test_db_are_isolated(self):
+        Theme.objects.using("replica").create(name="Replica Active", active=True)
+        default_theme = Theme.get_active_theme()
+        kwargs = {"using": "replica"}
+        replica_theme = Theme.get_active_theme(**kwargs)
+        assert default_theme.name != replica_theme.name
+
+    @expectedFailure
+    def test_fail_for_wrong_db_defined_in_kwargs(self):
+        kwargs = {"using": "other"}
+        Theme.get_active_theme(**kwargs)
