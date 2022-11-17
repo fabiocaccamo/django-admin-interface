@@ -57,10 +57,9 @@ jobs:
         tox -e translations
 
 
-
   test:
 
-    needs: [prepare, lint]
+    needs: [prepare]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
