@@ -90,7 +90,7 @@ database_config = {
         "HOST": "",
         "PORT": "",
     },
-    "postgres_2": {
+    "postgres_replica": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "admin_interface_2",
         "USER": "postgres",
@@ -106,7 +106,7 @@ if github_workflow:
     database_config["postgres"]["HOST"] = "127.0.0.1"
     database_config["postgres"]["PORT"] = "5432"
 
-replica_engine = "postgres_2" if database_engine == "postgres" else database_engine
+replica_engine = "postgres_replica" if database_engine == "postgres" else database_engine
 
 DATABASES = {
     "default": database_config.get(database_engine),
