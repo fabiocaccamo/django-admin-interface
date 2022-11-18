@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-17 07:29-0500\n"
+"POT-Creation-Date: 2022-11-18 14:11-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
 "Language-Team: Farsi <LL@li.org>\n"
@@ -17,262 +17,250 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: admin_interface/admin.py:31
+#: admin_interface/admin.py
 msgid "Environment"
 msgstr "محیط"
 
-#: admin_interface/admin.py:43
+#: admin_interface/admin.py
 msgid "Language chooser"
 msgstr "انتخاب زبان"
 
-#: admin_interface/admin.py:54
+#: admin_interface/admin.py
 msgid "Logo"
 msgstr "لوگو"
 
-#: admin_interface/admin.py:66
+#: admin_interface/admin.py
 msgid "Favicon"
 msgstr "آیکون تب"
 
-#: admin_interface/admin.py:68
+#: admin_interface/admin.py
 msgid "Title"
 msgstr "عنوان"
 
-#: admin_interface/admin.py:79
+#: admin_interface/admin.py
 msgid "Header"
 msgstr "هدر"
 
-#: admin_interface/admin.py:91
+#: admin_interface/admin.py
 msgid "Breadcrumbs / Module headers"
 msgstr "مسیر صفحه"
 
-#: admin_interface/admin.py:106
+#: admin_interface/admin.py
 msgid "Generic Links"
 msgstr "لینک‌های عمومی"
 
-#: admin_interface/admin.py:116
+#: admin_interface/admin.py
 msgid "Save Buttons"
 msgstr "دکمه‌های ذخیره"
 
-#: admin_interface/admin.py:127
+#: admin_interface/admin.py
 msgid "Delete Buttons"
 msgstr "دکمه‌های حذف"
 
-#: admin_interface/admin.py:137
+#: admin_interface/admin.py
 msgid "Navigation Bar"
 msgstr ""
 
-#: admin_interface/admin.py:139
+#: admin_interface/admin.py
 msgid "Related Modal"
 msgstr "مدل‌های مرتبط"
 
-#: admin_interface/admin.py:152
+#: admin_interface/admin.py
 msgid "Form Controls"
 msgstr ""
 
-#: admin_interface/admin.py:162
+#: admin_interface/admin.py
 msgid "List Filter"
 msgstr "فیلتر‌های لیست"
 
-#: admin_interface/admin.py:174
+#: admin_interface/admin.py
 msgid "Recent Actions"
 msgstr "فعالیت‌های اخیر"
 
-#: admin_interface/apps.py:12
+#: admin_interface/apps.py
 msgid "Admin Interface"
 msgstr "ظاهر ادمین"
 
-#: admin_interface/models.py:68 admin_interface/models.py:125
-#: admin_interface/models.py:157
+#: admin_interface/models.py
 msgid "name"
 msgstr "نام"
 
-#: admin_interface/models.py:70 admin_interface/models.py:143
-#: admin_interface/models.py:300
+#: admin_interface/models.py
 msgid "active"
 msgstr "فعال"
 
-#: admin_interface/models.py:74
-#: admin_interface/templates/admin/base_site.html:6
-#: admin_interface/templates/admin/base_site.html:165
+#: admin_interface/models.py admin_interface/templates/admin/base_site.html
 msgid "Django administration"
 msgstr "مدیریت جنگو"
 
-#: admin_interface/models.py:76
+#: admin_interface/models.py
 msgid "title"
 msgstr "عنوان"
 
-#: admin_interface/models.py:83 admin_interface/models.py:103
-#: admin_interface/models.py:133
+#: admin_interface/models.py
 msgid "color"
 msgstr "رنگ"
 
-#: admin_interface/models.py:85 admin_interface/models.py:111
-#: admin_interface/models.py:350
+#: admin_interface/models.py
 msgid "visible"
 msgstr "نمایان"
 
-#: admin_interface/models.py:95
+#: admin_interface/models.py
 msgid "Leave blank to use the default Django logo"
 msgstr "برای نمایش لوگوی پیش فرض، خالی بگذارید."
 
-#: admin_interface/models.py:96
+#: admin_interface/models.py
 msgid "logo"
 msgstr "لوگو"
 
-#: admin_interface/models.py:106
+#: admin_interface/models.py
 msgid "max width"
 msgstr ""
 
-#: admin_interface/models.py:109
+#: admin_interface/models.py
 msgid "max height"
 msgstr ""
 
-#: admin_interface/models.py:121
+#: admin_interface/models.py
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
 msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
 
-#: admin_interface/models.py:122
+#: admin_interface/models.py
 msgid "favicon"
 msgstr "آیکون تب"
 
-#: admin_interface/models.py:130
+#: admin_interface/models.py
 msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
 msgstr ""
 "(قرمز: #E74C3C, نارنجی: #E67E22, زرد: #F1C40F, سبز: #2ECC71, آبی: #3498DB)"
 
-#: admin_interface/models.py:136
+#: admin_interface/models.py
 msgid "visible in header (marker and name)"
 msgstr "نمایان در هدر"
 
-#: admin_interface/models.py:139
+#: admin_interface/models.py
 msgid "visible in favicon (marker)"
 msgstr "نمایان در آیکون تب"
 
-#: admin_interface/models.py:146
+#: admin_interface/models.py
 msgid "Default Select"
 msgstr ""
 
-#: admin_interface/models.py:147
+#: admin_interface/models.py
 msgid "Minimal Select"
 msgstr ""
 
-#: admin_interface/models.py:153
+#: admin_interface/models.py
 msgid "control"
 msgstr ""
 
-#: admin_interface/models.py:156
+#: admin_interface/models.py
 msgid "code"
 msgstr "کد"
 
-#: admin_interface/models.py:163
+#: admin_interface/models.py
 msgid "display"
 msgstr "نمایش"
 
-#: admin_interface/models.py:171 admin_interface/models.py:200
-#: admin_interface/models.py:261 admin_interface/models.py:283
-#: admin_interface/models.py:306
+#: admin_interface/models.py
 msgid "background color"
 msgstr "رنگ پس‌زمینه"
 
-#: admin_interface/models.py:178 admin_interface/models.py:214
-#: admin_interface/models.py:275 admin_interface/models.py:297
+#: admin_interface/models.py
 msgid "text color"
 msgstr "رنگ متن"
 
-#: admin_interface/models.py:185 admin_interface/models.py:221
-#: admin_interface/models.py:246
+#: admin_interface/models.py
 msgid "link color"
 msgstr "رنگ لینک"
 
-#: admin_interface/models.py:192 admin_interface/models.py:235
-#: admin_interface/models.py:253
+#: admin_interface/models.py
 msgid "link hover color"
 msgstr "رنگ لینک در حالت هاور"
 
-#: admin_interface/models.py:207
+#: admin_interface/models.py
 #, fuzzy
 #| msgid "background color"
 msgid "background selected color"
 msgstr "رنگ پس‌زمینه"
 
-#: admin_interface/models.py:228
+#: admin_interface/models.py
 #, fuzzy
 #| msgid "link color"
 msgid "link selected color"
 msgstr "رنگ لینک"
 
-#: admin_interface/models.py:238 admin_interface/models.py:327
+#: admin_interface/models.py
 msgid "rounded corners"
 msgstr "گوشه‌های خمیده"
 
-#: admin_interface/models.py:268 admin_interface/models.py:290
+#: admin_interface/models.py
 msgid "background hover color"
 msgstr "رنگ پس‌زمینه در حالت هاور"
 
-#: admin_interface/models.py:324
+#: admin_interface/models.py
 msgid "background opacity"
 msgstr "شفافیت بکگراند"
 
-#: admin_interface/models.py:330
+#: admin_interface/models.py
 msgid "close button visible"
 msgstr "دکمه بستن نمایان باشد"
 
-#: admin_interface/models.py:334
+#: admin_interface/models.py
 msgid "highlight active"
 msgstr ""
 
-#: admin_interface/models.py:337
+#: admin_interface/models.py
 msgid "use dropdown"
 msgstr "استفاده از دراپ داون"
 
-#: admin_interface/models.py:340
+#: admin_interface/models.py
 msgid "sticky position"
 msgstr ""
 
-#: admin_interface/models.py:344
+#: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
 msgstr ""
 
-#: admin_interface/models.py:347
+#: admin_interface/models.py
 msgid "foldable apps"
 msgstr ""
 
-#: admin_interface/models.py:354
+#: admin_interface/models.py
 msgid "sticky submit"
 msgstr ""
 
-#: admin_interface/models.py:357
+#: admin_interface/models.py
 msgid "sticky pagination"
 msgstr ""
 
-#: admin_interface/models.py:367
+#: admin_interface/models.py
 msgid "Theme"
 msgstr "تم"
 
-#: admin_interface/models.py:368
+#: admin_interface/models.py
 msgid "Themes"
 msgstr "تم‌ها"
 
-#: admin_interface/templates/admin/change_list.html:8
+#: admin_interface/templates/admin/change_list.html
 #, fuzzy
 #| msgid "List Filter"
 msgid "Filter"
 msgstr "فیلتر‌های لیست"
 
 #. Translators: don't translate this, the django catalog already contains it
-#: admin_interface/templates/admin/change_list.html:14
-#: admin_interface/templates/admin/change_list.html:19
+#: admin_interface/templates/admin/change_list.html
 msgid "Clear all filters"
 msgstr ""
 
-#: admin_interface/templates/admin/filter.html:13
-#: admin_interface/templates/admin_interface/dropdown_filter.html:4
+#: admin_interface/templates/admin/filter.html
+#: admin_interface/templates/admin_interface/dropdown_filter.html
 #, python-format
 msgid " By %(filter_title)s "
 msgstr " توسط %(filter_title)s "
 
-#: admin_interface/templates/admin/popup_response.html:3
+#: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
 msgstr "پاپ آپ در حال بسته شدن..."
