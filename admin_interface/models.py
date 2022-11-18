@@ -37,10 +37,10 @@ class Theme(models.Model):
     @staticmethod
     def pre_save_handler(instance, **kwargs):
         if instance.pk is None:
+            db = kwargs["using"]
             try:
-                obj = Theme.objects.get(name=instance.name)
-                if obj:
-                    instance.pk = obj.pk
+                obj = Theme.objects.using(db).get(name=instance.name)
+                instance.pk = obj.pk
             except Theme.DoesNotExist:
                 pass
 
