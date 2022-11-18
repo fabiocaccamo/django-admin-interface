@@ -104,18 +104,15 @@ class AdminInterfaceModelsMultiDBTestCase(TransactionTestCase):
         Theme.get_active_theme()
 
     def test_get_theme_from_replica_db(self):
-        kwargs = {"using": "replica"}
-        replica_theme = Theme.get_active_theme(**kwargs)
+        replica_theme = Theme.get_active_theme(database="replica")
         assert "Default" not in replica_theme.name
 
     def test_db_are_isolated(self):
         Theme.objects.using("replica").create(name="Replica Active", active=True)
         default_theme = Theme.get_active_theme()
-        kwargs = {"using": "replica"}
-        replica_theme = Theme.get_active_theme(**kwargs)
+        replica_theme = Theme.get_active_theme(database="replica")
         assert default_theme.name != replica_theme.name
 
     @expectedFailure
     def test_fail_for_wrong_db_defined_in_kwargs(self):
-        kwargs = {"using": "other"}
-        Theme.get_active_theme(**kwargs)
+        Theme.get_active_theme(database="other")
