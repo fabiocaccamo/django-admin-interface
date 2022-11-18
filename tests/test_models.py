@@ -89,6 +89,10 @@ class AdminInterfaceModelsTestCase(TestCase):
 
     def test_repr(self):
         theme = Theme.get_active_theme()
+        self.assertEqual(repr(theme), "<Theme: Django>")
+
+    def test_str(self):
+        theme = Theme.get_active_theme()
         self.assertEqual("{0}".format(theme), "Django")
 
 
