@@ -17,6 +17,7 @@ class AdminInterfaceModelsTestCase(TestCase):
         pass
 
     def tearDown(self):
+        Theme.objects.all().delete()
         shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
 
     def __test_active_theme(self):
@@ -91,24 +92,21 @@ class AdminInterfaceModelsTestCase(TestCase):
         self.assertEqual("{0}".format(theme), "Django")
 
 
-class AdminInterfaceModelsMultiDBTestCase(TransactionTestCase):
+class AdminInterfaceModelsMultiDBTestCase(TestCase):
     databases = ["default", "replica"]
 
-    def setUp(self):
-        pass
-
-    def tearDown(self):
-        shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
+    @classmethod
+    def setUpTestData(cls):
+        Theme.objects.using("default").create(name="Change Active", active=True)
 
     def test_get_theme_from_default_db(self):
         Theme.get_active_theme()
 
     def test_get_theme_from_replica_db(self):
         replica_theme = Theme.get_active_theme(database="replica")
-        assert "Default" not in replica_theme.name
+        assert replica_theme.name == "Django"
 
     def test_db_are_isolated(self):
-        Theme.objects.using("replica").create(name="Replica Active", active=True)
         default_theme = Theme.get_active_theme()
         replica_theme = Theme.get_active_theme(database="replica")
         assert default_theme.name != replica_theme.name
