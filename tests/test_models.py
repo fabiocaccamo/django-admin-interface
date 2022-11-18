@@ -97,14 +97,16 @@ class AdminInterfaceModelsMultiDBTestCase(TestCase):
 
     @classmethod
     def setUpTestData(cls):
+        Theme.objects.using("replica").create(name="Replica Active", active=True)
         Theme.objects.using("default").create(name="Change Active", active=True)
 
     def test_get_theme_from_default_db(self):
-        Theme.get_active_theme()
+        default_theme = Theme.get_active_theme()
+        assert default_theme.name == "Change Active"
 
     def test_get_theme_from_replica_db(self):
         replica_theme = Theme.get_active_theme(database="replica")
-        assert replica_theme.name == "Django"
+        assert replica_theme.name == "Replica Active"
 
     def test_db_are_isolated(self):
         default_theme = Theme.get_active_theme()
