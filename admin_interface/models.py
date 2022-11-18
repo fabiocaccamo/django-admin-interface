@@ -17,19 +17,22 @@ class Theme(models.Model):
     @staticmethod
     def post_migrate_handler(**kwargs):
         del_cached_active_theme()
-        Theme.get_active_theme()
+        db = kwargs["using"]
+        Theme.get_active_theme(database=db)
 
     @staticmethod
     def post_delete_handler(**kwargs):
         del_cached_active_theme()
-        Theme.get_active_theme()
+        db = kwargs["using"]
+        Theme.get_active_theme(database=db)
 
     @staticmethod
     def post_save_handler(instance, **kwargs):
         del_cached_active_theme()
+        db = kwargs["using"]
         if instance.active:
-            Theme.objects.exclude(pk=instance.pk).update(active=False)
-        Theme.get_active_theme()
+            Theme.objects.using(db).exclude(pk=instance.pk).update(active=False)
+        Theme.get_active_theme(database=db)
 
     @staticmethod
     def pre_save_handler(instance, **kwargs):
@@ -42,8 +45,8 @@ class Theme(models.Model):
                 pass
 
     @staticmethod
-    def get_active_theme():
-        objs_manager = Theme.objects
+    def get_active_theme(database="default"):
+        objs_manager = Theme.objects.using(database)
         objs_active_qs = objs_manager.filter(active=True)
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)

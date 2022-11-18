@@ -4,9 +4,10 @@ from __future__ import unicode_literals
 
 import random
 import shutil
+from unittest import expectedFailure
 
 from django.conf import settings
-from django.test import TestCase
+from django.test import TestCase, TransactionTestCase
 
 from admin_interface.models import Theme
 
@@ -16,6 +17,7 @@ class AdminInterfaceModelsTestCase(TestCase):
         pass
 
     def tearDown(self):
+        Theme.objects.all().delete()
         shutil.rmtree(settings.MEDIA_ROOT, ignore_errors=True)
 
     def __test_active_theme(self):
@@ -88,3 +90,28 @@ class AdminInterfaceModelsTestCase(TestCase):
     def test_repr(self):
         theme = Theme.get_active_theme()
         self.assertEqual("{0}".format(theme), "Django")
+
+
+class AdminInterfaceModelsMultiDBTestCase(TestCase):
+    databases = ["default", "replica"]
+
+    @classmethod
+    def setUpTestData(cls):
+        Theme.objects.using("default").create(name="Change Active", active=True)
+
+    def test_get_theme_from_default_db(self):
+        de_theme = Theme.get_active_theme()
+        assert de_theme.name == "Change Active"
+
+    def test_get_theme_from_replica_db(self):
+        replica_theme = Theme.get_active_theme(database="replica")
+        assert replica_theme.name == "Django"
+
+    def test_db_are_isolated(self):
+        default_theme = Theme.get_active_theme()
+        replica_theme = Theme.get_active_theme(database="replica")
+        assert default_theme.name != replica_theme.name
+
+    @expectedFailure
+    def test_fail_for_wrong_db_defined_in_kwargs(self):
+        Theme.get_active_theme(database="other")
