@@ -92,7 +92,7 @@ database_config = {
     },
     "postgres_replica": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "admin_interface_2",
+        "NAME": "admin_interface",
         "USER": "postgres",
         "PASSWORD": "postgres",
         "HOST": "",
