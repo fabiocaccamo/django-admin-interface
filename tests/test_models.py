@@ -97,7 +97,7 @@ class AdminInterfaceModelsMultiDBTestCase(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        Theme.objects.using("default").create(name="Change Active", active=True)
+        Theme.objects.create(name="Change Active", active=True)
 
     def test_get_theme_from_default_db(self):
         de_theme = Theme.get_active_theme()
