@@ -1,4 +1,5 @@
 from unittest import expectedFailure
+
 from django.test import TestCase
 
 from admin_interface.models import Theme
