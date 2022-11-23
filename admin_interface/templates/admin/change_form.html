@@ -1,5 +1,5 @@
 {% extends "admin/change_form.html" %}
-{% load admin_interface_tags %}
+{% load static admin_interface_tags %}
 
 
 {% block field_sets %}
@@ -51,23 +51,8 @@
       {% include inline_template %} 
     </div>
     {% endfor %}
+    <script type="text/javascript" id="tabbed-changeform-script" src="{% static "admin_interface/js/tabbed_changeform.js" %}"/>
 
-
-    <script>
-    function openTab(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    </script>
 {% endblock %}
 
 {% block inline_field_sets %}
