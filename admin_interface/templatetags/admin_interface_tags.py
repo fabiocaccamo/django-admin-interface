@@ -82,8 +82,8 @@ def get_admin_interface_setting(setting):
 
 @simple_tag()
 def get_inline_template(template):
-    template_path= template.split("/")
-    template_path[-1] = "headerless_" + template_path[-1] 
+    template_path = template.split("/")
+    template_path[-1] = "headerless_" + template_path[-1]
     return "/".join(template_path)
 
 
