@@ -349,6 +349,10 @@ class Theme(models.Model):
 
     foldable_apps = models.BooleanField(default=True, verbose_name=_("foldable apps"))
 
+    show_fieldsets_as_tabs = models.BooleanField(default=True, verbose_name=_("fieldsets as tabs"))
+
+    show_inlines_as_tabs = models.BooleanField(default=True, verbose_name=_("inlines as tabs"))
+
     recent_actions_visible = models.BooleanField(
         default=True, verbose_name=_("visible")
     )
