@@ -7,43 +7,6 @@
 {% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
 {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
 
-
-{% comment %} If inline_as_tab & formset_as_tabs == false {% endcomment %}
-{% comment %} {{block.super}} {% endcomment %}
-<style>
-    
-    .tab {
-      display: flex;
-      flex-direction: row;
-      gap: 0.75em;
-      flex-wrap: wrap;
-    }
-    
-    .tab button {
-      border: none;
-      cursor: pointer;
-      padding: 8px 12px;
-      transition: 0.3s;
-      border-radius: var(--admin-interface-module-border-radius);
-    }
-    
-    .tab button.active {
-      background-color: var(--admin-interface-module-background-color);
-      color: var(--admin-interface-module-text-color);
-    }
-    
-    .tabcontent {
-      display: none;
-      padding: 1em 0;
-    }
-
-    .tabcontent.active {
-        display: block;
-    }
-    </style>
-    <span>
-
-    </span>
     
     <div class="tab">
 
@@ -82,7 +45,6 @@
       </div> 
     {% endif %}
 
-             {% comment %} inlines_as_tabs = true {% endcomment %}
     {% for inline_admin_formset in inline_admin_formsets  %}
     <div id="{{inline_admin_formset.opts.verbose_name_plural|capfirst}}" class="tabcontent">
       {% get_inline_template inline_admin_formset.opts.template as inline_template %}
