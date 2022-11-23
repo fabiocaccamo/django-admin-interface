@@ -1,6 +1,4 @@
 from unittest import expectedFailure
-
-from django.db.utils import ConnectionRouter
 from django.test import TestCase
 
 from admin_interface.models import Theme
@@ -16,7 +14,7 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
         db_for_theme = router.db_for_read(Theme)
         assert db_for_theme == "default"
 
-    def test_dbrouter_fetches_db(self):
+    def test_dbrouter_selects_correct_db(self):
         DATABASE_APPS_MAPPING = {
             "admin_interface": "replica",
         }
@@ -27,3 +25,11 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
     @expectedFailure
     def test_dbrouter_errors_when_fetching_from_default(self):
         Theme.get_active_theme()
+
+    def test_dbrouter_fetches_db(self):
+        DATABASE_APPS_MAPPING = {
+            "admin_interface": "replica",
+        }
+        router = DatabaseAppsRouter(db_map=DATABASE_APPS_MAPPING)
+        with self.settings(DATABASE_ROUTERS=[router]):
+            Theme.get_active_theme()
