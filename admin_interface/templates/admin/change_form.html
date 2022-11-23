@@ -7,6 +7,7 @@
 {% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
 {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
 
+
 {% comment %} If inline_as_tab & formset_as_tabs == false {% endcomment %}
 {% comment %} {{block.super}} {% endcomment %}
 <style>
@@ -70,7 +71,7 @@
     {% if show_fieldsets_as_tabs %}
       {% for fieldset in adminform %}
       <div id="{{fieldset.name}}" class="tabcontent {{ forloop.counter0|default:"active" }}">
-          {% include "admin/includes/fieldset.html" %}
+          {% include "admin/includes/headerless_fieldset.html" %}
       </div>
       {% endfor %}
     {% else %}
@@ -84,7 +85,8 @@
              {% comment %} inlines_as_tabs = true {% endcomment %}
     {% for inline_admin_formset in inline_admin_formsets  %}
     <div id="{{inline_admin_formset.opts.verbose_name_plural|capfirst}}" class="tabcontent">
-        {% include inline_admin_formset.opts.template %}
+      {% get_inline_template inline_admin_formset.opts.template as inline_template %}
+      {% include inline_template %} 
     </div>
     {% endfor %}
 
