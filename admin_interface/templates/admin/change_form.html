@@ -1,0 +1,100 @@
+{% extends "admin/change_form.html" %}
+
+{% block field_sets %}
+
+{% comment %} If inline_as_tab & formset_as_tabs == false {% endcomment %}
+{% comment %} {{block.super}} {% endcomment %}
+<style>
+    
+    .tab {
+      display: flex;
+      flex-direction: row;
+      gap: 0.75em;
+      flex-wrap: wrap;
+    }
+    
+    .tab button {
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      transition: 0.3s;
+      border-radius: var(--admin-interface-module-border-radius);
+    }
+    
+    .tab button.active {
+      background-color: var(--admin-interface-module-background-color);
+      color: var(--admin-interface-module-text-color);
+    }
+    
+    .tabcontent {
+      display: none;
+      padding: 1em 0;
+    }
+
+    .tabcontent.active {
+        display: block;
+    }
+    </style>
+    
+    <div class="tab">
+        {% comment %} for Fieldset_as_tabs = true {% endcomment %}
+        {% for fieldset in adminform %}
+        <button type="button" class="tablinks {{ forloop.counter0|default:"active" }}" onclick="openTab(event, '{{fieldset.name}}')">
+             {{ fieldset.name|default_if_none:opts.verbose_name|capfirst}} 
+        </button> 
+        {% endfor %}
+        {% comment %} Fieldset_as_tabs = false {% endcomment %}
+        {% comment %} <button type="button" class="tablinks active" onclick="openTab(event, 'general')">
+          {{ opts.verbose_name|capfirst }}
+     </button>  {% endcomment %}
+     {% comment %} inlines_as_tabs = true {% endcomment %}
+        {% for inline_admin_formset in inline_admin_formsets %}
+        <button type="button" class="tablinks" onclick="openTab(event, '{{inline_admin_formset.opts.verbose_name_plural|capfirst}}')">
+            {{inline_admin_formset.opts.verbose_name_plural|capfirst}}
+        </button>
+        {% endfor %}
+    </div>
+
+    {% comment %} Fieldset_as_tabs = true {% endcomment %}
+    {% for fieldset in adminform %}
+    <div id="{{fieldset.name}}" class="tabcontent {{ forloop.counter0|default:"active" }}">
+        {% include "admin/includes/fieldset.html" %}
+    </div>
+    {% endfor %}
+    
+    {% comment %} fieldsets_as_tabs = false {% endcomment %}
+    {% comment %} <div id="general" class="tabcontent active">
+    {% for fieldset in adminform %}
+    {% include "admin/includes/fieldset.html" %}
+    {% endfor %}
+  </div> {% endcomment %}
+
+             {% comment %} inlines_as_tabs = true {% endcomment %}
+    {% for inline_admin_formset in inline_admin_formsets  %}
+    <div id="{{inline_admin_formset.opts.verbose_name_plural|capfirst}}" class="tabcontent">
+        {% include inline_admin_formset.opts.template %}
+    </div>
+    {% endfor %}
+
+
+    <script>
+    function openTab(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+{% endblock %}
+
+{% block inline_field_sets %}
+{% comment %} formset_as_tabs == false {% endcomment %}
+{% comment %} {{block.super}} {% endcomment %}
+{% endblock %}
