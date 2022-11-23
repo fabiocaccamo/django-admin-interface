@@ -1,6 +1,11 @@
 {% extends "admin/change_form.html" %}
+{% load admin_interface_tags %}
+
 
 {% block field_sets %}
+
+{% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
+{% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
 
 {% comment %} If inline_as_tab & formset_as_tabs == false {% endcomment %}
 {% comment %} {{block.super}} {% endcomment %}
@@ -16,7 +21,7 @@
     .tab button {
       border: none;
       cursor: pointer;
-      padding: 10px;
+      padding: 8px 12px;
       transition: 0.3s;
       border-radius: var(--admin-interface-module-border-radius);
     }
@@ -35,39 +40,46 @@
         display: block;
     }
     </style>
+    <span>
+
+    </span>
     
     <div class="tab">
-        {% comment %} for Fieldset_as_tabs = true {% endcomment %}
+
+      {% if show_fieldsets_as_tabs %}
         {% for fieldset in adminform %}
         <button type="button" class="tablinks {{ forloop.counter0|default:"active" }}" onclick="openTab(event, '{{fieldset.name}}')">
-             {{ fieldset.name|default_if_none:opts.verbose_name|capfirst}} 
+            {{ fieldset.name|default_if_none:opts.verbose_name|capfirst}} 
         </button> 
         {% endfor %}
-        {% comment %} Fieldset_as_tabs = false {% endcomment %}
-        {% comment %} <button type="button" class="tablinks active" onclick="openTab(event, 'general')">
+      {% else %}
+        <button type="button" class="tablinks active" onclick="openTab(event, 'general')">
           {{ opts.verbose_name|capfirst }}
-     </button>  {% endcomment %}
-     {% comment %} inlines_as_tabs = true {% endcomment %}
+        </button>  
+      {% endif %}
+     
+     {% if show_inlines_as_tabs %}
         {% for inline_admin_formset in inline_admin_formsets %}
         <button type="button" class="tablinks" onclick="openTab(event, '{{inline_admin_formset.opts.verbose_name_plural|capfirst}}')">
             {{inline_admin_formset.opts.verbose_name_plural|capfirst}}
         </button>
         {% endfor %}
+      {% endif %}
     </div>
 
-    {% comment %} Fieldset_as_tabs = true {% endcomment %}
-    {% for fieldset in adminform %}
-    <div id="{{fieldset.name}}" class="tabcontent {{ forloop.counter0|default:"active" }}">
-        {% include "admin/includes/fieldset.html" %}
-    </div>
-    {% endfor %}
-    
-    {% comment %} fieldsets_as_tabs = false {% endcomment %}
-    {% comment %} <div id="general" class="tabcontent active">
-    {% for fieldset in adminform %}
-    {% include "admin/includes/fieldset.html" %}
-    {% endfor %}
-  </div> {% endcomment %}
+    {% if show_fieldsets_as_tabs %}
+      {% for fieldset in adminform %}
+      <div id="{{fieldset.name}}" class="tabcontent {{ forloop.counter0|default:"active" }}">
+          {% include "admin/includes/fieldset.html" %}
+      </div>
+      {% endfor %}
+    {% else %}
+      <div id="general" class="tabcontent active">
+        {% for fieldset in adminform %}
+          {% include "admin/includes/fieldset.html" %}
+        {% endfor %}
+      </div> 
+    {% endif %}
 
              {% comment %} inlines_as_tabs = true {% endcomment %}
     {% for inline_admin_formset in inline_admin_formsets  %}
@@ -95,6 +107,8 @@
 {% endblock %}
 
 {% block inline_field_sets %}
-{% comment %} formset_as_tabs == false {% endcomment %}
-{% comment %} {{block.super}} {% endcomment %}
+  {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
+  {% if not show_inlines_as_tabs %}
+    {{block.super}}
+  {% endif %}
 {% endblock %}
