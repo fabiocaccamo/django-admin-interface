@@ -1,19 +1,19 @@
 DATABASE_APPS_MAPPING = {
-    'admin_interface': 'default',
+    "admin_interface": "default",
 }
 
 
 class DatabaseAppsRouter(object):
     """
-        arouter to control all database operations on models for different
-        databases.
+    arouter to control all database operations on models for different
+    databases.
 
-        in case an app is not set in DATABASE_APPS_MAPPING, the router
-        will fallback to the `default` database.
+    in case an app is not set in DATABASE_APPS_MAPPING, the router
+    will fallback to the `default` database.
 
-        Settings example:
+    Settings example:
 
-        DATABASE_APPS_MAPPING = {'app1': 'db1', 'app2': 'db2'}
+    DATABASE_APPS_MAPPING = {'app1': 'db1', 'app2': 'db2'}
     """
 
     def __init__(self, db_map=DATABASE_APPS_MAPPING):

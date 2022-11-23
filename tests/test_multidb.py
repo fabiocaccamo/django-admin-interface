@@ -1,9 +1,12 @@
 from unittest import expectedFailure
-from django.test import TestCase
+
 from django.db.utils import ConnectionRouter
+from django.test import TestCase
 
 from admin_interface.models import Theme
+
 from .routers import DatabaseAppsRouter
+
 
 class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
     databases = ["replica"]
@@ -15,7 +18,7 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
 
     def test_dbrouter_fetches_db(self):
         DATABASE_APPS_MAPPING = {
-            'admin_interface': 'replica',
+            "admin_interface": "replica",
         }
         router = DatabaseAppsRouter(db_map=DATABASE_APPS_MAPPING)
         db_for_theme = router.db_for_read(Theme)
