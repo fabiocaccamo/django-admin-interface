@@ -7,6 +7,11 @@
 {% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
 {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
 
+{% if not show_fieldsets_as_tabs and not show_inlines_as_tabs %}
+
+{{block.super}}
+
+{% else %}
 
     <div class="tab">
 
@@ -57,7 +62,7 @@
       src="{% static "admin_interface/js/tabbed_changeform.js" %}"
     >
     </script>
-
+{% endif %}
 {% endblock %}
 
 {% block inline_field_sets %}
