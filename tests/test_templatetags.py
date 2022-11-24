@@ -170,5 +170,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self.assertEqual(rendered, hash_manual)
 
     def test_get_inline_template(self):
-        headless_template = templatetags.get_inline_template("admin/edit_inline/stacked.html")
+        headless_template = templatetags.get_inline_template(
+            "admin/edit_inline/stacked.html"
+        )
         self.assertEqual(headless_template, "admin/edit_inline/headerless_stacked.html")
