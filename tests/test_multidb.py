@@ -1,7 +1,9 @@
 from django.test import TestCase
+
 from admin_interface.models import Theme
 
 from .routers import DatabaseAppsRouter
+
 
 class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
     databases = ["replica"]
