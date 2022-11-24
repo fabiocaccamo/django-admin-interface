@@ -22,7 +22,8 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
         assert db_for_theme == "replica"
 
     def test_dbrouter_errors_when_fetching_from_default(self):
-        self.assertRaises(AssertionError, Theme.get_active_theme)
+        self.assertRaises(Exception, Theme.get_active_theme)
+
 
     def test_dbrouter_fetches_db(self):
         DATABASE_APPS_MAPPING = {
