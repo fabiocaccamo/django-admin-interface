@@ -19,5 +19,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update/pre-commit-hooks
           title: Update pre-commit hooks
-          commit-message: "chore: update pre-commit hooks"
+          commit-message: "Update pre-commit hooks."
           body: Update versions of pre-commit hooks to latest version.
