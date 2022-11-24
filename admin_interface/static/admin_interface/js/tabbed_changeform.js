@@ -1,11 +1,11 @@
 
 function openTab(evt, tabName) {
   var tabcontents, tablinks;
-  tabcontents = document.getElementsByClassName("tabcontent");
+  tabcontents = document.getElementsByClassName("tabbed-changeform-tabcontent");
   for (let tabcontent of tabcontents) {
     tabcontent.classList.remove("active");
   }
-  tablinks = document.getElementsByClassName("tablinks");
+  tablinks = document.getElementsByClassName("tabbed-changeform-tablinks");
   for (let tablink of tablinks) {
     tablink.classList.remove("active");
   }
