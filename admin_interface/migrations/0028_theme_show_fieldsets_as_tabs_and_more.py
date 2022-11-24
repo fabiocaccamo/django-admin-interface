@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="theme",
             name="show_fieldsets_as_tabs",
-            field=models.BooleanField(default=True, verbose_name="fieldsets as tabs"),
+            field=models.BooleanField(default=False, verbose_name="fieldsets as tabs"),
         ),
         migrations.AddField(
             model_name="theme",
