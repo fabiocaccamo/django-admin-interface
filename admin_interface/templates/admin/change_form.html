@@ -46,8 +46,8 @@
     {% endif %}
 
     {% for inline_admin_formset in inline_admin_formsets  %}
-    <div id="{{inline_admin_formset.opts.verbose_name_plural|capfirst}}" class="tabcontent">
-      {% get_inline_template inline_admin_formset.opts.template as inline_template %}
+    <div id="{{inline_admadmin_interface_in_formset.opts.verbose_name_plural|capfirst}}" class="tabcontent">
+      {% get_admin_interface_inline_template inline_admin_formset.opts.template as inline_template %}
       {% include inline_template %}
     </div>
     {% endfor %}
