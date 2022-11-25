@@ -119,13 +119,3 @@ class AdminInterfaceModelsMultiDBTestCase(TestCase):
     @expectedFailure
     def test_fail_for_wrong_db_defined_in_kwargs(self):
         Theme.get_active_theme(database="other")
-
-
-class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
-    databases = ["default", "replica"]
-    # Refer : https://stackoverflow.com/questions/68233451/django-database-routers-how-do-you-test-them-especially-for-migrations
-    @expectedFailure
-    def test_db_routing(self):
-        default_theme = Theme.get_active_theme()
-        replica_theme = Theme.get_active_theme(database="replica")
-        assert default_theme.name != replica_theme.name
