@@ -1,6 +1,8 @@
-from django.test import TestCase
-from django import VERSION
 from unittest import skipIf
+
+from django import VERSION
+from django.test import TestCase
+
 from admin_interface.models import Theme
 
 from .routers import DatabaseAppsRouter
@@ -22,7 +24,9 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
         db_for_theme = router.db_for_read(Theme)
         assert db_for_theme == "replica"
 
-    @skipIf(VERSION[0]<2, "TestCase does not respect database param on older versions")
+    @skipIf(
+        VERSION[0] < 2, "TestCase does not respect database param on older versions"
+    )
     def test_dbrouter_errors_when_fetching_from_default(self):
         with self.assertRaises(Exception):
             Theme.get_active_theme()
