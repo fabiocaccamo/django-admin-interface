@@ -17,6 +17,7 @@
 }
 
 .admin-interface .tabbed-changeform-tab button.active {
+    font-weight: bold;
     border: 1px solid var(--border-color) ;
     border-bottom: none;
     border-radius: var(--admin-interface-module-border-radius);
