@@ -1,21 +1,29 @@
 .admin-interface .tabbed-changeform-tab {
     display: flex;
     flex-direction: row;
-    gap: 0.75em;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .admin-interface .tabbed-changeform-tab button {
-    border: none;
+    flex-shrink: 0;
+    flex-grow: 0;
     cursor: pointer;
     padding: 8px 12px;
     transition: 0.3s;
+    background-color: var(--admin-interface-module-background-selected-color);
+    color: var(--admin-interface-module-background-color);
+    border: none;
+    border-bottom: 1px solid var(--admin-interface-module-background-color) ;
     border-radius: var(--admin-interface-module-border-radius);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .admin-interface .tabbed-changeform-tab button.active {
-    background-color: var(--admin-interface-module-background-color);
-    color: var(--admin-interface-module-text-color);
+    background-color: var(--admin-interface-module-background-selected-color);
+    border: 1px solid var(--admin-interface-module-background-color) ;
+    border-bottom: none;
 }
 
 .admin-interface .tabbed-changeform-tabcontent {
