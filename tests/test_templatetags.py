@@ -168,3 +168,9 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             "{{ version_md5_hash }}"
         )
         self.assertEqual(rendered, hash_manual)
+
+    def test_get_admin_interface_inline_template(self):
+        headless_template = templatetags.get_admin_interface_inline_template(
+            "admin/edit_inline/stacked.html"
+        )
+        self.assertEqual(headless_template, "admin/edit_inline/headerless_stacked.html")

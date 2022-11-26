@@ -1,0 +1,73 @@
+{% extends "admin/change_form.html" %}
+{% load static admin_interface_tags %}
+
+
+{% block field_sets %}
+
+{% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
+{% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
+
+{% if not show_fieldsets_as_tabs and not show_inlines_as_tabs %}
+
+{{block.super}}
+
+{% else %}
+
+    <div class="tabbed-changeform-tab">
+
+      {% if show_fieldsets_as_tabs %}
+        {% for fieldset in adminform %}
+        <button type="button" class="tabbed-changeform-tablinks {{ forloop.counter0|default:"active" }}" onclick="openTab(event, '{{fieldset.name}}')">
+            {{ fieldset.name|default_if_none:opts.verbose_name|capfirst}}
+        </button>
+        {% endfor %}
+      {% else %}
+        <button type="button" class="tabbed-changeform-tablinks active" onclick="openTab(event, 'general')">
+          {{ opts.verbose_name|capfirst }}
+        </button>
+      {% endif %}
+
+     {% if show_inlines_as_tabs %}
+        {% for inline_admin_formset in inline_admin_formsets %}
+        <button type="button" class="tabbed-changeform-tablinks" onclick="openTab(event, '{{inline_admin_formset.opts.verbose_name_plural|capfirst}}')">
+            {{inline_admin_formset.opts.verbose_name_plural|capfirst}}
+        </button>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    {% if show_fieldsets_as_tabs %}
+      {% for fieldset in adminform %}
+      <div id="{{fieldset.name}}" class="tabbed-changeform-tabcontent {{ forloop.counter0|default:"active" }}">
+          {% include "admin/includes/headerless_fieldset.html" %}
+      </div>
+      {% endfor %}
+    {% else %}
+      <div id="general" class="tabbed-changeform-tabcontent active">
+        {% for fieldset in adminform %}
+          {% include "admin/includes/fieldset.html" %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% for inline_admin_formset in inline_admin_formsets  %}
+    <div id="{{inline_admin_formset.opts.verbose_name_plural|capfirst}}" class="tabbed-changeform-tabcontent">
+      {% get_admin_interface_inline_template inline_admin_formset.opts.template as inline_template %}
+      {% include inline_template %}
+    </div>
+    {% endfor %}
+    <script
+      type="text/javascript"
+      id="tabbed-changeform-script"
+      src="{% static "admin_interface/js/tabbed_changeform.js" %}"
+    >
+    </script>
+{% endif %}
+{% endblock %}
+
+{% block inline_field_sets %}
+  {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
+  {% if not show_inlines_as_tabs %}
+    {{block.super}}
+  {% endif %}
+{% endblock %}

@@ -80,6 +80,13 @@ def get_admin_interface_setting(setting):
     return getattr(theme, setting)
 
 
+@simple_tag()
+def get_admin_interface_inline_template(template):
+    template_path = template.split("/")
+    template_path[-1] = "headerless_" + template_path[-1]
+    return "/".join(template_path)
+
+
 @simple_tag(takes_context=False)
 def get_admin_interface_version():
     return __version__

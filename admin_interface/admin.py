@@ -171,6 +171,16 @@ class ThemeAdmin(admin.ModelAdmin):
             },
         ),
         (
+            _("Change Form"),
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "show_fieldsets_as_tabs",
+                    "show_inlines_as_tabs",
+                ),
+            },
+        ),
+        (
             _("Recent Actions"),
             {"classes": ("wide",), "fields": ("recent_actions_visible",)},
         ),
