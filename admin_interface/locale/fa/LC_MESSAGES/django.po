@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 14:11-0600\n"
+"POT-Creation-Date: 2022-11-26 02:56-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
 "Language-Team: Farsi <LL@li.org>\n"
@@ -72,6 +72,10 @@ msgstr ""
 #: admin_interface/admin.py
 msgid "List Filter"
 msgstr "فیلتر‌های لیست"
+
+#: admin_interface/admin.py
+msgid "Change Form"
+msgstr ""
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -229,6 +233,14 @@ msgid "foldable apps"
 msgstr ""
 
 #: admin_interface/models.py
+msgid "fieldsets as tabs"
+msgstr ""
+
+#: admin_interface/models.py
+msgid "inlines as tabs"
+msgstr ""
+
+#: admin_interface/models.py
 msgid "sticky submit"
 msgstr ""
 
@@ -253,6 +265,25 @@ msgstr "فیلتر‌های لیست"
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Clear all filters"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_stacked.html
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "Change"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_stacked.html
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "View"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_stacked.html
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "View on site"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "Delete?"
 msgstr ""
 
 #: admin_interface/templates/admin/filter.html
