@@ -45,8 +45,10 @@ class Theme(models.Model):
                 pass
 
     @staticmethod
-    def get_active_theme(database="default"):
-        objs_manager = Theme.objects.using(database)
+    def get_active_theme(database=None):
+        objs_manager = (
+            Theme.objects if database is None else Theme.objects.using(database)
+        )
         objs_active_qs = objs_manager.filter(active=True)
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)

@@ -117,6 +117,9 @@ DATABASES = {
     "replica": database_config.get(replica_engine),
 }
 
+
+DATABASE_ROUTERS = ["tests.routers.DatabaseAppsRouter"]
+
 USE_I18N = True
 LANGUAGES = (
     ("en", "English"),
