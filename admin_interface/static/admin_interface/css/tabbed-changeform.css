@@ -33,3 +33,8 @@
 .admin-interface .tabbed-changeform-tabcontent.active {
     display: block;
 }
+
+.admin-interface #rest-of-the-tabber {
+    flex: 1;
+    border-bottom: 1px solid var(--border-color) ;
+}
