@@ -356,7 +356,7 @@ class Theme(models.Model):
     )
 
     show_inlines_as_tabs = models.BooleanField(
-        default=True, verbose_name=_("inlines as tabs")
+        default=False, verbose_name=_("inlines as tabs")
     )
 
     recent_actions_visible = models.BooleanField(

@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="theme",
             name="show_inlines_as_tabs",
-            field=models.BooleanField(default=True, verbose_name="inlines as tabs"),
+            field=models.BooleanField(default=False, verbose_name="inlines as tabs"),
         ),
     ]
