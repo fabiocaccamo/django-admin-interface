@@ -3,8 +3,12 @@ list-filter-dropdown
 */
 
 .admin-interface .list-filter-dropdown {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.admin-interface .list-filter-dropdown + .list-filter-dropdown {
+    margin-top: 5px;
 }
 
 .admin-interface .list-filter-dropdown h3 {
