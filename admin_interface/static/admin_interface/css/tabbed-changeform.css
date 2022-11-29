@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
+    padding-bottom: 10px;
 }
 
 .admin-interface .tabbed-changeform-tab button {
