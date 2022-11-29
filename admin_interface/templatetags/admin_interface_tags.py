@@ -128,3 +128,11 @@ def admin_interface_filter_removal_link(changelist, list_filter):
             "title": title,
         }
     )
+
+@simple_tag()
+def has_multiple_tabs(adminform, inline_forms):
+    theme = get_admin_interface_theme()
+    has_fieldset_tabs = getattr(theme, "show_fieldsets_as_tabs") and len(adminform.fieldsets) > 1 
+    has_inline_tabs = getattr(theme, "show_inlines_as_tabs") and len(inline_forms) > 0 
+    has_tabs = has_fieldset_tabs or has_inline_tabs
+    return has_tabs
