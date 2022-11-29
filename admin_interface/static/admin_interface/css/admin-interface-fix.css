@@ -447,6 +447,7 @@ body.admin-interface .paginator a.showall:visited {
     border-top: none;
     border-bottom: none;
     border-left: none;
+    scrollbar-width: thin;
     /*transition: left .3s, margin-left .3s;*/
 }
 
