@@ -6,9 +6,9 @@
 
 {% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
 {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
-{% has_multiple_tabs adminform inline_admin_formsets as has_multiple_tabs %}
+{% admin_interface_use_changeform_tabs adminform inline_admin_formsets as admin_interface_use_changeform_tabs %}
 
-{% if not has_multiple_tabs %}
+{% if not admin_interface_use_changeform_tabs %}
 
 {{block.super}}
 
