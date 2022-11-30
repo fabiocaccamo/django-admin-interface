@@ -1,43 +1,56 @@
-.admin-interface .tabbed-changeform-tab {
+.admin-interface .tabbed-changeform-tabs {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: 4px;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    padding-bottom: 15px;
 }
 
-.admin-interface .tabbed-changeform-tab::-webkit-scrollbar {
-    height: 4px;
-    background-color: var(--border-color);
+@-moz-document url-prefix() {
+    .admin-interface .tabbed-changeform-tabs {
+        padding-bottom: 13px;
+    }
 }
-.admin-interface .tabbed-changeform-tab::-webkit-scrollbar-thumb {
-    background:  #aaa;
-  }
 
-
-.admin-interface .tabbed-changeform-tab button {
+.admin-interface .tabbed-changeform-tabs .tabbed-changeform-tablink {
+    appearance: none;
     -webkit-appearance: none;
-    border: none;
-    border-radius: 0;
+    border: 1px solid transparent;
     border-bottom: 1px solid var(--border-color);
-    flex-shrink: 0;
-    flex-grow: 0;
-    cursor: pointer;
-    padding: 8px 12px;
-    margin: 0;
-    background-color: var(--admin-interface-module-header-text-color);
-    color: var(--admin-interface-module-background-color);
-}
-
-.admin-interface .tabbed-changeform-tab button.active {
-    outline: none;
-    font-weight: bold;
-    border: 1px solid var(--border-color);
-    border-bottom: none;
     border-radius: var(--admin-interface-module-border-radius);
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: 0;
+    background-color: var(--admin-interface-module-header-text-color);
+    color: var(--admin-interface-generic-link-color);
+    font-size: 13px;
+    font-weight: bold;
+    outline: none !important;
+}
+
+.admin-interface .tabbed-changeform-tabs .tabbed-changeform-tablink + .tabbed-changeform-tablink {
+    margin-left: -1px;
+}
+
+.admin-interface .tabbed-changeform-tabs .tabbed-changeform-tablink:hover {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface .tabbed-changeform-tabs .tabbed-changeform-tablink.active {
+    border: 1px solid var(--border-color);
+    border-bottom: 1px solid transparent;
+    color: var(--admin-interface-module-background-color);
+}
+
+.admin-interface .tabbed-changeform-tabs-remaining-space {
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .admin-interface .tabbed-changeform-tabcontent {
@@ -47,9 +60,4 @@
 
 .admin-interface .tabbed-changeform-tabcontent.active {
     display: block;
-}
-
-.admin-interface .tabbed-changeform-tabs-remaining-space {
-    flex: 1;
-    border-bottom: 1px solid var(--border-color);
 }

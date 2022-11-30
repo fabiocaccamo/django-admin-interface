@@ -1,76 +1,88 @@
 {% extends "admin/change_form.html" %}
 {% load static admin_interface_tags %}
 
-
 {% block field_sets %}
 
-{% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
-{% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
-{% admin_interface_use_changeform_tabs adminform inline_admin_formsets as admin_interface_use_changeform_tabs %}
+    {% get_admin_interface_setting "show_fieldsets_as_tabs" as show_fieldsets_as_tabs %}
+    {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
+    {% admin_interface_use_changeform_tabs adminform inline_admin_formsets as admin_interface_use_changeform_tabs %}
 
-{% if not admin_interface_use_changeform_tabs %}
+    {% if not admin_interface_use_changeform_tabs %}
 
-{{block.super}}
+        {{ block.super }}
 
-{% else %}
-
-    <div class="tabbed-changeform-tab">
-
-      {% if show_fieldsets_as_tabs %}
-        {% for fieldset in adminform %}
-        <button type="button" class="tabbed-changeform-tablinks {{ forloop.counter0|default:"active" }}" onclick="openTab(event, 'tab-{{fieldset.name|slugify}}')">
-            {{ fieldset.name|default_if_none:opts.verbose_name|capfirst}}
-        </button>
-        {% endfor %}
-      {% else %}
-        <button type="button" class="tabbed-changeform-tablinks active" onclick="openTab(event, 'general')">
-          {{ opts.verbose_name|capfirst }}
-        </button>
-      {% endif %}
-
-     {% if show_inlines_as_tabs %}
-        {% for inline_admin_formset in inline_admin_formsets %}
-        <button type="button" class="tabbed-changeform-tablinks" onclick="openTab(event, 'tab-{{inline_admin_formset.opts.verbose_name_plural|slugify}}')">
-            {{inline_admin_formset.opts.verbose_name_plural|capfirst}}
-        </button>
-        {% endfor %}
-      {% endif %}
-      <div class="tabbed-changeform-tabs-remaining-space"></div>
-
-    </div>
-
-    {% if show_fieldsets_as_tabs %}
-      {% for fieldset in adminform %}
-      <div id="tab-{{fieldset.name|slugify}}" class="tabbed-changeform-tabcontent {{ forloop.counter0|default:"active" }}">
-          {% include "admin/includes/headerless_fieldset.html" %}
-      </div>
-      {% endfor %}
     {% else %}
-      <div id="general" class="tabbed-changeform-tabcontent active">
-        {% for fieldset in adminform %}
-          {% include "admin/includes/fieldset.html" %}
+
+        <div id="tabbed-changeform-tabs" class="tabbed-changeform-tabs">
+
+            {% if show_fieldsets_as_tabs %}
+                {% for fieldset in adminform %}
+                {% with fieldset.name|default_if_none:opts.verbose_name as tab_name %}
+                <button type="button" id="tablink-{{ tab_name|slugify }}" class="tabbed-changeform-tablink {{ forloop.counter0|default:'active' }}" onclick="AdminInterface.tabbedChangeForm.openTab(event, '{{ tab_name|slugify }}')">
+                    {{ tab_name|capfirst }}
+                </button>
+                {% endwith %}
+                {% endfor %}
+            {% else %}
+                {% with opts.verbose_name as tab_name %}
+                <button type="button" id="tablink-{{ tab_name|slugify }}" class="tabbed-changeform-tablink active" onclick="AdminInterface.tabbedChangeForm.openTab(event, '{{ tab_name|slugify }}')">
+                    {{ tab_name|capfirst }}
+                </button>
+                {% endwith %}
+            {% endif %}
+
+            {% if show_inlines_as_tabs %}
+                {% for inline_admin_formset in inline_admin_formsets %}
+                {% with fieldset.name|default_if_none:opts.verbose_name as tab_name %}
+                <button type="button" id="tablink-{{ tab_name|slugify }}" class="tabbed-changeform-tablink" onclick="AdminInterface.tabbedChangeForm.openTab(event, '{{ tab_name|slugify }}')">
+                    {{ tab_name|capfirst }}
+                </button>
+                {% endwith %}
+                {% endfor %}
+            {% endif %}
+
+            <span class="tabbed-changeform-tabs-remaining-space"></span>
+
+        </div>
+
+        {% if show_fieldsets_as_tabs %}
+            {% for fieldset in adminform %}
+            {% with fieldset.name|default_if_none:opts.verbose_name as tab_name %}
+            <div id="tabcontent-{{ tab_name|slugify }}" class="tabbed-changeform-tabcontent {{ forloop.counter0|default:'active' }}">
+                {% include "admin/includes/headerless_fieldset.html" %}
+            </div>
+            {% endwith %}
+            {% endfor %}
+        {% else %}
+            {% with opts.verbose_name as tab_name %}
+            <div id="tabcontent-{{ tab_name|slugify }}" class="tabbed-changeform-tabcontent active">
+            {% for fieldset in adminform %}
+                {% include "admin/includes/fieldset.html" %}
+            {% endfor %}
+            </div>
+            {% endwith %}
+        {% endif %}
+
+        {% for inline_admin_formset in inline_admin_formsets  %}
+        {% with inline_admin_formset.opts.verbose_name_plural as tab_name %}
+        <div id="tabcontent-{{ tab_name|slugify }}" class="tabbed-changeform-tabcontent">
+            {% get_admin_interface_inline_template inline_admin_formset.opts.template as inline_template %}
+            {% include inline_template %}
+        </div>
+        {% endwith %}
         {% endfor %}
-      </div>
+
+        <script type="text/javascript" id="admin-interface-tabbed-changeform-script" src="{% static 'admin_interface/tabbed-changeform/tabbed-changeform.js' %}"></script>
+
     {% endif %}
 
-    {% for inline_admin_formset in inline_admin_formsets  %}
-    <div id="tab-{{inline_admin_formset.opts.verbose_name_plural|slugify}}" class="tabbed-changeform-tabcontent">
-      {% get_admin_interface_inline_template inline_admin_formset.opts.template as inline_template %}
-      {% include inline_template %}
-    </div>
-    {% endfor %}
-    <script
-      type="text/javascript"
-      id="tabbed-changeform-script"
-      src="{% static "admin_interface/js/tabbed_changeform.js" %}"
-    >
-    </script>
-{% endif %}
 {% endblock %}
 
 {% block inline_field_sets %}
-  {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
-  {% if not show_inlines_as_tabs %}
-    {{block.super}}
-  {% endif %}
+
+    {% get_admin_interface_setting "show_inlines_as_tabs" as show_inlines_as_tabs %}
+    {% if not show_inlines_as_tabs %}
+        {{ block.super }}
+    {% endif %}
+
 {% endblock %}
