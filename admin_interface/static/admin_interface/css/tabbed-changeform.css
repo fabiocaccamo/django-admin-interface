@@ -12,7 +12,7 @@
     background-color: var(--border-color);
 }
 .admin-interface .tabbed-changeform-tab::-webkit-scrollbar-thumb {
-    background:  #aaa; 
+    background:  #aaa;
   }
 
 
