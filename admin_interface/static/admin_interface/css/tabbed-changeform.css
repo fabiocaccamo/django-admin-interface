@@ -15,13 +15,17 @@
     background:  #aaa; 
   }
 
+
 .admin-interface .tabbed-changeform-tab button {
+    -webkit-appearance: none;
     border: none;
+    border-radius: 0;
     border-bottom: 1px solid var(--border-color);
     flex-shrink: 0;
     flex-grow: 0;
     cursor: pointer;
     padding: 8px 12px;
+    margin: 0;
     background-color: var(--admin-interface-module-header-text-color);
     color: var(--admin-interface-module-background-color);
 }
