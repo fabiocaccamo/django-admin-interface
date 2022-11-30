@@ -407,7 +407,7 @@ body.admin-interface .paginator a.showall:visited {
     width: 30px;
     height: 45px;
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: -30px;
     background-color: #FFFFFF;
     font-size: 16px;
     border: 1px solid #eaeaea;
@@ -437,13 +437,13 @@ body.admin-interface .paginator a.showall:visited {
 }
 
 .admin-interface #nav-sidebar {
-    flex: 0 0 320px;
-    left: -320px;
+    flex: 0 0 360px;
+    left: -360px;
     margin-left: -360px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    padding: 40px 40px 40px 0px;
+    padding: 40px 40px 40px 40px;
     border-top: none;
     border-bottom: none;
     border-left: none;
