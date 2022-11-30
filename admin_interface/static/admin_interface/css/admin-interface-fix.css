@@ -413,9 +413,9 @@ body.admin-interface .paginator a.showall:visited {
     border: 1px solid #eaeaea;
     border-left: none;
     outline: none;
-    -webkit-box-shadow: 4px 2px 8px -4px #DBDBDB;
-    -moz-box-shadow: 4px 2px 8px -4px #DBDBDB;
-    box-shadow: 4px 2px 8px -4px #DBDBDB;
+    -webkit-box-shadow: 4px 4px 8px -4px #DBDBDB;
+    -moz-box-shadow: 4px 4px 8px -4px #DBDBDB;
+    box-shadow: 4px 4px 8px -4px #DBDBDB;
     /*transition: left .3s;*/
 }
 
@@ -449,6 +449,13 @@ body.admin-interface .paginator a.showall:visited {
     border-left: none;
     scrollbar-width: thin;
     /*transition: left .3s, margin-left .3s;*/
+}
+
+.admin-interface #nav-filter {
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 0 0 30px 0;
+    padding: 5px 6px;
 }
 
 @media (min-width:1280px) {
