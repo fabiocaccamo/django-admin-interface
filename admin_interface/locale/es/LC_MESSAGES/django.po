@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-26 02:56-0600\n"
+"POT-Creation-Date: 2022-11-29 11:47-0600\n"
 "PO-Revision-Date: 2018-12-30 19:13-0500\n"
 "Last-Translator: Martin Vuelta <martin.vuelta@softbutterfly.io>\n"
 "Language-Team: Spanish <dev@softbutterfly.io>\n"
@@ -296,3 +296,7 @@ msgstr " Por %(filter_title)s "
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
 msgstr "Cerando popup..."
+
+#: admin_interface/templates/admin_interface/date_hierarchy_removal_link.html
+msgid "Date filter"
+msgstr ""

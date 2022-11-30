@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-26 02:56-0600\n"
+"POT-Creation-Date: 2022-11-29 11:47-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
 "Language-Team: Farsi <LL@li.org>\n"
@@ -295,3 +295,7 @@ msgstr " توسط %(filter_title)s "
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
 msgstr "پاپ آپ در حال بسته شدن..."
+
+#: admin_interface/templates/admin_interface/date_hierarchy_removal_link.html
+msgid "Date filter"
+msgstr ""
