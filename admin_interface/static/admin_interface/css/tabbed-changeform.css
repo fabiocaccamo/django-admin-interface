@@ -18,6 +18,7 @@
 }
 
 .admin-interface .tabbed-changeform-tab button.active {
+    outline: none;
     font-weight: bold;
     border: 1px solid var(--border-color) ;
     border-bottom: none;
@@ -35,7 +36,7 @@
     display: block;
 }
 
-.admin-interface #rest-of-the-tabber {
+.admin-interface .tabbed-changeform-tabs-remaining-space {
     flex: 1;
     border-bottom: 1px solid var(--border-color) ;
 }
