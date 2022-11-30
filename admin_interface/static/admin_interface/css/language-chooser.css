@@ -66,14 +66,7 @@
     cursor: pointer;
     font-weight: inherit;
     font-size: inherit;
-    letter-spacing: inherit;
     height: auto;
     margin: 0;
-    padding: 0 12px 0 0;
-}
-
-@-moz-document url-prefix() {
-    .admin-interface .language-chooser.minimal select {
-        text-indent: -1px !important;
-    }
+    padding: 0 15px 0 0;
 }
