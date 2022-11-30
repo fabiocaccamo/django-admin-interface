@@ -454,8 +454,10 @@ body.admin-interface .paginator a.showall:visited {
 .admin-interface #nav-filter {
     background-color: transparent;
     border-radius: 4px;
+    height: 30px;
     margin: 0 0 30px 0;
     padding: 5px 6px;
+    outline-width: initial;
 }
 
 @media (min-width:1280px) {
