@@ -3,12 +3,21 @@
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
+    scrollbar-width: 4px;
 }
+
+.admin-interface .tabbed-changeform-tab::-webkit-scrollbar {
+    height: 4px;
+    background-color: var(--border-color);
+}
+.admin-interface .tabbed-changeform-tab::-webkit-scrollbar-thumb {
+    background:  #aaa; 
+  }
 
 .admin-interface .tabbed-changeform-tab button {
     border: none;
-    border-bottom: 1px solid var(--border-color) ;
+    border-bottom: 1px solid var(--border-color);
     flex-shrink: 0;
     flex-grow: 0;
     cursor: pointer;
@@ -20,7 +29,7 @@
 .admin-interface .tabbed-changeform-tab button.active {
     outline: none;
     font-weight: bold;
-    border: 1px solid var(--border-color) ;
+    border: 1px solid var(--border-color);
     border-bottom: none;
     border-radius: var(--admin-interface-module-border-radius);
     border-bottom-left-radius: 0px;
@@ -38,5 +47,5 @@
 
 .admin-interface .tabbed-changeform-tabs-remaining-space {
     flex: 1;
-    border-bottom: 1px solid var(--border-color) ;
+    border-bottom: 1px solid var(--border-color);
 }
