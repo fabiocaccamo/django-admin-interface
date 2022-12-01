@@ -44,5 +44,5 @@ class Migration(migrations.Migration):
                 verbose_name="link selected color",
             ),
         ),
-        migrations.RunPython(default_link_selected),
+        migrations.RunPython(default_link_selected, reverse_code=migrations.RunPython.noop),
     ]

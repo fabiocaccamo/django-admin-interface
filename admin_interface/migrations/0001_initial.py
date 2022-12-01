@@ -7,9 +7,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    def create_default_theme(apps, schema_editor):
-        Theme = apps.get_model("admin_interface", "Theme")
-        Theme.objects.create()
 
     dependencies = []
 
@@ -228,5 +225,65 @@ class Migration(migrations.Migration):
                 "verbose_name_plural": "Themes",
             },
         ),
-        migrations.RunPython(create_default_theme),
+        migrations.RunSQL("""
+        INSERT INTO
+            "admin_interface_theme" (
+                "name",
+                "active",
+                "title",
+                "title_visible",
+                "logo",
+                "logo_visible",
+                "css_header_background_color",
+                "css_header_title_color",
+                "css_header_text_color",
+                "css_header_link_color",
+                "css_header_link_hover_color",
+                "css_module_background_color",
+                "css_module_text_color",
+                "css_module_link_color",
+                "css_module_link_hover_color",
+                "css_module_rounded_corners",
+                "css_generic_link_color",
+                "css_generic_link_hover_color",
+                "css_save_button_background_color",
+                "css_save_button_background_hover_color",
+                "css_save_button_text_color",
+                "css_delete_button_background_color",
+                "css_delete_button_background_hover_color",
+                "css_delete_button_text_color",
+                "css",
+                "list_filter_dropdown"
+            )
+        values
+            (
+                'Django',
+                true,
+                'Django administration',
+                true,
+                null,
+                true,
+                "#0C4B33",
+                "#F5DD5D",
+                "#44B78B",
+                "#FFFFFF",
+                "#C9F0DD",
+                "#44B78B",
+                "#FFFFFF",
+                "#FFFFFF",
+                "#C9F0DD",
+                true,
+                "#0C3C26",
+                "#156641",
+                "#0C4B33",
+                "#0C3C26",
+                "#FFFFFF",
+                "#BA2121",
+                "#A41515",
+                "#FFFFFF",
+                '',
+                false
+            )
+        """, 
+        reverse_sql=migrations.RunPython.noop),
     ]
