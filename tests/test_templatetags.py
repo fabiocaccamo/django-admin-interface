@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 from django.template import Context, Template
 from django.test import TestCase, override_settings
 from django.test.client import RequestFactory

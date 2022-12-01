@@ -47,20 +47,17 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 
 ## Installation
 - Run `pip install django-admin-interface`
-- Add `admin_interface`, `flat_responsive`, `flat` and `colorfield` to `settings.INSTALLED_APPS` **before** `django.contrib.admin`
+- Add `admin_interface` and `colorfield` to `settings.INSTALLED_APPS` **before** `django.contrib.admin`
 ```python
 INSTALLED_APPS = (
     #...
     "admin_interface",
-    "flat_responsive", # only if django version < 2.0
-    "flat", # only if django version < 1.9
     "colorfield",
     #...
     "django.contrib.admin",
     #...
 )
 
-# only if django version >= 3.0
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 ```

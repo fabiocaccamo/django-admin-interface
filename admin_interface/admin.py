@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from django.contrib import admin
 
 from admin_interface.compat import gettext_lazy as _
