@@ -14,7 +14,6 @@ from admin_interface.compat import gettext_lazy as _
 
 @python_2_unicode_compatible
 class Theme(models.Model):
-
     @staticmethod
     def post_delete_handler(**kwargs):
         del_cached_active_theme()
