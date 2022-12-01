@@ -23,11 +23,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         return Template(string).render(Context(context or {}))
 
     def test_get_admin_interface_languages(self):
-        context = Context(
-            {
-                "request": self.request_factory.get("/en/admin/"),
-            }
-        )
+        context = Context({"request": self.request_factory.get("/en/admin/")})
         languages = templatetags.get_admin_interface_languages(context)
         expected_languages = [
             {
@@ -43,6 +39,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
                 "default": False,
                 "active": False,
                 "activation_url": "/i18n/setlang/?next=/es/admin/",
+            },
+            {
+                "code": "fa",
+                "name": "Farsi",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/fa/admin/",
             },
             {
                 "code": "fr",
@@ -88,11 +91,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         USE_I18N=False,
     )
     def test_get_admin_interface_languages_with_i18n_disabled(self):
-        context = Context(
-            {
-                "request": self.request_factory.get("/en/admin/"),
-            }
-        )
+        context = Context({"request": self.request_factory.get("/en/admin/")})
         languages = templatetags.get_admin_interface_languages(context)
         self.assertEqual(languages, None)
 
@@ -100,11 +99,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         ROOT_URLCONF="tests.urls_without_i18n_patterns",
     )
     def test_get_admin_interface_languages_without_i18n_url_patterns(self):
-        context = Context(
-            {
-                "request": self.request_factory.get("/en/admin/"),
-            }
-        )
+        context = Context({"request": self.request_factory.get("/en/admin/")})
         languages = templatetags.get_admin_interface_languages(context)
         self.assertEqual(languages, None)
 
@@ -112,11 +107,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         LANGUAGES=(("en", "English"),),
     )
     def test_get_admin_interface_languages_without_multiple_languages(self):
-        context = Context(
-            {
-                "request": self.request_factory.get("/en/admin/"),
-            }
-        )
+        context = Context({"request": self.request_factory.get("/en/admin/")})
         languages = templatetags.get_admin_interface_languages(context)
         self.assertEqual(languages, None)
 
@@ -126,11 +117,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self.assertEqual(languages, None)
 
     def test_get_admin_interface_languages_without_language_prefix_in_url(self):
-        context = Context(
-            {
-                "request": self.request_factory.get("/admin/"),
-            }
-        )
+        context = Context({"request": self.request_factory.get("/admin/")})
         languages = templatetags.get_admin_interface_languages(context)
         self.assertEqual(languages, None)
 
