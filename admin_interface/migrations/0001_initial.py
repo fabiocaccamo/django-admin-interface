@@ -225,7 +225,8 @@ class Migration(migrations.Migration):
                 "verbose_name_plural": "Themes",
             },
         ),
-        migrations.RunSQL("""
+        migrations.RunSQL(
+            """
         INSERT INTO
             "admin_interface_theme" (
                 "name",
@@ -284,6 +285,7 @@ class Migration(migrations.Migration):
                 '',
                 false
             )
-        """, 
-        reverse_sql=migrations.RunPython.noop),
+        """,
+            reverse_sql=migrations.RunPython.noop,
+        ),
     ]
