@@ -124,6 +124,7 @@ USE_I18N = True
 LANGUAGES = (
     ("en", "English"),
     ("es", "Español"),
+    ("fa", "Farsi"),
     ("fr", "Français"),
     ("it", "Italiano"),
     ("pl", "Polski"),
