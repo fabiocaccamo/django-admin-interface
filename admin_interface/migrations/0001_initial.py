@@ -285,9 +285,9 @@ class Migration(migrations.Migration):
                 '',
                 false
             )
-        """, 
-        reverse_sql="""
+        """,
+            reverse_sql="""
         DELETE FROM "admin_interface_theme" WHERE name='Django'
-        """
-    ),
+        """,
+        ),
     ]
