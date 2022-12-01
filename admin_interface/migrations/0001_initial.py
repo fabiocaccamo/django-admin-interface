@@ -8,6 +8,11 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
+
+    def create_default_theme(apps, schema_editor):
+        Theme = apps.get_model('admin_interface', 'Theme')
+        Theme.objects.create()
+
     dependencies = []
 
     operations = [
@@ -225,4 +230,5 @@ class Migration(migrations.Migration):
                 "verbose_name_plural": "Themes",
             },
         ),
+        migrations.RunPython(create_default_theme)
     ]
