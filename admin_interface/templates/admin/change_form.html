@@ -33,7 +33,7 @@
 
             {% if show_inlines_as_tabs %}
                 {% for inline_admin_formset in inline_admin_formsets %}
-                {% with fieldset.name|default_if_none:opts.verbose_name as tab_name %}
+                {% with inline_admin_formset.opts.verbose_name_plural as tab_name %}
                 <button type="button" id="tablink-{{ tab_name|slugify }}" class="tabbed-changeform-tablink" onclick="AdminInterface.tabbedChangeForm.openTab(event, '{{ tab_name|slugify }}')">
                     {{ tab_name|capfirst }}
                 </button>
