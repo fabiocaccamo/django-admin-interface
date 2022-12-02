@@ -162,7 +162,7 @@ class Theme(models.Model):
         verbose_name=_("display"),
     )
 
-    css_header_background_color = ColorField(
+    css_header_bg_color = ColorField(
         blank=True,
         default="#0C4B33",
         help_text="#0C4B33",
@@ -191,14 +191,14 @@ class Theme(models.Model):
         verbose_name=_("link hover color"),
     )
 
-    css_module_background_color = ColorField(
+    css_module_bg_color = ColorField(
         blank=True,
         default="#44B78B",
         help_text="#44B78B",
         max_length=10,
         verbose_name=_("background color"),
     )
-    css_module_background_selected_color = ColorField(
+    css_module_bg_selected_color = ColorField(
         blank=True,
         default="#FFFFCC",
         help_text="#FFFFCC",
@@ -252,14 +252,14 @@ class Theme(models.Model):
         verbose_name=_("link hover color"),
     )
 
-    css_save_button_background_color = ColorField(
+    css_save_button_bg_color = ColorField(
         blank=True,
         default="#0C4B33",
         help_text="#0C4B33",
         max_length=10,
         verbose_name=_("background color"),
     )
-    css_save_button_background_hover_color = ColorField(
+    css_save_button_bg_hover_color = ColorField(
         blank=True,
         default="#0C3C26",
         help_text="#0C3C26",
@@ -274,14 +274,14 @@ class Theme(models.Model):
         verbose_name=_("text color"),
     )
 
-    css_delete_button_background_color = ColorField(
+    css_delete_button_bg_color = ColorField(
         blank=True,
         default="#BA2121",
         help_text="#BA2121",
         max_length=10,
         verbose_name=_("background color"),
     )
-    css_delete_button_background_hover_color = ColorField(
+    css_delete_button_bg_hover_color = ColorField(
         blank=True,
         default="#A41515",
         help_text="#A41515",
@@ -297,14 +297,14 @@ class Theme(models.Model):
     )
 
     related_modal_active = models.BooleanField(default=True, verbose_name=_("active"))
-    related_modal_background_color = ColorField(
+    related_modal_bg_color = ColorField(
         blank=True,
         default="#000000",
         help_text="#000000",
         max_length=10,
         verbose_name=_("background color"),
     )
-    related_modal_background_opacity_choices = (
+    related_modal_bg_opacity_choices = (
         ("0.1", "10%"),
         ("0.2", "20%"),
         ("0.3", "30%"),
@@ -315,9 +315,9 @@ class Theme(models.Model):
         ("0.8", "80%"),
         ("0.9", "90%"),
     )
-    related_modal_background_opacity = models.CharField(
+    related_modal_bg_opacity = models.CharField(
         max_length=5,
-        choices=related_modal_background_opacity_choices,
+        choices=related_modal_bg_opacity_choices,
         default="0.3",
         help_text="20%",
         verbose_name=_("background opacity"),
