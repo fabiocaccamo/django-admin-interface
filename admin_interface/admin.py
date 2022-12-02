@@ -1,6 +1,6 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
-from admin_interface.compat import gettext_lazy as _
 from admin_interface.models import Theme
 
 

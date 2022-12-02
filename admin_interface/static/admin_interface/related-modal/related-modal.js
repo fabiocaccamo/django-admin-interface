@@ -70,7 +70,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                     }
                 }
 
-                // fix for django 1.7
+                // fix for django 1.7  TODO remove
                 if (iframeSrc.indexOf('_popup=1') === -1) {
                     if (iframeSrc.indexOf('?') === -1) {
                         iframeSrc += '?_popup=1';
@@ -135,10 +135,6 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             window.presentRelatedObjectModal = presentRelatedObjectModal;
             window.presentRelatedObjectModalOnClickOn = presentRelatedObjectModalOnClickOn;
 
-            // django 1.7 compatibility
-            presentRelatedObjectModalOnClickOn('a.add-another');
-
-            // django 1.8 and above
             presentRelatedObjectModalOnClickOn('a.related-widget-wrapper-link');
 
             // raw_id_fields support
