@@ -1,18 +1,13 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 from colorfield.fields import ColorField
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
-from six import python_2_unicode_compatible
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
-from admin_interface.cache import del_cached_active_theme
-from admin_interface.compat import FileExtensionValidator, force_str
-from admin_interface.compat import gettext_lazy as _
+from .cache import del_cached_active_theme
 
 
-@python_2_unicode_compatible
 class Theme(models.Model):
     @staticmethod
     def post_migrate_handler(**kwargs):
