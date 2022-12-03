@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.23.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.23.0) - 2022-11-30
+-  Add `Python 3.11` support.
+-  Add tabbed changeform support. (by [@VaZark](https://github.com/VaZark) in #211)
+-  Fix #208 / Do not assume active DB when not specified. (by [@VaZark](https://github.com/VaZark) in #210)
+-  Update translations.
+-  Bump actions and requirements.
+-  [css] Adjust list filter dropdown vertical margins.
+-  [css] Improve nav filter style. #214
+-  [css] Improve language chooser style.
+-  [css] Reduce secondary scrollbars size.
+-  [CI] Update `dependabot.yml`
+-  [CI] Add `pre-commit-autoupdate.yml` workflow.
+-  [CI] Update `pre-commit` hooks.
+
 ## [0.22.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.22.2) - 2022-11-18
 -  [CI] Add `django 4.1` to tests.
 -  [CI] Add `pre-commit` with `black`, `isort` and `flake8`.

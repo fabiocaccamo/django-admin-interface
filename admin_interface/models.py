@@ -1,54 +1,38 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 from colorfield.fields import ColorField
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
-from six import python_2_unicode_compatible
+from django.utils.encoding import force_str
+from django.utils.translation import gettext_lazy as _
 
-from admin_interface.cache import del_cached_active_theme
-from admin_interface.compat import FileExtensionValidator, force_str
-from admin_interface.compat import gettext_lazy as _
+from .cache import del_cached_active_theme
 
 
-@python_2_unicode_compatible
 class Theme(models.Model):
-    @staticmethod
-    def post_migrate_handler(**kwargs):
-        del_cached_active_theme()
-        db = kwargs["using"]
-        Theme.get_active_theme(database=db)
-
     @staticmethod
     def post_delete_handler(**kwargs):
         del_cached_active_theme()
-        db = kwargs["using"]
-        Theme.get_active_theme(database=db)
+        Theme.get_active_theme()
 
     @staticmethod
     def post_save_handler(instance, **kwargs):
         del_cached_active_theme()
-        db = kwargs["using"]
         if instance.active:
-            Theme.objects.using(db).exclude(pk=instance.pk).update(active=False)
-        Theme.get_active_theme(database=db)
+            Theme.objects.exclude(pk=instance.pk).update(active=False)
+        Theme.get_active_theme()
 
     @staticmethod
     def pre_save_handler(instance, **kwargs):
         if instance.pk is None:
-            db = kwargs["using"]
             try:
-                obj = Theme.objects.using(db).get(name=instance.name)
+                obj = Theme.objects.get(name=instance.name)
                 instance.pk = obj.pk
             except Theme.DoesNotExist:
                 pass
 
     @staticmethod
-    def get_active_theme(database=None):
-        objs_manager = (
-            Theme.objects if database is None else Theme.objects.using(database)
-        )
+    def get_active_theme():
+        objs_manager = Theme.objects
         objs_active_qs = objs_manager.filter(active=True)
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)
@@ -70,9 +54,15 @@ class Theme(models.Model):
         return obj
 
     name = models.CharField(
-        unique=True, max_length=50, default="Django", verbose_name=_("name")
+        unique=True,
+        max_length=50,
+        default="Django",
+        verbose_name=_("name"),
     )
-    active = models.BooleanField(default=True, verbose_name=_("active"))
+    active = models.BooleanField(
+        default=True,
+        verbose_name=_("active"),
+    )
 
     title = models.CharField(
         max_length=50,
@@ -87,7 +77,10 @@ class Theme(models.Model):
         max_length=10,
         verbose_name=_("color"),
     )
-    title_visible = models.BooleanField(default=True, verbose_name=_("visible"))
+    title_visible = models.BooleanField(
+        default=True,
+        verbose_name=_("visible"),
+    )
 
     logo = models.FileField(
         upload_to="admin-interface/logo/",
@@ -108,12 +101,19 @@ class Theme(models.Model):
         verbose_name=_("color"),
     )
     logo_max_width = models.PositiveSmallIntegerField(
-        blank=True, default=400, verbose_name=_("max width")
+        blank=True,
+        default=400,
+        verbose_name=_("max width"),
     )
     logo_max_height = models.PositiveSmallIntegerField(
-        blank=True, default=100, verbose_name=_("max height")
+        blank=True,
+        default=100,
+        verbose_name=_("max height"),
     )
-    logo_visible = models.BooleanField(default=True, verbose_name=_("visible"))
+    logo_visible = models.BooleanField(
+        default=True,
+        verbose_name=_("visible"),
+    )
 
     favicon = models.FileField(
         upload_to="admin-interface/favicon/",
@@ -138,14 +138,17 @@ class Theme(models.Model):
         verbose_name=_("color"),
     )
     env_visible_in_header = models.BooleanField(
-        default=True, verbose_name=_("visible in header (marker and name)")
+        default=True,
+        verbose_name=_("visible in header (marker and name)"),
     )
     env_visible_in_favicon = models.BooleanField(
-        default=True, verbose_name=_("visible in favicon (marker)")
+        default=True,
+        verbose_name=_("visible in favicon (marker)"),
     )
 
     language_chooser_active = models.BooleanField(
-        default=True, verbose_name=_("active")
+        default=True,
+        verbose_name=_("active"),
     )
     language_chooser_control_choices = (
         ("default-select", _("Default Select")),
@@ -329,45 +332,58 @@ class Theme(models.Model):
         verbose_name=_("background opacity"),
     )
     related_modal_rounded_corners = models.BooleanField(
-        default=True, verbose_name=_("rounded corners")
+        default=True,
+        verbose_name=_("rounded corners"),
     )
     related_modal_close_button_visible = models.BooleanField(
-        default=True, verbose_name=_("close button visible")
+        default=True,
+        verbose_name=_("close button visible"),
     )
 
     list_filter_highlight = models.BooleanField(
-        default=True, verbose_name=_("highlight active")
+        default=True,
+        verbose_name=_("highlight active"),
     )
     list_filter_dropdown = models.BooleanField(
-        default=True, verbose_name=_("use dropdown")
+        default=True,
+        verbose_name=_("use dropdown"),
     )
     list_filter_sticky = models.BooleanField(
-        default=True, verbose_name=_("sticky position")
+        default=True,
+        verbose_name=_("sticky position"),
     )
     list_filter_removal_links = models.BooleanField(
         default=False,
         verbose_name=_("quick remove links for active filters at top of sidebar"),
     )
 
-    foldable_apps = models.BooleanField(default=True, verbose_name=_("foldable apps"))
+    foldable_apps = models.BooleanField(
+        default=True,
+        verbose_name=_("foldable apps"),
+    )
 
     show_fieldsets_as_tabs = models.BooleanField(
-        default=False, verbose_name=_("fieldsets as tabs")
+        default=False,
+        verbose_name=_("fieldsets as tabs"),
     )
 
     show_inlines_as_tabs = models.BooleanField(
-        default=True, verbose_name=_("inlines as tabs")
+        default=False,
+        verbose_name=_("inlines as tabs"),
     )
 
     recent_actions_visible = models.BooleanField(
-        default=True, verbose_name=_("visible")
+        default=True,
+        verbose_name=_("visible"),
     )
 
     form_submit_sticky = models.BooleanField(
-        default=False, verbose_name=_("sticky submit")
+        default=False,
+        verbose_name=_("sticky submit"),
     )
     form_pagination_sticky = models.BooleanField(
-        default=False, verbose_name=_("sticky pagination")
+        default=False,
+        verbose_name=_("sticky pagination"),
     )
 
     def set_active(self):
@@ -376,7 +392,6 @@ class Theme(models.Model):
 
     class Meta:
         app_label = "admin_interface"
-
         verbose_name = _("Theme")
         verbose_name_plural = _("Themes")
 

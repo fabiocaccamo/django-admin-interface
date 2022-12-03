@@ -7,6 +7,7 @@ list-filter-dropdown
     margin-bottom: 15px;
 }
 
+.admin-interface h2 + .list-filter-dropdown,
 .admin-interface .list-filter-dropdown + .list-filter-dropdown {
     margin-top: 5px;
 }

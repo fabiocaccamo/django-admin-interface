@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import django
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
@@ -29,5 +27,3 @@ def check_installed_app(app, max_dj_version=None):
 
 def check_installed_apps():
     check_installed_app("colorfield")
-    check_installed_app("flat", max_dj_version=(1, 9))
-    check_installed_app("flat_responsive", max_dj_version=(2, 0))

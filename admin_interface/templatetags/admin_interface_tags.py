@@ -1,28 +1,21 @@
-# -*- coding: utf-8 -*-
 import datetime
 import hashlib
 import re
 
-import django
 from django import template
 from django.conf import settings
 from django.template.loader import get_template
+from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
-from admin_interface.compat import NoReverseMatch, reverse
 from admin_interface.models import Theme
 from admin_interface.version import __version__
 
 register = template.Library()
 
-if django.VERSION < (1, 9):
-    simple_tag = register.assignment_tag
-else:
-    simple_tag = register.simple_tag
 
-
-@simple_tag(takes_context=True)
+@register.simple_tag(takes_context=True)
 def get_admin_interface_languages(context):
     if not settings.USE_I18N:
         # i18n disabled
@@ -65,7 +58,7 @@ def get_admin_interface_languages(context):
     return langs_data
 
 
-@simple_tag()
+@register.simple_tag()
 def get_admin_interface_theme():
     theme = get_cached_active_theme()
     if not theme:
@@ -74,20 +67,20 @@ def get_admin_interface_theme():
     return theme
 
 
-@simple_tag()
+@register.simple_tag()
 def get_admin_interface_setting(setting):
     theme = get_admin_interface_theme()
     return getattr(theme, setting)
 
 
-@simple_tag()
+@register.simple_tag()
 def get_admin_interface_inline_template(template):
     template_path = template.split("/")
     template_path[-1] = "headerless_" + template_path[-1]
     return "/".join(template_path)
 
 
-@simple_tag(takes_context=False)
+@register.simple_tag()
 def get_admin_interface_version():
     return __version__
 
@@ -98,12 +91,12 @@ def hash_string(text):
     return sha224_hash
 
 
-@simple_tag(takes_context=False)
+@register.simple_tag()
 def get_admin_interface_nocache():
     return hash_string(__version__)
 
 
-@simple_tag(takes_context=False)
+@register.simple_tag(takes_context=False)
 def get_admin_interface_active_date_hierarchy(changelist):
     date_field = changelist.date_hierarchy
     if not date_field:
@@ -118,7 +111,7 @@ def get_admin_interface_active_date_hierarchy(changelist):
     return date_field
 
 
-@simple_tag()
+@register.simple_tag()
 def admin_interface_filter_removal_link(changelist, list_filter):
     template = get_template("admin_interface/list_filter_removal_link.html")
     title = list_filter.title
@@ -143,7 +136,7 @@ def admin_interface_filter_removal_link(changelist, list_filter):
     )
 
 
-@simple_tag()
+@register.simple_tag()
 def admin_interface_date_hierarchy_removal_link(changelist, date_field):
     tpl = get_template("admin_interface/date_hierarchy_removal_link.html")
 
@@ -173,3 +166,12 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field):
             "removal_link": removal_link,
         }
     )
+
+
+@register.simple_tag()
+def admin_interface_use_changeform_tabs(adminform, inline_forms):
+    theme = get_admin_interface_theme()
+    has_fieldset_tabs = theme.show_fieldsets_as_tabs and len(adminform.fieldsets) > 1
+    has_inline_tabs = theme.show_inlines_as_tabs and len(inline_forms) > 0
+    has_tabs = has_fieldset_tabs or has_inline_tabs
+    return has_tabs

@@ -42,10 +42,6 @@
             if (typeof(openerRef.dismissAddRelatedObjectPopup) === 'function') {
                 openerRef.dismissAddRelatedObjectPopup(windowRef, initData.value, initData.obj);
             }
-            else if (typeof(openerRef.dismissAddAnotherPopup) === 'function') {
-                // django 1.7 compatibility
-                openerRef.dismissAddAnotherPopup(windowRef, initData.value, initData.obj);
-            }
             break;
     }
 
