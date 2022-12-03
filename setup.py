@@ -50,10 +50,7 @@ setup(
         "ui",
     ],
     install_requires=[
-        "django-colorfield >= 0.2, < 1.0",
-        "django-flat-theme >= 1.0, < 2.0",
-        "django-flat-responsive >= 1.0, < 3.0",
-        "six >= 1.9.0, < 2.0.0",
+        "django-colorfield >= 0.8.0, < 1.0.0",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
