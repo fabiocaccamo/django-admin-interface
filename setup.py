@@ -49,6 +49,9 @@ setup(
         "custom",
         "ui",
     ],
+    requires=[
+        "django (>= 2.2)",
+    ],
     install_requires=[
         "django-colorfield >= 0.8.0, < 1.0.0",
     ],
@@ -67,7 +70,6 @@ setup(
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
