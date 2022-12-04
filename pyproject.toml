@@ -1,5 +1,4 @@
 [tool.black]
-py311 = true
 include = '\.pyi?$'
 exclude = '''
 /(
