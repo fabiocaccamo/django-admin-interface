@@ -28,11 +28,11 @@ msgstr "Sprachauswahl"
 
 #: django-admin-interface/admin_interface/admin.py:52
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: django-admin-interface/admin_interface/admin.py:64
 msgid "Favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: django-admin-interface/admin_interface/admin.py:66
 msgid "Title"
@@ -40,7 +40,7 @@ msgstr "Titel"
 
 #: django-admin-interface/admin_interface/admin.py:77
 msgid "Header"
-msgstr ""
+msgstr "Header"
 
 #: django-admin-interface/admin_interface/admin.py:89
 msgid "Breadcrumbs / Module headers"
@@ -90,13 +90,13 @@ msgstr "Admin-Oberfläche"
 #: django-admin-interface/admin_interface/models.py:130
 #: django-admin-interface/admin_interface/models.py:165
 msgid "name"
-msgstr ""
+msgstr "Name"
 
 #: django-admin-interface/admin_interface/models.py:64
 #: django-admin-interface/admin_interface/models.py:151
 #: django-admin-interface/admin_interface/models.py:308
 msgid "active"
-msgstr ""
+msgstr "aktiv"
 
 #: django-admin-interface/admin_interface/models.py:69
 #: django-admin-interface/admin_interface/templates/admin/base_site.html:6
@@ -126,7 +126,7 @@ msgstr "Dieses Feld leer lassen um das Django Standard Logo zu benutzen"
 
 #: django-admin-interface/admin_interface/models.py:94
 msgid "logo"
-msgstr ""
+msgstr "Logo"
 
 #: django-admin-interface/admin_interface/models.py:106
 msgid "max width"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: django-admin-interface/admin_interface/models.py:127
 msgid "favicon"
-msgstr ""
+msgstr "Favicon"
 
 #: django-admin-interface/admin_interface/models.py:135
 msgid ""
