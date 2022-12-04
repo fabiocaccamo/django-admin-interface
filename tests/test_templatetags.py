@@ -78,6 +78,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
                 "active": False,
                 "activation_url": "/i18n/setlang/?next=/tr/admin/",
             },
+            {
+                "code": "de",
+                "name": "Deutsch",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/de/admin/",
+            },
         ]
         self.assertEqual(len(languages), len(expected_languages))
         self.assertEqual(languages[0], expected_languages[0])
