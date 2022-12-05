@@ -23,6 +23,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         languages = templatetags.get_admin_interface_languages(context)
         expected_languages = [
             {
+                "code": "de",
+                "name": "Deutsch",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/de/admin/",
+            },
+            {
                 "code": "en",
                 "name": "English",
                 "default": True,
@@ -77,13 +84,6 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
                 "default": False,
                 "active": False,
                 "activation_url": "/i18n/setlang/?next=/tr/admin/",
-            },
-            {
-                "code": "de",
-                "name": "Deutsch",
-                "default": False,
-                "active": False,
-                "activation_url": "/i18n/setlang/?next=/de/admin/",
             },
         ]
         self.assertEqual(len(languages), len(expected_languages))
