@@ -18,8 +18,6 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 
 ![django-admin-interface-preview](https://user-images.githubusercontent.com/1035294/35631521-64b0cab8-06a4-11e8-8f57-c04fdfbb7e8b.gif)
 
----
-
 ## Features
 - Beautiful default **django-theme**
 - Themes management and customization *(you can **customize admin title, logo and colors**)*
@@ -27,10 +25,12 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Related modal *(instead of the old popup window)*
 - Environment name/marker
 - Language chooser
-- List filter dropdown
 - Foldable apps *(accordions in the navigation bar)*
-- [Collapsible fieldsets](https://docs.djangoproject.com/en/4.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets)
-  can have their initial state expanded instead of collapsed
+- [Collapsible fieldsets](https://docs.djangoproject.com/en/4.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets) can have their initial state expanded instead of collapsed
+- `NEW` Tabbed fieldsets and inlines
+- `NEW` List filter removal links
+- `NEW` List filter highlight selected options
+- List filter dropdown
 - List filter sticky
 - Form controls sticky *(pagination and save/delete buttons)*
 - Compatibility / style optimizations for:
@@ -42,8 +42,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
   - `django-streamfield`
   - `django-tabbed-admin`
   - `sorl-thumbnail`
-
----
+- Translated in many languages: `de`, `es`, `fa`, `fr`, `it`, `pl`, `pt_BR`, `tr`
 
 ## Installation
 - Run `pip install django-admin-interface`
@@ -79,11 +78,9 @@ To make a fieldset start expanded with a `Hide` button to collapse:
 
 #### Upgrade
 - Run `pip install django-admin-interface --upgrade`
-- Run `python manage.py migrate` *(add* `--fake-initial` *if you are upgrading from 0.1.0 version)*
+- Run `python manage.py migrate`
 - Run `python manage.py collectstatic --clear`
 - Restart your application server
-
----
 
 ## Optional themes
 This package ships with optional themes as fixtures, they can be installed using the [loaddata admin command](https://docs.djangoproject.com/en/1.11/ref/django-admin/#django-admin-loaddata). Optional themes are activated on installation.
@@ -156,8 +153,6 @@ You can add **theme support to existing third-party libraries** using the follow
 - `--admin-interface-related-modal-border-radius`
 - `--admin-interface-related-modal-close-button-display`
 
----
-
 ## Screenshots
 ###### Admin login
 ![django-admin-interface_login](https://cloud.githubusercontent.com/assets/1035294/11240233/55c8d4ba-8df1-11e5-9568-00fdc987ede8.gif)
@@ -170,8 +165,6 @@ You can add **theme support to existing third-party libraries** using the follow
 ---
 ###### Admin theme customization
 ![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11240250/7350d942-8df1-11e5-9b28-f2f54c333cdc.gif)
-
----
 
 ## FAQ
 
@@ -213,8 +206,6 @@ urlpatterns = [
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
 ```
 
----
-
 ## Testing
 ```bash
 # clone repository
@@ -232,12 +223,19 @@ pip install -r requirements.txt -r requirements-test.txt
 # run tests
 tox
 # or
-python setup.py test
-# or
-python -m django test --settings "tests.settings"
+python runtests.py
 ```
+### Update translations
+- Run `tox -e translations` *(if the translations files are not up-to-date, the `lint` step in the CI will fail)*
 
----
+## Contributing
+Contributions are always welcome, please follow these steps for submitting good quality PRs:
+
+- :exclamation: **Open an issue**, please don't submit any PR that doesn't refer to an existing issue.
+- :computer: **Work on changes** you intend to submit, changes should *preferably* be covered by tests to avoid regressions in the future.
+- :globe_with_meridians: **Update the translations** files.
+- :test_tube: **Run tests** ensuring that there are no errors.
+- :inbox_tray: **Submit a pull-request** and mark it as **"Ready for review"** only if it passes the `CI`. *(it will be reviewed as soon as possible).*
 
 ## License
 Released under [MIT License](LICENSE.txt).
