@@ -232,10 +232,10 @@ python runtests.py
 Contributions are always welcome, please follow these steps for submitting good quality PRs:
 
 - :exclamation: **Open an issue**, please don't submit any PR that doesn't refer to an existing issue.
-- :computer: **Work on changes** you intend to submit, changes should *preferably* be covered by tests to avoid regressions in the future.
+- :computer: **Work on changes**, changes should *preferably* be covered by tests to avoid regressions in the future.
 - :globe_with_meridians: **Update the translations** files.
 - :test_tube: **Run tests** ensuring that there are no errors.
-- :inbox_tray: **Submit a pull-request** and mark it as **"Ready for review"** only if it passes the `CI`. *(it will be reviewed as soon as possible).*
+- :inbox_tray: **Submit a pull-request** and mark it as **"Ready for review"** only if it passes the `CI`.
 
 ## License
 Released under [MIT License](LICENSE.txt).
