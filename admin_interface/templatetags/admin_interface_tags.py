@@ -49,9 +49,7 @@ def get_admin_interface_languages(context):
             "name": lang_name,
             "default": lang_code == default_lang_code,
             "active": lang_code == current_lang_code,
-            "activation_url": "{}?next=/{}{}".format(
-                set_language_url, lang_code, admin_nolang_url
-            ),
+            "activation_url": f"{set_language_url}?next=/{lang_code}{admin_nolang_url}",
         }
         langs_data.append(lang_data)
     return langs_data
