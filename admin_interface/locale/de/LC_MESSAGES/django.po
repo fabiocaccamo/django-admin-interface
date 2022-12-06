@@ -1,0 +1,292 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-05 03:20-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin_interface/admin.py
+msgid "Environment"
+msgstr "Umgebung"
+
+#: admin_interface/admin.py
+msgid "Language chooser"
+msgstr "Sprachauswahl"
+
+#: admin_interface/admin.py
+msgid "Logo"
+msgstr "Logo"
+
+#: admin_interface/admin.py
+msgid "Favicon"
+msgstr "Favicon"
+
+#: admin_interface/admin.py
+msgid "Title"
+msgstr "Titel"
+
+#: admin_interface/admin.py
+msgid "Header"
+msgstr "Header"
+
+#: admin_interface/admin.py
+msgid "Breadcrumbs / Module headers"
+msgstr "Breadcrumbs / Modul-Header"
+
+#: admin_interface/admin.py
+msgid "Generic Links"
+msgstr "Generische Links"
+
+#: admin_interface/admin.py
+msgid "Save Buttons"
+msgstr "Speichern-Buttons"
+
+#: admin_interface/admin.py
+msgid "Delete Buttons"
+msgstr "Löschen-Buttons"
+
+#: admin_interface/admin.py
+msgid "Navigation Bar"
+msgstr "Navigationsleiste"
+
+#: admin_interface/admin.py
+msgid "Related Modal"
+msgstr "Modal für verwandte Objekte"
+
+#: admin_interface/admin.py
+msgid "Form Controls"
+msgstr "Formularsteuerung"
+
+#: admin_interface/admin.py
+msgid "List Filter"
+msgstr "Filteranzeige"
+
+#: admin_interface/admin.py
+msgid "Change Form"
+msgstr "Änderungsformular"
+
+#: admin_interface/admin.py
+msgid "Recent Actions"
+msgstr "Neueste Aktionen"
+
+#: admin_interface/apps.py
+msgid "Admin Interface"
+msgstr "Admin-Oberfläche"
+
+#: admin_interface/models.py
+msgid "name"
+msgstr "Name"
+
+#: admin_interface/models.py
+msgid "active"
+msgstr "aktiv"
+
+#: admin_interface/models.py admin_interface/templates/admin/base_site.html
+msgid "Django administration"
+msgstr "Django-Administration"
+
+#: admin_interface/models.py
+msgid "title"
+msgstr "Titel"
+
+#: admin_interface/models.py
+msgid "color"
+msgstr "Farbe"
+
+#: admin_interface/models.py
+msgid "visible"
+msgstr "sichtbar"
+
+#: admin_interface/models.py
+msgid "Leave blank to use the default Django logo"
+msgstr "Dieses Feld leer lassen um das Django Standard Logo zu benutzen"
+
+#: admin_interface/models.py
+msgid "logo"
+msgstr "Logo"
+
+#: admin_interface/models.py
+msgid "max width"
+msgstr "maximale Breite"
+
+#: admin_interface/models.py
+msgid "max height"
+msgstr "maximale Höhe"
+
+#: admin_interface/models.py
+msgid "(.ico|.png|.gif - 16x16|32x32 px)"
+msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
+
+#: admin_interface/models.py
+msgid "favicon"
+msgstr "Favicon"
+
+#: admin_interface/models.py
+msgid ""
+"(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
+"#3498DB)"
+msgstr ""
+"(rot: #E74C3C, orange: #E67E22, gelb: #F1C40F, grün: #2ECC71, blau: #3498DB)"
+
+#: admin_interface/models.py
+msgid "visible in header (marker and name)"
+msgstr "sichtbar im Header (Marker und Name)"
+
+#: admin_interface/models.py
+msgid "visible in favicon (marker)"
+msgstr "sichtbar im Favicon (Marker)"
+
+#: admin_interface/models.py
+msgid "Default Select"
+msgstr "normale Auswahl"
+
+#: admin_interface/models.py
+msgid "Minimal Select"
+msgstr "minimale Auswahl"
+
+#: admin_interface/models.py
+msgid "control"
+msgstr "Regler"
+
+#: admin_interface/models.py
+msgid "code"
+msgstr "Code"
+
+#: admin_interface/models.py
+msgid "display"
+msgstr "Anzeige"
+
+#: admin_interface/models.py
+msgid "background color"
+msgstr "Hintergrundfarbe"
+
+#: admin_interface/models.py
+msgid "text color"
+msgstr "Textfarbe"
+
+#: admin_interface/models.py
+msgid "link color"
+msgstr "Linkfarbe"
+
+#: admin_interface/models.py
+msgid "link hover color"
+msgstr "Linkfarbe beim Überfahren"
+
+#: admin_interface/models.py
+msgid "background selected color"
+msgstr "Hintergrundfarbe bei Auswahl"
+
+#: admin_interface/models.py
+msgid "link selected color"
+msgstr "Linkfarbe bei Auswahl"
+
+#: admin_interface/models.py
+msgid "rounded corners"
+msgstr "abgerundete Ecken"
+
+#: admin_interface/models.py
+msgid "background hover color"
+msgstr "Hintergrundfarbe beim Überfahren"
+
+#: admin_interface/models.py
+msgid "background opacity"
+msgstr "Deckkraft des Hintergrunds"
+
+#: admin_interface/models.py
+msgid "close button visible"
+msgstr "Schließen-Schalter sichtbar"
+
+#: admin_interface/models.py
+msgid "highlight active"
+msgstr "Aktiv hervorheben"
+
+#: admin_interface/models.py
+msgid "use dropdown"
+msgstr "Dropdown-Liste nutzen"
+
+#: admin_interface/models.py
+msgid "sticky position"
+msgstr "angeheftete Position"
+
+#: admin_interface/models.py
+msgid "quick remove links for active filters at top of sidebar"
+msgstr "Schnellentfernung für aktive Filter oben in der Seitenleiste"
+
+#: admin_interface/models.py
+msgid "foldable apps"
+msgstr "einklappbare Apps"
+
+#: admin_interface/models.py
+msgid "fieldsets as tabs"
+msgstr "Fieldsets als Tabs"
+
+#: admin_interface/models.py
+msgid "inlines as tabs"
+msgstr "Inlines als Tabs"
+
+#: admin_interface/models.py
+msgid "sticky submit"
+msgstr "angeheftete Schaltfläche"
+
+#: admin_interface/models.py
+msgid "sticky pagination"
+msgstr "angeheftete Seitennummerierung"
+
+#: admin_interface/models.py
+msgid "Theme"
+msgstr "Thema"
+
+#: admin_interface/models.py
+msgid "Themes"
+msgstr "Themen"
+
+#: admin_interface/templates/admin/change_list.html
+msgid "Filter"
+msgstr ""
+
+#. Translators: don't translate this, the django catalog already contains it
+#: admin_interface/templates/admin/change_list.html
+msgid "Clear all filters"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_stacked.html
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "Change"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_stacked.html
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "View"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_stacked.html
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "View on site"
+msgstr ""
+
+#: admin_interface/templates/admin/edit_inline/headerless_tabular.html
+msgid "Delete?"
+msgstr ""
+
+#: admin_interface/templates/admin/filter.html
+#: admin_interface/templates/admin_interface/dropdown_filter.html
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: admin_interface/templates/admin/popup_response.html
+msgid "Popup closing..."
+msgstr "Popup schließen..."

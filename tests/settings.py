@@ -97,6 +97,7 @@ DATABASE_ROUTERS = ["tests.routers.DatabaseAppsRouter"]
 
 USE_I18N = True
 LANGUAGES = (
+    ("de", "Deutsch"),
     ("en", "English"),
     ("es", "Español"),
     ("fa", "Farsi"),
