@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-29 11:47-0600\n"
+"POT-Creation-Date: 2022-12-06 08:39-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -295,7 +295,3 @@ msgstr " por %(filter_title)s "
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
 msgstr "Pop-up fechando..."
-
-#: admin_interface/templates/admin_interface/date_hierarchy_removal_link.html
-msgid "Date filter"
-msgstr ""

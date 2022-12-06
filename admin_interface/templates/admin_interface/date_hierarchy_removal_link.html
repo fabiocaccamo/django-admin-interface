@@ -1,4 +1,3 @@
-{% load i18n %}
 <div class="changelist-filter-clear"><a href="{{ removal_link }}">
-  {% translate "Date filter" %}: <span>{{ date_value|date:date_format|capfirst }}</span> &#10006;
+  {{ date_label|capfirst }}: <span>{{ date_value|date:date_format|capfirst }}</span> &#10006;
 </a></div>

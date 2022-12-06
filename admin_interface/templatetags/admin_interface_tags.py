@@ -138,6 +138,8 @@ def admin_interface_filter_removal_link(changelist, list_filter):
 def admin_interface_date_hierarchy_removal_link(changelist, date_field):
     tpl = get_template("admin_interface/date_hierarchy_removal_link.html")
 
+    date_label = changelist.model._meta.get_field(date_field).verbose_name
+
     params = changelist.get_filters_params()
     date_params = [p for p in params if p.startswith(date_field)]
 
@@ -159,6 +161,7 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field):
     return tpl.render(
         {
             "cl": changelist,
+            "date_label": date_label,
             "date_value": date_value,
             "date_format": date_format,
             "removal_link": removal_link,

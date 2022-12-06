@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-29 11:47-0600\n"
+"POT-Creation-Date: 2022-12-06 08:39-0600\n"
 "PO-Revision-Date: 2020-01-29 04:53+0300\n"
 "Last-Translator: Ishak Okutan <ishak.oktn@gmail.com>\n"
 "Language-Team: \n"
@@ -300,7 +300,3 @@ msgstr " %(filter_title)s tarafından "
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
 msgstr "Popup kapanıyor..."
-
-#: admin_interface/templates/admin_interface/date_hierarchy_removal_link.html
-msgid "Date filter"
-msgstr ""
