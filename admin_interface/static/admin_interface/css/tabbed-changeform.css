@@ -42,6 +42,10 @@
     color: var(--admin-interface-generic-link-hover-color);
 }
 
+.admin-interface .tabbed-changeform-tabs .tabbed-changeform-tablink:focus {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
 .admin-interface .tabbed-changeform-tabs .tabbed-changeform-tablink.active {
     border: 1px solid var(--border-color);
     border-bottom: 1px solid transparent;
