@@ -209,7 +209,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
 
         self.assertIn("Shape filter", html)
-        self.assertIn("Pointy", html)
+        self.assertIn("<span>Pointy</span>", html)
 
     def test_filter_removal_link_no_display(self):
         changelist = Mock()
@@ -222,4 +222,47 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
 
         self.assertIn("Shape filter", html)
-        self.assertIn("...", html)
+        self.assertIn("<span>...</span>", html)
+
+    def test_date_hierarchy_removal_link_year(self):
+        changelist = Mock()
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
+        params = {"last_login__year": 2022}
+        changelist.get_filters_params.return_value = params
+
+        html = templatetags.admin_interface_date_hierarchy_removal_link(
+            changelist, "last_login"
+        )
+
+        self.assertIn("Last login", html)
+        self.assertIn("<span>2022</span>", html)
+
+    def test_date_hierarchy_removal_link_year_month(self):
+        changelist = Mock()
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
+        params = {"last_login__year": 2022, "last_login__month": "11"}
+        changelist.get_filters_params.return_value = params
+
+        html = templatetags.admin_interface_date_hierarchy_removal_link(
+            changelist, "last_login"
+        )
+
+        self.assertIn("Last login", html)
+        self.assertIn("<span>November 2022</span>", html)
+
+    def test_date_hierarchy_removal_link_year_month_day(self):
+        changelist = Mock()
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
+        params = {
+            "last_login__year": 2022,
+            "last_login__month": "11",
+            "last_login__day": "30",
+        }
+        changelist.get_filters_params.return_value = params
+
+        html = templatetags.admin_interface_date_hierarchy_removal_link(
+            changelist, "last_login"
+        )
+
+        self.assertIn("Last login", html)
+        self.assertIn("<span>Nov. 30, 2022</span>", html)
