@@ -182,6 +182,7 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
     def test_get_active_date_hierarchy_inactive(self):
         changelist = Mock()
         changelist.date_hierarchy = "last_login"
+        changelist.get_filters_params.return_value = {}
 
         date_field = templatetags.get_admin_interface_active_date_hierarchy(changelist)
 
@@ -196,3 +197,29 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         date_field = templatetags.get_admin_interface_active_date_hierarchy(changelist)
 
         self.assertEqual(date_field, "last_login")
+
+    def test_filter_removal_link(self):
+        changelist = Mock()
+        list_filter = Mock()
+        list_filter.title = "Shape filter"
+        choices = [{"display": "Round"}, {"display": "Pointy", "selected": True}]
+        list_filter.choices.return_value = choices
+        list_filter.expected_parameters.return_value = ("shape",)
+
+        html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+
+        self.assertIn("Shape filter", html)
+        self.assertIn("Pointy", html)
+
+    def test_filter_removal_link_no_display(self):
+        changelist = Mock()
+        list_filter = Mock()
+        list_filter.title = "Shape filter"
+        choices = [{"other": "Round"}, {"other": "Pointy", "selected": True}]
+        list_filter.choices.return_value = choices
+        list_filter.expected_parameters.return_value = ("shape",)
+
+        html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+
+        self.assertIn("Shape filter", html)
+        self.assertIn("...", html)
