@@ -1,5 +1,6 @@
 from unittest.mock import Mock
 
+from django.contrib.admin.views.main import ChangeList
 from django.template import Context, Template
 from django.test import TestCase, override_settings
 from django.test.client import RequestFactory
@@ -198,8 +199,21 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
 
         self.assertEqual(date_field, "last_login")
 
+    def _add_changelist_methods(self, mock, params):
+        def get_query_string(**kwargs):
+            return ChangeList.get_query_string(mock, **kwargs)
+
+        def get_filters_params(**kwargs):
+            return ChangeList.get_filters_params(mock, **kwargs)
+
+        mock.get_query_string = get_query_string
+        mock.get_filters_params = get_filters_params
+        mock.params = params
+
     def test_filter_removal_link(self):
         changelist = Mock()
+        params = {"shape": "pointy", "size": "small"}
+        self._add_changelist_methods(changelist, params)
         list_filter = Mock()
         list_filter.title = "Shape filter"
         choices = [{"display": "Round"}, {"display": "Pointy", "selected": True}]
@@ -208,11 +222,14 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
 
         html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
 
+        self.assertIn('href="?size=small"', html)
         self.assertIn("Shape filter", html)
         self.assertIn("<span>Pointy</span>", html)
 
     def test_filter_removal_link_no_display(self):
         changelist = Mock()
+        params = {"shape": "pointy", "size": "small"}
+        self._add_changelist_methods(changelist, params)
         list_filter = Mock()
         list_filter.title = "Shape filter"
         choices = [{"other": "Round"}, {"other": "Pointy", "selected": True}]
@@ -221,19 +238,21 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
 
         html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
 
+        self.assertIn('href="?size=small"', html)
         self.assertIn("Shape filter", html)
         self.assertIn("<span>...</span>", html)
 
     def test_date_hierarchy_removal_link_year(self):
         changelist = Mock()
+        params = {"shape": "pointy", "last_login__year": 2022}
+        self._add_changelist_methods(changelist, params)
         changelist.model._meta.get_field.return_value.verbose_name = "last login"
-        params = {"last_login__year": 2022}
-        changelist.get_filters_params.return_value = params
 
         html = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
+        self.assertIn('href="?shape=pointy"', html)
         self.assertIn("Last login", html)
         self.assertIn("<span>2022</span>", html)
 
@@ -241,12 +260,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         changelist = Mock()
         changelist.model._meta.get_field.return_value.verbose_name = "last login"
         params = {"last_login__year": 2022, "last_login__month": "11"}
-        changelist.get_filters_params.return_value = params
+        self._add_changelist_methods(changelist, params)
 
         html = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
+        self.assertIn('href="?"', html)
         self.assertIn("Last login", html)
         self.assertIn("<span>November 2022</span>", html)
 
@@ -257,12 +277,15 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             "last_login__year": 2022,
             "last_login__month": "11",
             "last_login__day": "30",
+            "shape": "round",
+            "size": "small",
         }
-        changelist.get_filters_params.return_value = params
+        self._add_changelist_methods(changelist, params)
 
         html = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
+        self.assertIn('href="?shape=round&amp;size=small"', html)
         self.assertIn("Last login", html)
         self.assertIn("<span>Nov. 30, 2022</span>", html)
