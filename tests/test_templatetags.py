@@ -1,3 +1,6 @@
+from unittest.mock import create_autospec
+
+from django.contrib.admin.views.main import ChangeList
 from django.template import Context, Template
 from django.test import TestCase, override_settings
 from django.test.client import RequestFactory
@@ -168,3 +171,10 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             "admin/edit_inline/stacked.html"
         )
         self.assertEqual(headless_template, "admin/edit_inline/headerless_stacked.html")
+
+    def test_get_active_date_hierarchy(self):
+        changelist = create_autospec(ChangeList)
+
+        date_field = templatetags.get_admin_interface_active_date_hierarchy(changelist)
+
+        self.assertIsNone(date_field)
