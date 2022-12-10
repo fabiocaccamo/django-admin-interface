@@ -137,6 +137,10 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         )
         self.assertEqual(rendered, "Django")
 
+    def test_get_setting(self):
+        title = templatetags.get_admin_interface_setting("title")
+        self.assertEqual(title, "Django administration")
+
     def test_get_version(self):
         version = templatetags.get_admin_interface_version()
         self.assertEqual(version, __version__)
