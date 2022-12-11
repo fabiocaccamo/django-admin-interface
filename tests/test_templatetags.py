@@ -1,3 +1,7 @@
+from datetime import date
+from unittest.mock import Mock
+
+from django.contrib.admin.views.main import ChangeList
 from django.template import Context, Template
 from django.test import TestCase, override_settings
 from django.test.client import RequestFactory
@@ -137,6 +141,10 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         )
         self.assertEqual(rendered, "Django")
 
+    def test_get_setting(self):
+        title = templatetags.get_admin_interface_setting("title")
+        self.assertEqual(title, "Django administration")
+
     def test_get_version(self):
         version = templatetags.get_admin_interface_version()
         self.assertEqual(version, __version__)
@@ -164,3 +172,121 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             "admin/edit_inline/stacked.html"
         )
         self.assertEqual(headless_template, "admin/edit_inline/headerless_stacked.html")
+
+    def test_get_active_date_hierarchy_none(self):
+        changelist = Mock()
+        changelist.date_hierarchy = None
+
+        date_field = templatetags.get_admin_interface_active_date_hierarchy(changelist)
+
+        self.assertIsNone(date_field)
+
+    def test_get_active_date_hierarchy_inactive(self):
+        changelist = Mock()
+        changelist.date_hierarchy = "last_login"
+        changelist.get_filters_params.return_value = {}
+
+        date_field = templatetags.get_admin_interface_active_date_hierarchy(changelist)
+
+        self.assertIsNone(date_field)
+
+    def test_get_active_date_hierarchy_active(self):
+        changelist = Mock()
+        changelist.date_hierarchy = "last_login"
+        params = {"some_field": 2, "last_login__year": 2022}
+        changelist.get_filters_params.return_value = params
+
+        date_field = templatetags.get_admin_interface_active_date_hierarchy(changelist)
+
+        self.assertEqual(date_field, "last_login")
+
+    def _add_changelist_methods(self, mock, params):
+        def get_query_string(**kwargs):
+            return ChangeList.get_query_string(mock, **kwargs)
+
+        def get_filters_params(**kwargs):
+            return ChangeList.get_filters_params(mock, **kwargs)
+
+        mock.get_query_string = get_query_string
+        mock.get_filters_params = get_filters_params
+        mock.params = params
+
+    def test_filter_removal_link(self):
+        changelist = Mock()
+        params = {"shape": "pointy", "size": "small"}
+        self._add_changelist_methods(changelist, params)
+        list_filter = Mock()
+        list_filter.title = "Shape filter"
+        choices = [{"display": "Round"}, {"display": "Pointy", "selected": True}]
+        list_filter.choices.return_value = choices
+        list_filter.expected_parameters.return_value = ("shape",)
+
+        ctx = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+
+        self.assertEqual(ctx["removal_link"], "?size=small")
+        self.assertEqual(ctx["title"], "Shape filter")
+        self.assertEqual(ctx["selected_value"], "Pointy")
+
+    def test_filter_removal_link_no_display(self):
+        changelist = Mock()
+        params = {"shape": "pointy", "size": "small"}
+        self._add_changelist_methods(changelist, params)
+        list_filter = Mock()
+        list_filter.title = "Shape filter"
+        choices = [{"other": "Round"}, {"other": "Pointy", "selected": True}]
+        list_filter.choices.return_value = choices
+        list_filter.expected_parameters.return_value = ("shape",)
+
+        ctx = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+
+        self.assertEqual(ctx["removal_link"], "?size=small")
+        self.assertEqual(ctx["title"], "Shape filter")
+        self.assertEqual(ctx["selected_value"], "...")
+
+    def test_date_hierarchy_removal_link_year(self):
+        changelist = Mock()
+        params = {"shape": "pointy", "last_login__year": 2022}
+        self._add_changelist_methods(changelist, params)
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
+
+        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
+            changelist, "last_login"
+        )
+
+        self.assertEqual(ctx["removal_link"], "?shape=pointy")
+        self.assertEqual(ctx["date_label"], "last login")
+        self.assertEqual(ctx["date_value"], date(2022, 1, 1))
+
+    def test_date_hierarchy_removal_link_year_month(self):
+        changelist = Mock()
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
+        params = {"last_login__year": 2022, "last_login__month": "11"}
+        self._add_changelist_methods(changelist, params)
+
+        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
+            changelist, "last_login"
+        )
+
+        self.assertEqual(ctx["removal_link"], "?")
+        self.assertEqual(ctx["date_label"], "last login")
+        self.assertEqual(ctx["date_value"], date(2022, 11, 1))
+
+    def test_date_hierarchy_removal_link_year_month_day(self):
+        changelist = Mock()
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
+        params = {
+            "last_login__year": 2022,
+            "last_login__month": "11",
+            "last_login__day": "30",
+            "shape": "round",
+            "size": "small",
+        }
+        self._add_changelist_methods(changelist, params)
+
+        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
+            changelist, "last_login"
+        )
+
+        self.assertEqual(ctx["removal_link"], "?shape=round&size=small")
+        self.assertEqual(ctx["date_label"], "last login")
+        self.assertEqual(ctx["date_value"], date(2022, 11, 30))

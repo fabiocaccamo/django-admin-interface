@@ -1,9 +1,9 @@
+import datetime
 import hashlib
 import re
 
 from django import template
 from django.conf import settings
-from django.template.loader import get_template
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 
@@ -93,14 +93,23 @@ def get_admin_interface_nocache():
     return hash_string(__version__)
 
 
-@register.simple_tag()
-def admin_interface_clear_filter_qs(changelist, list_filter):
-    return changelist.get_query_string(remove=list_filter.expected_parameters())
+@register.simple_tag(takes_context=False)
+def get_admin_interface_active_date_hierarchy(changelist):
+    date_field = changelist.date_hierarchy
+    if not date_field:
+        return
+
+    params = changelist.get_filters_params()
+    # link to clear all filters contains 'date_field__gte',
+    # only filters with specific year are really active
+    if f"{date_field}__year" not in params:
+        return
+
+    return date_field
 
 
-@register.simple_tag()
+@register.inclusion_tag("admin_interface/list_filter_removal_link.html")
 def admin_interface_filter_removal_link(changelist, list_filter):
-    template = get_template("admin_interface/list_filter_removal_link.html")
     title = list_filter.title
     choices = [
         choice for choice in list_filter.choices(changelist) if choice.get("selected")
@@ -110,14 +119,46 @@ def admin_interface_filter_removal_link(changelist, list_filter):
     except (IndexError, KeyError):
         value = "..."
 
-    return template.render(
-        {
-            "cl": changelist,
-            "spec": list_filter,
-            "selected_value": value,
-            "title": title,
-        }
-    )
+    removal_link = changelist.get_query_string(remove=list_filter.expected_parameters())
+
+    return {
+        "cl": changelist,
+        "spec": list_filter,
+        "selected_value": value,
+        "title": title,
+        "removal_link": removal_link,
+    }
+
+
+@register.inclusion_tag("admin_interface/date_hierarchy_removal_link.html")
+def admin_interface_date_hierarchy_removal_link(changelist, date_field):
+    date_label = changelist.model._meta.get_field(date_field).verbose_name
+
+    params = changelist.get_filters_params()
+    date_params = [p for p in params if p.startswith(date_field)]
+
+    date_args = [int(params[f"{date_field}__year"]), 1, 1]
+    date_format = "Y"
+
+    if f"{date_field}__month" in params:
+        date_args[1] = int(params[f"{date_field}__month"])
+        date_format = "YEAR_MONTH_FORMAT"
+
+    if f"{date_field}__day" in params:
+        date_args[2] = int(params[f"{date_field}__day"])
+        date_format = "DATE_FORMAT"
+
+    date_value = datetime.date(*date_args)
+
+    removal_link = changelist.get_query_string(remove=date_params)
+
+    return {
+        "cl": changelist,
+        "date_label": date_label,
+        "date_value": date_value,
+        "date_format": date_format,
+        "removal_link": removal_link,
+    }
 
 
 @register.simple_tag()
