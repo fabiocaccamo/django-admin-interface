@@ -224,6 +224,8 @@ pip install -r requirements.txt -r requirements-test.txt
 tox
 # or
 python runtests.py
+# or
+python -m django test --settings "tests.settings"
 ```
 ### Update translations
 - Run `tox -e translations` *(if the translations files are not up-to-date, the `lint` step in the CI will fail)*
