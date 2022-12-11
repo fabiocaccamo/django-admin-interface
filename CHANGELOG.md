@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.24.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.24.0) - 2022-12-11
+-  Drop `Python < 3.8` and `Django < 2.2` versions support. (by [@merwok](https://github.com/merwok) in #220)
+-  Replace `str.format` with `f-strings`.
+-  Remove `post_migrate` signal handler and multi db test.
+-  Add german translation. (by [@derzinn](https://github.com/derzinn) in #222)
+-  Include date hierarchy in quick removal links (by [@merwok](https://github.com/merwok) in #218)
+-  Fix broken tabbed inline name. (by [@VaZark](https://github.com/VaZark) in #221)
+-  Minor cleanups. (by [@merwok](https://github.com/merwok) in #225)
+-  Bump actions and requirements.
+-  [css] Fix inlines vertical alignement. (by [@VaZark](https://github.com/VaZark) in #201)
+-  [css] Fix tabbed changeform tabs text color on focus. (by [@VaZark](https://github.com/VaZark) in #223)
+-  [CI] Add Farsi language to `tests.settings.LANGUAGES`. (by [@merwok](https://github.com/merwok))
+-  [CI] Update `pre-commit` config.
+-  [CI] Automate package build and publish on PyPI.
+
 ## [0.23.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.23.0) - 2022-11-30
 -  Add `Python 3.11` support.
 -  Add tabbed changeform support. (by [@VaZark](https://github.com/VaZark) in #211)
