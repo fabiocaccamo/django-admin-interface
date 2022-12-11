@@ -22,3 +22,21 @@ jobs:
         with:
           body: ${{ steps.extract-release-notes.outputs.release_notes }}
           token: ${{ secrets.WORKFLOWS_CREATE_RELEASE_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: Build Package
+        run: |
+          pip install pip --upgrade
+          pip install build
+          python -m build
+
+      - name: Publish on PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages_dir: dist/
+          password: ${{ secrets.WORKFLOWS_PUBLISH_TO_PYPI_TOKEN }}
