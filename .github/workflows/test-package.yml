@@ -106,7 +106,7 @@ jobs:
       env:
         DATABASE_ENGINE: ${{ matrix.database }}
       run: |
-        coverage run --append --source=admin_interface setup.py test
+        coverage run --append --source=admin_interface runtests.py
         coverage xml -o ./coverage.xml
 
     - name: Upload coverage to Codecov
