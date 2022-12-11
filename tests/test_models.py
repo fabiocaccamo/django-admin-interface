@@ -89,7 +89,7 @@ class AdminInterfaceModelsTestCase(TestCase):
 
     def test_str(self):
         theme = Theme.get_active_theme()
-        self.assertEqual(f"{theme}", "Django")
+        self.assertEqual(str(theme), "Django")
 
 
 # class AdminInterfaceModelsMultiDBTestCase(TestCase):
