@@ -4,7 +4,6 @@ import re
 
 from django import template
 from django.conf import settings
-from django.template.loader import get_template
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 
@@ -109,9 +108,8 @@ def get_admin_interface_active_date_hierarchy(changelist):
     return date_field
 
 
-@register.simple_tag()
+@register.inclusion_tag("admin_interface/list_filter_removal_link.html")
 def admin_interface_filter_removal_link(changelist, list_filter):
-    template = get_template("admin_interface/list_filter_removal_link.html")
     title = list_filter.title
     choices = [
         choice for choice in list_filter.choices(changelist) if choice.get("selected")
@@ -123,21 +121,17 @@ def admin_interface_filter_removal_link(changelist, list_filter):
 
     removal_link = changelist.get_query_string(remove=list_filter.expected_parameters())
 
-    return template.render(
-        {
-            "cl": changelist,
-            "spec": list_filter,
-            "selected_value": value,
-            "title": title,
-            "removal_link": removal_link,
-        }
-    )
+    return {
+        "cl": changelist,
+        "spec": list_filter,
+        "selected_value": value,
+        "title": title,
+        "removal_link": removal_link,
+    }
 
 
-@register.simple_tag()
+@register.inclusion_tag("admin_interface/date_hierarchy_removal_link.html")
 def admin_interface_date_hierarchy_removal_link(changelist, date_field):
-    tpl = get_template("admin_interface/date_hierarchy_removal_link.html")
-
     date_label = changelist.model._meta.get_field(date_field).verbose_name
 
     params = changelist.get_filters_params()
@@ -158,15 +152,13 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field):
 
     removal_link = changelist.get_query_string(remove=date_params)
 
-    return tpl.render(
-        {
-            "cl": changelist,
-            "date_label": date_label,
-            "date_value": date_value,
-            "date_format": date_format,
-            "removal_link": removal_link,
-        }
-    )
+    return {
+        "cl": changelist,
+        "date_label": date_label,
+        "date_value": date_value,
+        "date_format": date_format,
+        "removal_link": removal_link,
+    }
 
 
 @register.simple_tag()

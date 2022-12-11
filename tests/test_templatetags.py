@@ -1,3 +1,4 @@
+from datetime import date
 from unittest.mock import Mock
 
 from django.contrib.admin.views.main import ChangeList
@@ -220,11 +221,11 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         list_filter.choices.return_value = choices
         list_filter.expected_parameters.return_value = ("shape",)
 
-        html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+        ctx = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
 
-        self.assertIn('href="?size=small"', html)
-        self.assertIn("Shape filter", html)
-        self.assertIn("<span>Pointy</span>", html)
+        self.assertEqual(ctx["removal_link"], "?size=small")
+        self.assertEqual(ctx["title"], "Shape filter")
+        self.assertEqual(ctx["selected_value"], "Pointy")
 
     def test_filter_removal_link_no_display(self):
         changelist = Mock()
@@ -236,11 +237,11 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         list_filter.choices.return_value = choices
         list_filter.expected_parameters.return_value = ("shape",)
 
-        html = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+        ctx = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
 
-        self.assertIn('href="?size=small"', html)
-        self.assertIn("Shape filter", html)
-        self.assertIn("<span>...</span>", html)
+        self.assertEqual(ctx["removal_link"], "?size=small")
+        self.assertEqual(ctx["title"], "Shape filter")
+        self.assertEqual(ctx["selected_value"], "...")
 
     def test_date_hierarchy_removal_link_year(self):
         changelist = Mock()
@@ -248,13 +249,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self._add_changelist_methods(changelist, params)
         changelist.model._meta.get_field.return_value.verbose_name = "last login"
 
-        html = templatetags.admin_interface_date_hierarchy_removal_link(
+        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
-        self.assertIn('href="?shape=pointy"', html)
-        self.assertIn("Last login", html)
-        self.assertIn("<span>2022</span>", html)
+        self.assertEqual(ctx["removal_link"], "?shape=pointy")
+        self.assertEqual(ctx["date_label"], "last login")
+        self.assertEqual(ctx["date_value"], date(2022, 1, 1))
 
     def test_date_hierarchy_removal_link_year_month(self):
         changelist = Mock()
@@ -262,13 +263,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         params = {"last_login__year": 2022, "last_login__month": "11"}
         self._add_changelist_methods(changelist, params)
 
-        html = templatetags.admin_interface_date_hierarchy_removal_link(
+        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
-        self.assertIn('href="?"', html)
-        self.assertIn("Last login", html)
-        self.assertIn("<span>November 2022</span>", html)
+        self.assertEqual(ctx["removal_link"], "?")
+        self.assertEqual(ctx["date_label"], "last login")
+        self.assertEqual(ctx["date_value"], date(2022, 11, 1))
 
     def test_date_hierarchy_removal_link_year_month_day(self):
         changelist = Mock()
@@ -282,10 +283,10 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         }
         self._add_changelist_methods(changelist, params)
 
-        html = templatetags.admin_interface_date_hierarchy_removal_link(
+        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
-        self.assertIn('href="?shape=round&amp;size=small"', html)
-        self.assertIn("Last login", html)
-        self.assertIn("<span>Nov. 30, 2022</span>", html)
+        self.assertEqual(ctx["removal_link"], "?shape=round&size=small")
+        self.assertEqual(ctx["date_label"], "last login")
+        self.assertEqual(ctx["date_value"], date(2022, 11, 30))
