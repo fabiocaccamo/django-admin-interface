@@ -125,10 +125,12 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
                 var data = {
                     lookup:(lookup === true ? true : false)
                 };
+                // remove potential existing click event listener
                 var el = $(selector);
                 el.removeAttr('onclick');
                 el.unbind('click');
-                el.click(data, presentRelatedObjectModal);
+                // listen the event on document for handling it on elements will be added to the DOM later
+                $(document).on('click', selector, data, presentRelatedObjectModal);
             }
 
             // assign functions to global variables
