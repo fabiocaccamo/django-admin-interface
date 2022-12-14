@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.24.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.24.1) - 2022-12-14
+-  Fix modal opener buttons not working when added to the DOM asynchronously. #228
+-  [css] Improve changelist filter margins.
+
 ## [0.24.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.24.0) - 2022-12-11
 -  Drop `Python < 3.8` and `Django < 2.2` versions support. (by [@merwok](https://github.com/merwok) in #220)
 -  Replace `str.format` with `f-strings`.
