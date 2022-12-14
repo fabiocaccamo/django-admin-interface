@@ -2,26 +2,26 @@
 list-filter-dropdown
 */
 
-.admin-interface .list-filter-dropdown {
+.admin-interface #changelist-filter .list-filter-dropdown {
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.admin-interface h2 + .list-filter-dropdown,
-.admin-interface .list-filter-dropdown + .list-filter-dropdown {
+.admin-interface #changelist-filter h2 + .list-filter-dropdown,
+.admin-interface #changelist-filter .list-filter-dropdown + .list-filter-dropdown {
     margin-top: 5px;
 }
 
-.admin-interface .list-filter-dropdown h3 {
-    margin-top: 0;
+.admin-interface #changelist-filter .list-filter-dropdown h3 {
+    margin-top: 0 !important;
 }
 
-.admin-interface .list-filter-dropdown select {
+.admin-interface #changelist-filter .list-filter-dropdown select {
     background-color: #FFFFFF;
     width: calc(100% - 30px);
     margin-right: 15px;
 }
 
-.admin-interface.list-filter-highlight .list-filter-dropdown h3.active + div select {
+.admin-interface.list-filter-highlight #changelist-filter .list-filter-dropdown h3.active + div select {
     font-weight: bold;
 }

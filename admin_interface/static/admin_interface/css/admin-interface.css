@@ -377,6 +377,10 @@
     border-radius: var(--admin-interface-module-border-radius);
 }
 
+.admin-interface .module.filtered #changelist-filter h3#changelist-filter-clear {
+    margin-bottom: 0;
+}
+
 .admin-interface .module.filtered #changelist-filter .changelist-filter-clear a {
     font-size: 13px;
     margin: .3em 0;

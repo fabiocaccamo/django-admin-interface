@@ -285,6 +285,15 @@ body.admin-interface .paginator a.showall:visited {
     padding: 10px 15px;
 }
 
+.admin-interface .module.filtered #changelist-filter h2 + h3 {
+    margin-top: 0px;
+}
+
+.admin-interface .module.filtered #changelist-filter h3 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 .admin-interface #changelist-form .results {
     scrollbar-width: thin;
 }
