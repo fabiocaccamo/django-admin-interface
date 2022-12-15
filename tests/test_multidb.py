@@ -25,7 +25,7 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
 
     def test_dbrouter_errors_when_fetching_from_default(self):
         with self.assertRaises(Exception):
-            Theme.objects.get_active_theme()
+            Theme.objects.get_active()
 
     def test_dbrouter_fetches_db(self):
         DATABASE_APPS_MAPPING = {
@@ -33,4 +33,4 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
         }
         router = DatabaseAppsRouter(db_map=DATABASE_APPS_MAPPING)
         with self.settings(DATABASE_ROUTERS=[router]):
-            Theme.objects.get_active_theme()
+            Theme.objects.get_active()

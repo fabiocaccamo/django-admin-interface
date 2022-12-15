@@ -9,7 +9,7 @@ from .cache import del_cached_active_theme
 
 
 class ThemeQuerySet(models.QuerySet):
-    def get_active_theme(self):
+    def get_active(self):
         objs_active_qs = self.filter(active=True)
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)
@@ -35,14 +35,14 @@ class Theme(models.Model):
     @staticmethod
     def post_delete_handler(**kwargs):
         del_cached_active_theme()
-        Theme.objects.get_active_theme()
+        Theme.objects.get_active()
 
     @staticmethod
     def post_save_handler(instance, **kwargs):
         del_cached_active_theme()
         if instance.active:
             Theme.objects.exclude(pk=instance.pk).update(active=False)
-        Theme.objects.get_active_theme()
+        Theme.objects.get_active()
 
     @staticmethod
     def pre_save_handler(instance, **kwargs):

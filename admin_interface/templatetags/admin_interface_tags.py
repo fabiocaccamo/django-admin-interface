@@ -59,7 +59,7 @@ def get_admin_interface_languages(context):
 def get_admin_interface_theme():
     theme = get_cached_active_theme()
     if not theme:
-        theme = Theme.objects.get_active_theme()
+        theme = Theme.objects.get_active()
         set_cached_active_theme(theme)
     return theme
 
