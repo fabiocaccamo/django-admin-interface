@@ -2,6 +2,7 @@ from colorfield.fields import ColorField
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
+from django.dispatch import receiver
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
 
@@ -32,27 +33,6 @@ class ThemeQuerySet(models.QuerySet):
 
 
 class Theme(models.Model):
-    @staticmethod
-    def post_delete_handler(**kwargs):
-        del_cached_active_theme()
-        Theme.objects.get_active()
-
-    @staticmethod
-    def post_save_handler(instance, **kwargs):
-        del_cached_active_theme()
-        if instance.active:
-            Theme.objects.exclude(pk=instance.pk).update(active=False)
-        Theme.objects.get_active()
-
-    @staticmethod
-    def pre_save_handler(instance, **kwargs):
-        if instance.pk is None:
-            try:
-                obj = Theme.objects.get(name=instance.name)
-                instance.pk = obj.pk
-            except Theme.DoesNotExist:
-                pass
-
     name = models.CharField(
         unique=True,
         max_length=50,
@@ -401,6 +381,25 @@ class Theme(models.Model):
         return force_str(self.name)
 
 
-post_delete.connect(Theme.post_delete_handler, sender=Theme)
-post_save.connect(Theme.post_save_handler, sender=Theme)
-pre_save.connect(Theme.pre_save_handler, sender=Theme)
+@receiver(post_delete, sender=Theme)
+def post_delete_handler(sender, instance, **kwargs):
+    del_cached_active_theme()
+    Theme.objects.get_active()
+
+
+@receiver(post_save, sender=Theme)
+def post_save_handler(sender, instance, **kwargs):
+    del_cached_active_theme()
+    if instance.active:
+        Theme.objects.exclude(pk=instance.pk).update(active=False)
+    Theme.objects.get_active()
+
+
+@receiver(pre_save, sender=Theme)
+def pre_save_handler(sender, instance, **kwargs):
+    if instance.pk is None:
+        try:
+            obj = Theme.objects.get(name=instance.name)
+            instance.pk = obj.pk
+        except Theme.DoesNotExist:
+            pass
