@@ -2,47 +2,25 @@ from colorfield.fields import ColorField
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.db.models.signals import post_delete, post_save, pre_save
+from django.dispatch import receiver
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
 
 from .cache import del_cached_active_theme
 
 
-class Theme(models.Model):
-    @staticmethod
-    def post_delete_handler(**kwargs):
-        del_cached_active_theme()
-        Theme.get_active_theme()
-
-    @staticmethod
-    def post_save_handler(instance, **kwargs):
-        del_cached_active_theme()
-        if instance.active:
-            Theme.objects.exclude(pk=instance.pk).update(active=False)
-        Theme.get_active_theme()
-
-    @staticmethod
-    def pre_save_handler(instance, **kwargs):
-        if instance.pk is None:
-            try:
-                obj = Theme.objects.get(name=instance.name)
-                instance.pk = obj.pk
-            except Theme.DoesNotExist:
-                pass
-
-    @staticmethod
-    def get_active_theme():
-        objs_manager = Theme.objects
-        objs_active_qs = objs_manager.filter(active=True)
+class ThemeQuerySet(models.QuerySet):
+    def get_active(self):
+        objs_active_qs = self.filter(active=True)
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)
 
         if objs_active_count == 0:
-            obj = objs_manager.all().first()
+            obj = self.all().first()
             if obj:
                 obj.set_active()
             else:
-                obj = objs_manager.create()
+                obj = self.create()
 
         elif objs_active_count == 1:
             obj = objs_active_ls[0]
@@ -53,6 +31,8 @@ class Theme(models.Model):
 
         return obj
 
+
+class Theme(models.Model):
     name = models.CharField(
         unique=True,
         max_length=50,
@@ -386,6 +366,8 @@ class Theme(models.Model):
         verbose_name=_("sticky pagination"),
     )
 
+    objects = ThemeQuerySet.as_manager()
+
     def set_active(self):
         self.active = True
         self.save()
@@ -399,6 +381,25 @@ class Theme(models.Model):
         return force_str(self.name)
 
 
-post_delete.connect(Theme.post_delete_handler, sender=Theme)
-post_save.connect(Theme.post_save_handler, sender=Theme)
-pre_save.connect(Theme.pre_save_handler, sender=Theme)
+@receiver(post_delete, sender=Theme)
+def post_delete_handler(sender, instance, **kwargs):
+    del_cached_active_theme()
+    Theme.objects.get_active()
+
+
+@receiver(post_save, sender=Theme)
+def post_save_handler(sender, instance, **kwargs):
+    del_cached_active_theme()
+    if instance.active:
+        Theme.objects.exclude(pk=instance.pk).update(active=False)
+    Theme.objects.get_active()
+
+
+@receiver(pre_save, sender=Theme)
+def pre_save_handler(sender, instance, **kwargs):
+    if instance.pk is None:
+        try:
+            obj = Theme.objects.get(name=instance.name)
+            instance.pk = obj.pk
+        except Theme.DoesNotExist:
+            pass
