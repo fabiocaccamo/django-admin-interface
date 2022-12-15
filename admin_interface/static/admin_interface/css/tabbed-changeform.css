@@ -49,7 +49,7 @@
 .admin-interface .tabbed-changeform-tabs .tabbed-changeform-tablink.active {
     border: 1px solid var(--border-color);
     border-bottom: 1px solid transparent;
-    color: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
 }
 
 .admin-interface .tabbed-changeform-tabs-remaining-space {
