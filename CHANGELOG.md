@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.24.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.24.2) - 2022-12-19
+-  Fix modal and popup opening at the same time. #228
+-  Make `Theme.get_active_theme` class method a manager method. (by [@MounirMesselmeni](https://github.com/MounirMesselmeni) in #230)
+
 ## [0.24.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.24.1) - 2022-12-14
 -  Fix modal opener buttons not working when added to the DOM asynchronously. #228
 -  [css] Improve changelist filter margins.
