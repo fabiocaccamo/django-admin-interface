@@ -19,9 +19,16 @@ class AdminInterfaceModelsTestCase(TestCase):
     def __test_active_theme(self):
         theme = Theme.objects.get_active()
         print(theme)
-        self.assertTrue(theme is not None)
+        self.assertIsNotNone(theme)
         self.assertTrue(theme.active)
         self.assertEqual(Theme.objects.filter(active=True).count(), 1)
+
+    def __test_active_dark_theme(self):
+        theme = Theme.objects.get_active(use_dark=True)
+        print(theme)
+        self.assertIsNotNone(theme)
+        self.assertTrue(theme.active_dark)
+        self.assertEqual(Theme.objects.filter(active_dark=True).count(), 1)
 
     def test_default_theme_created_if_no_themes(self):
         Theme.objects.all().delete()
@@ -67,6 +74,28 @@ class AdminInterfaceModelsTestCase(TestCase):
         theme_3 = Theme.objects.create(name="Custom 3", active=True)
         self.assertEqual(Theme.objects.get_active().pk, theme_3.pk)
         self.__test_active_theme()
+
+    def test_default_dark_theme(self):
+        Theme.objects.all().delete()
+        theme_1 = Theme.objects.create(name="New Theme")
+        self.assertEqual(Theme.objects.get_active(use_dark=True).pk, theme_1.pk)
+        self.__test_active_dark_theme()
+
+    def test_dark_theme(self):
+        Theme.objects.all().delete()
+        theme_1 = Theme.objects.create(name="Light theme", active_dark=False)
+        theme_2 = Theme.objects.create(name="Dark Theme", active_dark=True)
+        theme_3 = Theme.objects.create(name="Another Light theme", active_dark=False)
+        self.assertEqual(Theme.objects.get_active(use_dark=True).pk, theme_2.pk)
+        self.__test_active_dark_theme()
+
+    def test_latest_dark_theme(self):
+        Theme.objects.all().delete()
+        theme_1 = Theme.objects.create(name="Dark Theme", active_dark=True)
+        theme_2 = Theme.objects.create(name="Light theme", active_dark=False)
+        theme_3 = Theme.objects.create(name="Another Dark theme", active_dark=True)
+        self.assertEqual(Theme.objects.get_active(use_dark=True).pk, theme_3.pk)
+        self.__test_active_dark_theme()
 
     def test_last_theme_activated_on_multiple_themes_activated(self):
         Theme.objects.all().delete()

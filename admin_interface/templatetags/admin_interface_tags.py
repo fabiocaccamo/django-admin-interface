@@ -7,7 +7,12 @@ from django.conf import settings
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 
-from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
+from admin_interface.cache import (
+    get_cached_active_dark_theme,
+    get_cached_active_theme,
+    set_cached_active_dark_theme,
+    set_cached_active_theme,
+)
 from admin_interface.models import Theme
 from admin_interface.version import __version__
 
@@ -61,6 +66,15 @@ def get_admin_interface_theme():
     if not theme:
         theme = Theme.objects.get_active()
         set_cached_active_theme(theme)
+    return theme
+
+
+@register.simple_tag()
+def get_admin_interface_dark_theme():
+    theme = get_cached_active_dark_theme()
+    if not theme:
+        theme = Theme.objects.get_active(use_dark=True)
+        set_cached_active_dark_theme(theme)
     return theme
 
 

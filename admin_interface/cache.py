@@ -8,6 +8,7 @@ def app_cache():
 
 def del_cached_active_theme():
     app_cache().delete("admin_interface_theme")
+    app_cache().delete("admin_interface_dark_theme")
 
 
 def get_cached_active_theme():
@@ -16,3 +17,11 @@ def get_cached_active_theme():
 
 def set_cached_active_theme(theme):
     app_cache().set("admin_interface_theme", theme)
+
+
+def get_cached_active_dark_theme():
+    return app_cache().get("admin_interface_dark_theme", None)
+
+
+def set_cached_active_dark_theme(theme):
+    app_cache().set("admin_interface_dark_theme", theme)

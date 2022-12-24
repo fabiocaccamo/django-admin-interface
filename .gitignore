@@ -8,6 +8,7 @@ __pycache__/
 ## Local setup
 .vscode/
 .venv/
+venv/
 
 # Distribution / packaging
 .Python

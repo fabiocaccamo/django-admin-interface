@@ -141,6 +141,19 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         )
         self.assertEqual(rendered, "Django")
 
+    def test_get_dark_theme(self):
+        Theme.objects.all().delete()
+        context = Context({})
+        theme = templatetags.get_admin_interface_dark_theme()
+        self.assertEqual(theme.name, "Django")
+        rendered = self.__render_template(
+            "{% load admin_interface_tags %}"
+            "{% get_admin_interface_theme as theme %}"
+            "{{ theme.name }}",
+            context,
+        )
+        self.assertEqual(rendered, "Django")
+
     def test_get_setting(self):
         title = templatetags.get_admin_interface_setting("title")
         self.assertEqual(title, "Django administration")

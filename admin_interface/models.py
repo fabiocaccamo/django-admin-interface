@@ -10,15 +10,17 @@ from .cache import del_cached_active_theme
 
 
 class ThemeQuerySet(models.QuerySet):
-    def get_active(self):
-        objs_active_qs = self.filter(active=True)
+    def get_active(self, use_dark=False):
+        objs_active_qs = (
+            self.filter(active=True) if not use_dark else self.filter(active_dark=True)
+        )
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)
 
         if objs_active_count == 0:
             obj = self.all().first()
             if obj:
-                obj.set_active()
+                obj.set_active(use_dark)
             else:
                 obj = self.create()
 
@@ -27,7 +29,7 @@ class ThemeQuerySet(models.QuerySet):
 
         elif objs_active_count > 1:
             obj = objs_active_ls[-1]
-            obj.set_active()
+            obj.set_active(use_dark)
 
         return obj
 
@@ -42,6 +44,11 @@ class Theme(models.Model):
     active = models.BooleanField(
         default=True,
         verbose_name=_("active"),
+    )
+
+    active_dark = models.BooleanField(
+        default=True,
+        # verbose_name=_("active dark"),
     )
 
     title = models.CharField(
@@ -368,8 +375,11 @@ class Theme(models.Model):
 
     objects = ThemeQuerySet.as_manager()
 
-    def set_active(self):
-        self.active = True
+    def set_active(self, use_dark=False):
+        if use_dark:
+            self.active_dark = True
+        else:
+            self.active = True
         self.save()
 
     class Meta:
@@ -385,6 +395,7 @@ class Theme(models.Model):
 def post_delete_handler(sender, instance, **kwargs):
     del_cached_active_theme()
     Theme.objects.get_active()
+    Theme.objects.get_active(use_dark=True)
 
 
 @receiver(post_save, sender=Theme)
@@ -392,7 +403,10 @@ def post_save_handler(sender, instance, **kwargs):
     del_cached_active_theme()
     if instance.active:
         Theme.objects.exclude(pk=instance.pk).update(active=False)
+    if instance.active_dark:
+        Theme.objects.exclude(pk=instance.pk).update(active_dark=False)
     Theme.objects.get_active()
+    Theme.objects.get_active(use_dark=True)
 
 
 @receiver(pre_save, sender=Theme)

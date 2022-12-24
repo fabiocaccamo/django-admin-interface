@@ -10,8 +10,12 @@ class ThemeAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "active",
+        "active_dark",
     )
-    list_editable = ("active",)
+    list_editable = (
+        "active",
+        "active_dark",
+    )
     list_per_page = 100
     show_full_result_count = False
 
@@ -23,6 +27,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 "fields": (
                     "name",
                     "active",
+                    "active_dark",
                 ),
             },
         ),
