@@ -16,4 +16,4 @@ assignees: fabiocaccamo
 - [ ] I have performed a self-review of my code.
 - [ ] I have added torough tests for the proposed changes.
 - [ ] I have run the tests and there are not errors.
-- [ ] I have updated translations.
+- [ ] I have updated translation files.
