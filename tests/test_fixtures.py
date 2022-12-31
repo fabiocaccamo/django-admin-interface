@@ -12,7 +12,7 @@ class AdminInterfaceFixturesTestCase(TestCase):
         pass
 
     def __load_theme(self, theme_name):
-        call_command("loaddata", "admin_interface_theme_%s.json" % (theme_name,))
+        call_command("loaddata", "admin_interface_theme_{}.json".format(theme_name))
 
     def test_import_initial_data(self):
         call_command("loaddata", "initial_data.json")

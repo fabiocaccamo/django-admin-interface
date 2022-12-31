@@ -3,7 +3,7 @@ DATABASE_APPS_MAPPING = {
 }
 
 
-class DatabaseAppsRouter(object):
+class DatabaseAppsRouter:
     """
     arouter to control all database operations on models for different
     databases.
