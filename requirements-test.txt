@@ -2,4 +2,4 @@ codecov == 2.1.12
 coverage == 7.0.3
 pre-commit == 2.21.0
 psycopg2-binary == 2.9.5
-tox == 4.2.4
+tox == 4.2.6
