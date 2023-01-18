@@ -4,6 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from admin_interface.models import Theme
 
 
+@admin.register(Theme)
 class ThemeAdmin(admin.ModelAdmin):
 
     list_display = (
@@ -185,6 +186,3 @@ class ThemeAdmin(admin.ModelAdmin):
     )
 
     save_on_top = True
-
-
-admin.site.register(Theme, ThemeAdmin)
