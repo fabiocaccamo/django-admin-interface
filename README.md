@@ -4,10 +4,10 @@
 [![](https://img.shields.io/pypi/v/django-admin-interface.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
 [![](https://pepy.tech/badge/django-admin-interface/month)](https://pepy.tech/project/django-admin-interface)
 [![](https://img.shields.io/github/stars/fabiocaccamo/django-admin-interface?logo=github)](https://github.com/fabiocaccamo/django-admin-interface/)
-[![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/master/LICENSE.txt)
+[![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/main/LICENSE.txt)
 
-[![](https://results.pre-commit.ci/badge/github/fabiocaccamo/django-admin-interface/master.svg)](https://results.pre-commit.ci/latest/github/fabiocaccamo/django-admin-interface/master)
-[![](https://img.shields.io/github/actions/workflow/status/fabiocaccamo/django-admin-interface/test-package.yml?branch=master&label=build&logo=github)](https://github.com/fabiocaccamo/django-admin-interface)
+[![](https://results.pre-commit.ci/badge/github/fabiocaccamo/django-admin-interface/main.svg)](https://results.pre-commit.ci/latest/github/fabiocaccamo/django-admin-interface/main)
+[![](https://img.shields.io/github/actions/workflow/status/fabiocaccamo/django-admin-interface/test-package.yml?branch=main&label=build&logo=github)](https://github.com/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codecov/c/gh/fabiocaccamo/django-admin-interface?logo=codecov)](https://codecov.io/gh/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codacy/grade/21cb657283c04e70b56fb935277a1ad1?logo=codacy)](https://www.codacy.com/app/fabiocaccamo/django-admin-interface)
 [![](https://img.shields.io/codeclimate/maintainability/fabiocaccamo/django-admin-interface?logo=code-climate)](https://codeclimate.com/github/fabiocaccamo/django-admin-interface/)
