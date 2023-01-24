@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
             field=colorfield.fields.ColorField(
                 blank=True,
                 default="#E74C3C",
-                help_text="(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)",
+                help_text="(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)",  # noqa: E501
                 max_length=10,
                 verbose_name="color",
             ),

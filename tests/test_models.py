@@ -1,9 +1,8 @@
 import random
 import shutil
-from unittest import expectedFailure
 
 from django.conf import settings
-from django.test import TestCase, TransactionTestCase
+from django.test import TestCase
 
 from admin_interface.models import Theme
 
@@ -45,25 +44,25 @@ class AdminInterfaceModelsTestCase(TestCase):
 
     def test_default_theme_activated_after_update_if_multiple_active_themes(self):
         Theme.objects.all().delete()
-        theme_1 = Theme.objects.create(name="Custom 1", active=True)
-        theme_2 = Theme.objects.create(name="Custom 2", active=True)
-        theme_3 = Theme.objects.create(name="Custom 3", active=True)
+        Theme.objects.create(name="Custom 1", active=True)
+        Theme.objects.create(name="Custom 2", active=True)
+        Theme.objects.create(name="Custom 3", active=True)
         Theme.objects.update(active=False)
         Theme.objects.update(active=True)
         self.__test_active_theme()
 
     def test_default_theme_activated_on_active_theme_deleted(self):
         Theme.objects.all().delete()
-        theme_1 = Theme.objects.create(name="Custom 1", active=True)
-        theme_2 = Theme.objects.create(name="Custom 2", active=True)
-        theme_3 = Theme.objects.create(name="Custom 3", active=True)
+        Theme.objects.create(name="Custom 1", active=True)
+        Theme.objects.create(name="Custom 2", active=True)
+        Theme.objects.create(name="Custom 3", active=True)
         Theme.objects.filter(pk=Theme.objects.get_active().pk).delete()
         self.__test_active_theme()
 
     def test_last_theme_activated_on_multiple_themes_created(self):
         Theme.objects.all().delete()
-        theme_1 = Theme.objects.create(name="Custom 1", active=True)
-        theme_2 = Theme.objects.create(name="Custom 2", active=True)
+        Theme.objects.create(name="Custom 1", active=True)
+        Theme.objects.create(name="Custom 2", active=True)
         theme_3 = Theme.objects.create(name="Custom 3", active=True)
         self.assertEqual(Theme.objects.get_active().pk, theme_3.pk)
         self.__test_active_theme()

@@ -107,12 +107,16 @@ class Theme(models.Model):
         verbose_name=_("favicon"),
     )
 
-    env_name = models.CharField(blank=True, max_length=50, verbose_name=_("name"))
+    env_name = models.CharField(
+        blank=True,
+        max_length=50,
+        verbose_name=_("name"),
+    )
     env_color = ColorField(
         blank=True,
         default="#E74C3C",
         help_text=_(
-            "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)"
+            "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)"  # noqa: E501
         ),
         max_length=10,
         verbose_name=_("color"),
@@ -223,7 +227,8 @@ class Theme(models.Model):
         verbose_name=_("link hover color"),
     )
     css_module_rounded_corners = models.BooleanField(
-        default=True, verbose_name=_("rounded corners")
+        default=True,
+        verbose_name=_("rounded corners"),
     )
 
     css_generic_link_color = ColorField(
@@ -285,7 +290,10 @@ class Theme(models.Model):
         verbose_name=_("text color"),
     )
 
-    related_modal_active = models.BooleanField(default=True, verbose_name=_("active"))
+    related_modal_active = models.BooleanField(
+        default=True,
+        verbose_name=_("active"),
+    )
     related_modal_background_color = ColorField(
         blank=True,
         default="#000000",
