@@ -6,7 +6,6 @@ from admin_interface.models import Theme
 
 @admin.register(Theme)
 class ThemeAdmin(admin.ModelAdmin):
-
     list_display = (
         "name",
         "active",

@@ -6,7 +6,6 @@ from admin_interface.settings import check_installed_apps
 
 
 class AdminInterfaceSettingsTestCase(TestCase):
-
     DJANGO_APPS = [
         "django.contrib.admin",
         "django.contrib.auth",

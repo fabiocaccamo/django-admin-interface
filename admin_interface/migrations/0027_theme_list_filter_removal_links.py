@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("admin_interface", "0026_theme_list_filter_highlight"),
     ]

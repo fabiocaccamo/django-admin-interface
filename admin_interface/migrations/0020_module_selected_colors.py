@@ -12,7 +12,6 @@ def default_link_selected(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("admin_interface", "0019_add_form_sticky"),
     ]

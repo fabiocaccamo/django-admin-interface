@@ -2,7 +2,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("admin_interface", "0017_change_list_filter_dropdown"),
     ]
