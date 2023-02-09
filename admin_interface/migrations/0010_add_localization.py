@@ -45,9 +45,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="theme",
             name="name",
-            field=models.CharField(
-                default="Django", max_length=50, verbose_name="name"
-            ),
+            field=models.CharField(default="Django", max_length=50, verbose_name="name"),
         ),
         migrations.AlterField(
             model_name="theme",

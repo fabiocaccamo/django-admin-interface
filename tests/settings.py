@@ -83,9 +83,7 @@ if github_workflow:
     database_config["postgres_replica"]["HOST"] = "127.0.0.1"
     database_config["postgres_replica"]["PORT"] = "5432"
 
-replica_engine = (
-    "postgres_replica" if database_engine == "postgres" else database_engine
-)
+replica_engine = "postgres_replica" if database_engine == "postgres" else database_engine
 
 DATABASES = {
     "default": database_config.get(database_engine),
