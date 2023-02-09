@@ -64,6 +64,8 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 - Run `python manage.py collectstatic`
 - Restart your application server
 
+> **Warning**: if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
+
 #### Optional features
 
 To make a fieldset start expanded with a `Hide` button to collapse:
