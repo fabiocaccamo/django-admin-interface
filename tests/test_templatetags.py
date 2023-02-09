@@ -6,10 +6,10 @@ from django.template import Context, Template
 from django.test import TestCase, override_settings
 from django.test.client import RequestFactory
 
+from admin_interface.metadata import __version__
 from admin_interface.models import Theme
 from admin_interface.templatetags import admin_interface_tags as templatetags
 from admin_interface.templatetags.admin_interface_tags import hash_string
-from admin_interface.version import __version__
 
 
 class AdminInterfaceTemplateTagsTestCase(TestCase):

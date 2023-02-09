@@ -8,8 +8,8 @@ from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
+from admin_interface.metadata import __version__
 from admin_interface.models import Theme
-from admin_interface.version import __version__
 
 register = template.Library()
 
