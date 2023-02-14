@@ -61,7 +61,7 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 ```
 - Run `python manage.py migrate`
-- Run `python manage.py collectstatic`
+- Run `python manage.py collectstatic --clear`
 - Restart your application server
 
 > **Warning**: if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
