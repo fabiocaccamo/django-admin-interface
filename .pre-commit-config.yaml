@@ -29,6 +29,8 @@ repos:
     rev: 6.0.0
     hooks:
       - id: flake8
+        additional_dependencies:
+          - flake8-bugbear
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0

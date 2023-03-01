@@ -1,4 +1,5 @@
 from django.test import TestCase
+from django.test.testcases import DatabaseOperationForbidden
 
 from admin_interface.models import Theme
 
@@ -22,7 +23,7 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
         assert db_for_theme == "replica"
 
     def test_dbrouter_errors_when_fetching_from_default(self):
-        with self.assertRaises(Exception):
+        with self.assertRaises(DatabaseOperationForbidden):
             Theme.objects.get_active()
 
     def test_dbrouter_fetches_db(self):

@@ -75,7 +75,7 @@ class AdminInterfaceModelsTestCase(TestCase):
         theme_4 = Theme.objects.create(name="Custom 4", active=True)
         theme_5 = Theme.objects.create(name="Custom 5", active=True)
         themes = [theme_1, theme_2, theme_3, theme_4, theme_5]
-        for i in range(5):
+        for _ in range(5):
             random.shuffle(themes)
             for theme in themes:
                 theme.set_active()

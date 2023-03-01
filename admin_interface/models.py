@@ -116,7 +116,8 @@ class Theme(models.Model):
         blank=True,
         default="#E74C3C",
         help_text=_(
-            "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: #3498DB)"  # noqa: E501
+            "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, "
+            "green: #2ECC71, blue: #3498DB)"
         ),
         max_length=10,
         verbose_name=_("color"),
