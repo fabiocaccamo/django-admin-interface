@@ -1,9 +1,13 @@
 from django.test import TestCase
-from django.test.testcases import DatabaseOperationForbidden
 
 from admin_interface.models import Theme
 
 from .routers import DatabaseAppsRouter
+
+try:
+    from django.test.testcases import DatabaseOperationForbidden
+except ImportError:
+    DatabaseOperationForbidden = AssertionError
 
 
 class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
@@ -12,7 +16,7 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
     def test_standard_dbrouter(self):
         router = DatabaseAppsRouter()
         db_for_theme = router.db_for_read(Theme)
-        assert db_for_theme == "default"
+        self.assertEqual(db_for_theme, "default")
 
     def test_dbrouter_selects_correct_db(self):
         DATABASE_APPS_MAPPING = {
@@ -20,7 +24,7 @@ class AdminInterfaceModelsWithDBRoutingTestCase(TestCase):
         }
         router = DatabaseAppsRouter(db_map=DATABASE_APPS_MAPPING)
         db_for_theme = router.db_for_read(Theme)
-        assert db_for_theme == "replica"
+        self.assertEqual(db_for_theme, "replica")
 
     def test_dbrouter_errors_when_fetching_from_default(self):
         with self.assertRaises(DatabaseOperationForbidden):
