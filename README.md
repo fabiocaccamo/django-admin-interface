@@ -64,25 +64,21 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 - Run `python manage.py collectstatic --clear`
 - Restart your application server
 
-> **Warning**: if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
+> **Warning** - if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
 
-#### Optional features
-
-To make a fieldset start expanded with a `Hide` button to collapse:
+### Optional features
+To make a fieldset start expanded with a `Hide` button to collapse, add the class `"expanded"` to its classes:
 ```python
+class MyModelAdmin(admin.ModelAdmin):
+    # ...
     fieldsets = [
         ("Section title", {
             "classes": ("collapse", "expanded"),
             "fields": (...),
         }),
     ]
+    # ...
 ```
-
-#### Upgrade
-- Run `pip install django-admin-interface --upgrade`
-- Run `python manage.py migrate`
-- Run `python manage.py collectstatic --clear`
-- Restart your application server
 
 ## Optional themes
 This package ships with optional themes as fixtures, they can be installed using the [loaddata admin command](https://docs.djangoproject.com/en/1.11/ref/django-admin/#django-admin-loaddata). Optional themes are activated on installation.
@@ -168,6 +164,22 @@ You can add **theme support to existing third-party libraries** using the follow
 ###### Admin theme customization
 ![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11240250/7350d942-8df1-11e5-9b28-f2f54c333cdc.gif)
 
+## Localization
+At the moment, this package supports has been translated into the following languages: `de`, `es`, `fa`, `fr`, `it`, `pl`, `pt_BR`, `tr`.
+
+### Translate into another language
+
+- Run `python -m django makemessages --ignore "venv" --locale "it"` *(example for Italian localization)*
+
+- Update translations in `admin_interface/locale/it/LC_MESSAGES/django.po`
+
+- Run `python -m django compilemessages --ignore ".tox" --ignore "venv"`
+
+### Update translations
+
+If you do some changes to the project, remember to update translations, because if the translations files are not up-to-date, the `lint` step in the CI will fail:
+- Run `tox -e translations`
+
 ## FAQ
 
 ### Custom `base-site.html`
@@ -232,8 +244,6 @@ python runtests.py
 # or
 python -m django test --settings "tests.settings"
 ```
-### Update translations
-- Run `tox -e translations` *(if the translations files are not up-to-date, the `lint` step in the CI will fail)*
 
 ## Contributing
 Contributions are always welcome, please follow these steps for submitting good quality PRs:
