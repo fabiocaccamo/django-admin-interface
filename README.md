@@ -169,7 +169,7 @@ At the moment, this package supports has been translated into the following lang
 
 ### Translate into another language
 
-- Run `python -m django makemessages --ignore ".tox" --ignore "venv" --locale "it"` *(example for Italian localization)*
+- Run `python -m django makemessages --ignore ".tox" --ignore "venv" --add-location "file" --extension "html,py" --locale "it"` *(example for Italian localization)*
 
 - Update translations in `admin_interface/locale/it/LC_MESSAGES/django.po`
 
