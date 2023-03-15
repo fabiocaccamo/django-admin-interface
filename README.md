@@ -165,7 +165,7 @@ You can add **theme support to existing third-party libraries** using the follow
 ![django-admin-interface_theme_customization](https://cloud.githubusercontent.com/assets/1035294/11240250/7350d942-8df1-11e5-9b28-f2f54c333cdc.gif)
 
 ## Localization
-At the moment, this package supports has been translated into the following languages: `de`, `es`, `fa`, `fr`, `it`, `pl`, `pt_BR`, `tr`.
+At the moment, this package has been translated into the following languages: `de`, `es`, `fa`, `fr`, `it`, `pl`, `pt_BR`, `tr`.
 
 ### Translate into another language
 
