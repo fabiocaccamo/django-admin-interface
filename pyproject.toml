@@ -2,6 +2,66 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "django-admin-interface"
+description = "django's default admin interface with superpowers - customizable themes, popup windows replaced by modals and many other features."
+authors = [
+    { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
+]
+keywords = [
+    "django",
+    "admin",
+    "interface",
+    "responsive",
+    "flat",
+    "theme",
+    "custom",
+    "ui",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = [
+    "django-colorfield >= 0.8.0, < 1.0.0",
+]
+dynamic = ["version"]
+maintainers = [
+    { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.license]
+file = "LICENSE.txt"
+content-type = "text/plain"
+
+[project.urls]
+Homepage = "https://github.com/fabiocaccamo/django-admin-interface"
+Download = "https://github.com/fabiocaccamo/django-admin-interface/releases"
+Documentation = "https://github.com/fabiocaccamo/django-admin-interface#readme"
+Issues = "https://github.com/fabiocaccamo/django-admin-interface/issues"
+Funding = "https://github.com/sponsors/fabiocaccamo/"
+Twitter = "https://twitter.com/fabiocaccamo"
+
 [tool.black]
 line-length = 88
 include = '\.pyi?$'
@@ -23,14 +83,13 @@ exclude = '''
 [tool.ruff]
 ignore = []
 line-length = 88
-select = [
-    "B",
-    "B9",
-    "C",
-    "E",
-    "F",
-    "W",
-]
+select = ["B", "B9", "C", "E", "F", "W"]
 
 [tool.ruff.mccabe]
 max-complexity = 10
+
+[tool.setuptools.packages.find]
+include = ["admin_interface*"]
+
+[tool.setuptools.dynamic.version]
+attr = "admin_interface.metadata.__version__"
