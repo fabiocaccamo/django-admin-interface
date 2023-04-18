@@ -137,7 +137,7 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field_name):
     date_field_path = get_fields_from_path(changelist.model, date_field_name)
     # date_field = date_field_path[-1]
     date_labels = [str(field.verbose_name) for field in date_field_path]
-    date_label = " ".join(date_labels).capitalize()
+    date_label = " ".join(date_labels).lower()
 
     params = changelist.get_filters_params()
     date_params = [p for p in params if p.startswith(date_field_name)]
