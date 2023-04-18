@@ -136,6 +136,7 @@ You can add **theme support to existing third-party libraries** using the follow
 - `--admin-interface-module-link-hover-color`
 - `--admin-interface-generic-link-color`
 - `--admin-interface-generic-link-hover-color`
+- `--admin-interface-generic-link-active-color`
 
 #### Buttons
 - `--admin-interface-save-button-background-color`

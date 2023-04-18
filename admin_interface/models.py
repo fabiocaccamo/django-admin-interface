@@ -246,6 +246,13 @@ class Theme(models.Model):
         max_length=10,
         verbose_name=_("link hover color"),
     )
+    css_generic_link_active_color = ColorField(
+        blank=True,
+        default="#29B864",
+        help_text="#29B864",
+        max_length=10,
+        verbose_name=_("link active color"),
+    )
 
     css_save_button_background_color = ColorField(
         blank=True,

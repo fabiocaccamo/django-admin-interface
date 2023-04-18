@@ -107,6 +107,7 @@ class ThemeAdmin(admin.ModelAdmin):
                 "fields": (
                     "css_generic_link_color",
                     "css_generic_link_hover_color",
+                    "css_generic_link_active_color",
                 ),
             },
         ),
