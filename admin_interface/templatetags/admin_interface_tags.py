@@ -4,12 +4,13 @@ import re
 
 from django import template
 from django.conf import settings
+from django.contrib.admin.utils import get_fields_from_path
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
-from admin_interface.metadata import __version__
 from admin_interface.models import Theme
+from admin_interface.version import __version__
 
 register = template.Library()
 
@@ -95,17 +96,17 @@ def get_admin_interface_nocache():
 
 @register.simple_tag(takes_context=False)
 def get_admin_interface_active_date_hierarchy(changelist):
-    date_field = changelist.date_hierarchy
-    if not date_field:
+    date_field_name = changelist.date_hierarchy
+    if not date_field_name:
         return
 
     params = changelist.get_filters_params()
-    # link to clear all filters contains 'date_field__gte',
+    # link to clear all filters contains f'{date_field_name}__gte',
     # only filters with specific year are really active
-    if f"{date_field}__year" not in params:
+    if f"{date_field_name}__year" not in params:
         return
 
-    return date_field
+    return date_field_name
 
 
 @register.inclusion_tag("admin_interface/list_filter_removal_link.html")
@@ -131,21 +132,24 @@ def admin_interface_filter_removal_link(changelist, list_filter):
 
 
 @register.inclusion_tag("admin_interface/date_hierarchy_removal_link.html")
-def admin_interface_date_hierarchy_removal_link(changelist, date_field):
-    date_label = changelist.model._meta.get_field(date_field).verbose_name
+def admin_interface_date_hierarchy_removal_link(changelist, date_field_name):
+    date_field_path = get_fields_from_path(changelist.model, date_field_name)
+    # date_field = date_field_path[-1]
+    date_labels = [str(field.verbose_name) for field in date_field_path]
+    date_label = " ".join(date_labels).capitalize()
 
     params = changelist.get_filters_params()
-    date_params = [p for p in params if p.startswith(date_field)]
+    date_params = [p for p in params if p.startswith(date_field_name)]
 
-    date_args = [int(params[f"{date_field}__year"]), 1, 1]
+    date_args = [int(params[f"{date_field_name}__year"]), 1, 1]
     date_format = "Y"
 
-    if f"{date_field}__month" in params:
-        date_args[1] = int(params[f"{date_field}__month"])
+    if f"{date_field_name}__month" in params:
+        date_args[1] = int(params[f"{date_field_name}__month"])
         date_format = "YEAR_MONTH_FORMAT"
 
-    if f"{date_field}__day" in params:
-        date_args[2] = int(params[f"{date_field}__day"])
+    if f"{date_field_name}__day" in params:
+        date_args[2] = int(params[f"{date_field_name}__day"])
         date_format = "DATE_FORMAT"
 
     date_value = datetime.date(*date_args)
