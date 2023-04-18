@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-26 02:56-0600\n"
+"POT-Creation-Date: 2023-04-18 11:06-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
 "Language-Team: Farsi <LL@li.org>\n"
@@ -47,15 +47,15 @@ msgstr "مسیر صفحه"
 
 #: admin_interface/admin.py
 msgid "Generic Links"
-msgstr "لینک‌های عمومی"
+msgstr "لینکهای عمومی"
 
 #: admin_interface/admin.py
 msgid "Save Buttons"
-msgstr "دکمه‌های ذخیره"
+msgstr "دکمههای ذخیره"
 
 #: admin_interface/admin.py
 msgid "Delete Buttons"
-msgstr "دکمه‌های حذف"
+msgstr "دکمههای حذف"
 
 #: admin_interface/admin.py
 msgid "Navigation Bar"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: admin_interface/admin.py
 msgid "Related Modal"
-msgstr "مدل‌های مرتبط"
+msgstr "مدلهای مرتبط"
 
 #: admin_interface/admin.py
 msgid "Form Controls"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: admin_interface/admin.py
 msgid "List Filter"
-msgstr "فیلتر‌های لیست"
+msgstr "فیلترهای لیست"
 
 #: admin_interface/admin.py
 msgid "Change Form"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
-msgstr "فعالیت‌های اخیر"
+msgstr "فعالیتهای اخیر"
 
 #: admin_interface/apps.py
 msgid "Admin Interface"
@@ -170,7 +170,7 @@ msgstr "نمایش"
 
 #: admin_interface/models.py
 msgid "background color"
-msgstr "رنگ پس‌زمینه"
+msgstr "رنگ پسزمینه"
 
 #: admin_interface/models.py
 msgid "text color"
@@ -188,7 +188,7 @@ msgstr "رنگ لینک در حالت هاور"
 #, fuzzy
 #| msgid "background color"
 msgid "background selected color"
-msgstr "رنگ پس‌زمینه"
+msgstr "رنگ پسزمینه"
 
 #: admin_interface/models.py
 #, fuzzy
@@ -198,11 +198,15 @@ msgstr "رنگ لینک"
 
 #: admin_interface/models.py
 msgid "rounded corners"
-msgstr "گوشه‌های خمیده"
+msgstr "گوشههای خمیده"
+
+#: admin_interface/models.py
+msgid "link active color"
+msgstr "رنگ فعال پیوند"
 
 #: admin_interface/models.py
 msgid "background hover color"
-msgstr "رنگ پس‌زمینه در حالت هاور"
+msgstr "رنگ پسزمینه در حالت هاور"
 
 #: admin_interface/models.py
 msgid "background opacity"
@@ -254,13 +258,13 @@ msgstr "تم"
 
 #: admin_interface/models.py
 msgid "Themes"
-msgstr "تم‌ها"
+msgstr "تمها"
 
 #: admin_interface/templates/admin/change_list.html
 #, fuzzy
 #| msgid "List Filter"
 msgid "Filter"
-msgstr "فیلتر‌های لیست"
+msgstr "فیلترهای لیست"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html

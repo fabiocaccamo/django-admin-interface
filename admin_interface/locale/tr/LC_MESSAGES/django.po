@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-26 02:56-0600\n"
+"POT-Creation-Date: 2023-04-18 11:06-0500\n"
 "PO-Revision-Date: 2020-01-29 04:53+0300\n"
 "Last-Translator: Ishak Okutan <ishak.oktn@gmail.com>\n"
 "Language-Team: \n"
@@ -204,6 +204,10 @@ msgstr "bağlantı rengi"
 #: admin_interface/models.py
 msgid "rounded corners"
 msgstr "köşeleri ovalleştir"
+
+#: admin_interface/models.py
+msgid "link active color"
+msgstr "bağlantı aktif gelindiğindeki rengi"
 
 #: admin_interface/models.py
 msgid "background hover color"

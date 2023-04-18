@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-26 02:56-0600\n"
+"POT-Creation-Date: 2023-04-18 11:06-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -199,6 +199,10 @@ msgstr "link cor selecionada"
 #: admin_interface/models.py
 msgid "rounded corners"
 msgstr "cantos arredondados"
+
+#: admin_interface/models.py
+msgid "link active color"
+msgstr "cor de ativação do link"
 
 #: admin_interface/models.py
 msgid "background hover color"
