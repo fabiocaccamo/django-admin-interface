@@ -8,7 +8,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
-            model_name="theme", name="related_modal_background_opacity"
+            model_name="theme",
+            name="related_modal_background_opacity",
         ),
         migrations.AddField(
             model_name="theme",

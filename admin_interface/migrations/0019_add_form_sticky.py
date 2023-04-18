@@ -10,11 +10,17 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="theme",
             name="form_pagination_sticky",
-            field=models.BooleanField(default=False, verbose_name="sticky pagination"),
+            field=models.BooleanField(
+                default=False,
+                verbose_name="sticky pagination",
+            ),
         ),
         migrations.AddField(
             model_name="theme",
             name="form_submit_sticky",
-            field=models.BooleanField(default=False, verbose_name="sticky submit"),
+            field=models.BooleanField(
+                default=False,
+                verbose_name="sticky submit",
+            ),
         ),
     ]

@@ -10,6 +10,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="theme",
             name="foldable_apps",
-            field=models.BooleanField(default=True, verbose_name="foldable apps"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="foldable apps",
+            ),
         ),
     ]

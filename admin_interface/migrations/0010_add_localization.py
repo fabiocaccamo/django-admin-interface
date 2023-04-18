@@ -10,12 +10,18 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="theme",
             name="active",
-            field=models.BooleanField(default=True, verbose_name="active"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="active",
+            ),
         ),
         migrations.AlterField(
             model_name="theme",
             name="css",
-            field=models.TextField(blank=True, verbose_name="text color"),
+            field=models.TextField(
+                blank=True,
+                verbose_name="text color",
+            ),
         ),
         migrations.AlterField(
             model_name="theme",
@@ -46,7 +52,9 @@ class Migration(migrations.Migration):
             model_name="theme",
             name="name",
             field=models.CharField(
-                default="Django", max_length=50, verbose_name="name"
+                default="Django",
+                max_length=50,
+                verbose_name="name",
             ),
         ),
         migrations.AlterField(

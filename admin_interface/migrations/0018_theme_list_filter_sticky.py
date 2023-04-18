@@ -10,6 +10,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="theme",
             name="list_filter_sticky",
-            field=models.BooleanField(default=True, verbose_name="sticky position"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="sticky position",
+            ),
         ),
     ]

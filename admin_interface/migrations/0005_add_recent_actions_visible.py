@@ -10,6 +10,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="theme",
             name="recent_actions_visible",
-            field=models.BooleanField(default=True, verbose_name="visible"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="visible",
+            ),
         ),
     ]

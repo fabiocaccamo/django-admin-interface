@@ -10,6 +10,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="theme",
             name="language_chooser_active",
-            field=models.BooleanField(default=True, verbose_name="active"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="active",
+            ),
         ),
     ]

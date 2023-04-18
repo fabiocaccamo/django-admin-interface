@@ -11,7 +11,10 @@ class Migration(migrations.Migration):
             model_name="theme",
             name="name",
             field=models.CharField(
-                default="Django", max_length=50, unique=True, verbose_name="name"
+                default="Django",
+                max_length=50,
+                unique=True,
+                verbose_name="name",
             ),
         ),
     ]

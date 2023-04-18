@@ -11,22 +11,28 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="theme",
             name="list_filter_dropdown",
-            field=models.BooleanField(default=False, verbose_name=b"use dropdown"),
+            field=models.BooleanField(
+                default=False,
+                verbose_name="use dropdown",
+            ),
         ),
         migrations.AddField(
             model_name="theme",
             name="related_modal_active",
-            field=models.BooleanField(default=True, verbose_name=b"active"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="active",
+            ),
         ),
         migrations.AddField(
             model_name="theme",
             name="related_modal_background_color",
             field=colorfield.fields.ColorField(
                 blank=True,
-                default=b"#000000",
-                help_text=b"#000000",
+                default="#000000",
+                help_text="#000000",
                 max_length=10,
-                verbose_name=b"background color",
+                verbose_name="background color",
             ),
         ),
         migrations.AddField(
@@ -34,24 +40,27 @@ class Migration(migrations.Migration):
             name="related_modal_background_opacity",
             field=models.FloatField(
                 choices=[
-                    (0.1, b"10%"),
-                    (0.2, b"20%"),
-                    (0.3, b"30%"),
-                    (0.4, b"40%"),
-                    (0.5, b"50%"),
-                    (0.6, b"60%"),
-                    (0.7, b"70%"),
-                    (0.8, b"80%"),
-                    (0.9, b"90%"),
+                    (0.1, "10%"),
+                    (0.2, "20%"),
+                    (0.3, "30%"),
+                    (0.4, "40%"),
+                    (0.5, "50%"),
+                    (0.6, "60%"),
+                    (0.7, "70%"),
+                    (0.8, "80%"),
+                    (0.9, "90%"),
                 ],
                 default=0.2,
-                help_text=b"20%",
-                verbose_name=b"background opacity",
+                help_text="20%",
+                verbose_name="background opacity",
             ),
         ),
         migrations.AddField(
             model_name="theme",
             name="related_modal_rounded_corners",
-            field=models.BooleanField(default=True, verbose_name=b"rounded corners"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="rounded corners",
+            ),
         ),
     ]

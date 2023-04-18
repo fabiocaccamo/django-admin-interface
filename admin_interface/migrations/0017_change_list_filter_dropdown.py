@@ -10,6 +10,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="theme",
             name="list_filter_dropdown",
-            field=models.BooleanField(default=True, verbose_name="use dropdown"),
+            field=models.BooleanField(
+                default=True,
+                verbose_name="use dropdown",
+            ),
         ),
     ]

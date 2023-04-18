@@ -11,14 +11,18 @@ class Migration(migrations.Migration):
             model_name="theme",
             name="logo_max_height",
             field=models.PositiveSmallIntegerField(
-                blank=True, default=100, verbose_name="max height"
+                blank=True,
+                default=100,
+                verbose_name="max height",
             ),
         ),
         migrations.AddField(
             model_name="theme",
             name="logo_max_width",
             field=models.PositiveSmallIntegerField(
-                blank=True, default=400, verbose_name="max width"
+                blank=True,
+                default=400,
+                verbose_name="max width",
             ),
         ),
     ]

@@ -11,7 +11,8 @@ class Migration(migrations.Migration):
             model_name="theme",
             name="related_modal_close_button_visible",
             field=models.BooleanField(
-                default=True, verbose_name="close button visible"
+                default=True,
+                verbose_name="close button visible",
             ),
         ),
     ]
