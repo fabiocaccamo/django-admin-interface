@@ -41,6 +41,7 @@ classifiers = [
 ]
 dependencies = [
     "django-colorfield >= 0.8.0, < 1.0.0",
+    "python-slugify >= 7.0.0, < 9.0.0",
 ]
 dynamic = ["version"]
 maintainers = [

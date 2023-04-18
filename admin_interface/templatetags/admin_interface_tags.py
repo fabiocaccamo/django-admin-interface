@@ -7,6 +7,7 @@ from django.conf import settings
 from django.contrib.admin.utils import get_fields_from_path
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
+from slugify import slugify
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
 from admin_interface.models import Theme
@@ -172,3 +173,8 @@ def admin_interface_use_changeform_tabs(adminform, inline_forms):
     has_inline_tabs = theme.show_inlines_as_tabs and len(inline_forms) > 0
     has_tabs = has_fieldset_tabs or has_inline_tabs
     return has_tabs
+
+
+@register.filter
+def admin_interface_slugify(name):
+    return slugify(str(name or ""))
