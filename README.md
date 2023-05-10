@@ -27,6 +27,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Language chooser
 - Foldable apps *(accordions in the navigation bar)*
 - [Collapsible fieldsets](https://docs.djangoproject.com/en/4.0/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets) can have their initial state expanded instead of collapsed
+- `NEW` Collapsible inlines
 - `NEW` Tabbed fieldsets and inlines
 - `NEW` List filter removal links
 - `NEW` List filter highlight selected options
