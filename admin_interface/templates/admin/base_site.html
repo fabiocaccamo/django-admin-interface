@@ -135,6 +135,7 @@
 {% include "admin_interface/favicon.html" %}
 {% include "admin_interface/foldable-apps.html" %}
 {% include "admin_interface/related-modal.html" %}
+{% include "admin_interface/collapsible-inlines.html" %}
 {% endblock %}
 
 {% block extrahead %}
@@ -150,6 +151,12 @@ flat-theme admin-interface
 {% if theme.form_pagination_sticky %} sticky-pagination {% endif %}
 {% if theme.list_filter_highlight %} list-filter-highlight {% endif %}
 {% if theme.list_filter_sticky %} list-filter-sticky {% endif %}
+{% if theme.collapsible_stacked_inlines %} collapsible-stacked-inlines
+    {% if theme.collapsible_stacked_inlines_collapsed %} collapsible-stacked-inlines-collapsed {% endif %}
+{% endif %}
+{% if theme.collapsible_tabular_inlines %} collapsible-tabular-inlines
+    {% if theme.collapsible_tabular_inlines_collapsed %} collapsible-tabular-inlines-collapsed {% endif %}
+{% endif %}
 {% endblock %}
 
 {% block branding %}
