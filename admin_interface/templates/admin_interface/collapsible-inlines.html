@@ -1,0 +1,5 @@
+{% load static %}
+
+{% if theme.collapsible_stacked_inlines or theme.collapsible_tabular_inlines %}
+<script type="text/javascript" src="{% static 'admin_interface/collapsible-inlines/collapsible-inlines.js' %}?nocache={{ version_md5_cache }}"></script>
+{% endif %}
