@@ -192,21 +192,21 @@
     color: var(--admin-interface-module-link-hover-color);
 }
 
-.admin-interface fieldset.collapse.collapsed a.collapse-toggle {
-    color: var(--admin-interface-module-link-color);
-}
-
-.admin-interface fieldset.collapse.collapsed a.collapse-toggle:hover,
-.admin-interface fieldset.collapse.collapsed a.collapse-toggle:active {
-    color: var(--admin-interface-module-link-hover-color);
-}
-
-.admin-interface fieldset.collapse a.collapse-toggle {
+.admin-interface fieldset.collapse a.collapse-toggle,
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle,
+.admin-interface .inline-group .inline-related fieldset.module a.collapse-toggle,
+.admin-interface .inline-group .inline-related fieldset.module.collapsed a.collapse-toggle {
     color: var(--admin-interface-module-link-color);
 }
 
 .admin-interface fieldset.collapse a.collapse-toggle:hover,
-.admin-interface fieldset.collapse a.collapse-toggle:active {
+.admin-interface fieldset.collapse a.collapse-toggle:active,
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle:hover,
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle:active,
+.admin-interface .inline-group .inline-related fieldset.module a.collapse-toggle:hover,
+.admin-interface .inline-group .inline-related fieldset.module a.collapse-toggle:active,
+.admin-interface .inline-group .inline-related fieldset.module.collapsed a.collapse-toggle:hover,
+.admin-interface .inline-group .inline-related fieldset.module.collapsed a.collapse-toggle:active {
     color: var(--admin-interface-module-link-hover-color);
 }
 

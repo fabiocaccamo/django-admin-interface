@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-18 11:06-0500\n"
+"POT-Creation-Date: 2023-05-10 18:20-0500\n"
 "PO-Revision-Date: 2018-12-30 19:13-0500\n"
 "Last-Translator: Fabio Caccamo <fabio.caccamo@gmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
@@ -77,6 +77,10 @@ msgstr "Filtro listato"
 
 #: admin_interface/admin.py
 msgid "Change Form"
+msgstr ""
+
+#: admin_interface/admin.py
+msgid "Inlines"
 msgstr ""
 
 #: admin_interface/admin.py
@@ -245,6 +249,22 @@ msgstr ""
 
 #: admin_interface/models.py
 msgid "inlines as tabs"
+msgstr ""
+
+#: admin_interface/models.py
+msgid "collapsible stacked inlines"
+msgstr ""
+
+#: admin_interface/models.py
+msgid "collapsible stacked inlines collapsed"
+msgstr ""
+
+#: admin_interface/models.py
+msgid "collapsible tabular inlines"
+msgstr ""
+
+#: admin_interface/models.py
+msgid "collapsible tabular inlines collapsed"
 msgstr ""
 
 #: admin_interface/models.py

@@ -368,6 +368,23 @@ class Theme(models.Model):
         verbose_name=_("inlines as tabs"),
     )
 
+    collapsible_stacked_inlines = models.BooleanField(
+        default=False,
+        verbose_name=_("collapsible stacked inlines"),
+    )
+    collapsible_stacked_inlines_collapsed = models.BooleanField(
+        default=True,
+        verbose_name=_("collapsible stacked inlines collapsed"),
+    )
+    collapsible_tabular_inlines = models.BooleanField(
+        default=False,
+        verbose_name=_("collapsible tabular inlines"),
+    )
+    collapsible_tabular_inlines_collapsed = models.BooleanField(
+        default=True,
+        verbose_name=_("collapsible tabular inlines collapsed"),
+    )
+
     recent_actions_visible = models.BooleanField(
         default=True,
         verbose_name=_("visible"),
