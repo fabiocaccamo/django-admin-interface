@@ -133,7 +133,13 @@ class ThemeAdmin(admin.ModelAdmin):
                 ),
             },
         ),
-        (_("Navigation Bar"), {"classes": ("wide",), "fields": ("foldable_apps",)}),
+        (
+            _("Navigation Bar"),
+            {
+                "classes": ("wide",),
+                "fields": ("foldable_apps",),
+            },
+        ),
         (
             _("Related Modal"),
             {
@@ -181,7 +187,10 @@ class ThemeAdmin(admin.ModelAdmin):
         ),
         (
             _("Recent Actions"),
-            {"classes": ("wide",), "fields": ("recent_actions_visible",)},
+            {
+                "classes": ("wide",),
+                "fields": ("recent_actions_visible",),
+            },
         ),
     )
 
