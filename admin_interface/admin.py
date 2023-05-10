@@ -186,6 +186,18 @@ class ThemeAdmin(admin.ModelAdmin):
             },
         ),
         (
+            _("Inlines"),
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "collapsible_stacked_inlines",
+                    "collapsible_stacked_inlines_collapsed",
+                    "collapsible_tabular_inlines",
+                    "collapsible_tabular_inlines_collapsed",
+                ),
+            },
+        ),
+        (
             _("Recent Actions"),
             {
                 "classes": ("wide",),
