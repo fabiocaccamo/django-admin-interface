@@ -83,6 +83,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
                 "activation_url": "/i18n/setlang/?next=/pt-br/admin/",
             },
             {
+                "code": "ru",
+                "name": "Русский",
+                "default": False,
+                "active": False,
+                "activation_url": "/i18n/setlang/?next=/ru/admin/",
+            },
+            {
                 "code": "tr",
                 "name": "Türk",
                 "default": False,

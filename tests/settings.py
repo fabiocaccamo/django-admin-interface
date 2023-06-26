@@ -105,6 +105,7 @@ LANGUAGES = (
     ("it", "Italiano"),
     ("pl", "Polski"),
     ("pt-BR", "Português"),
+    ("ru", "Русский"),
     ("tr", "Türk"),
 )
 LANGUAGE_CODE = "en"
