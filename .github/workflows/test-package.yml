@@ -95,7 +95,7 @@ jobs:
 
     - name: Install django
       run: |
-        pip install "Django ~= ${{ matrix.django-version }}"
+        pip install "Django == ${{ matrix.django-version }}.*"
 
     - name: Install requirements
       run: |
