@@ -5,12 +5,14 @@ from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
+import os
 
 from .cache import del_cached_active_theme
 
 
 class ThemeQuerySet(models.QuerySet):
     def get_active(self):
+        DEPLOYMENT_ENV = os.getenv("DEPLOYMENT_ENV")
         objs_active_qs = self.filter(active=True)
         objs_active_ls = list(objs_active_qs)
         objs_active_count = len(objs_active_ls)
@@ -28,6 +30,9 @@ class ThemeQuerySet(models.QuerySet):
         elif objs_active_count > 1:
             obj = objs_active_ls[-1]
             obj.set_active()
+            
+        if DEPLOYMENT_ENV == "PROD":
+            obj.title = f"{obj.title} / PRODUCTION"
 
         return obj
 
