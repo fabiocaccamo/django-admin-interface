@@ -1,3 +1,5 @@
+import os
+
 from colorfield.fields import ColorField
 from django.core.validators import FileExtensionValidator
 from django.db import models
@@ -5,7 +7,6 @@ from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
-import os
 
 from .cache import del_cached_active_theme
 
@@ -30,7 +31,7 @@ class ThemeQuerySet(models.QuerySet):
         elif objs_active_count > 1:
             obj = objs_active_ls[-1]
             obj.set_active()
-            
+
         if DEPLOYMENT_ENV == "PROD":
             obj.title = f"{obj.title} / PRODUCTION"
 
