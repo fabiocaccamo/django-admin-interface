@@ -61,7 +61,7 @@ msgstr "Pulsanti per eliminare"
 
 #: admin_interface/admin.py
 msgid "Navigation Bar"
-msgstr ""
+msgstr "Barra di Navigazione"
 
 #: admin_interface/admin.py
 msgid "Related Modal"
@@ -69,7 +69,7 @@ msgstr "Modale per gli oggetti correlati"
 
 #: admin_interface/admin.py
 msgid "Form Controls"
-msgstr ""
+msgstr "Controlli dei form"
 
 #: admin_interface/admin.py
 msgid "List Filter"
@@ -77,7 +77,7 @@ msgstr "Filtro listato"
 
 #: admin_interface/admin.py
 msgid "Change Form"
-msgstr ""
+msgstr "Form di modifica"
 
 #: admin_interface/admin.py
 msgid "Inlines"
@@ -125,11 +125,11 @@ msgstr "logo"
 
 #: admin_interface/models.py
 msgid "max width"
-msgstr ""
+msgstr "larghezza massima"
 
 #: admin_interface/models.py
 msgid "max height"
-msgstr ""
+msgstr "altezza massima"
 
 #: admin_interface/models.py
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
@@ -237,7 +237,7 @@ msgstr ""
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr ""
+msgstr "links di rimozione rapida dei filtri attivi in alto nella sidebar"
 
 #: admin_interface/models.py
 msgid "foldable apps"
@@ -292,26 +292,26 @@ msgstr "Filtro listato"
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Clear all filters"
-msgstr ""
+msgstr "Cancella tutti i filtri"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "Modifica"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "Visualizza"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "Visualizza sul sito"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "Eliminare?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html
