@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.26.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.26.1) - 2023-09-05
+-   Fix logout and theme buttons style. #246
+-   Add Russian translation. (by [@rustzzdevel](https://github.com/rustzzdevel) in #295)
+-   Update Italian translations.
+-   Update Spanish translations. (by [@smunoz-ml](https://github.com/smunoz-ml) in #307)
+-   Prevent multiple `.collapse-toggle` button.
+
 ## [0.26.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.26.0) - 2023-05-11
 -   Add options for collapsible inlines. #263 (by [@fabiocaccamo](https://github.com/fabiocaccamo) in #282)
 -   Bump requirements.
