@@ -6,17 +6,9 @@ updates:
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 100
-    groups:
-      python-requirements:
-        patterns:
-          - "*"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
     open-pull-requests-limit: 100
-    groups:
-      github-actions:
-        patterns:
-          - "*"
