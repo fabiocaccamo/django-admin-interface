@@ -16,8 +16,8 @@ from admin_interface.models import Theme
 register = template.Library()
 
 
-@register.simple_tag(takes_context=True)
-def get_admin_interface_languages(context):
+@register.inclusion_tag("admin_interface/language_chooser.html", takes_context=True)
+def admin_interface_language_chooser(context):
     if not settings.USE_I18N:
         # i18n disabled
         return None
@@ -25,7 +25,7 @@ def get_admin_interface_languages(context):
         # less than 2 languages
         return None
     try:
-        set_language_url = reverse("set_language")
+        context["set_language_url"] = reverse("set_language")
     except NoReverseMatch:
         # ImproperlyConfigured - must include i18n urls:
         # urlpatterns += [url(r'^i18n/', include('django.conf.urls.i18n')),]
@@ -33,28 +33,16 @@ def get_admin_interface_languages(context):
     request = context.get("request", None)
     if not request:
         return None
+    context["LANGUAGES"] = settings.LANGUAGES
+
     full_path = request.get_full_path()
     admin_nolang_url = re.sub(r"^\/([\w]{2})([\-\_]{1}[\w]{2,4})?\/", "/", full_path)
-    if admin_nolang_url == full_path:
-        # ImproperlyConfigured - must include admin urls using i18n_patterns:
-        # from django.conf.urls.i18n import i18n_patterns
-        # urlpatterns += i18n_patterns(url(r'^admin/', admin.site.urls))
-        return None
-    langs_data = []
+
     default_lang_code = settings.LANGUAGE_CODE
     current_lang_code = translation.get_language() or default_lang_code
-    for language in settings.LANGUAGES:
-        lang_code = language[0].lower()
-        lang_name = language[1].title()
-        lang_data = {
-            "code": lang_code,
-            "name": lang_name,
-            "default": lang_code == default_lang_code,
-            "active": lang_code == current_lang_code,
-            "activation_url": f"{set_language_url}?next=/{lang_code}{admin_nolang_url}",
-        }
-        langs_data.append(lang_data)
-    return langs_data
+    context["LANGUAGE_CODE"] = current_lang_code
+    context["next"] = admin_nolang_url
+    return context
 
 
 @register.simple_tag()

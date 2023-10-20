@@ -186,7 +186,6 @@ flat-theme admin-interface
 {{ block.super }}
 {% get_admin_interface_theme as theme %}
 {% if theme.language_chooser_active %}
-    {% get_admin_interface_languages as languages %}
-    {% include "admin_interface/language_chooser.html" %}
+    {% admin_interface_language_chooser %}
 {% endif %}
 {% endblock %}
