@@ -27,3 +27,15 @@ def check_installed_app(app, max_dj_version=None):
 
 def check_installed_apps():
     check_installed_app("colorfield")
+
+
+def check_locale_middleware():
+    if not settings.USE_I18N or len(settings.LANGUAGES) < 2:
+        # no i18n or less than 2 languages
+        return
+
+    if "django.middleware.locale.LocaleMiddleware" not in settings.MIDDLEWARE:
+        raise ImproperlyConfigured(
+            "'django.middleware.locale.LocaleMiddleware' is required, "
+            "add it to settings.MIDDLEWARE."
+        )

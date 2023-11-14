@@ -11,3 +11,4 @@ class AdminInterfaceConfig(AppConfig):
         from admin_interface import settings
 
         settings.check_installed_apps()
+        settings.check_locale_middleware()
