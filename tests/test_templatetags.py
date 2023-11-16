@@ -56,7 +56,17 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
     )
     def test_admin_interface_language_chooser_without_i18n_url_patterns(self):
         context = Context({"request": self.request_factory.get("/en/admin/")})
-        tag_context = templatetags.admin_interface_language_chooser(context)
+        with self.assertWarnsMessage(UserWarning, "django.conf.urls.i18n"):
+            tag_context = templatetags.admin_interface_language_chooser(context)
+        self.assertEqual(tag_context, None)
+
+    @override_settings(
+        MIDDLEWARE=[],
+    )
+    def test_admin_interface_language_chooser_without_locale_middleware(self):
+        context = Context({"request": self.request_factory.get("/en/admin/")})
+        with self.assertWarnsMessage(UserWarning, "LocaleMiddleware"):
+            tag_context = templatetags.admin_interface_language_chooser(context)
         self.assertEqual(tag_context, None)
 
     @override_settings(
