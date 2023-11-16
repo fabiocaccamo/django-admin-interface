@@ -1,6 +1,7 @@
 import datetime
 import hashlib
 import re
+import warnings
 
 from django import template
 from django.conf import settings
@@ -24,11 +25,21 @@ def admin_interface_language_chooser(context):
     if len(settings.LANGUAGES) < 2:
         # less than 2 languages
         return None
+    if "django.middleware.locale.LocaleMiddleware" not in settings.MIDDLEWARE:
+        warnings.warn(
+            "Language chooser requires 'django.middleware.locale.LocaleMiddleware' "
+            "in your MIDDLEWARE to work.",
+            stacklevel=1,
+        )
+        return None
     try:
         context["set_language_url"] = reverse("set_language")
     except NoReverseMatch:
-        # ImproperlyConfigured - must include i18n urls:
-        # urlpatterns += [url(r'^i18n/', include('django.conf.urls.i18n')),]
+        warnings.warn(
+            "Language chooser requires Django's `set_language` view: "
+            "`urlpatterns += [url(r'^i18n/', include('django.conf.urls.i18n'))]`.",
+            stacklevel=1,
+        )
         return None
     request = context.get("request", None)
     if not request:
