@@ -185,11 +185,13 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         list_filter.choices.return_value = choices
         list_filter.expected_parameters.return_value = ("shape",)
 
-        ctx = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+        context = templatetags.admin_interface_filter_removal_link(
+            changelist, list_filter
+        )
 
-        self.assertEqual(ctx["removal_link"], "?size=small")
-        self.assertEqual(ctx["title"], "Shape filter")
-        self.assertEqual(ctx["selected_value"], "Pointy")
+        self.assertEqual(context["removal_link"], "?size=small")
+        self.assertEqual(context["title"], "Shape filter")
+        self.assertEqual(context["selected_value"], "Pointy")
 
     def test_filter_removal_link_no_display(self):
         params = {"shape": "pointy", "size": "small"}
@@ -200,36 +202,39 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         list_filter.choices.return_value = choices
         list_filter.expected_parameters.return_value = ("shape",)
 
-        ctx = templatetags.admin_interface_filter_removal_link(changelist, list_filter)
+        context = templatetags.admin_interface_filter_removal_link(
+            changelist, list_filter
+        )
 
-        self.assertEqual(ctx["removal_link"], "?size=small")
-        self.assertEqual(ctx["title"], "Shape filter")
-        self.assertEqual(ctx["selected_value"], "...")
+        self.assertEqual(context["removal_link"], "?size=small")
+        self.assertEqual(context["title"], "Shape filter")
+        self.assertEqual(context["selected_value"], "...")
 
     def test_date_hierarchy_removal_link_year(self):
         params = {"shape": "pointy", "last_login__year": 2022}
         changelist = self._get_changelist_mock(params)
         changelist.model._meta.get_field.return_value.verbose_name = "last login"
 
-        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
+        context = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
-        self.assertEqual(ctx["removal_link"], "?shape=pointy")
-        self.assertEqual(ctx["date_label"], "last login")
-        self.assertEqual(ctx["date_value"], date(2022, 1, 1))
+        self.assertEqual(context["removal_link"], "?shape=pointy")
+        self.assertEqual(context["date_label"], "last login")
+        self.assertEqual(context["date_value"], date(2022, 1, 1))
 
     def test_date_hierarchy_removal_link_year_month(self):
         params = {"last_login__year": 2022, "last_login__month": "11"}
         changelist = self._get_changelist_mock(params)
         changelist.model._meta.get_field.return_value.verbose_name = "last login"
-        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
+
+        context = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
-        self.assertEqual(ctx["removal_link"], "?")
-        self.assertEqual(ctx["date_label"], "last login")
-        self.assertEqual(ctx["date_value"], date(2022, 11, 1))
+        self.assertEqual(context["removal_link"], "?")
+        self.assertEqual(context["date_label"], "last login")
+        self.assertEqual(context["date_value"], date(2022, 11, 1))
 
     def test_date_hierarchy_removal_link_year_month_day(self):
         params = {
@@ -241,10 +246,11 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         }
         changelist = self._get_changelist_mock(params)
         changelist.model._meta.get_field.return_value.verbose_name = "last login"
-        ctx = templatetags.admin_interface_date_hierarchy_removal_link(
+
+        context = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
 
-        self.assertEqual(ctx["removal_link"], "?shape=round&size=small")
-        self.assertEqual(ctx["date_label"], "last login")
-        self.assertEqual(ctx["date_value"], date(2022, 11, 30))
+        self.assertEqual(context["removal_link"], "?shape=round&size=small")
+        self.assertEqual(context["date_label"], "last login")
+        self.assertEqual(context["date_value"], date(2022, 11, 30))
