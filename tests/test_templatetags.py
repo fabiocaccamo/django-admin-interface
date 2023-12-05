@@ -159,21 +159,26 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
 
         self.assertEqual(date_field, "last_login")
 
-    def _add_changelist_methods(self, mock, params):
-        def get_query_string(**kwargs):
-            return ChangeList.get_query_string(mock, **kwargs)
+    def _get_changelist_mock(self, params=None):
+        class ChangelistMock(Mock):
+            def __init__(self, params=None, *args, **kwargs):
+                super().__init__(*args, **kwargs)
+                # django < 5.0
+                self.params = params or {}
+                # django >= 5.0
+                self.filter_params = params or {}
 
-        def get_filters_params(**kwargs):
-            return ChangeList.get_filters_params(mock, **kwargs)
+            def get_query_string(self, **kwargs):
+                return ChangeList.get_query_string(self, **kwargs)
 
-        mock.get_query_string = get_query_string
-        mock.get_filters_params = get_filters_params
-        mock.params = params
+            def get_filters_params(self, **kwargs):
+                return ChangeList.get_filters_params(self, **kwargs)
+
+        return ChangelistMock(params=params)
 
     def test_filter_removal_link(self):
-        changelist = Mock()
         params = {"shape": "pointy", "size": "small"}
-        self._add_changelist_methods(changelist, params)
+        changelist = self._get_changelist_mock(params)
         list_filter = Mock()
         list_filter.title = "Shape filter"
         choices = [{"display": "Round"}, {"display": "Pointy", "selected": True}]
@@ -187,9 +192,8 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self.assertEqual(ctx["selected_value"], "Pointy")
 
     def test_filter_removal_link_no_display(self):
-        changelist = Mock()
         params = {"shape": "pointy", "size": "small"}
-        self._add_changelist_methods(changelist, params)
+        changelist = self._get_changelist_mock(params)
         list_filter = Mock()
         list_filter.title = "Shape filter"
         choices = [{"other": "Round"}, {"other": "Pointy", "selected": True}]
@@ -203,9 +207,8 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self.assertEqual(ctx["selected_value"], "...")
 
     def test_date_hierarchy_removal_link_year(self):
-        changelist = Mock()
         params = {"shape": "pointy", "last_login__year": 2022}
-        self._add_changelist_methods(changelist, params)
+        changelist = self._get_changelist_mock(params)
         changelist.model._meta.get_field.return_value.verbose_name = "last login"
 
         ctx = templatetags.admin_interface_date_hierarchy_removal_link(
@@ -217,11 +220,9 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self.assertEqual(ctx["date_value"], date(2022, 1, 1))
 
     def test_date_hierarchy_removal_link_year_month(self):
-        changelist = Mock()
-        changelist.model._meta.get_field.return_value.verbose_name = "last login"
         params = {"last_login__year": 2022, "last_login__month": "11"}
-        self._add_changelist_methods(changelist, params)
-
+        changelist = self._get_changelist_mock(params)
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
         ctx = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
@@ -231,8 +232,6 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self.assertEqual(ctx["date_value"], date(2022, 11, 1))
 
     def test_date_hierarchy_removal_link_year_month_day(self):
-        changelist = Mock()
-        changelist.model._meta.get_field.return_value.verbose_name = "last login"
         params = {
             "last_login__year": 2022,
             "last_login__month": "11",
@@ -240,8 +239,8 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             "shape": "round",
             "size": "small",
         }
-        self._add_changelist_methods(changelist, params)
-
+        changelist = self._get_changelist_mock(params)
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
         ctx = templatetags.admin_interface_date_hierarchy_removal_link(
             changelist, "last_login"
         )
