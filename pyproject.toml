@@ -46,7 +46,6 @@ dependencies = [
     "python-slugify >= 7.0.0, < 9.0.0",
 ]
 dynamic = ["version"]
-license = "MIT"
 maintainers = [
     { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
 ]
