@@ -1,18 +1,15 @@
 {% load admin_interface_tags %}
 
-{% if languages %}
+{% if set_language_url %}
 <div class="language-chooser {% if theme.language_chooser_control == 'minimal-select' %}minimal {% endif %}">
-    {% for language in languages %}
-    <form class="language-chooser-hidden-form" id="language-chooser-hidden-form-{{ language.code }}" action="{{ language.activation_url }}" method="POST">
+    <form class="language-chooser-select-form" action="{{ set_language_url }}" method="POST">
         {% csrf_token %}
-        <input name="language" type="hidden" value="{{ language.code }}">
-    </form>
-    {% endfor %}
-    <form class="language-chooser-select-form">
-        {% csrf_token %}
-        <select name="language" onchange="document.getElementById(String('language-chooser-hidden-form-' + this.value)).submit();">
-            {% for language in languages %}
-            <option value="{{ language.code }}" {% if language.active %}selected{% endif %}>{% if theme.language_chooser_display == 'code' %}{{ language.code|upper }}{% elif theme.language_chooser_display == 'name' %}{{ language.name }}{% endif %}</option>
+        <input type="hidden" name="next" value="{{ next }}">
+        <select name="language" onchange="this.form.submit();">
+            {% for code, language in LANGUAGES %}
+            <option value="{{ code }}" {% if code == LANGUAGE_CODE %}selected{% endif %}>
+                {% if theme.language_chooser_display == 'code' %}{{ code|upper }}{% elif theme.language_chooser_display == 'name' %}{{ language }}{% endif %}
+            </option>
             {% endfor %}
         </select>
     </form>
