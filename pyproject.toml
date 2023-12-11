@@ -84,9 +84,6 @@ exclude = '''
 )/
 '''
 
-[tool.isort]
-profile = "black"
-
 [tool.ruff]
 ignore = []
 line-length = 88
