@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # environment: release
+    permissions:
+      id-token: write
 
     steps:
       - name: Checkout
@@ -38,5 +41,5 @@ jobs:
       - name: Publish on PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages_dir: dist/
-          password: ${{ secrets.WORKFLOWS_PUBLISH_TO_PYPI_TOKEN }}
+          packages-dir: dist/
+          # password: ${{ secrets.WORKFLOWS_PUBLISH_TO_PYPI_TOKEN }}
