@@ -2,8 +2,7 @@
 <html>
   <head><title>{% trans 'Popup closing...' %}</title></head>
   <body>
-    <script type="text/javascript"
-            id="django-admin-popup-response-constants"
+    <script id="django-admin-popup-response-constants"
             src="{% static "admin/js/popup_response.js" %}"
             {% if popup_response_data %}
             data-popup-response="{{ popup_response_data }}"
