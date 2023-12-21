@@ -1,0 +1,3 @@
+.admin-interface textarea.tinymce ~ p.help {
+    margin-top:5px !important;
+}

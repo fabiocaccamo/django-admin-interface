@@ -98,25 +98,22 @@
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/related-modal.css' %}?v={{ version_md5_cache }}">
     <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/streamfield.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/jquery.ui.tabs.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/modeltranslation.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/sorl-thumbnail.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/ckeditor.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/tinymce.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/json-widget.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/import-export.css' %}?v={{ version_md5_cache }}">
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/rtl.css' %}?v={{ version_md5_cache }}">
     <link rel="stylesheet" type="text/css"
           href="{% static 'admin_interface/css/tabbed-changeform.css' %}?v={{ version_md5_cache }}">
+
+    <!-- third-party packages compatibility / style optimizations -->
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/ckeditor.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/import-export.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/json-widget.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/modeltranslation.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/rangefilter.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/sorl-thumbnail.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/streamfield.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/tinymce.css' %}?v={{ version_md5_cache }}">
+    <!-- end third-party packages compatibility / style optimizations -->
 
 {% if current_lang == 'fa' %}
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.2/dist/font-face.css">

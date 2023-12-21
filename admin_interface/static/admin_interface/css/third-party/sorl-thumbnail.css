@@ -1,0 +1,67 @@
+/*
+sorl-thumbnail - improved AdminImageMixin widget layout
+https://github.com/mariocesar/sorl-thumbnail
+*/
+
+.admin-interface a.thumbnail + a {
+    font-weight: normal;
+}
+
+.admin-interface a.thumbnail + a + input[type="checkbox"] {
+    margin: 10px 0px 10px 18px;
+}
+
+@media (max-width: 767px){
+    .admin-interface a.thumbnail + a {
+        display: block;
+        margin-top: 3px;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+    .admin-interface a.thumbnail + a + input[type="checkbox"]  {
+        margin: 15px 0;
+    }
+}
+
+.admin-interface a.thumbnail ~ label {
+    color: #333;
+    font-size: 11px;
+    display: inline;
+    float: none;
+    margin-left: 2px;
+}
+
+.admin-interface.change-form div[style="float:left"] {
+    font-size: 11px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 767px){
+    .admin-interface.change-form div[style="float:left"] {
+        font-size: 12px;
+        width: 100%;
+    }
+}
+
+.admin-interface .aligned .form-row a.thumbnail ~ input[type="file"] {
+    margin-top: 0px;
+}
+
+@media (max-width:767px){
+    .admin-interface .aligned .form-row a.thumbnail ~ input[type="file"] {
+        width: auto;
+        padding: 0px;
+        display: block;
+        margin-top: 3px;
+    }
+
+    .admin-interface div[style="float:left"] {
+        margin-bottom: 0px;
+    }
+
+    .admin-interface div[style="float:left"] + div.help {
+        margin-top: 0px !important;
+    }
+}

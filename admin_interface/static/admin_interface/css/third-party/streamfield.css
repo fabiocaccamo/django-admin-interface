@@ -1,0 +1,200 @@
+/*
+django-streamfield support
+https://github.com/raagin/django-streamfield/
+*/
+
+.admin-interface .form-row.field-stream {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.admin-interface .form-row.field-stream label[for=id_stream] {
+    display: none;
+}
+
+.admin-interface .streamfield_app {
+    clear: both;
+    width: 100%;
+}
+
+.admin-interface .streamfield_app .stream-help-text {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    clear: both;
+}
+
+.admin-interface .streamfield_app .stream-help-text .stream-help-text__title {
+    align-self: flex-end;
+    user-select: none;
+    padding: 8px;
+    padding-right: 0;
+    color: var(--admin-interface-generic-link-color);
+}
+
+.admin-interface .streamfield_app .stream-help-text .stream-help-text__title:hover {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface .streamfield_app .stream-help-text .stream-help-text__content {
+    background: var(--admin-interface-module-background-selected-color);
+    border-radius: var(--admin-interface-module-border-radius);
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.admin-interface .streamfield_app .stream-help-text .stream-help-text__content > ul {
+    margin: 0;
+    padding: 0;
+}
+
+.admin-interface .streamfield_app .collapse-handler {
+    user-select: none;
+    padding: 8px;
+    padding-right: 0;
+    margin: 0 0 5px 0;
+    color: var(--admin-interface-generic-link-color);
+    text-decoration: none;
+}
+
+.admin-interface .streamfield_app .collapse-handler:hover {
+    color: var(--admin-interface-generic-link-hover-color);
+    text-decoration: none;
+}
+
+.admin-interface .streamfield_app .stream-model-block {
+    position: relative;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--admin-interface-module-border-radius);
+    overflow: hidden;
+}
+
+.admin-interface .streamfield_app .stream-model-block,
+.admin-interface .streamfield_app .streamfield-models.collapsed .stream-model-block {
+    margin-bottom: 10px;
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title span {
+    font-size: 18px;
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle {
+    position: static;
+    right: 0;
+    top: 0;
+    color: var(--admin-interface-generic-link-color);
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle:hover {
+    color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle .block-move,
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle .block-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-weight: normal;
+    background: none;
+    flex-shrink: 0;
+    color: inherit;
+    font-size: 16px;
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle .block-move {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle .block-move:before {
+    content: "↕";
+
+    display: block;
+}
+
+.admin-interface .streamfield_app .stream-model-block .streamblock__block__title .streamblock__block-handle .block-delete:before {
+    content: "×";
+    display: block;
+    font-size: 18px;
+}
+
+.admin-interface .streamfield_app .block-fields > div {
+    margin-bottom: 15px;
+}
+
+.admin-interface .streamfield_app .stream-model-block .stream-model-block__content {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.admin-interface .streamfield_app .stream-model-block .stream-model-block__content.no-subblocks.abstract-block  {
+    display: none;
+}
+
+.admin-interface .streamfield_app .stream-insert-new-block {
+    margin-bottom: 20px;
+}
+
+.admin-interface .streamfield_app .stream-insert-new-block .add-new-block-button {
+    color: var(--admin-interface-generic-link-color);
+    text-decoration: none;
+}
+
+.admin-interface .streamfield_app .stream-insert-new-block .add-new-block-button:hover {
+    color: var(--admin-interface-generic-link-hover-color);
+    text-decoration: none;
+}
+
+.admin-interface .streamfield_app .stream-insert-new-block ul {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 0;
+    user-select: none;
+}
+
+.admin-interface .streamfield_app .stream-insert-new-block ul li {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-interface .streamfield_app .stream-btn {
+    font-weight: normal;
+    text-decoration: none;
+    background-color: var(--admin-interface-generic-link-color);
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.admin-interface .streamfield_app .stream-btn:hover {
+    text-decoration: none;
+    background-color: var(--admin-interface-generic-link-hover-color);
+}
+
+.admin-interface .streamfield_app .stream-insert-new-block ul li .stream-btn {
+    margin-top: 5px;
+    margin-left: 5px;
+}

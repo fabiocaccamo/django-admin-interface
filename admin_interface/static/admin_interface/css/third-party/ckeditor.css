@@ -1,0 +1,126 @@
+/*
+ckeditor + light theme
+https://github.com/Ikimea/ckeditor-light-theme
+*/
+
+.admin-interface .cke {
+    border: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.admin-interface .cke_inner,
+.admin-interface .cke_wysiwyg_frame {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.admin-interface .cke_inner {
+    border: 1px solid #CCCCCC;
+}
+
+.admin-interface .cke_chrome {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.admin-interface .cke_top {
+    background: #f8f8f8;
+    border-top: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid #EEEEEE;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.admin-interface .cke_toolgroup {
+    background: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.admin-interface .cke_bottom {
+    background: #f8f8f8;
+    border-top: 1px solid #EEEEEE;
+
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.admin-interface .cke_source {
+    padding: 13px 15px;
+    box-sizing: border-box;
+}
+
+.admin-interface a.cke_button,
+.admin-interface a.cke_button:active,
+.admin-interface a.cke_button:hover,
+.admin-interface a.cke_button:focus {
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    background-image: none;
+    border-radius: 4px;
+    border: none;
+}
+
+.admin-interface a.cke_button:active,
+.admin-interface a.cke_button:hover,
+.admin-interface a.cke_button:focus {
+    background-color: #E8E8E8 !important;
+}
+
+.admin-interface a.cke_button.cke_button_on {
+    background-color: #CCCCCC !important;
+}
+
+.admin-interface a.cke_button.cke_button_disabled {
+    background-color: transparent !important;
+}
+
+.admin-interface .cke_resizer {
+    border-color: transparent #666666 transparent transparent;
+}
+
+@media (max-width: 767px){
+
+    .admin-interface .django-ckeditor-widget,
+    .admin-interface .cke {
+        width: 100% !important;
+    }
+
+    .admin-interface .cke_top {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .admin-interface .cke_toolbar {
+        height: auto;
+    }
+
+    .admin-interface .cke_contents {
+        height: auto;
+    }
+
+    .admin-interface .tabular .django-ckeditor-widget,
+    .admin-interface .tabular .cke {
+        width: 400px !important;
+    }
+
+    .admin-interface .tabular .cke_contents {
+        height: 90px !important;
+    }
+}
