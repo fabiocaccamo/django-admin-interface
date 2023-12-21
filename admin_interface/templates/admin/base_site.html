@@ -139,7 +139,7 @@
 
 {% block bodyclass %}
 {% get_admin_interface_theme as theme %}
-flat-theme admin-interface
+admin-interface
 {% if theme.name %} {{ theme.name|slugify }}-theme {% endif %}
 {% if theme.foldable_apps %} foldable-apps {% endif %}
 {% if theme.form_submit_sticky %} sticky-submit {% endif %}
