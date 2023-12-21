@@ -1,0 +1,95 @@
+/* sticky pagination */
+
+.admin-interface.sticky-pagination.change-list #content-main {
+    padding-bottom: 4.375rem;
+}
+
+.admin-interface.sticky-pagination.change-list .paginator {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 40;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 0;
+    border-top: 1px solid #EEEEEE !important;
+    border-bottom: none;
+    margin: 0;
+}
+
+.admin-interface.sticky-pagination.change-list.popup .paginator {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media (min-width:768px) {
+    .admin-interface.sticky-pagination.change-list:not(.popup) .paginator {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width:1024px) {
+    .admin-interface.sticky-pagination.change-list:not(.popup) .paginator {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (min-width:1280px) {
+    .admin-interface.sticky-pagination.change-list:not(.popup) #main.shifted > #nav-sidebar + .content .paginator {
+        width: calc(100% - 360px);
+    }
+}
+
+/* sticky submit */
+
+@media (min-width:768px) {
+    .admin-interface.sticky-submit.change-form #content-main {
+        padding-bottom: 4.375rem;
+    }
+
+    .admin-interface.sticky-submit.change-form .submit-row:last-of-type {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 40;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        border-radius: 0;
+        border-top: 1px solid #EEEEEE;
+        border-bottom: none !important;
+        margin: 0;
+    }
+
+    .admin-interface.sticky-submit.change-form.popup .submit-row:last-of-type {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .admin-interface.sticky-submit.change-form:not(.popup) .submit-row:last-of-type {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width:1024px) {
+    .admin-interface.sticky-submit.change-form:not(.popup) .submit-row:last-of-type {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media (min-width:1280px) {
+    .admin-interface.sticky-submit.change-form:not(.popup) #main.shifted > #nav-sidebar + .content .submit-row:last-of-type {
+        width: calc(100% - 359px);
+    }
+}
