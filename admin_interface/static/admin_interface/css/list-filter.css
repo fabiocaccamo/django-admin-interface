@@ -1,0 +1,28 @@
+.admin-interface .module.filtered h2 {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.admin-interface .module.filtered #changelist-filter {
+    min-width: 240px;
+}
+
+@media (max-width: 1024px) {
+    .admin-interface .module.filtered #changelist-filter {
+        min-width: 200px;
+    }
+}
+
+.admin-interface .module.filtered #changelist-filter h2 {
+    font-size: 11px;
+    padding: 10px 15px;
+}
+
+.admin-interface .module.filtered #changelist-filter h2 + h3 {
+    margin-top: 0px;
+}
+
+.admin-interface .module.filtered #changelist-filter h3 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}

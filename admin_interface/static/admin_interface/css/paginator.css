@@ -1,0 +1,33 @@
+.admin-interface #changelist .paginator {
+    margin-top: -1px; /* merge 2 borders into 1 */
+    line-height: 1.5em;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.admin-interface .paginator a,
+.admin-interface .paginator a:link,
+.admin-interface .paginator a:visited,
+.admin-interface .paginator .this-page {
+    padding: 7px 12px;
+}
+
+.admin-interface .paginator a,
+.admin-interface .paginator .this-page {
+    margin-left: 0px;
+}
+
+.admin-interface .paginator .this-page,
+.admin-interface .paginator a.end {
+    margin-right: 25px;
+}
+
+.admin-interface .paginator .this-page + a:not(.showall)  {
+    margin-left: -25px;
+}
+
+body.admin-interface .paginator a.showall,
+body.admin-interface .paginator a.showall:link,
+body.admin-interface .paginator a.showall:visited {
+    margin-left: 20px;
+}

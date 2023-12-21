@@ -1,0 +1,51 @@
+.admin-interface .file-thumbnail > a {
+    display: inline-block;
+}
+
+.admin-interface .aligned p.file-upload {
+    display: table;
+}
+
+.admin-interface form .form-row p.file-upload > a {
+    margin-right: 20px;
+}
+
+.admin-interface form .form-row p.file-upload .clearable-file-input {
+    display: inline-block;
+}
+
+.admin-interface form .form-row p.file-upload .clearable-file-input label {
+    padding-bottom: 0px;
+    margin-left: 5px;
+}
+
+.admin-interface form .form-row p.file-upload > input[type="file"] {
+    margin-top: 0px;
+}
+
+@media (max-width:767px){
+
+    .admin-interface form .form-row p.file-upload {
+        width: 100%;
+    }
+
+    .admin-interface form .form-row p.file-upload > a {
+        margin-right: 0px;
+        display: block;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    .admin-interface form .form-row p.file-upload .clearable-file-input {
+        display: block;
+        margin-top: 10px;
+        margin-left: 0;
+        margin-bottom: -10px;
+    }
+
+    .admin-interface form .form-row p.file-upload > input[type="file"] {
+        display: block;
+        width: auto;
+        padding: 0px;
+    }
+}

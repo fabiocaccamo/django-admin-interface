@@ -42,6 +42,10 @@
     }
 }
 
+.admin-interface {
+    overflow-x: hidden;
+}
+
 .admin-interface #header {
     background: var(--admin-interface-header-background-color);
     color: var(--admin-interface-header-text-color);

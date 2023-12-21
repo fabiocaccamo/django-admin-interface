@@ -1,0 +1,14 @@
+.admin-interface fieldset.collapse {
+    border: 1px solid transparent;
+}
+
+.admin-interface fieldset.collapse.collapsed a.collapse-toggle,
+.admin-interface fieldset.collapse a.collapse-toggle,
+.admin-interface .inline-group .inline-related fieldset.module a.collapse-toggle,
+.admin-interface .inline-group .inline-related fieldset.module.collapsed a.collapse-toggle {
+    font-weight: normal;
+    text-transform: lowercase;
+    font-size: 12px;
+    text-decoration: underline;
+    padding: 0 1px;
+}

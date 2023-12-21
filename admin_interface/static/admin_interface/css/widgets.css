@@ -1,0 +1,102 @@
+/* fix generic flex container */
+.admin-interface .flex-container {
+    width: 100%;
+}
+.admin-interface .flex-container.checkbox-row {
+    align-items: center;
+}
+.admin-interface .flex-container.checkbox-row label.vCheckboxLabel {
+    margin-top: 0 !important;
+    padding-left: 5px !important;
+    padding-bottom: 0;
+}
+/* end-fix */
+
+/* fixed time widget header border radius */
+.admin-interface .clockbox.module h2 {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+/* end-fix */
+
+/* fixed related widget and select2 */
+/* begin fix issue #10 - Related widget broken in long tabular inline */
+.admin-interface .related-widget-wrapper {
+    white-space: nowrap;
+}
+/* end fix */
+
+.admin-interface .related-widget-wrapper select + .related-widget-wrapper-link,
+.admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
+    margin-left: 12px !important;
+}
+
+
+/* improve responsive selector */
+
+/* fix [stacked, not-stacked] equalize horizontal and vertical select padding for selector */
+.admin-interface .selector .selector-available select,
+.admin-interface .selector .selector-chosen select {
+    padding: 7px 10px;
+    display: block;
+}
+
+/* fix [stacked, not-stacked] select options text overflow */
+.admin-interface .selector .selector-available select option,
+.admin-interface .selector .selector-chosen select option {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* fix [not-stacked] equalize selectors height by adding the height of the .selector-available filter-bar */
+.admin-interface .selector:not(.stacked) .selector-chosen select {
+    height: calc(46px + 17.2em) !important;
+}
+
+@media (max-width: 767px) {
+    /* fixed responsive widgets */
+    .admin-interface .aligned.collapsed .form-row {
+        display: none;
+    }
+
+    .admin-interface .aligned .form-row > div {
+        display: flex;
+        width: 100%;
+        max-width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .admin-interface .aligned .form-row .help {
+        margin-left: 0;
+    }
+
+    .admin-interface .aligned .form-row .checkbox-row label {
+        margin: 10px 0 0 0;
+        padding: 0;
+    }
+
+    .admin-interface .aligned .form-row input[type="file"],
+    .admin-interface .aligned .form-row input[type="text"],
+    .admin-interface .aligned .form-row input[type="email"] {
+        width: 100%;
+    }
+
+    /* fix textarea horizontal scroll on Firefox */
+    .admin-interface .aligned .form-row textarea {
+        width: 100% !important;
+        flex: 0 1 auto;
+    }
+
+    .admin-interface .aligned .form-row .datetime input[type="text"] {
+        width: 50%;
+    }
+
+    .admin-interface .aligned .form-row span + .file-upload {
+        margin-top: 10px;
+    }
+
+    .admin-interface .aligned .form-row .file-upload input[type="file"] {
+        margin-top: 5px;
+    }
+}

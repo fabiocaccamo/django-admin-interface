@@ -1,0 +1,12 @@
+/* begin fix lateral padding to align text with field labels */
+.admin-interface .module h2,
+.admin-interface.dashboard .module caption,
+.admin-interface.dashboard .module th,
+.admin-interface .module.filtered h2,
+.admin-interface .inline-group h2,
+.admin-interface #nav-sidebar .module caption,
+.admin-interface #nav-sidebar .module th {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* end fix */

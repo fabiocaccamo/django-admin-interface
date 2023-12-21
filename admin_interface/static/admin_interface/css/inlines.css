@@ -1,0 +1,105 @@
+/* begin fix help text icon on newline */
+.admin-interface .inline-group thead th {
+    white-space:nowrap;
+}
+
+.admin-interface .inline-group thead th img {
+    vertical-align: -2px;
+    margin-left: 5px;
+}
+
+.admin-interface .inline-group .inlinechangelink {
+    margin-left: 10px;
+}
+
+.admin-interface .inline-group .inline-related.tabular .inlinechangelink {
+    background-size: contain;
+}
+/* end fix */
+
+/* begin fix restrict tabular-inline horizontal-scroll to inline-group instead of whole page */
+.admin-interface .inline-group[data-inline-type="tabular"] {
+    overflow-x: auto;
+}
+/* end fix */
+
+/* begin fix stacked-inline margin-bottom in responsive small viewport */
+.admin-interface .inline-group[data-inline-type="stacked"] .module {
+    margin-bottom: 0px;
+}
+/* end fix */
+
+/* begin fix tabular inlines horizontal scroll */
+.admin-interface .inline-related.tabular {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.admin-interface .inline-related.tabular fieldset.module {
+    display: contents;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+}
+.admin-interface .inline-related.tabular fieldset.module h2 {
+    position: sticky;
+    left: 0;
+}
+.admin-interface .inline-related.tabular fieldset.module table {
+    scrollbar-width: thin;
+}
+.admin-interface .inline-related.tabular fieldset.module table tbody tr {
+    position: relative;
+}
+/* end fix */
+
+.admin-interface .inline-related h3 {
+    padding: 6px 10px;
+}
+
+/* begin fix issue #12 - Inlines bad delete buttons alignement */
+.admin-interface .inline-group .tabular thead th:last-child:not([class]):not([style]) {
+    text-align: right;
+}
+
+.admin-interface .inline-group .tabular tr td {
+    vertical-align: top;
+}
+
+.admin-interface .inline-group .tabular tr td.delete {
+    text-align: right;
+    padding-right: 15px;
+    vertical-align: top;
+}
+
+.admin-interface .inline-group .tabular tr td input[type="checkbox"] {
+    margin: 7px 0px;
+}
+
+.admin-interface .inline-group .tabular tr td.delete a.inline-deletelink {
+    margin-top: 4px;
+    overflow: hidden;
+    text-indent: 9999px;
+}
+/* end fix */
+
+/* begin fix remove button at the end od dynamically added inline rows */
+.admin-interface .inline-group .tabular tr td:not(.delete) * + div:has(> a.inline-deletelink) {
+    display: inline-block;
+    margin-bottom: -3px;
+    margin-left: 10px;
+}
+/* end fix */
+
+/* begin fix issue #13 - Datetime widget broken in long inlines */
+.admin-interface .inline-group .inline-related p.datetime {
+    white-space: nowrap;
+}
+/* end fix */
+
+/* begin fix inline horizontal scroll caused by checkbox-row */
+@media (max-width:767px){
+    .admin-interface form .form-row > div.checkbox-row {
+        width: 100%;
+    }
+}
+/* end fix */

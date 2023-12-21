@@ -1,0 +1,78 @@
+/* fix nav-sidebar (added in django 3.1.0) */
+.admin-interface #toggle-nav-sidebar {
+    top: 10px;
+    left: 0;
+    z-index: 20;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 45px;
+    margin-top: 10px;
+    margin-right: -30px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    border: 1px solid #eaeaea;
+    border-left: none;
+    outline: none;
+    -webkit-box-shadow: 4px 4px 8px -4px #DBDBDB;
+    -moz-box-shadow: 4px 4px 8px -4px #DBDBDB;
+    box-shadow: 4px 4px 8px -4px #DBDBDB;
+    /*transition: left .3s;*/
+}
+
+.admin-interface .toggle-nav-sidebar::before {
+    margin-top: -2px;
+}
+
+.admin-interface .main > #nav-sidebar + .content,
+.admin-interface .main.shifted > #nav-sidebar + .content {
+    max-width: 100%;
+}
+
+/* hide nav-sidebar below 1280px to prevent horizontal overflow issues */
+@media (max-width:1279px) {
+    .admin-interface #nav-sidebar,
+    .admin-interface #toggle-nav-sidebar {
+        display: none;
+    }
+}
+
+.admin-interface #nav-sidebar {
+    flex: 0 0 360px;
+    left: -360px;
+    margin-left: -360px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 40px 40px 40px 40px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    scrollbar-width: thin;
+    /*transition: left .3s, margin-left .3s;*/
+}
+
+.admin-interface #nav-filter {
+    background-color: transparent;
+    border-radius: 4px;
+    height: 30px;
+    margin: 0 0 30px 0;
+    padding: 5px 6px;
+    outline-width: initial;
+}
+
+@media (min-width:1280px) {
+    .admin-interface #main.shifted > #toggle-nav-sidebar {
+        left: 359px;
+    }
+    .admin-interface #main.shifted > #nav-sidebar {
+        left: 0px;
+        margin-left: 0;
+    }
+    .admin-interface #main:not(.shifted) > .content {
+        max-width: 100%;
+    }
+    .admin-interface.change-list:not(.popup) #main.shifted > #nav-sidebar + .content,
+    .admin-interface.change-form:not(.popup) #main.shifted > #nav-sidebar + .content {
+        max-width: calc(100% - 360px);
+    }
+}

@@ -1,0 +1,43 @@
+@media (min-width: 1024px) {
+    .admin-interface #changelist .actions .button,
+    .admin-interface #changelist .actions .action-counter {
+        margin-left: 8px;
+    }
+}
+
+.admin-interface #changelist-form .results {
+    scrollbar-width: thin;
+}
+
+/* fix searchbar overriden padding */
+.admin-interface #changelist #changelist-search #searchbar {
+    padding: 2px 5px 3px 5px;
+}
+
+@media (min-width: 1024px) {
+    .admin-interface #changelist #changelist-search #searchbar,
+    .admin-interface #changelist #changelist-search input[type="submit"],
+    .admin-interface #changelist #changelist-search .quiet {
+        margin-left: 8px;
+    }
+    .admin-interface #changelist #changelist-search label img {
+        vertical-align: text-top;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .admin-interface #changelist #toolbar {
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+    /* fixed changelist search size when there are search results and .quiet is visible */
+    .admin-interface #changelist-search label img {
+        margin-top: 2px;
+    }
+    .admin-interface #changelist-search .quiet {
+        margin: 0 0 0 10px;
+        align-self: center;
+        flex-basis: content;
+    }
+}

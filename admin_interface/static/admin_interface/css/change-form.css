@@ -1,0 +1,9 @@
+@media (min-width: 768px) {
+    .admin-interface .submit-row {
+        flex-direction: row-reverse;
+    }
+    .admin-interface .submit-row a.deletelink {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}

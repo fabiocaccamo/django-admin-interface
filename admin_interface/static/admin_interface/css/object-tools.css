@@ -1,0 +1,10 @@
+/* top-right buttons color on hover -> just a lighten grey */
+.admin-interface .object-tools a {
+    color: #FFFFFF;
+}
+.admin-interface .object-tools a:focus,
+.admin-interface .object-tools a:hover,
+.admin-interface .object-tools li:focus a,
+.admin-interface .object-tools li:hover a {
+    background-color: #AAAAAA;
+}

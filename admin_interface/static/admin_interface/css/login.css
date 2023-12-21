@@ -1,0 +1,65 @@
+.admin-interface.login #container {
+    width: 100%;
+    max-width: 360px;
+    margin: 15px auto;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.admin-interface.login #content {
+    padding: 15px 30px 30px 30px;
+}
+
+@media (min-width:768px){
+    .admin-interface.login #container {
+        margin: 90px auto;
+    }
+}
+
+.admin-interface.login #header {
+    min-height: auto;
+    padding: 10px 30px;
+    line-height: 30px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.admin-interface.login #header #branding h1 {
+    margin-right:0;
+}
+
+.admin-interface.login #header #branding h1 img.logo {
+    margin-right: 0;
+}
+
+.admin-interface.login #header #branding h1 img.logo+span {
+    display: block;
+}
+
+.admin-interface.login #login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-interface.login .submit-row {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 0;
+    padding-left: 0;
+    text-align: right;
+}
+
+.admin-interface.login .submit-row label {
+    display: none;
+}
+
+.admin-interface.login .submit-row input[type="submit"] {
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.admin-interface.login #footer {
+    display: none;
+}

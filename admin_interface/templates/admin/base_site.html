@@ -79,28 +79,29 @@
         {% endif %}
         }
     </style>
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/admin-interface.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/admin-interface-fix.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/form-controls.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/language-chooser.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/list-filter-dropdown.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/rangefilter.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/admin-interface.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/changelist.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/change-form.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/fieldsets.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/file-upload.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/header.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/inlines.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/jquery.ui.tabs.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/language-chooser.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/list-filter.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/list-filter-dropdown.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/login.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/modules.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/nav-sidebar.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/paginator.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/object-tools.css' %}?v={{ version_md5_cache }}">
     {% if not theme.recent_actions_visible %}
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/recent-actions.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/recent-actions.css' %}?v={{ version_md5_cache }}">
     {% endif %}
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/jquery.ui.tabs.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/rtl.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'admin_interface/css/tabbed-changeform.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/rtl.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/sticky-form-controls.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/tabbed-changeform.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/widgets.css' %}?v={{ version_md5_cache }}">
 
     <!-- third-party packages compatibility / style optimizations -->
     <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/ckeditor.css' %}?v={{ version_md5_cache }}">
