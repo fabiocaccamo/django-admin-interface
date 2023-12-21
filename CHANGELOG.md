@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.0) - 2023-12-21
+-   [html] Remove old `flat-theme` body class.
+-   [html] Remove `type="text/css"` and `type="text/javascript"` attributes.
+-   [css] Fix filter input fields collapsing on different layouts. #338
+-   [css] Fix paginator buttons height.
+-   [css] Fix `foldable-apps` +/- button vertical alignment.
+-   [css] Split `admin-interface-fix.css` CSS file into multiple files for easier debugging.
+-   [css] Rename `form-controls.css` to `sticky-form-controls.css`.
+-   [css] Move third-party compatibility CSS files to a `third-party` folder.
+-   [css] Move `related-modal.css` to related-modal plugin folder.
+-   [third-party] Update compatibility with `django-streamfield`.
+-   [ci] Replace `Black` and `isort` with `Ruff-format`.
+-   [ci] Bump `pre-commit` hooks.
+
 ## [0.27.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.27.0) - 2023-12-05
 -   Add `Python 3.12` support.
 -   Add `Django 5.0` support.
