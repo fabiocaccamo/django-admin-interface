@@ -2,7 +2,17 @@
     .admin-interface .submit-row {
         flex-direction: row-reverse;
     }
+    .admin-interface .submit-row input[name="_save"] {
+        order: 1;
+    }
+    .admin-interface .submit-row input[name="_continue"] {
+        order: 2;
+    }
+    .admin-interface .submit-row input[name="_addanother"] {
+        order: 3;
+    }
     .admin-interface .submit-row a.deletelink {
+        order: 4;
         margin-left: 0;
         margin-right: auto;
     }
