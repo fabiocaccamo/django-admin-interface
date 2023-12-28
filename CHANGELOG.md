@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.1) - 2023-12-28
+-   [python] Fix `TemplateDoesNotExist` when using `django-nested-admin` by returning custom template for other third-party packages. #341 (by [@markdrrr](https://github.com/markdrrr) in #342)
+-   [html] Display language chooser language name uppercase.
+-   [css] Move save buttons to right in change form.
+-   [css] Fix related widget links icons size and vertical alignment.
+-   [css] Fix admin `raw_id_fields` appearance.
+-   [css] Fix `autocomplete_fields` appearance.
+-   [ci] Bump requirements.
+
+### Contributors
+-   [@markdrrr](https://github.com/markdrrr)
+
 ## [0.28.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.0) - 2023-12-21
 -   [html] Remove old `flat-theme` body class.
 -   [html] Remove `type="text/css"` and `type="text/javascript"` attributes.
