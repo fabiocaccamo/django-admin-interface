@@ -2,6 +2,7 @@
 .admin-interface .flex-container {
     width: 100%;
 }
+/* end-fix */
 
 /* fix flex container for boolean fields */
 .admin-interface .flex-container.checkbox-row {
@@ -44,7 +45,8 @@
 /* end fix */
 
 /* fix related widget links icons size and vertical alignment */
-.admin-interface .related-widget-wrapper select + .related-widget-wrapper-link {
+.admin-interface .related-widget-wrapper select + .related-widget-wrapper-link,
+.admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
     margin-left: 2px !important;
 }
 
@@ -58,11 +60,6 @@
     height: 16px;
 }
 /* end fix */
-
-.admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
-    margin-left: 12px !important;
-}
-
 
 /* improve responsive selector */
 
