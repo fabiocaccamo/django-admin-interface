@@ -2,6 +2,8 @@
 .admin-interface .flex-container {
     width: 100%;
 }
+
+/* fix flex container for boolean fields */
 .admin-interface .flex-container.checkbox-row {
     align-items: center;
 }
@@ -9,6 +11,20 @@
     margin-top: 0 !important;
     padding-left: 5px !important;
     padding-bottom: 0;
+}
+/* end-fix */
+
+/* fix flex container for related-lookup (raw_id_fields) */
+.admin-interface .flex-container:has(.vForeignKeyRawIdAdminField) {
+    align-items: center;
+}
+
+.admin-interface .flex-container:has(.vForeignKeyRawIdAdminField) .related-lookup {
+    margin-left: 12px;
+}
+
+.admin-interface .flex-container:has(.vForeignKeyRawIdAdminField) .related-lookup + * {
+    margin-left: 8px;
 }
 /* end-fix */
 
