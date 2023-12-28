@@ -131,6 +131,10 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
             "admin/edit_inline/stacked.html"
         )
         self.assertEqual(headless_template, "admin/edit_inline/headerless_stacked.html")
+        headless_template = templatetags.get_admin_interface_inline_template(
+            "nesting/admin/inlines/tabular.html"
+        )
+        self.assertEqual(headless_template, "nesting/admin/inlines/tabular.html")
 
     def test_get_active_date_hierarchy_none(self):
         changelist = Mock()
