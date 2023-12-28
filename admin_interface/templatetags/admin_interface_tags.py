@@ -74,6 +74,9 @@ def get_admin_interface_setting(setting):
 @register.simple_tag()
 def get_admin_interface_inline_template(template):
     template_path = template.split("/")
+    if template_path[0] != 'admin':
+        # return costume inline template for other packages
+        return template
     template_path[-1] = "headerless_" + template_path[-1]
     return "/".join(template_path)
 
