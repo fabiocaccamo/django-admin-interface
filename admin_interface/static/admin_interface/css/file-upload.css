@@ -4,6 +4,7 @@
 
 .admin-interface .aligned p.file-upload {
     display: table;
+    margin-left: 0;
 }
 
 .admin-interface form .form-row p.file-upload > a {
