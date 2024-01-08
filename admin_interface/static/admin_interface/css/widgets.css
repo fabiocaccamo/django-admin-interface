@@ -57,6 +57,14 @@
 }
 /* end fix */
 
+/* fix related widget links add button position on many-to-many selector */
+.admin-interface .related-widget-wrapper .related-widget-wrapper-link:has(+ .selector) {
+    order: 2;
+    align-self: flex-start;
+    margin-top: 8px;
+}
+/* end fix */
+
 /* fix related widget links margin from select2 (autocomplete_fields) */
 .admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
     margin-left: 12px !important;
