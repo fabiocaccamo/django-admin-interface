@@ -1,8 +1,8 @@
 .admin-interface #changelist .paginator {
     margin-top: -1px; /* merge 2 borders into 1 */
     line-height: 1.5em;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .admin-interface .paginator a,
