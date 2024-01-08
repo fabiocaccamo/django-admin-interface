@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.3](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.3) - 2024-01-08
+-   [css] Fix help text horizontal alignment when using `show-fieldsets-as-tabs` / `show-inlines-as-tabs` theme options. #317
+-   [css] Fix file-upload widget margin-left.
+-   [css] Fix related widget links add button position on `many-to-many` selector.
+-   [css] Fix related widget links margin from `select2` (`autocomplete_fields`).
+-   [css] Reduce paginator vertical padding.
+
 ## [0.28.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.2) - 2024-01-08
 -   [css] Fix related widget icon alignment. #348 #350
 
