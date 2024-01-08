@@ -57,6 +57,12 @@
 }
 /* end fix */
 
+/* fix related widget links margin from select2 (autocomplete_fields) */
+.admin-interface .related-widget-wrapper .select2-container + .related-widget-wrapper-link {
+    margin-left: 12px !important;
+}
+/* end fix */
+
 /* improve responsive selector */
 
 /* fix [stacked, not-stacked] equalize horizontal and vertical select padding for selector */
