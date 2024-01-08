@@ -3,7 +3,7 @@
 
 [![](https://img.shields.io/pypi/v/django-admin-interface.svg?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/django-admin-interface/)
 [![](https://static.pepy.tech/badge/django-admin-interface/month)](https://pepy.tech/project/django-admin-interface)
-[![](https://img.shields.io/github/stars/fabiocaccamo/django-admin-interface?logo=github)](https://github.com/fabiocaccamo/django-admin-interface/stargazers)
+[![](https://img.shields.io/github/stars/fabiocaccamo/django-admin-interface?logo=github&style=flat)](https://github.com/fabiocaccamo/django-admin-interface/stargazers)
 [![](https://img.shields.io/pypi/l/django-admin-interface.svg?color=blue)](https://github.com/fabiocaccamo/django-admin-interface/blob/main/LICENSE.txt)
 
 [![](https://results.pre-commit.ci/badge/github/fabiocaccamo/django-admin-interface/main.svg)](https://results.pre-commit.ci/latest/github/fabiocaccamo/django-admin-interface/main)
