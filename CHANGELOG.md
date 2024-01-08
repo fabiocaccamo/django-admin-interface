@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.2) - 2024-01-08
+-   [css] Fix related widget icon alignment. #348 #350
+
 ## [0.28.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.1) - 2023-12-28
 -   [python] Fix `TemplateDoesNotExist` when using `django-nested-admin` by returning custom template for other third-party packages. #341 (by [@markdrrr](https://github.com/markdrrr) in #342)
 -   [html] Display language chooser language name uppercase.
