@@ -1,3 +1,4 @@
+/* fix form submit buttons alignemnt and ordering */
 @media (min-width: 768px) {
     .admin-interface .submit-row {
         flex-direction: row-reverse;
@@ -17,3 +18,17 @@
         margin-right: auto;
     }
 }
+/* endfix */
+
+/* fix help-text horizontal alignment when using show-fieldsets-as-tabs / show-inlines-as-tabs options - #317 */
+.admin-interface.show-fieldsets-as-tabs fieldset > .form-row .help,
+.admin-interface.show-inlines-as-tabs .inline-related > fieldset .help {
+    margin-left: 0;
+    padding-left: 0;
+}
+.admin-interface.show-fieldsets-as-tabs fieldset > .form-row div:has(.related-widget-wrapper .selector) + .help,
+.admin-interface.show-inlines-as-tabs .inline-related > fieldset div:has(.related-widget-wrapper .selector) + .help {
+    display: flex;
+    width: 100%;
+}
+/* endfix */

@@ -171,8 +171,12 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field_name):
 @register.simple_tag()
 def admin_interface_use_changeform_tabs(adminform, inline_forms):
     theme = get_admin_interface_theme()
-    has_fieldset_tabs = theme.show_fieldsets_as_tabs and len(adminform.fieldsets) > 1
-    has_inline_tabs = theme.show_inlines_as_tabs and len(inline_forms) > 0
+    has_fieldset_tabs = (
+        theme.show_fieldsets_as_tabs and adminform and len(adminform.fieldsets) > 1
+    )
+    has_inline_tabs = (
+        theme.show_inlines_as_tabs and inline_forms and len(inline_forms) > 0
+    )
     has_tabs = has_fieldset_tabs or has_inline_tabs
     return has_tabs
 

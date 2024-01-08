@@ -147,6 +147,13 @@ admin-interface
 {% if theme.form_pagination_sticky %} sticky-pagination {% endif %}
 {% if theme.list_filter_highlight %} list-filter-highlight {% endif %}
 {% if theme.list_filter_sticky %} list-filter-sticky {% endif %}
+
+{% admin_interface_use_changeform_tabs adminform inline_admin_formsets as admin_interface_use_changeform_tabs %}
+{% if admin_interface_use_changeform_tabs %}
+    {% if theme.show_fieldsets_as_tabs %} show-fieldsets-as-tabs {% endif %}
+    {% if theme.show_inlines_as_tabs %} show-inlines-as-tabs {% endif %}
+{% endif %}
+
 {% if theme.collapsible_stacked_inlines %} collapsible-stacked-inlines
     {% if theme.collapsible_stacked_inlines_collapsed %} collapsible-stacked-inlines-collapsed {% endif %}
 {% endif %}
