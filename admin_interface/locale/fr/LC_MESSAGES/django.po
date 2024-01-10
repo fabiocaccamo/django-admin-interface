@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-09 15:47+0100\n"
+"POT-Creation-Date: 2024-01-10 10:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,16 +179,24 @@ msgid "display"
 msgstr "affichage"
 
 #: admin_interface/models.py
+msgid "Default: #333 (required fields, error messages)"
+msgstr "Défaut: #333 (champs requis, messages d'erreur)"
+
+#: admin_interface/models.py
 msgid "foreground color"
-msgstr "couleur du premier plan (gras, champs requis, messages d'erreur)"
+msgstr "couleur du premier plan"
 
 #: admin_interface/models.py
 msgid "background color"
 msgstr "couleur d'arrière-plan"
 
 #: admin_interface/models.py
+msgid "Default: #666 (optional fields, help text, field content)"
+msgstr "Défaut: #666 (champs optionnels, texte d'aide, contenu des champs)"
+
+#: admin_interface/models.py
 msgid "quiet color"
-msgstr "couleur discrète (champs optionnels, contenu des champs)"
+msgstr "couleur discrète"
 
 #: admin_interface/models.py
 msgid "loud color"
