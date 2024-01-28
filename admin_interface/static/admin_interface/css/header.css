@@ -1,6 +1,5 @@
 .admin-interface #header {
     height: auto;
-    min-height: 55px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
