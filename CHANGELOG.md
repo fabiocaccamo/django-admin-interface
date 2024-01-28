@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.4) - 2024-01-29
+-   [css] Fix header logo not displayed correctly.
+
 ## [0.28.3](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.3) - 2024-01-08
 -   [css] Fix help text horizontal alignment when using `show-fieldsets-as-tabs` / `show-inlines-as-tabs` theme options. #317
 -   [css] Fix file-upload widget margin-left.
