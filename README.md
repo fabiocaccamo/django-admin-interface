@@ -185,7 +185,7 @@ If you do some changes to the project, remember to update translations, because 
 
 ## Caching
 
-This package utilizes caching to improve theme load times and overall performance; however, there is a [known compatability issue](https://github.com/fabiocaccamo/django-admin-interface/issues/356) when using this package with a `JSONSerializer` that will result in the following error: `TypeError: Object of type Theme is not JSON serializable`
+This package utilizes caching to improve theme load times and overall performance; however, there is a [known compatibility issue](https://github.com/fabiocaccamo/django-admin-interface/issues/356) when using this package with a `JSONSerializer` that will result in the following error: `TypeError: Object of type Theme is not JSON serializable`
 
 To mitigate this you can specify a separate cache for this package. The following shows an example of using a separate local memory cache for this package, alongside the problematic cache using a JSONSerializer:
 
