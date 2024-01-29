@@ -66,7 +66,7 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 - Run `python manage.py collectstatic --clear`
 - Restart your application server
 
-> [!WARNING]  
+> [!WARNING]
 > if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
 
 ### Optional features
@@ -200,7 +200,7 @@ CACHES = {
 }
 ```
 
-> [!WARNING]  
+> [!WARNING]
 > There is a [known compatibility issue](https://github.com/fabiocaccamo/django-admin-interface/issues/356) when using this package with `django-redis`, more specifically, using the `JSONSerializer` the following error is raised: `TypeError: Object of type Theme is not JSON serializable`, to mitigate this problem, simply use a specific cache for this app that does not use any `json` serializer.
 
 ## FAQ
