@@ -66,7 +66,8 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 - Run `python manage.py collectstatic --clear`
 - Restart your application server
 
-> **Warning** - if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
+> [!WARNING]
+> if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
 
 ### Optional features
 To make a fieldset start expanded with a `Hide` button to collapse, add the class `"expanded"` to its classes:
@@ -182,6 +183,25 @@ At the moment, this package has been translated into the following languages: `d
 
 If you do some changes to the project, remember to update translations, because if the translations files are not up-to-date, the `lint` step in the CI will fail:
 - Run `tox -e translations`
+
+## Caching
+
+This package uses caching to improve theme load time and overall performance.
+You can customise the app caching options using `settings.CACHES["admin_interface"]` setting, otherwise the `"default"` cache will be used:
+
+```python
+CACHES = {
+    # ...
+    "admin_interface": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "TIMEOUT": 60 * 5,
+    },
+    # ...
+}
+```
+
+> [!WARNING]
+> There is a [known compatibility issue](https://github.com/fabiocaccamo/django-admin-interface/issues/356) when using this package with `django-redis`, more specifically, using the `JSONSerializer` the following error is raised: `TypeError: Object of type Theme is not JSON serializable`, to mitigate this problem, simply use a specific cache for this app that does not use any `json` serializer.
 
 ## FAQ
 
