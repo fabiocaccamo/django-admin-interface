@@ -66,7 +66,8 @@ SILENCED_SYSTEM_CHECKS = ["security.W019"]
 - Run `python manage.py collectstatic --clear`
 - Restart your application server
 
-> **Warning** - if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
+> [!WARNING]  
+> if you want use modals instead of popup windows, ensure to add `X_FRAME_OPTIONS = "SAMEORIGIN"` setting.
 
 ### Optional features
 To make a fieldset start expanded with a `Hide` button to collapse, add the class `"expanded"` to its classes:
@@ -185,27 +186,22 @@ If you do some changes to the project, remember to update translations, because 
 
 ## Caching
 
-This package utilizes caching to improve theme load times and overall performance; however, there is a [known compatibility issue](https://github.com/fabiocaccamo/django-admin-interface/issues/356) when using this package with a `JSONSerializer` that will result in the following error: `TypeError: Object of type Theme is not JSON serializable`
-
-To mitigate this you can specify a separate cache for this package. The following shows an example of using a separate local memory cache for this package, alongside the problematic cache using a JSONSerializer:
+This package uses caching to improve theme load time and overall performance.
+You can customise the app caching options using `settings.CACHES["admin_interface"]` setting, otherwise the `"default"` cache will be used:
 
 ```python
 CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": config("REDIS_URL", default="redis://"),
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            # problematic JSONSerializer
-            "SERIALIZER": "django_redis.serializers.json.JSONSerializer",
-        },
-    },
-    # separate local memory cache for this package
+    # ...
     "admin_interface": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-    }
+        "TIMEOUT": 60 * 5,
+    },
+    # ...
 }
 ```
+
+> [!WARNING]  
+> There is a [known compatibility issue](https://github.com/fabiocaccamo/django-admin-interface/issues/356) when using this package with `django-redis`, more specifically, using the `JSONSerializer` the following error is raised: `TypeError: Object of type Theme is not JSON serializable`, to mitigate this problem, simply use a specific cache for this app that does not use any `json` serializer.
 
 ## FAQ
 
