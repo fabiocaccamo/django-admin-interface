@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.5](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.5) - 2024-01-30
+-   [css] Fix related widget height and buttons alignment when there is a multiline label.
+-   [css] Fix inputs height when there is a multiline label.
+
 ## [0.28.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.4) - 2024-01-29
 -   [css] Fix header logo not displayed correctly.
 
