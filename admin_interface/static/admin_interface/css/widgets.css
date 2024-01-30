@@ -29,6 +29,17 @@
 }
 /* end-fix */
 
+/* fix flex container input fields height inheritance */
+.admin-interface .flex-container label + input[type="text"],
+.admin-interface .flex-container label + input[type="password"],
+.admin-interface .flex-container label + input[type="email"],
+.admin-interface .flex-container label + input[type="url"],
+.admin-interface .flex-container label + input[type="number"],
+.admin-interface .flex-container label + input[type="tel"] {
+    height: 1.375em;
+}
+/* end-fix */
+
 /* fixed time widget header border radius */
 .admin-interface .clockbox.module h2 {
     border-bottom-left-radius: 0;
