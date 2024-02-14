@@ -210,6 +210,16 @@ CACHES = {
 
 You can use [django-apptemplates](https://github.com/bittner/django-apptemplates), then add `{% extends "admin_interface:admin/base_site.html" %}` to your `base_site.html`
 
+### Custom `LocaleMiddleware` warning
+> I'm using a `django.middleware.locale.LocaleMiddleware` subclass, but I see an unnecessary warning for missing `django.middleware.locale.LocaleMiddleware`, what can I do?
+
+You can simply ignore the warning (this has been discussed [here](https://github.com/fabiocaccamo/django-admin-interface/issues/354))
+```python
+import warnings
+
+warnings.filterwarnings("ignore", module="admin_interface.templatetags.admin_interface_tags")
+```
+
 ### Language Chooser not showing
 > I have enabled the **Language Chooser**, but it is not visible in the admin, what should I do?
 
