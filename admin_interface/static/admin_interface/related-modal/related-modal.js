@@ -150,6 +150,9 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined')
             // show_change_link=True support
             presentRelatedObjectModalOnClickOn('a.inlinechangelink');
 
+            // any link with _popup=1 parameter support
+            presentRelatedObjectModalOnClickOn('a[href*="_popup=1"]');
+
             // django-streamfield support
             // https://github.com/raagin/django-streamfield/
             presentRelatedObjectModalOnClickOn('.streamfield_app a.stream-btn[href*="_popup=1"]');
