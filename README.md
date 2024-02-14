@@ -253,6 +253,15 @@ urlpatterns = [
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
 ```
 
+### Open any url in modal window
+> I have an application with some cross-links in the admin and I would like to open them in modal windows instead of same/new window, how can I do?
+
+You just need to add `_popup=1` query-string parameter to the urls:
+```python
+url = reverse(f"admin:myapp_mymodel_change", args=[mymodel_instance.pk])
+url = f"{url}?_popup=1"
+```
+
 ## Testing
 ```bash
 # clone repository
