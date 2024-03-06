@@ -144,15 +144,15 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field_name):
     params = changelist.get_filters_params()
     date_params = [p for p in params if p.startswith(date_field_name)]
 
-    date_args = [int(params[f"{date_field_name}__year"]), 1, 1]
+    date_args = [int(params[f"{date_field_name}__year"][0]), 1, 1]
     date_format = "Y"
 
     if f"{date_field_name}__month" in params:
-        date_args[1] = int(params[f"{date_field_name}__month"])
+        date_args[1] = int(params[f"{date_field_name}__month"][0])
         date_format = "YEAR_MONTH_FORMAT"
 
     if f"{date_field_name}__day" in params:
-        date_args[2] = int(params[f"{date_field_name}__day"])
+        date_args[2] = int(params[f"{date_field_name}__day"][0])
         date_format = "DATE_FORMAT"
 
     date_value = datetime.date(*date_args)
