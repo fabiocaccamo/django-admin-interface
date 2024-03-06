@@ -104,6 +104,10 @@ jobs:
         pip install -r requirements.txt
         pip install -r requirements-test.txt
 
+    - name: Run pre-commit
+      run: |
+        pre-commit run --all-files --show-diff-on-failure --verbose
+
     - name: Run tests
       env:
         DATABASE_ENGINE: ${{ matrix.database }}
