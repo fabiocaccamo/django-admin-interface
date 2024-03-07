@@ -142,24 +142,26 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field_name):
     date_label = " ".join(date_labels).lower()
 
     params = changelist.get_filters_params()
-    date_params = [p for p in params if p.startswith(date_field_name)]
+    date_params = [param for param in params if param.startswith(date_field_name)]
 
     date_args = [datetime.datetime.now().year, 1, 1]
-    year = params.get(f"{date_field_name}__year")
-    if year:
-        date_args[0] = int(year[0]) if isinstance(year, list) else int(year)
     date_format = "Y"
-
-    if f"{date_field_name}__month" in params:
-        month = params[f"{date_field_name}__month"]
-        date_args[1] = int(month[0]) if isinstance(month, list) else int(month)
-        date_format = "YEAR_MONTH_FORMAT"
-
-    if f"{date_field_name}__day" in params:
-        day = params[f"{date_field_name}__day"]
-        date_args[2] = int(day[0]) if isinstance(day, list) else int(day)
-        date_format = "DATE_FORMAT"
-
+    date_filters = (
+        ("year", "Y"),
+        ("month", "YEAR_MONTH_FORMAT"),
+        ("day", "DATE_FORMAT"),
+    )
+    for index, date_filter in enumerate(date_filters):
+        date_filter_key, date_filter_format = date_filter
+        date_filter_param = f"{date_field_name}__{date_filter_key}"
+        if date_filter_param in params:
+            param = params[date_filter_param]
+            date_args[index] = (
+                int(param[0]) if isinstance(param, (list, tuple)) else int(param)
+            )
+            date_format = date_filter_format
+            continue
+        break
     date_value = datetime.date(*date_args)
 
     removal_link = changelist.get_query_string(remove=date_params)
