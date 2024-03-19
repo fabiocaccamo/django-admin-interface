@@ -4,7 +4,7 @@ import shutil
 from django.conf import settings
 from django.test import TestCase
 
-from admin_interface.models import Theme
+from admin_interface.models import Theme, static_logo_directory_path
 
 
 class AdminInterfaceModelsTestCase(TestCase):
@@ -89,6 +89,33 @@ class AdminInterfaceModelsTestCase(TestCase):
     def test_str(self):
         theme = Theme.objects.get_active()
         self.assertEqual(str(theme), "Django")
+
+    def test_save_clear_cache(self):
+        theme = Theme.objects.get_active()
+        theme.static_logo_path = "test"
+        theme.save()
+
+        self.assertEqual(str(theme), "Django")
+
+        fake_dir = settings.LOCAL_FILE_DIR + "/fake"
+        theme.static_logo_path = fake_dir
+        theme.save()
+
+        assert theme.static_logo_path == fake_dir
+
+    def test_save_clear_cache_no_matched_theme(self):
+        theme = Theme(
+            name="Custom 1",
+            active=True,
+            static_logo_path=settings.LOCAL_FILE_DIR + "/fake",
+        )
+        theme.pk = 999
+        theme.save()
+
+    def test_static_path(self):
+        # the `static_logo_directory_path` function is used as the callable
+        # in the `path` argument of the `static_logo_path` field
+        assert static_logo_directory_path() == settings.LOCAL_FILE_DIR
 
 
 # class AdminInterfaceModelsMultiDBTestCase(TestCase):
