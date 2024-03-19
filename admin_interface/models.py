@@ -5,8 +5,14 @@ from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
+import os
 
 from .cache import del_cached_active_theme
+
+
+def static_logo_directory_path():
+    return settings.LOCAL_FILE_DIR
 
 
 class ThemeQuerySet(models.QuerySet):
@@ -60,6 +66,14 @@ class Theme(models.Model):
     title_visible = models.BooleanField(
         default=True,
         verbose_name=_("visible"),
+    )
+
+    static_logo_path = models.FilePathField(
+        path=static_logo_directory_path,
+        blank=True,
+        verbose_name=_("static logo"),
+        match=r"^.*\.(jpg|jpeg|png|svg)$",
+        max_length=255,
     )
 
     logo = models.FileField(
@@ -401,9 +415,25 @@ class Theme(models.Model):
 
     objects = ThemeQuerySet.as_manager()
 
+    @property
+    def static_logo_relative_url(self):
+        return os.path.relpath(self.static_logo_path, settings.STATIC_ROOT)
+
     def set_active(self):
         self.active = True
         self.save()
+
+    def save(self, *args, **kwargs):
+        if self.static_logo_path:
+            # clear cache if static logo path has changed
+            try:
+                obj = Theme.objects.get(pk=self.pk)
+                if obj.static_logo_path != self.static_logo_path:
+                    del_cached_active_theme()
+            except Theme.DoesNotExist:
+                pass
+
+        super().save(*args, **kwargs)
 
     class Meta:
         app_label = "admin_interface"
