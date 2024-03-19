@@ -120,3 +120,4 @@ MEDIA_URL = "/media/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "admin_interface/public/static/")
 STATIC_URL = "/static/"
+LOCAL_FILE_DIR = os.path.join(BASE_DIR, "admin_interface/public/")

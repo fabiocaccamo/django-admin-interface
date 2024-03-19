@@ -2,7 +2,8 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.test import TestCase, override_settings
 
-from admin_interface.settings import check_installed_apps
+from admin_interface.settings import check_installed_apps, check_settings
+import os
 
 
 class AdminInterfaceSettingsTestCase(TestCase):
@@ -28,6 +29,12 @@ class AdminInterfaceSettingsTestCase(TestCase):
         else:
             check_installed_apps()
 
+    def __test_check_settings(self):
+        if not hasattr(settings, "LOCAL_FILE_DIR"):
+            self.assertRaises(ImproperlyConfigured, check_settings, "LOCAL_FILE_DIR")
+        else:
+            check_settings("LOCAL_FILE_DIR")
+
     @override_settings(
         INSTALLED_APPS=[
             "admin_interface",
@@ -47,3 +54,7 @@ class AdminInterfaceSettingsTestCase(TestCase):
     )
     def test_installed_apps_no_colorfield(self):
         self.__test_installed_apps()
+
+    @override_settings(LOCAL_FILE_DIR=os.path.join(settings.BASE_DIR, "local_file_dir"))
+    def test_check_settings_local_file_dir(self):
+        self.__test_check_settings()
