@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 18:20-0500\n"
+"POT-Creation-Date: 2024-03-19 18:27-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
 "Language-Team: Farsi <LL@li.org>\n"
@@ -112,6 +112,10 @@ msgstr "رنگ"
 #: admin_interface/models.py
 msgid "visible"
 msgstr "نمایان"
+
+#: admin_interface/models.py
+msgid "static logo"
+msgstr "لوگوی استاتیک"
 
 #: admin_interface/models.py
 msgid "Leave blank to use the default Django logo"

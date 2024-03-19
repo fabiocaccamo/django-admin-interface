@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 18:20-0500\n"
+"POT-Creation-Date: 2024-03-19 18:27-0500\n"
 "PO-Revision-Date: 2023-08-04 11:52-0300\n"
 "Last-Translator: Santiago Muñoz <smunoz@mythologylabs.com.uy>\n"
 "Language-Team: Spanish <dev@softbutterfly.io>\n"
@@ -115,6 +115,10 @@ msgstr "color"
 #: admin_interface/models.py
 msgid "visible"
 msgstr "visible"
+
+#: admin_interface/models.py
+msgid "static logo"
+msgstr "logo estático"
 
 #: admin_interface/models.py
 msgid "Leave blank to use the default Django logo"
@@ -236,7 +240,8 @@ msgstr "anclar posición"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr "remover enlaces para filtros activos en la parte superior de la barra lateral"
+msgstr ""
+"remover enlaces para filtros activos en la parte superior de la barra lateral"
 
 #: admin_interface/models.py
 msgid "foldable apps"
