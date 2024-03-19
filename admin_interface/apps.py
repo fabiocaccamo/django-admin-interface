@@ -11,3 +11,6 @@ class AdminInterfaceConfig(AppConfig):
         from admin_interface import settings
 
         settings.check_installed_apps()
+
+        # must check if LOCAL_FILE_DIR is set in settings
+        settings.check_settings("LOCAL_FILE_DIR")
