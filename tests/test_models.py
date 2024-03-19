@@ -117,6 +117,13 @@ class AdminInterfaceModelsTestCase(TestCase):
         # in the `path` argument of the `static_logo_path` field
         assert static_logo_directory_path() == settings.LOCAL_FILE_DIR
 
+    def test_property_static_logo(self):
+        theme = Theme.objects.get_active()
+        theme.static_logo_path = settings.LOCAL_FILE_DIR + "/fake"
+        theme.save()
+
+        assert theme.static_logo_relative_url == "../fake"
+
 
 # class AdminInterfaceModelsMultiDBTestCase(TestCase):
 #     databases = ["default", "replica"]
