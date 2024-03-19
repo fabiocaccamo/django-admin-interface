@@ -25,5 +25,18 @@ def check_installed_app(app, max_dj_version=None):
             )
 
 
+def check_settings(setting_attribute):
+    """
+    Check if the setting_attribute is set in the settings module.
+    """
+
+    if not hasattr(settings, setting_attribute):
+        raise ImproperlyConfigured(
+            "You must set the {} setting in your settings module.".format(
+                setting_attribute
+            )
+        )
+
+
 def check_installed_apps():
     check_installed_app("colorfield")
