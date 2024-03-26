@@ -58,6 +58,7 @@ class ThemeAdmin(admin.ModelAdmin):
                     "logo_max_height",
                     "logo_color",
                     "logo_visible",
+                    "static_logo_path",
                 ),
             },
         ),
