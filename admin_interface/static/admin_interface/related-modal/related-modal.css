@@ -15,6 +15,7 @@ https://github.com/dimsemenov/Magnific-Popup
 }
 
 .admin-interface .related-modal .mfp-container {
+    position: fixed;
     padding: 80px 80px 80px 80px;
 }
 
