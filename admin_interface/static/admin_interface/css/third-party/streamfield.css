@@ -159,6 +159,12 @@ https://github.com/raagin/django-streamfield/
     margin-bottom: 15px;
 }
 
+/* don't inherit form .aligned ul style */
+.admin-interface .streamfield_app .block-fields > div ul {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
 .admin-interface .streamfield_app .stream-model-block .stream-model-block__content {
     background-color: #f8f8f8;
     padding: 20px;
