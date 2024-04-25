@@ -96,9 +96,11 @@ def hash_string(text):
 def get_admin_interface_nocache():
     return hash_string(__version__)
 
+
 @register.simple_tag()
 def get_use_version_nocache():
     return bool(getattr(settings, "ADMIN_TEMPLATE_USE_VERSION_NOCACHE", False))
+
 
 @register.simple_tag(takes_context=False)
 def get_admin_interface_active_date_hierarchy(changelist):
