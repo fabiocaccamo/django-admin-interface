@@ -1,8 +1,9 @@
-{% load static %}
+{% load static admin_interface_tags %}
+{% get_use_version_nocache as nocache %}
 
 {% if theme.related_modal_active %}
-<link rel="stylesheet" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}?nocache={{ version_md5_cache }}">
-<link rel="stylesheet" href="{% static 'admin_interface/related-modal/related-modal.css' %}?v={{ version_md5_cache }}">
-<script src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}?nocache={{ version_md5_cache }}"></script>
-<script src="{% static 'admin_interface/related-modal/related-modal.js' %}?nocache={{ version_md5_cache }}"></script>
+<link rel="stylesheet" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}">
+<link rel="stylesheet" href="{% static 'admin_interface/related-modal/related-modal.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+<script src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}"></script>
+<script src="{% static 'admin_interface/related-modal/related-modal.js' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}"></script>
 {% endif %}

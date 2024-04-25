@@ -1,9 +1,10 @@
-{% load static %}
+{% load static admin_interface_tags %}
+{% get_use_version_nocache as nocache %}
 
 {% if theme.favicon %}
 <link rel="icon" href="{{ theme.favicon.url }}">
 {% if theme.env_visible_in_favicon %}
-<script src="{% static 'admin_interface/favico/favico-0.3.10-patched.min.js' %}?nocache={{ version_md5_cache }}"></script>
+<script src="{% static 'admin_interface/favico/favico-0.3.10-patched.min.js' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}"></script>
 <script>
 var favicon = new Favico({
     type: 'circle',
