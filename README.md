@@ -61,6 +61,10 @@ INSTALLED_APPS = (
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
+ADMIN_TEMPLATE_USE_VERSION_NOCACHE = True
+
+> [!WARNING]
+> If you are using S3 with querysting signature set `ADMIN_TEMPLATE_USE_VERSION_NOCACHE = False`
 ```
 - Run `python manage.py migrate`
 - Run `python manage.py collectstatic --clear`
