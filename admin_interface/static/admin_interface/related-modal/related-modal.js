@@ -32,9 +32,18 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
             window.dismissRelatedObjectModal = dismissRelatedObjectModal;
             window.dismissRelatedLookupPopup = dismissRelatedLookupModal;
 
-            function presentRelatedObjectModal(e)
-            {
-                var linkEl = $(this);
+            function updateURLParameter(url, key, value) {
+                const urlPattern = /^https?:\/\//i;
+                if (!urlPattern.test(url)) {
+                    url = window.location.origin + url;
+                }
+                const urlObject = new URL(url);
+                urlObject.searchParams.set(key, value);
+                return urlObject.toString();
+            }
+
+            function presentRelatedObjectModal(e) {
+                const linkEl = $(this);
 
                 const href = (linkEl.attr('href') || '');
                 if (href === '') {
@@ -57,22 +66,12 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
                     // browsers stop loading nested iframes having the same src url
                     // create a random parameter and append it to the src url to prevent it
                     // this workaround doesn't work with related lookup url
-                    if (iframeSrc.indexOf('?') === -1) {
-                        iframeSrc += '?_modal=' + iframeSrcRandom;
-                    } else {
-                        iframeSrc += '&_modal=' + iframeSrcRandom;
-                    }
                     const iframeSrcRandom = String(Math.round(Math.random() * 999999));
+                    iframeSrc = updateURLParameter(iframeSrc, '_modal', iframeSrcRandom);
                 }
 
-                // fix for django 1.7  TODO remove
-                if (iframeSrc.indexOf('_popup=1') === -1) {
-                    if (iframeSrc.indexOf('?') === -1) {
-                        iframeSrc += '?_popup=1';
-                    } else {
-                        iframeSrc += '&_popup=1';
-                    }
-                }
+                // fix for django 1.7 TODO remove
+                iframeSrc = updateURLParameter(iframeSrc, '_popup', '1');
 
                 // build the iframe html
                 const iframeHTML = '<iframe id="related-modal-iframe" name="' + iframeName + '" src="' + iframeSrc + '"></iframe>';
