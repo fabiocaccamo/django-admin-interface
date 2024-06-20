@@ -252,6 +252,21 @@
     color: var(--admin-interface-generic-link-hover-color);
 }
 
+/* fix #393  */
+.admin-interface .selector-chosen .list-footer-display {
+    background: var(--admin-interface-module-background-color);
+}
+.admin-interface .selector-chosen .list-footer-display {
+    color: var(--admin-interface-module-text-color);
+}
+.admin-interface .selector-chosen .list-footer-display__clear {
+    color: var(--admin-interface-module-link-color);
+}
+.admin-interface .selector-chosen .list-footer-display__clear:hover {
+    color: var(--admin-interface-module-link-hover-color);
+}
+/* endfix */
+
 .admin-interface a:link,
 .admin-interface a:visited {
     color: var(--admin-interface-generic-link-color);
