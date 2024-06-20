@@ -53,15 +53,19 @@
     display: flex;
     flex-wrap: nowrap;
     white-space: nowrap;
+    max-width: 1000px;
     height: fit-content;
+    gap: 0;
 }
 /* end fix */
 
 /* fix related widget links icons size and vertical alignment */
 .admin-interface .related-widget-wrapper .related-widget-wrapper-link {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 2px;
+    width: 34px;
+    height: 34px;
 }
 .admin-interface .related-widget-wrapper .related-widget-wrapper-link img {
     width: 16px;
@@ -74,6 +78,13 @@
     order: 2;
     align-self: flex-start;
     margin-top: 8px;
+}
+/* end fix */
+
+/* fix selector chooser slide transition */
+.admin-interface .related-widget-wrapper .selector-chooser .selector-add,
+.admin-interface .related-widget-wrapper .selector-chooser .selector-remove {
+    transition: none;
 }
 /* end fix */
 
