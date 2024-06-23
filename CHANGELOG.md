@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.7](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.7) - 2024-06-23
+-   [html] Fix missing check for showing inlines as tabs. #390
+-   [css] Improve m2m selector style.
+-   [css] Fix m2m selector not styled correctly. #393
+-   [css] Update related-widget links margins.
+-   [css] Use `position: fixed;` for related modal.
+-   [css] Improve html list preview rendering with `django-streamfield`.
+-   [js] Code refactoring for adding modal params to url and use `const` and `let` instead of `var`.
+-   [ci] Bump `pre-commit` hooks.
+
 ## [0.28.6](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.6) - 2024-03-07
 -   [python] Fix date hierarchy params. #374 (by [@jeroenpeters1986](https://github.com/jeroenpeters1986) in #375)
 -   [js] Open any link with `_popup=1` query-string parameter in a modal window.
