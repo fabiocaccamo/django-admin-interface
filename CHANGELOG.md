@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.8](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.8) - 2024-06-26
+-   [js] Fix invalid assignment to const `iframeInternalModalClass`.
+
 ## [0.28.7](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.7) - 2024-06-23
 -   [html] Fix missing check for showing inlines as tabs. #390
 -   [css] Improve m2m selector style.
