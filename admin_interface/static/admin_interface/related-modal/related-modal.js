@@ -90,7 +90,7 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
                 }
 
                 // the modal css class
-                const iframeInternalModalClass = 'related-modal';
+                let iframeInternalModalClass = 'related-modal';
 
                 // if the current window is inside an iframe, it means that it is already in a modal,
                 // append an additional css class to the modal to offer more customization
