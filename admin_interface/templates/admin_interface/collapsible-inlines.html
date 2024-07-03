@@ -1,5 +1,6 @@
-{% load static %}
+{% load static admin_interface_tags %}
+{% get_use_version_nocache as nocache %}
 
 {% if theme.collapsible_stacked_inlines or theme.collapsible_tabular_inlines %}
-<script src="{% static 'admin_interface/collapsible-inlines/collapsible-inlines.js' %}?nocache={{ version_md5_cache }}"></script>
+<script src="{% static 'admin_interface/collapsible-inlines/collapsible-inlines.js' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}"></script>
 {% endif %}

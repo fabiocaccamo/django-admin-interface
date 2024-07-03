@@ -126,6 +126,36 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         )
         self.assertEqual(rendered, hash_manual)
 
+    @override_settings(
+        ADMIN_TEMPLATE_USE_VERSION_NOCACHE=True,
+    )
+    def test_use_version_nocache(self):
+        hash_from_tag = templatetags.get_admin_interface_nocache()
+        hash_manual = hash_string(__version__)
+        self.assertEqual(hash_from_tag, hash_manual)
+
+        rendered = self.__render_template(
+            "{% load admin_interface_tags %}"
+            "{% get_admin_interface_nocache as version_md5_hash %}"
+            "{% get_use_version_nocache as nocache %}"
+            "{% if nocache %}?v={{ version_md5_hash }}{% endif %}"
+        )
+        self.assertEqual(rendered, f"?v={hash_manual}")
+
+    @override_settings(
+        ADMIN_TEMPLATE_USE_VERSION_NOCACHE=False,
+    )
+    def test_not_use_version_nocache(self):
+        empty = ""
+
+        rendered = self.__render_template(
+            "{% load admin_interface_tags %}"
+            "{% get_admin_interface_nocache as version_md5_hash %}"
+            "{% get_use_version_nocache as nocache %}"
+            "{% if nocache %}?v={{ version_md5_hash }}{% endif %}"
+        )
+        self.assertEqual(rendered, empty)
+
     def test_get_admin_interface_inline_template(self):
         headless_template = templatetags.get_admin_interface_inline_template(
             "admin/edit_inline/stacked.html"
