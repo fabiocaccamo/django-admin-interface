@@ -159,7 +159,7 @@ class Theme(models.Model):
     css_body_foreground_color = ColorField(
         blank=True,
         default="#333",
-        help_text=_("Default: #333 (required fields, error messages)"),
+        help_text=_("Required fields, error messages"),
         max_length=10,
         verbose_name=_("foreground color"),
     )
@@ -173,7 +173,7 @@ class Theme(models.Model):
     css_body_quiet_color = ColorField(
         blank=True,
         default="#666",
-        help_text=_("Default: #666 (optional fields, help text, field content)"),
+        help_text=_("Optional fields, help text, field content"),
         max_length=10,
         verbose_name=_("quiet color"),
     )
