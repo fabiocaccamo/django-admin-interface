@@ -177,7 +177,7 @@ msgid "display"
 msgstr "نمایش"
 
 #: admin_interface/models.py
-msgid "Default: #333 (required fields, error messages)"
+msgid "Required fields, error messages"
 msgstr ""
 
 #: admin_interface/models.py
@@ -191,7 +191,7 @@ msgid "background color"
 msgstr "رنگ پسزمینه"
 
 #: admin_interface/models.py
-msgid "Default: #666 (optional fields, help text, field content)"
+msgid "Optional fields, help text, field content"
 msgstr ""
 
 #: admin_interface/models.py
