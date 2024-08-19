@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             field=colorfield.fields.ColorField(
                 blank=True,
                 default="#333",
-                help_text="Default: #333 (required fields, error messages)",
+                help_text="Required fields, error messages",
                 image_field=None,
                 max_length=10,
                 samples=None,
@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             field=colorfield.fields.ColorField(
                 blank=True,
                 default="#666",
-                help_text="Default: #666 (optional fields, help text, field content)",
+                help_text="Optional fields, help text, field content",
                 image_field=None,
                 max_length=10,
                 samples=None,
