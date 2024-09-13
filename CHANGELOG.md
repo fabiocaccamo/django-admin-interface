@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.9](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.9) - 2024-09-13
+-   [css] Add missing background color variable.
+-   [css] Fix fieldsets border color.
+-   [css] Fix fieldset collapse header style.
+-   [css] Prevent changelist table text wrapping.
+-   [html] Show theme toggle.
+-   [ci] Bump test requirements.
+-   [ci] Bump `pre-commit` hooks.
+
 ## [0.28.8](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.8) - 2024-06-26
 -   [js] Fix invalid assignment to const `iframeInternalModalClass`.
 
