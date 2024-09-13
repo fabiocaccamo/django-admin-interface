@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 18:20-0500\n"
+"POT-Creation-Date: 2024-01-10 04:13-0600\n"
 "PO-Revision-Date: 2020-01-29 04:53+0300\n"
 "Last-Translator: Ishak Okutan <ishak.oktn@gmail.com>\n"
 "Language-Team: \n"
@@ -38,6 +38,10 @@ msgstr "Favicon"
 #: admin_interface/admin.py
 msgid "Title"
 msgstr "Başlık"
+
+#: admin_interface/admin.py
+msgid "Body"
+msgstr ""
 
 #: admin_interface/admin.py
 msgid "Header"
@@ -178,8 +182,34 @@ msgid "display"
 msgstr "görüntüle"
 
 #: admin_interface/models.py
+msgid "Required fields, error messages"
+msgstr ""
+
+#: admin_interface/models.py
+#, fuzzy
+#| msgid "background color"
+msgid "foreground color"
+msgstr "arka plan rengi"
+
+#: admin_interface/models.py
 msgid "background color"
 msgstr "arka plan rengi"
+
+#: admin_interface/models.py
+msgid "Optional fields, help text, field content"
+msgstr ""
+
+#: admin_interface/models.py
+#, fuzzy
+#| msgid "text color"
+msgid "quiet color"
+msgstr "metin rengi"
+
+#: admin_interface/models.py
+#, fuzzy
+#| msgid "link color"
+msgid "loud color"
+msgstr "bağlantı rengi"
 
 #: admin_interface/models.py
 msgid "text color"
