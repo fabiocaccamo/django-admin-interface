@@ -182,6 +182,7 @@
 .admin-interface .module caption,
 .admin-interface .module.filtered h2 {
     background: var(--admin-interface-module-background-color);
+    border-color: var(--admin-interface-module-background-color);
     color: var(--admin-interface-module-text-color);
 }
 
