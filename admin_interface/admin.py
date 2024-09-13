@@ -74,18 +74,6 @@ class ThemeAdmin(admin.ModelAdmin):
             },
         ),
         (
-            _("Body"),
-            {
-                "classes": ("wide",),
-                "fields": (
-                    "css_body_foreground_color",
-                    "css_body_background_color",
-                    "css_body_quiet_color",
-                    "css_body_loud_color",
-                ),
-            },
-        ),
-        (
             _("Header"),
             {
                 "classes": ("wide",),

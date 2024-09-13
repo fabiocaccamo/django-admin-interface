@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-10 04:13-0600\n"
+"POT-Creation-Date: 2023-05-10 18:20-0500\n"
 "PO-Revision-Date: 2023-08-04 11:52-0300\n"
 "Last-Translator: Santiago Muñoz <smunoz@mythologylabs.com.uy>\n"
 "Language-Team: Spanish <dev@softbutterfly.io>\n"
@@ -39,10 +39,6 @@ msgstr "Favicon"
 #: admin_interface/admin.py
 msgid "Title"
 msgstr "Título"
-
-#: admin_interface/admin.py
-msgid "Body"
-msgstr ""
 
 #: admin_interface/admin.py
 msgid "Header"
@@ -179,34 +175,8 @@ msgid "display"
 msgstr "mostrar"
 
 #: admin_interface/models.py
-msgid "Required fields, error messages"
-msgstr ""
-
-#: admin_interface/models.py
-#, fuzzy
-#| msgid "background color"
-msgid "foreground color"
-msgstr "color de fondo"
-
-#: admin_interface/models.py
 msgid "background color"
 msgstr "color de fondo"
-
-#: admin_interface/models.py
-msgid "Optional fields, help text, field content"
-msgstr ""
-
-#: admin_interface/models.py
-#, fuzzy
-#| msgid "text color"
-msgid "quiet color"
-msgstr "color de texto"
-
-#: admin_interface/models.py
-#, fuzzy
-#| msgid "link color"
-msgid "loud color"
-msgstr "color de enlace"
 
 #: admin_interface/models.py
 msgid "text color"
@@ -266,8 +236,7 @@ msgstr "anclar posición"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr ""
-"remover enlaces para filtros activos en la parte superior de la barra lateral"
+msgstr "remover enlaces para filtros activos en la parte superior de la barra lateral"
 
 #: admin_interface/models.py
 msgid "foldable apps"

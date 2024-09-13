@@ -4,6 +4,10 @@
         --secondary: #417690;
         --accent: #f5dd5d;
         --primary-fg: #fff;
+        --body-fg: #333;
+        --body-bg: #fff;
+        --body-quiet-color: #666;
+        --body-loud-color: #000;
         --header-color: #ffc;
         --header-branding-color: var(--accent);
         --header-bg: var(--secondary);
@@ -36,18 +40,6 @@
         --object-tools-bg: var(--close-button-bg);
         --object-tools-hover-bg: var(--close-button-hover-bg);
     }
-}
-
-:root .admin-interface {
-    --body-fg: var(--admin-interface-body-foreground-color);
-    --body-bg: var(--admin-interface-body-background-color);
-    --body-quiet-color: var(--admin-interface-body-quiet-color);
-    --body-loud-color: var(--admin-interface-body-loud-color);
-}
-
-body.admin-interface {
-    color: var(--admin-interface-body-foreground-color);
-    background: var(--admin-interface-body-background-color);
 }
 
 .admin-interface {
