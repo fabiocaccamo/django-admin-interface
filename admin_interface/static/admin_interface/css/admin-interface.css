@@ -181,6 +181,7 @@
 
 .admin-interface .module h2,
 .admin-interface .module caption,
+.admin-interface .module.collapse details summary,
 .admin-interface .module.filtered h2 {
     background: var(--admin-interface-module-background-color);
     border-color: var(--admin-interface-module-background-color);
@@ -477,6 +478,7 @@
 .admin-interface.dashboard .module caption,
 .admin-interface #nav-sidebar .module th,
 .admin-interface #nav-sidebar .module caption,
+.admin-interface .module.collapse details summary,
 .admin-interface .module.filtered h2 {
     border-radius: var(--admin-interface-module-border-radius);
 }
