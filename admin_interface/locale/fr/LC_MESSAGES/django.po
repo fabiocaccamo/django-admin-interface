@@ -40,7 +40,7 @@ msgstr "Titre"
 
 #: admin_interface/admin.py
 msgid "Body"
-msgstr "Body"
+msgstr "Corps"
 
 #: admin_interface/admin.py
 msgid "Header"
@@ -180,7 +180,7 @@ msgstr "affichage"
 
 #: admin_interface/models.py
 msgid "Required fields, error messages"
-msgstr "Défaut: #333 (champs requis, messages d'erreur)"
+msgstr "Champs requis, messages d'erreur"
 
 #: admin_interface/models.py
 msgid "foreground color"
