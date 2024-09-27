@@ -43,6 +43,18 @@
     }
 }
 
+:root .admin-interface {
+    --body-fg: var(--admin-interface-body-foreground-color);
+    --body-bg: var(--admin-interface-body-background-color);
+    --body-quiet-color: var(--admin-interface-body-quiet-color);
+    --body-loud-color: var(--admin-interface-body-loud-color);
+}
+
+body.admin-interface {
+    color: var(--admin-interface-body-foreground-color);
+    background: var(--admin-interface-body-background-color);
+}
+
 .admin-interface {
     overflow-x: hidden;
 }
