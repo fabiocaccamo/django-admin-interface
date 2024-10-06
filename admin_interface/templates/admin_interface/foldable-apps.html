@@ -1,6 +1,7 @@
-{% load static %}
+{% load static admin_interface_tags %}
+{% get_use_version_nocache as nocache %}
 
 {% if theme.foldable_apps %}
-<link rel="stylesheet" href="{% static 'admin_interface/foldable-apps/foldable-apps.css' %}?nocache={{ version_md5_cache }}">
-<script src="{% static 'admin_interface/foldable-apps/foldable-apps.js' %}?nocache={{ version_md5_cache }}"></script>
+<link rel="stylesheet" href="{% static 'admin_interface/foldable-apps/foldable-apps.css' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}">
+<script src="{% static 'admin_interface/foldable-apps/foldable-apps.js' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}"></script>
 {% endif %}

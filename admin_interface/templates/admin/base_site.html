@@ -9,6 +9,7 @@
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
 {% get_admin_interface_nocache as version_md5_cache %}
+{% get_use_version_nocache as nocache %}
 {% get_current_language as current_lang %}
     <style>
         :root .admin-interface {
@@ -79,39 +80,39 @@
         {% endif %}
         }
     </style>
-    <link rel="stylesheet" href="{% static 'admin_interface/css/admin-interface.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/changelist.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/change-form.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/fieldsets.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/file-upload.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/header.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/inlines.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/jquery.ui.tabs.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/language-chooser.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/list-filter.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/list-filter-dropdown.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/login.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/modules.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/nav-sidebar.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/paginator.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/object-tools.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/admin-interface.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/changelist.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/change-form.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/fieldsets.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/file-upload.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/header.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/inlines.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/jquery.ui.tabs.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/language-chooser.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/list-filter.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/list-filter-dropdown.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/login.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/modules.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/nav-sidebar.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/paginator.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/object-tools.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
     {% if not theme.recent_actions_visible %}
-    <link rel="stylesheet" href="{% static 'admin_interface/css/recent-actions.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/recent-actions.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
     {% endif %}
-    <link rel="stylesheet" href="{% static 'admin_interface/css/rtl.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/sticky-form-controls.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/tabbed-changeform.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/widgets.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/rtl.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/sticky-form-controls.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/tabbed-changeform.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/widgets.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
 
     <!-- third-party packages compatibility / style optimizations -->
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/ckeditor.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/import-export.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/json-widget.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/modeltranslation.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/rangefilter.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/sorl-thumbnail.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/streamfield.css' %}?v={{ version_md5_cache }}">
-    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/tinymce.css' %}?v={{ version_md5_cache }}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/ckeditor.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/import-export.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/json-widget.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/modeltranslation.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/rangefilter.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/sorl-thumbnail.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/streamfield.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
+    <link rel="stylesheet" href="{% static 'admin_interface/css/third-party/tinymce.css' %}{% if nocache %}?v={{ version_md5_cache }}{% endif %}">
     <!-- end third-party packages compatibility / style optimizations -->
 
 {% if current_lang == 'fa' %}
@@ -126,8 +127,8 @@
 {% get_admin_interface_nocache as version_md5_cache %}
 {# https://github.com/elky/django-flat-responsive#important-note #}
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}?nocache={{ version_md5_cache }}">
-<link rel="stylesheet" href="{% static 'admin/css/responsive_rtl.css' %}?nocache={{ version_md5_cache }}">
+<link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}">
+<link rel="stylesheet" href="{% static 'admin/css/responsive_rtl.css' %}{% if nocache %}?nocache={{ version_md5_cache }}{% endif %}">
 {% include "admin_interface/favicon.html" %}
 {% include "admin_interface/foldable-apps.html" %}
 {% include "admin_interface/related-modal.html" %}
