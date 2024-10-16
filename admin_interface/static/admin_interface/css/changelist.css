@@ -46,4 +46,7 @@
 .admin-interface #changelist #changelist-form table tbody th,
 .admin-interface #changelist #changelist-form table tbody td {
     white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: min(400px, 30vw);
 }
