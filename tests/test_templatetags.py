@@ -1,15 +1,14 @@
 from datetime import date
 from unittest.mock import Mock
 
+from django.conf import settings
 from django.contrib.admin.views.main import ChangeList
 from django.template import Context, Template
 from django.test import TestCase, override_settings
 from django.test.client import RequestFactory
 
-from admin_interface.metadata import __version__
 from admin_interface.models import Theme
 from admin_interface.templatetags import admin_interface_tags as templatetags
-from admin_interface.templatetags.admin_interface_tags import hash_string
 
 
 class AdminInterfaceTemplateTagsTestCase(TestCase):
@@ -104,27 +103,24 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         title = templatetags.get_admin_interface_setting("title")
         self.assertEqual(title, "Django administration")
 
-    def test_get_version(self):
-        version = templatetags.get_admin_interface_version()
-        self.assertEqual(version, __version__)
+    def test_get_static(self):
+        path = "admin_interface/css/admin-interface.css"
         rendered = self.__render_template(
             "{% load admin_interface_tags %}"
-            "{% get_admin_interface_version as version %}"
-            "{{ version }}"
+            f"{{% get_admin_interface_static '{path}' %}}"
         )
-        self.assertEqual(rendered, __version__)
+        self.assertTrue(rendered.startswith(f"{settings.STATIC_URL}{path}?v="))
 
-    def test_get_version_nocache(self):
-        hash_from_tag = templatetags.get_admin_interface_nocache()
-        hash_manual = hash_string(__version__)
-        self.assertEqual(hash_from_tag, hash_manual)
-
+    @override_settings(
+        STATIC_URL="https://bucket.s3.amazonaws.com/static/",
+    )
+    def test_get_static_with_s3_url(self):
+        path = "admin_interface/css/admin-interface.css"
         rendered = self.__render_template(
             "{% load admin_interface_tags %}"
-            "{% get_admin_interface_nocache as version_md5_hash %}"
-            "{{ version_md5_hash }}"
+            f"{{% get_admin_interface_static '{path}' %}}"
         )
-        self.assertEqual(rendered, hash_manual)
+        self.assertEqual(rendered, f"{settings.STATIC_URL}{path}")
 
     def test_get_admin_interface_inline_template(self):
         headless_template = templatetags.get_admin_interface_inline_template(

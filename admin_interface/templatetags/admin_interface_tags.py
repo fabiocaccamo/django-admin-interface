@@ -6,6 +6,7 @@ import warnings
 from django import template
 from django.conf import settings
 from django.contrib.admin.utils import get_fields_from_path
+from django.templatetags.static import static
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
 from slugify import slugify
@@ -81,20 +82,19 @@ def get_admin_interface_inline_template(template):
     return "/".join(template_path)
 
 
-@register.simple_tag()
-def get_admin_interface_version():
-    return __version__
-
-
 def hash_string(text):
     hash_object = hashlib.sha224(text.encode())
     sha224_hash = hash_object.hexdigest()
     return sha224_hash
 
 
-@register.simple_tag()
-def get_admin_interface_nocache():
-    return hash_string(__version__)
+@register.simple_tag(takes_context=False)
+def get_admin_interface_static(path):
+    url = static(path)
+    if not url.startswith(("https://", "http://", "//")):
+        version_hash = hash_string(__version__)
+        url = f"{url}?v={version_hash}"
+    return url
 
 
 @register.simple_tag(takes_context=False)
