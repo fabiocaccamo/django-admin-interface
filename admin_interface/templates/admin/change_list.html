@@ -12,8 +12,10 @@
             {% if cl.is_facets_optional %}
             <h3>
                 {% if cl.add_facets %}
+                {# Translators: don't translate this, the django catalog already contains it #}
                 <a href="{{ cl.remove_facet_link }}" class="hidelink">{% translate "Hide counts" %}</a>
                 {% else %}
+                {# Translators: don't translate this, the django catalog already contains it #}
                 <a href="{{ cl.add_facet_link }}" class="viewlink">{% translate "Show counts" %}</a>
                 {% endif %}
             </h3>
@@ -26,6 +28,7 @@
                 {% if cl.has_active_filters or active_date_hierarchy %}
                     <div class="changelist-filter-clear-container">
                         <h3 id="changelist-filter-clear">
+                            {# Translators: don't translate this, the django catalog already contains it #}
                             <a href="{{ cl.clear_all_filters_qs }}">&#10006; {% translate "Clear all filters" %}</a>
                         </h3>
                         {% if active_date_hierarchy %}
