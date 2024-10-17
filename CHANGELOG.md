@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.29.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.0) - 2024-10-17
+-   [python] Drop `Python 3.8`, `Python 3.9` and `Django 3.x` support.
+-   [python] Add support for admin `show_facets` option. #396
+-   [python] Fix serving static files from third-party services. #384 #385
+-   [css] Improve list filter style.
+-   [css] Set changelist table cell max-width.
+-   [ci] Add `Django 5.1` to `tox` test matrix.
+-   [ci] Update `pyupgrade` and `django-upgrade` hooks target versions.
+-   [ci] Bump `pre-commit` hooks.
+-   [ci] Bump test requirements.
+
 ## [0.28.9](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.28.9) - 2024-09-13
 -   [css] Add missing background color variable.
 -   [css] Fix fieldsets border color.
