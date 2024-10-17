@@ -113,6 +113,12 @@ You can add a theme you've created through the admin to this repository by [send
 ### Add theme support to third-party libraries
 You can add **theme support to existing third-party libraries** using the following **CSS variables**:
 
+### Body colors
+- `--admin-interface-body-background-color`
+- `--admin-interface-body-foreground-color`
+- `--admin-interface-body-quiet-color`
+- `--admin-interface-body-loud-color`
+
 #### Header
 
 - `--admin-interface-header-background-color`

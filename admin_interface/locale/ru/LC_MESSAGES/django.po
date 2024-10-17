@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-23 16:28-0500\n"
+"POT-Creation-Date: 2024-01-10 04:13-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,10 @@ msgstr "Иконка адресной строки"
 #: admin_interface/admin.py
 msgid "Title"
 msgstr "Заголовок"
+
+#: admin_interface/admin.py
+msgid "Body"
+msgstr ""
 
 #: admin_interface/admin.py
 msgid "Header"
@@ -177,8 +181,34 @@ msgid "display"
 msgstr "отображение"
 
 #: admin_interface/models.py
+msgid "Required fields, error messages"
+msgstr ""
+
+#: admin_interface/models.py
+#, fuzzy
+#| msgid "background color"
+msgid "foreground color"
+msgstr "цвет заднего фона"
+
+#: admin_interface/models.py
 msgid "background color"
 msgstr "цвет заднего фона"
+
+#: admin_interface/models.py
+msgid "Optional fields, help text, field content"
+msgstr ""
+
+#: admin_interface/models.py
+#, fuzzy
+#| msgid "text color"
+msgid "quiet color"
+msgstr "цвет текста"
+
+#: admin_interface/models.py
+#, fuzzy
+#| msgid "link color"
+msgid "loud color"
+msgstr "цвет ссылки"
 
 #: admin_interface/models.py
 msgid "text color"
