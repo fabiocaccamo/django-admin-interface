@@ -13,6 +13,14 @@
     }
 }
 
+.admin-interface .module.filtered #changelist-filter h2#changelist-filter-header {
+    margin-bottom: 0;
+}
+
+.admin-interface .module.filtered #changelist-filter h2#changelist-filter-header + details {
+    margin-top: 12px;
+}
+
 .admin-interface .module.filtered #changelist-filter h2 {
     font-size: 11px;
     padding: 10px 15px;
@@ -25,4 +33,11 @@
 .admin-interface .module.filtered #changelist-filter h3 {
     margin-top: 12px;
     margin-bottom: 12px;
+}
+
+/* fix summary shift when expanding/collapsing list filter */
+.admin-interface .module.filtered #changelist-filter details > summary::before {
+    display: inline-block;
+    width: 14px;
+    text-align: center;
 }

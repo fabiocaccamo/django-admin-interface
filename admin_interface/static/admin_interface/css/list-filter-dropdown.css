@@ -8,6 +8,7 @@ list-filter-dropdown
 }
 
 .admin-interface #changelist-filter h2 + .list-filter-dropdown,
+.admin-interface #changelist-filter #changelist-filter-extra-actions + .list-filter-dropdown,
 .admin-interface #changelist-filter .list-filter-dropdown + .list-filter-dropdown {
     margin-top: 5px;
 }
