@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 18:20-0500\n"
+"POT-Creation-Date: 2024-10-17 07:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
 "Language-Team: Farsi <LL@li.org>\n"
@@ -285,6 +285,16 @@ msgstr "تمها"
 #| msgid "List Filter"
 msgid "Filter"
 msgstr "فیلترهای لیست"
+
+#. Translators: don't translate this, the django catalog already contains it
+#: admin_interface/templates/admin/change_list.html
+msgid "Hide counts"
+msgstr ""
+
+#. Translators: don't translate this, the django catalog already contains it
+#: admin_interface/templates/admin/change_list.html
+msgid "Show counts"
+msgstr ""
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html

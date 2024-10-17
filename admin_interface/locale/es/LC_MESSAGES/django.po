@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-10 18:20-0500\n"
+"POT-Creation-Date: 2024-10-17 07:09-0500\n"
 "PO-Revision-Date: 2023-08-04 11:52-0300\n"
 "Last-Translator: Santiago Muñoz <smunoz@mythologylabs.com.uy>\n"
 "Language-Team: Spanish <dev@softbutterfly.io>\n"
@@ -236,7 +236,8 @@ msgstr "anclar posición"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr "remover enlaces para filtros activos en la parte superior de la barra lateral"
+msgstr ""
+"remover enlaces para filtros activos en la parte superior de la barra lateral"
 
 #: admin_interface/models.py
 msgid "foldable apps"
@@ -287,6 +288,16 @@ msgstr "Temas"
 #| msgid "List Filter"
 msgid "Filter"
 msgstr "Lista de filtros"
+
+#. Translators: don't translate this, the django catalog already contains it
+#: admin_interface/templates/admin/change_list.html
+msgid "Hide counts"
+msgstr ""
+
+#. Translators: don't translate this, the django catalog already contains it
+#: admin_interface/templates/admin/change_list.html
+msgid "Show counts"
+msgstr ""
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
