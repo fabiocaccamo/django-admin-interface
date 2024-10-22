@@ -76,3 +76,12 @@
         max-width: calc(100% - 360px);
     }
 }
+
+/* Hide the app element when all its models filtered-out (hidden) by quick-search. */
+.admin-interface #nav-sidebar .module[class^="app-"]:has([class^="model-"][style="display: none;"]) {
+    display: none;
+}
+
+.admin-interface #nav-sidebar .module[class^="app-"]:has([class^="model-"]:not([style="display: none;"])) {
+    display: block !important;
+}
