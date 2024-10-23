@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.29.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.1) - 2024-10-23
+-   [css] Hide dashboard app elements when all their models are filtered-out (hidden) by quick-search filters.
+-   [ci] Bump `pre-commit` hooks.
+
 ## [0.29.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.0) - 2024-10-17
 -   [python] Drop `Python 3.8`, `Python 3.9` and `Django 3.x` support.
 -   [python] Add support for admin `show_facets` option. #396
