@@ -222,10 +222,6 @@ backward compatibility:
     margin-right: 5px;
 }
 
-.admin-interface .inline-group .tabular .datetime br {
-    display: none;
-}
-
 .admin-interface #changelist .row1:not(.selected):hover,
 .admin-interface #changelist .row2:not(.selected):hover {
     background: #f9f9f9;
