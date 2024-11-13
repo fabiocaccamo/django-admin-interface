@@ -77,8 +77,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 32px;
+}
+.admin-interface .related-widget-wrapper .related-widget-wrapper-link:first-of-type {
+    margin-left: 8px;
+}
+.admin-interface .related-widget-wrapper .related-widget-wrapper-link:hover {
+    filter: brightness(80%);
 }
 .admin-interface .related-widget-wrapper .related-widget-wrapper-link img {
     width: 16px;
