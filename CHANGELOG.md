@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.29.2](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.2) - 2024-11-20
+-   [js] Highlight tab button with errors. #287 (thanks to [@EricPobot](https://github.com/EricPobot))
+-   [css] Improve related widget links style.
+-   [css] Improve user reset-password form appearance.
+-   [css] Don't show datetime widget on single-line in inlines.
+-   [ci] Bump `pre-commit` hooks.
+-   [ci] Bump test requirements.
+
 ## [0.29.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.1) - 2024-10-23
 -   [css] Hide dashboard app elements when all their models are filtered-out (hidden) by quick-search filters.
 -   [ci] Bump `pre-commit` hooks.
