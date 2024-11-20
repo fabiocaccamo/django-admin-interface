@@ -4,6 +4,19 @@
 
     scope.tabbedChangeForm = {
 
+        hightlightTabsWithErrors: function() {
+            document.querySelectorAll(".errorlist").forEach((el) => {
+                const tabContent = el.closest(".tabbed-changeform-tabcontent");
+                if (tabContent) {
+                    const tabName = tabContent.id.replace("tabcontent-", "");
+                    const tabEl = document.getElementById("tablink-" + tabName);
+                    if (tabEl) {
+                        tabEl.classList.add("error");
+                    }
+                }
+            });
+        },
+
         openTab: function (event, tabName) {
             this.openTabByName(tabName);
         },
@@ -67,6 +80,7 @@
 
     // scope.tabbedChangeForm.openTabByLocationHash();
     document.addEventListener('DOMContentLoaded', function() {
+        scope.tabbedChangeForm.hightlightTabsWithErrors();
         scope.tabbedChangeForm.openTabByLocationHash();
     }, false);
 
