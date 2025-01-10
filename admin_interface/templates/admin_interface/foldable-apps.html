@@ -1,6 +1,6 @@
-{% load static %}
+{% load static admin_interface_tags %}
 
 {% if theme.foldable_apps %}
-<link rel="stylesheet" href="{% static 'admin_interface/foldable-apps/foldable-apps.css' %}?nocache={{ version_md5_cache }}">
-<script src="{% static 'admin_interface/foldable-apps/foldable-apps.js' %}?nocache={{ version_md5_cache }}"></script>
+<link rel="stylesheet" href="{% get_admin_interface_static 'admin_interface/foldable-apps/foldable-apps.css' %}">
+<script src="{% get_admin_interface_static 'admin_interface/foldable-apps/foldable-apps.js' %}"></script>
 {% endif %}
