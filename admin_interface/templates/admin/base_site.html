@@ -124,8 +124,8 @@
 {% get_admin_interface_theme as theme %}
 {# https://github.com/elky/django-flat-responsive#important-note #}
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<link rel="stylesheet" href="{% get_admin_interface_static 'admin/css/responsive.css' %}?nocache={{ version_md5_cache }}">
-<link rel="stylesheet" href="{% get_admin_interface_static 'admin/css/responsive_rtl.css' %}?nocache={{ version_md5_cache }}">
+<link rel="stylesheet" href="{% get_admin_interface_static 'admin/css/responsive.css' %}">
+<link rel="stylesheet" href="{% get_admin_interface_static 'admin/css/responsive_rtl.css' %}">
 {% include "admin_interface/favicon.html" %}
 {% include "admin_interface/foldable-apps.html" %}
 {% include "admin_interface/related-modal.html" %}

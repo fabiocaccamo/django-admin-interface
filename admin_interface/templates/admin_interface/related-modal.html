@@ -1,8 +1,8 @@
-{% load static %}
+{% load static admin_interface_tags %}
 
 {% if theme.related_modal_active %}
-<link rel="stylesheet" href="{% static 'admin_interface/magnific-popup/magnific-popup.css' %}?nocache={{ version_md5_cache }}">
-<link rel="stylesheet" href="{% static 'admin_interface/related-modal/related-modal.css' %}?v={{ version_md5_cache }}">
-<script src="{% static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}?nocache={{ version_md5_cache }}"></script>
-<script src="{% static 'admin_interface/related-modal/related-modal.js' %}?nocache={{ version_md5_cache }}"></script>
+<link rel="stylesheet" href="{% get_admin_interface_static 'admin_interface/magnific-popup/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% get_admin_interface_static 'admin_interface/related-modal/related-modal.css' %}">
+<script src="{% get_admin_interface_static 'admin_interface/magnific-popup/jquery.magnific-popup.js' %}"></script>
+<script src="{% get_admin_interface_static 'admin_interface/related-modal/related-modal.js' %}"></script>
 {% endif %}

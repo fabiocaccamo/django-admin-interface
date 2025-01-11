@@ -1,9 +1,9 @@
-{% load static %}
+{% load static admin_interface_tags %}
 
 {% if theme.favicon %}
 <link rel="icon" href="{{ theme.favicon.url }}">
 {% if theme.env_visible_in_favicon %}
-<script src="{% static 'admin_interface/favico/favico-0.3.10-patched.min.js' %}?nocache={{ version_md5_cache }}"></script>
+<script src="{% get_admin_interface_static 'admin_interface/favico/favico-0.3.10-patched.min.js' %}"></script>
 <script>
 var favicon = new Favico({
     type: 'circle',
