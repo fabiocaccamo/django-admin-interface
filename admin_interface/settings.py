@@ -9,7 +9,7 @@ def check_installed_app(app, max_dj_version=None):
     if max_dj_version is None:
         if app not in installed_apps:
             raise ImproperlyConfigured(
-                "'{}' is required, " "add it to settings.INSTALLED_APPS.".format(app)
+                f"'{app}' is required, add it to settings.INSTALLED_APPS."
             )
     elif dj_version < max_dj_version:
         if app not in installed_apps:
