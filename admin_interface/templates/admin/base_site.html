@@ -146,7 +146,7 @@ admin-interface
 {% if theme.list_filter_highlight %} list-filter-highlight {% endif %}
 {% if theme.list_filter_sticky %} list-filter-sticky {% endif %}
 
-{% if adminform %}
+{% if adminform and inline_admin_formsets %}
 {% admin_interface_use_changeform_tabs adminform inline_admin_formsets as admin_interface_use_changeform_tabs %}
 {% if admin_interface_use_changeform_tabs %}
     {% if theme.show_fieldsets_as_tabs %} show-fieldsets-as-tabs {% endif %}
