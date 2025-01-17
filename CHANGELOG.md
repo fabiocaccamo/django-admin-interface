@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.29.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.4) - 2025-01-17
+-   [html] Guard variables that are not always defined. (by [@merwok](https://github.com/merwok) in #418)
+
 ## [0.29.3](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.3) - 2025-01-11
 -   [html] Fix old nocache md5. (by [@merwok](https://github.com/merwok) in #417)
 -   [ci] Bump `pre-commit` hooks.
