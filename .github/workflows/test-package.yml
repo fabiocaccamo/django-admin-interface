@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create matrix
-        uses: fabiocaccamo/create-matrix-action@v4
+        uses: fabiocaccamo/create-matrix-action@v5
         id: create_matrix
         with:
           matrix: |
