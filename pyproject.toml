@@ -63,28 +63,10 @@ Issues = "https://github.com/fabiocaccamo/django-admin-interface/issues"
 Funding = "https://github.com/sponsors/fabiocaccamo/"
 Twitter = "https://twitter.com/fabiocaccamo"
 
-[tool.black]
-line-length = 88
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-  | venv
-)/
-'''
-
 [tool.ruff]
 ignore = []
 line-length = 88
-select = ["B", "B9", "C", "E", "F", "W"]
+select = ["B", "B9", "C", "E", "F", "I", "W"]
 
 [tool.ruff.mccabe]
 max-complexity = 10
