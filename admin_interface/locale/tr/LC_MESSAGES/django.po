@@ -61,7 +61,7 @@ msgstr "Kaldır Butonları"
 
 #: admin_interface/admin.py
 msgid "Navigation Bar"
-msgstr ""
+msgstr "Navigasyon"
 
 #: admin_interface/admin.py
 msgid "Related Modal"
@@ -69,7 +69,7 @@ msgstr "İlgili Modal"
 
 #: admin_interface/admin.py
 msgid "Form Controls"
-msgstr ""
+msgstr "Form Kontrolleri"
 
 #: admin_interface/admin.py
 msgid "List Filter"
@@ -77,11 +77,11 @@ msgstr "Liste Filtresi"
 
 #: admin_interface/admin.py
 msgid "Change Form"
-msgstr ""
+msgstr "Değiştir Formu"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "İç/Alt  Formlar"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -125,11 +125,11 @@ msgstr "logo"
 
 #: admin_interface/models.py
 msgid "max width"
-msgstr ""
+msgstr "maks genişlik"
 
 #: admin_interface/models.py
 msgid "max height"
-msgstr ""
+msgstr "maks yükseklik"
 
 #: admin_interface/models.py
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
@@ -159,15 +159,15 @@ msgstr "favicon’da görünsün (yuvarlak işaret)"
 
 #: admin_interface/models.py
 msgid "Default Select"
-msgstr ""
+msgstr "Varsayılan Seçim"
 
 #: admin_interface/models.py
 msgid "Minimal Select"
-msgstr ""
+msgstr "Minimal Seçim"
 
 #: admin_interface/models.py
 msgid "control"
-msgstr ""
+msgstr "kontrol"
 
 #: admin_interface/models.py
 msgid "code"
@@ -227,7 +227,7 @@ msgstr "kapat düğmesi görünsün"
 
 #: admin_interface/models.py
 msgid "highlight active"
-msgstr ""
+msgstr "aktif vurgula"
 
 #: admin_interface/models.py
 msgid "use dropdown"
@@ -235,47 +235,47 @@ msgstr "açılır listeyi kullan"
 
 #: admin_interface/models.py
 msgid "sticky position"
-msgstr ""
+msgstr "sabit konum"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr ""
+msgstr "yan menüdeki aktif filtrelerin üst kısmında hızlı kaldırma bağlantıları"
 
 #: admin_interface/models.py
 msgid "foldable apps"
-msgstr ""
+msgstr "katlanabilir uygulamalar"
 
 #: admin_interface/models.py
 msgid "fieldsets as tabs"
-msgstr ""
+msgstr "fieldsetleri sekmeler olarak"
 
 #: admin_interface/models.py
 msgid "inlines as tabs"
-msgstr ""
+msgstr "iç/alt formları sekmeler olarak"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines"
-msgstr ""
+msgstr "kapatılabilir iç/alt formlar"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines collapsed"
-msgstr ""
+msgstr "kapatılabilir iç/alt formlar kapalı"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines"
-msgstr ""
+msgstr "kapatılabilir tabular iç/alt formlar"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines collapsed"
-msgstr ""
+msgstr "kapatılabilir tabular iç/alt formlar kapalı"
 
 #: admin_interface/models.py
 msgid "sticky submit"
-msgstr ""
+msgstr "gönderme sabit"
 
 #: admin_interface/models.py
 msgid "sticky pagination"
-msgstr ""
+msgstr "sayfalama sabit"
 
 #: admin_interface/models.py
 msgid "Theme"
@@ -289,47 +289,47 @@ msgstr "Temalar"
 #, fuzzy
 #| msgid "List Filter"
 msgid "Filter"
-msgstr "Liste Filtresi"
+msgstr "Filitre"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Hide counts"
-msgstr ""
+msgstr "Sayım gizle"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Show counts"
-msgstr ""
+msgstr "Sayım göster"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Clear all filters"
-msgstr ""
+msgstr "Tüm filtreleri temizle"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "Değiştir"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "Görüntüle"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "Siteyi görüntüle"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "Sil?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html
 #, python-format
 msgid " By %(filter_title)s "
-msgstr " %(filter_title)s tarafından "
+msgstr " %(filter_title)s "
 
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
