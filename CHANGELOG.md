@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.30.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.30.0) - 2025-04-03
+-   [python] Add `Django 5.2` support.
+-   [html] Process templates with `djade`.
+-   [i18n] Update Turkish translations. (by [@mcihad](https://github.com/mcihad) in #429)
+-   [ci] Add `djade` pre-commit hook.
+-   [ci] Bump `pre-commit` hooks.
+-   [ci] Bump requirements.
+
 ## [0.29.4](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.29.4) - 2025-01-17
 -   [html] Guard variables that are not always defined. (by [@merwok](https://github.com/merwok) in #418)
 
