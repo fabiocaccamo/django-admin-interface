@@ -22,7 +22,7 @@ jobs:
             python-version {3.10}, django-version {4.0, 4.1, 4.2, 5.0, 5.1}, database {sqlite, postgres}
             python-version {3.11}, django-version {4.1, 4.2, 5.0, 5.1}, database {sqlite, postgres}
             python-version {3.12}, django-version {4.2, 5.0, 5.1}, database {sqlite, postgres}
-            python-version {3.13}, django-version {5.1}, database {sqlite}
+            python-version {3.13}, django-version {5.1}, database {sqlite, postgres}
 
     outputs:
       matrix: ${{ steps.create_matrix.outputs.matrix }}
