@@ -1,5 +1,5 @@
 {% extends "admin/change_form.html" %}
-{% load static admin_interface_tags %}
+{% load admin_interface_tags static %}
 
 {% block field_sets %}
 
@@ -17,14 +17,14 @@
 
             {% if show_fieldsets_as_tabs %}
                 {% for fieldset in adminform %}
-                {% with fieldset.name|default_if_none:opts.verbose_name as tab_name %}
+                {% with tab_name=fieldset.name|default_if_none:opts.verbose_name %}
                 <button type="button" id="tablink-{{ tab_name|admin_interface_slugify }}" class="tabbed-changeform-tablink {{ forloop.counter0|default:'active' }}" onclick="AdminInterface.tabbedChangeForm.openTab(event, '{{ tab_name|admin_interface_slugify }}')">
                     {{ tab_name|capfirst }}
                 </button>
                 {% endwith %}
                 {% endfor %}
             {% else %}
-                {% with opts.verbose_name as tab_name %}
+                {% with tab_name=opts.verbose_name %}
                 <button type="button" id="tablink-{{ tab_name|admin_interface_slugify }}" class="tabbed-changeform-tablink active" onclick="AdminInterface.tabbedChangeForm.openTab(event, '{{ tab_name|admin_interface_slugify }}')">
                     {{ tab_name|capfirst }}
                 </button>
@@ -33,7 +33,7 @@
 
             {% if show_inlines_as_tabs %}
                 {% for inline_admin_formset in inline_admin_formsets %}
-                {% with inline_admin_formset.opts.verbose_name_plural as tab_name %}
+                {% with tab_name=inline_admin_formset.opts.verbose_name_plural %}
                 <button type="button" id="tablink-{{ tab_name|admin_interface_slugify }}" class="tabbed-changeform-tablink" onclick="AdminInterface.tabbedChangeForm.openTab(event, '{{ tab_name|admin_interface_slugify }}')">
                     {{ tab_name|capfirst }}
                 </button>
@@ -47,14 +47,14 @@
 
         {% if show_fieldsets_as_tabs %}
             {% for fieldset in adminform %}
-            {% with fieldset.name|default_if_none:opts.verbose_name as tab_name %}
+            {% with tab_name=fieldset.name|default_if_none:opts.verbose_name %}
             <div id="tabcontent-{{ tab_name|admin_interface_slugify }}" class="tabbed-changeform-tabcontent {{ forloop.counter0|default:'active' }}">
                 {% include "admin/includes/headerless_fieldset.html" %}
             </div>
             {% endwith %}
             {% endfor %}
         {% else %}
-            {% with opts.verbose_name as tab_name %}
+            {% with tab_name=opts.verbose_name %}
             <div id="tabcontent-{{ tab_name|admin_interface_slugify }}" class="tabbed-changeform-tabcontent active">
             {% for fieldset in adminform %}
                 {% include "admin/includes/fieldset.html" %}
@@ -64,8 +64,8 @@
         {% endif %}
 
         {% if show_inlines_as_tabs %}
-        {% for inline_admin_formset in inline_admin_formsets  %}
-        {% with inline_admin_formset.opts.verbose_name_plural as tab_name %}
+        {% for inline_admin_formset in inline_admin_formsets %}
+        {% with tab_name=inline_admin_formset.opts.verbose_name_plural %}
         <div id="tabcontent-{{ tab_name|admin_interface_slugify }}" class="tabbed-changeform-tabcontent">
             {% get_admin_interface_inline_template inline_admin_formset.opts.template as inline_template %}
             {% include inline_template %}
@@ -78,7 +78,7 @@
 
     {% endif %}
 
-{% endblock %}
+{% endblock field_sets %}
 
 {% block inline_field_sets %}
 
@@ -87,4 +87,4 @@
         {{ block.super }}
     {% endif %}
 
-{% endblock %}
+{% endblock inline_field_sets %}

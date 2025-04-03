@@ -1,5 +1,5 @@
 {% extends "admin/change_list.html" %}
-{% load i18n admin_list admin_interface_tags %}
+{% load admin_interface_tags admin_list i18n %}
 {# copied from django 5.1.2 #}
 
 {% block filters %}
@@ -60,4 +60,4 @@
         {% endfor %}
     </nav>
     {% endif %}
-{% endblock %}
+{% endblock filters %}

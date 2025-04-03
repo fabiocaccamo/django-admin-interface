@@ -1,10 +1,10 @@
 {% extends 'admin/base.html' %}
-{% load i18n static admin_interface_tags %}
+{% load admin_interface_tags i18n static %}
 
 {% block title %}
 {% get_admin_interface_theme as theme %}
-{% if title %}{{ title }} | {% endif %}{% if theme.title %}{% trans theme.title %}{% else %}{{ site_title|default:_('Django administration') }}{% endif %}
-{% endblock %}
+{% if title %}{{ title }} | {% endif %}{% if theme.title %}{% translate theme.title %}{% else %}{{ site_title|default:_('Django administration') }}{% endif %}
+{% endblock title %}
 
 {% block extrastyle %}
 {% get_admin_interface_theme as theme %}
@@ -117,7 +117,7 @@
 <link rel="stylesheet"  href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.2/dist/font-face.css">
 {% endif %}
 
-{% endblock %}
+{% endblock extrastyle %}
 
 {% block blockbots %}
 {{ block.super }}
@@ -130,11 +130,11 @@
 {% include "admin_interface/foldable-apps.html" %}
 {% include "admin_interface/related-modal.html" %}
 {% include "admin_interface/collapsible-inlines.html" %}
-{% endblock %}
+{% endblock blockbots %}
 
 {% block extrahead %}
 {{ block.super }}
-{% endblock %}
+{% endblock extrahead %}
 
 {% block bodyclass %}
 {% get_admin_interface_theme as theme %}
@@ -160,7 +160,7 @@ admin-interface
 {% if theme.collapsible_tabular_inlines %} collapsible-tabular-inlines
     {% if theme.collapsible_tabular_inlines_collapsed %} collapsible-tabular-inlines-collapsed {% endif %}
 {% endif %}
-{% endblock %}
+{% endblock bodyclass %}
 
 {% block branding %}
 {% get_admin_interface_theme as theme %}
@@ -174,16 +174,16 @@ admin-interface
             {% endif %}
         {% endif %}
         {% if theme.title_visible %}
-        <span>{% if theme.title %}{% trans theme.title %}{% else %}{{ site_header|default:_('Django administration') }}{% endif %}</span>
+        <span>{% if theme.title %}{% translate theme.title %}{% else %}{{ site_header|default:_('Django administration') }}{% endif %}</span>
         {% endif %}
     </a>
 </h1>
-{% endblock %}
+{% endblock branding %}
 
 {% block welcome-msg %}
 {% get_admin_interface_theme as theme %}
 {% if theme.env_visible_in_header %}<span class="environment-label {{ theme.env_name }}">{{ theme.env_name }}</span><br>{% endif %}{{ block.super }}<br>
-{% endblock %}
+{% endblock welcome-msg %}
 
 {% block userlinks %}
 {{ block.super }}
@@ -191,4 +191,4 @@ admin-interface
 {% if theme.language_chooser_active %}
     {% admin_interface_language_chooser %}
 {% endif %}
-{% endblock %}
+{% endblock userlinks %}
