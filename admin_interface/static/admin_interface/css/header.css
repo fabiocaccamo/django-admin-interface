@@ -34,6 +34,10 @@
     align-self: flex-start;
 }
 
+.admin-interface #user-tools .theme-toggle {
+    transform: scale(0.7) !important;
+}
+
 .admin-interface #user-tools br {
     display: none;
 }
