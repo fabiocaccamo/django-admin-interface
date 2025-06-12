@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.30.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.30.1) - 2025-06-12
+-   [js] Fix paginator links inside modal (from `raw_id_fields`) returns `404`. #420
+-   [css] Fix `Django 5.2` selector style. #435
+-   [css] Reduce theme toggle button size.
+-   [ci] Update linter settings.
+-   [ci] Bump `pre-commit` hooks.
+-   [ci] Bump test requirements.
+
 ## [0.30.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.30.0) - 2025-04-03
 -   [python] Add `Django 5.2` support.
 -   [html] Process templates with `djade`.
