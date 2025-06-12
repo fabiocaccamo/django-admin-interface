@@ -242,6 +242,11 @@
     color: var(--admin-interface-module-text-color);
 }
 
+.admin-interface .selector .selector-chosen .selector-chosen-title {
+    background: var(--admin-interface-module-background-color);
+    color: var(--admin-interface-module-text-color);
+}
+
 .admin-interface .selector .selector-available h2,
 .admin-interface .selector .selector-chosen h2 {
     border-bottom-left-radius: 0px;
