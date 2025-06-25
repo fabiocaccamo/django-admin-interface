@@ -32,3 +32,11 @@
     margin-right: 0px !important;
     padding: 40px 0px 40px 40px !important;
 }
+
+[dir="rtl"] .admin-interface .paginator .this-page + a:not(.showall)  {
+    margin-left: 0px;
+}
+
+[dir="rtl"] .admin-interface .paginator .this-page, .admin-interface .paginator a.end {
+    margin-right: 0px;
+}
