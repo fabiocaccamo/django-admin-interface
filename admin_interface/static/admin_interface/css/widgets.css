@@ -136,6 +136,11 @@
     height: calc(46px + 17.2em) !important;
 }
 
+/* fix selected options color */
+.admin-interface .selector select option:checked {
+    color: inherit;
+}
+
 @media (max-width: 767px) {
     /* fixed responsive widgets */
     .admin-interface .aligned.collapsed .form-row {
