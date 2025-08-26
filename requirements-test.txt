@@ -1,4 +1,4 @@
-coverage == 7.9.*
-pre-commit == 4.2.*
+coverage == 7.10.*
+pre-commit == 4.3.*
 psycopg2-binary == 2.9.*
-tox == 4.26.*
+tox == 4.28.*
