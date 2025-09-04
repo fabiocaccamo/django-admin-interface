@@ -188,6 +188,11 @@ def admin_interface_use_changeform_tabs(adminform, inline_forms):
     return has_tabs
 
 
+@register.simple_tag(takes_context=True)
+def resolve_variable(context, var_name, default=""):
+    return context.get(var_name, default)
+
+
 @register.filter
 def admin_interface_slugify(name):
     return slugify(str(name or ""))
