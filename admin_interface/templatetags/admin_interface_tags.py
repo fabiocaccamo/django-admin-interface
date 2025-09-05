@@ -189,8 +189,20 @@ def admin_interface_use_changeform_tabs(adminform, inline_forms):
 
 
 @register.simple_tag(takes_context=True)
-def resolve_variable(context, var_name, default=""):
-    return context.get(var_name, default)
+def admin_interface_resolve_variable(context, var_name, default=""):
+    bits = var_name.split(".")
+    current = context.flatten()  # merge all and create a context dict
+
+    for bit in bits:
+        try:
+            if isinstance(current, dict):
+                current = current[bit]
+            else:
+                current = getattr(current, bit)
+        except (KeyError, AttributeError, TypeError):
+            return default
+
+    return template.Variable(var_name).resolve(context)
 
 
 @register.filter
