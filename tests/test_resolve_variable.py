@@ -14,14 +14,14 @@ class ResolveVariableTagTests(SimpleTestCase):
 
     def test_returns_existing_variable(self):
         out = self.render_template(
-            '{% admin_interface_resolve_variable "myvar" as result %}{{ result }}',
+            '{% admin_interface_resolve_variable "myvar" as res %}{{ res }}',
             {"myvar": "hello"},
         )
         self.assertEqual(out, "hello")
 
     def test_returns_default_when_missing(self):
         out = self.render_template(
-            '{% admin_interface_resolve_variable "missingvar" as result %}{{ result }}'
+            '{% admin_interface_resolve_variable "missingvar" as res %}{{ res }}'
         )
         self.assertEqual(out, "")
 
@@ -34,7 +34,7 @@ class ResolveVariableTagTests(SimpleTestCase):
     def test_dotted_variable_existing(self):
         context = {"user": {"name": "alice"}}
         out = self.render_template(
-            '{% admin_interface_resolve_variable "user.name" as result %}{{ result }}',
+            '{% admin_interface_resolve_variable "user.name" as res %}{{ res }}',
             context,
         )
         self.assertEqual(out, "alice")
@@ -60,7 +60,7 @@ class ResolveVariableTagTests(SimpleTestCase):
 
         context = {"user": User()}
         out = self.render_template(
-            '{% admin_interface_resolve_variable "user.name" as result %}{{ result }}',
+            '{% admin_interface_resolve_variable "user.name" as res %}{{ res }}',
             context,
         )
         self.assertEqual(out, "bob")
