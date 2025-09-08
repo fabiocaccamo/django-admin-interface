@@ -9,19 +9,19 @@ repos:
         args: ["--py310-plus"]
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.25.0
+    rev: 1.27.0
     hooks:
       - id: django-upgrade
         args: ["--target-version", "4.0"]
 
   - repo: https://github.com/adamchainz/djade-pre-commit
-    rev: "1.4.0"
+    rev: "1.5.0"
     hooks:
     -   id: djade
         args: [--target-version, "4.1"]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.10
+    rev: v0.12.11
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
