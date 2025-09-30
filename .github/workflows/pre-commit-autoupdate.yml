@@ -1,5 +1,9 @@
 name: Pre-commit auto-update
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
   # every month
   schedule:
