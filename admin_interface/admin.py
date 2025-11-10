@@ -158,6 +158,7 @@ class ThemeAdmin(admin.ModelAdmin):
             {
                 "classes": ("wide",),
                 "fields": (
+                    "form_actions_sticky",
                     "form_submit_sticky",
                     "form_pagination_sticky",
                 ),

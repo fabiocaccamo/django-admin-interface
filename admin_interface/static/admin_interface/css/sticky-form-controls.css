@@ -1,3 +1,19 @@
+/* sticky actions */
+
+.admin-interface.sticky-actions #changelist .actions {
+    width: 100%;
+    background: var(--body-bg);
+    border-top: none;
+    border-bottom: 1px solid #EEEEEE;
+    padding: 10px;
+    line-height: 1.5rem;
+    color: var(--body-quiet-color);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: -1px;
+}
+
 /* sticky pagination */
 
 .admin-interface.sticky-pagination.change-list #content-main {

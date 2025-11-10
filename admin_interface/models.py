@@ -390,6 +390,10 @@ class Theme(models.Model):
         verbose_name=_("visible"),
     )
 
+    form_actions_sticky = models.BooleanField(
+        default=True,
+        verbose_name=_("sticky actions"),
+    )
     form_submit_sticky = models.BooleanField(
         default=False,
         verbose_name=_("sticky submit"),

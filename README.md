@@ -33,7 +33,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - `NEW` List filter highlight selected options
 - List filter dropdown
 - List filter sticky
-- Form controls sticky *(pagination and save/delete buttons)*
+- Form controls sticky *(actions, pagination and save/delete buttons)*
 - Compatibility / style optimizations for:
   - `django-ckeditor`
   - `django-dynamic-raw-id`

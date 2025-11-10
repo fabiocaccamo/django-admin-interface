@@ -141,6 +141,7 @@
 admin-interface
 {% if theme.name %} {{ theme.name|slugify }}-theme {% endif %}
 {% if theme.foldable_apps %} foldable-apps {% endif %}
+{% if theme.form_actions_sticky %} sticky-actions {% endif %}
 {% if theme.form_submit_sticky %} sticky-submit {% endif %}
 {% if theme.form_pagination_sticky %} sticky-pagination {% endif %}
 {% if theme.list_filter_highlight %} list-filter-highlight {% endif %}
