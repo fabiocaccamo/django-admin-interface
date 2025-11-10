@@ -50,3 +50,19 @@
     overflow: hidden;
     max-width: min(400px, 30vw);
 }
+
+/* make date hierarchy scrollable horizontally */
+/*
+.admin-interface.scrollable-date-hierarchy #changelist .changelist-form-container #toplinks {
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow: auto;
+    flex-direction: row-reverse;
+    padding-bottom: 15px;
+    scrollbar-width: thin;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+*/
