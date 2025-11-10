@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: 2020-01-29 04:53+0300\n"
 "Last-Translator: Ishak Okutan <ishak.oktn@gmail.com>\n"
 "Language-Team: \n"
@@ -81,7 +81,7 @@ msgstr "Değiştir Formu"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr "İç/Alt  Formlar"
+msgstr "İç/Alt Formlar"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -146,8 +146,8 @@ msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
 msgstr ""
-"(kırmızı: # E74C3C, turuncu: # E67E22, sarı: # F1C40F, yeşil: # 2ECC71, "
-"mavi: # 3498DB)"
+"(kırmızı: #E74C3C, turuncu: #E67E22, sarı: #F1C40F, yeşil: #2ECC71, "
+"mavi: #3498DB)"
 
 #: admin_interface/models.py
 msgid "visible in header (marker and name)"
@@ -155,7 +155,7 @@ msgstr "üst kısım da görünsün (yuvarlak işaret ve ad)"
 
 #: admin_interface/models.py
 msgid "visible in favicon (marker)"
-msgstr "favicon’da görünsün (yuvarlak işaret)"
+msgstr "favicon'da görünsün (yuvarlak işaret)"
 
 #: admin_interface/models.py
 msgid "Default Select"
@@ -194,16 +194,12 @@ msgid "link hover color"
 msgstr "bağlantı üzerine gelindiğindeki rengi"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "background color"
 msgid "background selected color"
-msgstr "arka plan rengi"
+msgstr "seçilen arka plan rengi"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "link color"
 msgid "link selected color"
-msgstr "bağlantı rengi"
+msgstr "seçilen bağlantı rengi"
 
 #: admin_interface/models.py
 msgid "rounded corners"
@@ -239,7 +235,8 @@ msgstr "sabit konum"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr "yan menüdeki aktif filtrelerin üst kısmında hızlı kaldırma bağlantıları"
+msgstr ""
+"yan menüdeki aktif filtrelerin üst kısmında hızlı kaldırma bağlantıları"
 
 #: admin_interface/models.py
 msgid "foldable apps"
@@ -270,6 +267,10 @@ msgid "collapsible tabular inlines collapsed"
 msgstr "kapatılabilir tabular iç/alt formlar kapalı"
 
 #: admin_interface/models.py
+msgid "sticky actions"
+msgstr "sabit eylemler"
+
+#: admin_interface/models.py
 msgid "sticky submit"
 msgstr "gönderme sabit"
 
@@ -286,25 +287,23 @@ msgid "Themes"
 msgstr "Temalar"
 
 #: admin_interface/templates/admin/change_list.html
-#, fuzzy
-#| msgid "List Filter"
 msgid "Filter"
-msgstr "Filitre"
+msgstr "Filtre"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Hide counts"
-msgstr "Sayım gizle"
+msgstr ""
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Show counts"
-msgstr "Sayım göster"
+msgstr ""
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Clear all filters"
-msgstr "Tüm filtreleri temizle"
+msgstr ""
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html

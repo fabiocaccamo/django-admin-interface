@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: 2023-08-04 11:52-0300\n"
 "Last-Translator: Santiago Muñoz <smunoz@mythologylabs.com.uy>\n"
 "Language-Team: Spanish <dev@softbutterfly.io>\n"
@@ -82,7 +82,7 @@ msgstr "Cambiar Formulario"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "Inlines"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -145,6 +145,8 @@ msgid ""
 "(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
 "#3498DB)"
 msgstr ""
+"(rojo: #E74C3C, naranja: #E67E22, amarillo: #F1C40F, verde: #2ECC71, azul: "
+"#3498DB)"
 
 #: admin_interface/models.py
 msgid "visible in header (marker and name)"
@@ -191,16 +193,12 @@ msgid "link hover color"
 msgstr "color de enlace (hover)"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "background color"
 msgid "background selected color"
-msgstr "color de fondo"
+msgstr "color de fondo seleccionado"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "link color"
 msgid "link selected color"
-msgstr "color de enlace"
+msgstr "color de enlace seleccionado"
 
 #: admin_interface/models.py
 msgid "rounded corners"
@@ -268,6 +266,10 @@ msgid "collapsible tabular inlines collapsed"
 msgstr "inlines tabulares plegables colapsados"
 
 #: admin_interface/models.py
+msgid "sticky actions"
+msgstr "anclar acciones"
+
+#: admin_interface/models.py
 msgid "sticky submit"
 msgstr "anclar botón de guardar"
 
@@ -284,10 +286,8 @@ msgid "Themes"
 msgstr "Temas"
 
 #: admin_interface/templates/admin/change_list.html
-#, fuzzy
-#| msgid "List Filter"
 msgid "Filter"
-msgstr "Lista de filtros"
+msgstr "Filtrar"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
@@ -307,21 +307,21 @@ msgstr ""
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "Cambiar"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "Ver en el sitio"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "¿Eliminar?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html
@@ -331,4 +331,4 @@ msgstr " Por %(filter_title)s "
 
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
-msgstr "Cerando popup..."
+msgstr "Cerrando popup..."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,7 +134,7 @@ msgstr "максимальная высота"
 
 #: admin_interface/models.py
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
-msgstr ""
+msgstr "(.ico|.png|.gif - 16x16|32x32 px)"
 
 #: admin_interface/models.py
 msgid "favicon"
@@ -146,7 +146,7 @@ msgid ""
 "#3498DB)"
 msgstr ""
 "(красный: #E74C3C, оранжевый: #E67E22, желтый: #F1C40F, зеленый: #2ECC71, "
-"синий: #3498DB"
+"синий: #3498DB)"
 
 #: admin_interface/models.py
 msgid "visible in header (marker and name)"
@@ -265,6 +265,10 @@ msgid "collapsible tabular inlines collapsed"
 msgstr "сворачивающиеся табличные вставки свернуты"
 
 #: admin_interface/models.py
+msgid "sticky actions"
+msgstr "устойчивые действия"
+
+#: admin_interface/models.py
 msgid "sticky submit"
 msgstr "устойчивая отправка"
 
@@ -297,7 +301,7 @@ msgstr ""
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Clear all filters"
-msgstr "Очистить все фильтры"
+msgstr ""
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
@@ -320,10 +324,9 @@ msgstr "Удалить?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html
-#, fuzzy, python-format
-#| msgid " By %(filter_title)s "
+#, python-format
 msgid " By %(filter_title)s "
-msgstr " По %(filter_title)ы "
+msgstr " По %(filter_title)s "
 
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."

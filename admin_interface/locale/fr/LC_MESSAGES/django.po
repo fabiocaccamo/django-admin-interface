@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,11 +76,11 @@ msgstr "Filtre de liste"
 
 #: admin_interface/admin.py
 msgid "Change Form"
-msgstr ""
+msgstr "Formulaire de modification"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "Formulaires en ligne"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -148,7 +148,7 @@ msgstr ""
 
 #: admin_interface/models.py
 msgid "visible in header (marker and name)"
-msgstr "visible dans l’en-tête (marqueur et nom)"
+msgstr "visible dans l'en-tête (marqueur et nom)"
 
 #: admin_interface/models.py
 msgid "visible in favicon (marker)"
@@ -156,11 +156,11 @@ msgstr "visible dans la favicon (marqueur)"
 
 #: admin_interface/models.py
 msgid "Default Select"
-msgstr ""
+msgstr "Sélection par défaut"
 
 #: admin_interface/models.py
 msgid "Minimal Select"
-msgstr ""
+msgstr "Sélection minimale"
 
 #: admin_interface/models.py
 msgid "control"
@@ -241,27 +241,31 @@ msgstr "apps repliables"
 
 #: admin_interface/models.py
 msgid "fieldsets as tabs"
-msgstr ""
+msgstr "fieldsets sous forme d'onglets"
 
 #: admin_interface/models.py
 msgid "inlines as tabs"
-msgstr ""
+msgstr "formulaires en ligne sous forme d'onglets"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines"
-msgstr ""
+msgstr "formulaires en ligne empilés repliables"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines collapsed"
-msgstr ""
+msgstr "formulaires en ligne empilés repliables (repliés)"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines"
-msgstr ""
+msgstr "formulaires en ligne tabulaires repliables"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines collapsed"
-msgstr ""
+msgstr "formulaires en ligne tabulaires repliables (repliés)"
+
+#: admin_interface/models.py
+msgid "sticky actions"
+msgstr "actions adhérentes (sticky)"
 
 #: admin_interface/models.py
 msgid "sticky submit"
@@ -301,21 +305,21 @@ msgstr ""
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "Modifier"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "Voir"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "Voir sur le site"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "Supprimer ?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html

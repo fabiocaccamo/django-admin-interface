@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: 2022-02-04 19:13-0500\n"
 "Last-Translator: Kamil Paduszyński <kpaduszy@gmail.com>\n"
 "Language-Team: Polish <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr "Przyciski usuwania"
 
 #: admin_interface/admin.py
 msgid "Navigation Bar"
-msgstr ""
+msgstr "Pasek nawigacji"
 
 #: admin_interface/admin.py
 msgid "Related Modal"
@@ -69,7 +69,7 @@ msgstr "Okno dialogowe"
 
 #: admin_interface/admin.py
 msgid "Form Controls"
-msgstr ""
+msgstr "Kontrolki formularza"
 
 #: admin_interface/admin.py
 msgid "List Filter"
@@ -77,11 +77,11 @@ msgstr "Filtry"
 
 #: admin_interface/admin.py
 msgid "Change Form"
-msgstr ""
+msgstr "Formularz zmiany"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "Formularze wbudowane"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -125,11 +125,11 @@ msgstr "logo"
 
 #: admin_interface/models.py
 msgid "max width"
-msgstr ""
+msgstr "maksymalna szerokość"
 
 #: admin_interface/models.py
 msgid "max height"
-msgstr ""
+msgstr "maksymalna wysokość"
 
 #: admin_interface/models.py
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
@@ -157,15 +157,15 @@ msgstr "widoczne przy ikonce (znacznik)"
 
 #: admin_interface/models.py
 msgid "Default Select"
-msgstr ""
+msgstr "Domyślny wybór"
 
 #: admin_interface/models.py
 msgid "Minimal Select"
-msgstr ""
+msgstr "Minimalny wybór"
 
 #: admin_interface/models.py
 msgid "control"
-msgstr ""
+msgstr "kontrolka"
 
 #: admin_interface/models.py
 msgid "code"
@@ -192,16 +192,12 @@ msgid "link hover color"
 msgstr "kolor wskazywanego linku"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "background color"
 msgid "background selected color"
-msgstr "kolor tła"
+msgstr "kolor zaznaczonego tła"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "link color"
 msgid "link selected color"
-msgstr "kolor linku"
+msgstr "kolor zaznaczonego linku"
 
 #: admin_interface/models.py
 msgid "rounded corners"
@@ -225,7 +221,7 @@ msgstr "pokaż przycisk zamykania"
 
 #: admin_interface/models.py
 msgid "highlight active"
-msgstr ""
+msgstr "podświetl aktywne"
 
 #: admin_interface/models.py
 msgid "use dropdown"
@@ -233,47 +229,51 @@ msgstr "zastosuj listy rozwijane"
 
 #: admin_interface/models.py
 msgid "sticky position"
-msgstr ""
+msgstr "przyklejona pozycja"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr ""
+msgstr "szybkie usuwanie aktywnych filtrów na górze paska bocznego"
 
 #: admin_interface/models.py
 msgid "foldable apps"
-msgstr ""
+msgstr "zwijane aplikacje"
 
 #: admin_interface/models.py
 msgid "fieldsets as tabs"
-msgstr ""
+msgstr "zbiory pól jako zakładki"
 
 #: admin_interface/models.py
 msgid "inlines as tabs"
-msgstr ""
+msgstr "formularze wbudowane jako zakładki"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines"
-msgstr ""
+msgstr "zwijane formularze wbudowane w stosie"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines collapsed"
-msgstr ""
+msgstr "zwijane formularze wbudowane w stosie (zwinięte)"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines"
-msgstr ""
+msgstr "zwijane tabelaryczne formularze wbudowane"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines collapsed"
-msgstr ""
+msgstr "zwijane tabelaryczne formularze wbudowane (zwinięte)"
+
+#: admin_interface/models.py
+msgid "sticky actions"
+msgstr "przyklejone akcje"
 
 #: admin_interface/models.py
 msgid "sticky submit"
-msgstr ""
+msgstr "przyklejony przycisk wysyłania"
 
 #: admin_interface/models.py
 msgid "sticky pagination"
-msgstr ""
+msgstr "przyklejona paginacja"
 
 #: admin_interface/models.py
 msgid "Theme"
@@ -284,10 +284,8 @@ msgid "Themes"
 msgstr "Schematy"
 
 #: admin_interface/templates/admin/change_list.html
-#, fuzzy
-#| msgid "List Filter"
 msgid "Filter"
-msgstr "Filtry"
+msgstr "Filtruj"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
@@ -307,21 +305,21 @@ msgstr ""
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "Zmień"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "Widok"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "Zobacz na stronie"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "Usunąć?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html

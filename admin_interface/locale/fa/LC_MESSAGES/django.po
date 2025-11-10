@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Amir Ajorloo <amirajorloo@gmail.com>\n"
 "Language-Team: Farsi <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgstr "دکمههای حذف"
 
 #: admin_interface/admin.py
 msgid "Navigation Bar"
-msgstr ""
+msgstr "نوار ناوبری"
 
 #: admin_interface/admin.py
 msgid "Related Modal"
@@ -67,7 +67,7 @@ msgstr "مدلهای مرتبط"
 
 #: admin_interface/admin.py
 msgid "Form Controls"
-msgstr ""
+msgstr "کنترل‌های فرم"
 
 #: admin_interface/admin.py
 msgid "List Filter"
@@ -75,11 +75,11 @@ msgstr "فیلترهای لیست"
 
 #: admin_interface/admin.py
 msgid "Change Form"
-msgstr ""
+msgstr "فرم تغییر"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "فرم‌های درون خطی"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -123,11 +123,11 @@ msgstr "لوگو"
 
 #: admin_interface/models.py
 msgid "max width"
-msgstr ""
+msgstr "حداکثر عرض"
 
 #: admin_interface/models.py
 msgid "max height"
-msgstr ""
+msgstr "حداکثر ارتفاع"
 
 #: admin_interface/models.py
 msgid "(.ico|.png|.gif - 16x16|32x32 px)"
@@ -154,15 +154,15 @@ msgstr "نمایان در آیکون تب"
 
 #: admin_interface/models.py
 msgid "Default Select"
-msgstr ""
+msgstr "انتخاب پیش‌فرض"
 
 #: admin_interface/models.py
 msgid "Minimal Select"
-msgstr ""
+msgstr "انتخاب حداقلی"
 
 #: admin_interface/models.py
 msgid "control"
-msgstr ""
+msgstr "کنترل"
 
 #: admin_interface/models.py
 msgid "code"
@@ -189,16 +189,12 @@ msgid "link hover color"
 msgstr "رنگ لینک در حالت هاور"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "background color"
 msgid "background selected color"
-msgstr "رنگ پسزمینه"
+msgstr "رنگ پس‌زمینه انتخاب شده"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "link color"
 msgid "link selected color"
-msgstr "رنگ لینک"
+msgstr "رنگ لینک انتخاب شده"
 
 #: admin_interface/models.py
 msgid "rounded corners"
@@ -222,7 +218,7 @@ msgstr "دکمه بستن نمایان باشد"
 
 #: admin_interface/models.py
 msgid "highlight active"
-msgstr ""
+msgstr "برجسته‌سازی فعال"
 
 #: admin_interface/models.py
 msgid "use dropdown"
@@ -230,47 +226,51 @@ msgstr "استفاده از دراپ داون"
 
 #: admin_interface/models.py
 msgid "sticky position"
-msgstr ""
+msgstr "موقعیت چسبنده"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr ""
+msgstr "لینک‌های حذف سریع برای فیلترهای فعال در بالای نوار کناری"
 
 #: admin_interface/models.py
 msgid "foldable apps"
-msgstr ""
+msgstr "برنامه‌های تاشو"
 
 #: admin_interface/models.py
 msgid "fieldsets as tabs"
-msgstr ""
+msgstr "فیلدست‌ها به صورت تب"
 
 #: admin_interface/models.py
 msgid "inlines as tabs"
-msgstr ""
+msgstr "فرم‌های درون خطی به صورت تب"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines"
-msgstr ""
+msgstr "فرم‌های درون خطی پشته‌ای جمع‌شونده"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines collapsed"
-msgstr ""
+msgstr "فرم‌های درون خطی پشته‌ای جمع‌شونده (جمع شده)"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines"
-msgstr ""
+msgstr "فرم‌های درون خطی جدولی جمع‌شونده"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines collapsed"
-msgstr ""
+msgstr "فرم‌های درون خطی جدولی جمع‌شونده (جمع شده)"
+
+#: admin_interface/models.py
+msgid "sticky actions"
+msgstr "اقدامات چسبنده"
 
 #: admin_interface/models.py
 msgid "sticky submit"
-msgstr ""
+msgstr "ارسال چسبنده"
 
 #: admin_interface/models.py
 msgid "sticky pagination"
-msgstr ""
+msgstr "صفحه‌بندی چسبنده"
 
 #: admin_interface/models.py
 msgid "Theme"
@@ -281,10 +281,8 @@ msgid "Themes"
 msgstr "تمها"
 
 #: admin_interface/templates/admin/change_list.html
-#, fuzzy
-#| msgid "List Filter"
 msgid "Filter"
-msgstr "فیلترهای لیست"
+msgstr "فیلتر"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
@@ -304,21 +302,21 @@ msgstr ""
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "تغییر"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "نمایش"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "نمایش در سایت"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "حذف؟"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-admin-interface\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: 2018-12-30 19:13-0500\n"
 "Last-Translator: Fabio Caccamo <fabio.caccamo@gmail.com>\n"
 "Language-Team: Italian <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr "Form di modifica"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "Form in linea"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -157,15 +157,15 @@ msgstr "visibile nella favicon (marker)"
 
 #: admin_interface/models.py
 msgid "Default Select"
-msgstr ""
+msgstr "Selezione predefinita"
 
 #: admin_interface/models.py
 msgid "Minimal Select"
-msgstr ""
+msgstr "Selezione minima"
 
 #: admin_interface/models.py
 msgid "control"
-msgstr ""
+msgstr "controllo"
 
 #: admin_interface/models.py
 msgid "code"
@@ -192,16 +192,12 @@ msgid "link hover color"
 msgstr "colore dei link in hover"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "background color"
 msgid "background selected color"
-msgstr "colore di sfondo"
+msgstr "colore di sfondo selezionato"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "link color"
 msgid "link selected color"
-msgstr "colore dei link"
+msgstr "colore dei link selezionati"
 
 #: admin_interface/models.py
 msgid "rounded corners"
@@ -225,7 +221,7 @@ msgstr "pulsante chiudi visibile"
 
 #: admin_interface/models.py
 msgid "highlight active"
-msgstr ""
+msgstr "evidenzia attivo"
 
 #: admin_interface/models.py
 msgid "use dropdown"
@@ -233,7 +229,7 @@ msgstr "usa dropdown"
 
 #: admin_interface/models.py
 msgid "sticky position"
-msgstr ""
+msgstr "posizione sticky"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
@@ -241,39 +237,43 @@ msgstr "links di rimozione rapida dei filtri attivi in alto nella sidebar"
 
 #: admin_interface/models.py
 msgid "foldable apps"
-msgstr ""
+msgstr "app pieghevoli"
 
 #: admin_interface/models.py
 msgid "fieldsets as tabs"
-msgstr ""
+msgstr "fieldsets come tabs"
 
 #: admin_interface/models.py
 msgid "inlines as tabs"
-msgstr ""
+msgstr "form in linea come tabs"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines"
-msgstr ""
+msgstr "form in linea impilati richiudibili"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines collapsed"
-msgstr ""
+msgstr "form in linea impilati richiudibili (chiusi)"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines"
-msgstr ""
+msgstr "form in linea tabulari richiudibili"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines collapsed"
-msgstr ""
+msgstr "form in linea tabulari richiudibili (chiusi)"
+
+#: admin_interface/models.py
+msgid "sticky actions"
+msgstr "azioni sticky"
 
 #: admin_interface/models.py
 msgid "sticky submit"
-msgstr ""
+msgstr "invio sticky"
 
 #: admin_interface/models.py
 msgid "sticky pagination"
-msgstr ""
+msgstr "impaginazione sticky"
 
 #: admin_interface/models.py
 msgid "Theme"
@@ -284,10 +284,8 @@ msgid "Themes"
 msgstr "Temi"
 
 #: admin_interface/templates/admin/change_list.html
-#, fuzzy
-#| msgid "List Filter"
 msgid "Filter"
-msgstr "Filtro listato"
+msgstr "Filtra"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
@@ -302,7 +300,7 @@ msgstr ""
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
 msgid "Clear all filters"
-msgstr "Cancella tutti i filtri"
+msgstr ""
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html

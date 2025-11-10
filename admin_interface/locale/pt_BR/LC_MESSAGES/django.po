@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,11 +76,11 @@ msgstr "Filtro de lista"
 
 #: admin_interface/admin.py
 msgid "Change Form"
-msgstr ""
+msgstr "Formulário de Alteração"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "Formulários Embutidos"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -156,17 +156,15 @@ msgstr "visível no favicon (marcador)"
 
 #: admin_interface/models.py
 msgid "Default Select"
-msgstr ""
+msgstr "Seleção Padrão"
 
 #: admin_interface/models.py
 msgid "Minimal Select"
-msgstr ""
+msgstr "Seleção Mínima"
 
 #: admin_interface/models.py
-#, fuzzy
-#| msgid "Form Controls"
 msgid "control"
-msgstr "Controles de Formulário"
+msgstr "controle"
 
 #: admin_interface/models.py
 msgid "code"
@@ -198,7 +196,7 @@ msgstr "cor de fundo selecionada"
 
 #: admin_interface/models.py
 msgid "link selected color"
-msgstr "link cor selecionada"
+msgstr "cor do link selecionado"
 
 #: admin_interface/models.py
 msgid "rounded corners"
@@ -222,7 +220,7 @@ msgstr "botão fechar visível"
 
 #: admin_interface/models.py
 msgid "highlight active"
-msgstr ""
+msgstr "destacar ativo"
 
 #: admin_interface/models.py
 msgid "use dropdown"
@@ -234,7 +232,7 @@ msgstr "posição sticky"
 
 #: admin_interface/models.py
 msgid "quick remove links for active filters at top of sidebar"
-msgstr ""
+msgstr "links de remoção rápida para filtros ativos no topo da barra lateral"
 
 #: admin_interface/models.py
 msgid "foldable apps"
@@ -242,27 +240,31 @@ msgstr "aplicativos dobráveis"
 
 #: admin_interface/models.py
 msgid "fieldsets as tabs"
-msgstr ""
+msgstr "fieldsets como abas"
 
 #: admin_interface/models.py
 msgid "inlines as tabs"
-msgstr ""
+msgstr "formulários embutidos como abas"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines"
-msgstr ""
+msgstr "formulários embutidos empilhados recolhíveis"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines collapsed"
-msgstr ""
+msgstr "formulários embutidos empilhados recolhíveis (recolhidos)"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines"
-msgstr ""
+msgstr "formulários embutidos tabulares recolhíveis"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines collapsed"
-msgstr ""
+msgstr "formulários embutidos tabulares recolhíveis (recolhidos)"
+
+#: admin_interface/models.py
+msgid "sticky actions"
+msgstr "ações fixas"
 
 #: admin_interface/models.py
 msgid "sticky submit"
@@ -281,10 +283,8 @@ msgid "Themes"
 msgstr "Temas"
 
 #: admin_interface/templates/admin/change_list.html
-#, fuzzy
-#| msgid "List Filter"
 msgid "Filter"
-msgstr "Filtro de lista"
+msgstr "Filtrar"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
@@ -304,21 +304,21 @@ msgstr ""
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "Alterar"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "Visualizar"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "Visualizar no site"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "Excluir?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 07:09-0500\n"
+"POT-Creation-Date: 2025-11-10 12:06-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,7 @@ msgstr "Änderungsformular"
 
 #: admin_interface/admin.py
 msgid "Inlines"
-msgstr ""
+msgstr "Inline-Formulare"
 
 #: admin_interface/admin.py
 msgid "Recent Actions"
@@ -247,19 +247,25 @@ msgstr "Inlines als Tabs"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines"
-msgstr ""
+msgstr "zusammenklappbare gestapelte Inlines"
 
 #: admin_interface/models.py
 msgid "collapsible stacked inlines collapsed"
-msgstr ""
+msgstr "zusammenklappbare gestapelte Inlines eingeklappt"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines"
-msgstr ""
+msgstr "zusammenklappbare tabellarische Inlines"
 
 #: admin_interface/models.py
 msgid "collapsible tabular inlines collapsed"
-msgstr ""
+msgstr "zusammenklappbare tabellarische Inlines eingeklappt"
+
+#: admin_interface/models.py
+#, fuzzy
+#| msgid "sticky pagination"
+msgid "sticky actions"
+msgstr "angeheftete Aktionen"
 
 #: admin_interface/models.py
 msgid "sticky submit"
@@ -279,7 +285,7 @@ msgstr "Themen"
 
 #: admin_interface/templates/admin/change_list.html
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #. Translators: don't translate this, the django catalog already contains it
 #: admin_interface/templates/admin/change_list.html
@@ -299,27 +305,27 @@ msgstr ""
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Change"
-msgstr ""
+msgstr "Ändern"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View"
-msgstr ""
+msgstr "Anzeigen"
 
 #: admin_interface/templates/admin/edit_inline/headerless_stacked.html
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "View on site"
-msgstr ""
+msgstr "Auf der Website anzeigen"
 
 #: admin_interface/templates/admin/edit_inline/headerless_tabular.html
 msgid "Delete?"
-msgstr ""
+msgstr "Löschen?"
 
 #: admin_interface/templates/admin/filter.html
 #: admin_interface/templates/admin_interface/dropdown_filter.html
 #, python-format
 msgid " By %(filter_title)s "
-msgstr ""
+msgstr " Nach %(filter_title)s "
 
 #: admin_interface/templates/admin/popup_response.html
 msgid "Popup closing..."
