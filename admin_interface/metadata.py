@@ -7,4 +7,4 @@ __description__ = (
 __email__ = "fabio.caccamo@gmail.com"
 __license__ = "MIT"
 __title__ = "django-admin-interface"
-__version__ = "0.30.1"
+__version__ = "0.31.0"

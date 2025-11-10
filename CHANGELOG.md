@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.31.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.31.0) - 2025-11-10
+-   [python] Add option for making changelist actions sticky.
+-   [python] Enable by default sticky behavior.
+-   [js] Move inline JS to separate modules to fix CSP issues.
+-   [css] Fix next-page button margins in RTL. #441 (#442).
+-   [css] Fix inlines delete-link icon size.
+-   [css] Fix filter-horizontal selected options text color.
+-   [i18n] Update all missing translations.
+-   [ci] Bump actions.
+-   [ci] Bump `pre-commit` hooks.
+-   [ci] Bump test requirements.
+
 ## [0.30.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.30.1) - 2025-06-12
 -   [js] Fix paginator links inside modal (from `raw_id_fields`) returns `404`. #420
 -   [css] Fix `Django 5.2` selector style. #435
