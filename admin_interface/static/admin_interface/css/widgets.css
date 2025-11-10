@@ -127,6 +127,7 @@
 /* fix [stacked, not-stacked] select options text overflow */
 .admin-interface .selector .selector-available select option,
 .admin-interface .selector .selector-chosen select option {
+    color: var(--body-fg) !important;
     overflow: hidden;
     text-overflow: ellipsis;
 }
