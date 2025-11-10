@@ -349,7 +349,7 @@ class Theme(models.Model):
         verbose_name=_("sticky position"),
     )
     list_filter_removal_links = models.BooleanField(
-        default=False,
+        default=True,
         verbose_name=_("quick remove links for active filters at top of sidebar"),
     )
 
@@ -395,11 +395,11 @@ class Theme(models.Model):
         verbose_name=_("sticky actions"),
     )
     form_submit_sticky = models.BooleanField(
-        default=False,
+        default=True,
         verbose_name=_("sticky submit"),
     )
     form_pagination_sticky = models.BooleanField(
-        default=False,
+        default=True,
         verbose_name=_("sticky pagination"),
     )
 
