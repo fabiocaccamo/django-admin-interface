@@ -143,8 +143,8 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
             // show_change_link=True support
             presentRelatedObjectModalOnClickOn('a.inlinechangelink');
 
-            // any link with _popup=1 parameter support excluding those inside .paginator (see #420)
-            presentRelatedObjectModalOnClickOn('a[href*="_popup=1"]:not(.paginator a)');
+            // any link with _popup=1 parameter support excluding pagination, date hierarchy, filters and search links (see #420)
+            presentRelatedObjectModalOnClickOn('a[href*="_popup=1"]:not(.paginator a, .toplinks a, #changelist-filter-extra-actions a, #changelist-search a)');
 
             // django-streamfield support
             // https://github.com/raagin/django-streamfield/
