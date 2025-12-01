@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-16 04:29+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+
+"Last-Translator: Khaled Sukkar <khaled.sukkar.contact@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\admin_interface\admin.py
+msgid "Environment"
+msgstr "البيئة"
+
+#: .\admin_interface\admin.py
+msgid "Language chooser"
+msgstr "أداة اختيار اللغة"
+
+#: .\admin_interface\admin.py
+msgid "Logo"
+msgstr "الشعار"
+
+#: .\admin_interface\admin.py
+msgid "Favicon"
+msgstr "الأيقونة"
+
+#: .\admin_interface\admin.py
+msgid "Title"
+msgstr "العنوان"
+
+#: .\admin_interface\admin.py
+msgid "Header"
+msgstr "الرأس"
+
+#: .\admin_interface\admin.py
+msgid "Breadcrumbs / Module headers"
+msgstr "مسار التنقل / عناوين الوحدات"
+
+#: .\admin_interface\admin.py
+msgid "Generic Links"
+msgstr "الروابط العامة"
+
+#: .\admin_interface\admin.py
+msgid "Save Buttons"
+msgstr "أزرار الحفظ"
+
+#: .\admin_interface\admin.py
+msgid "Delete Buttons"
+msgstr "أزرار الحذف"
+
+#: .\admin_interface\admin.py
+msgid "Navigation Bar"
+msgstr "شريط التنقل"
+
+#: .\admin_interface\admin.py
+msgid "Related Modal"
+msgstr "النافذة المشترطة ذات الصلة"
+
+#: .\admin_interface\admin.py
+msgid "Form Controls"
+msgstr "عناصر التحكم في النماذج"
+
+#: .\admin_interface\admin.py
+msgid "List Filter"
+msgstr "عامل تصفية القائمة"
+
+#: .\admin_interface\admin.py
+msgid "Change Form"
+msgstr "نموذج التعديل"
+
+#: .\admin_interface\admin.py
+msgid "Inlines"
+msgstr "الكيانات المضمنة"
+
+#: .\admin_interface\admin.py
+msgid "Recent Actions"
+msgstr "الإجراءات الحديثة"
+
+#: .\admin_interface\apps.py
+msgid "Admin Interface"
+msgstr "واجهة الإدارة"
+
+#: .\admin_interface\models.py
+msgid "name"
+msgstr "الاسم"
+
+#: .\admin_interface\models.py
+msgid "active"
+msgstr "نشط"
+
+#: .\admin_interface\models.py .\admin_interface\templates\admin\base_site.html
+msgid "Django administration"
+msgstr "إدارة Django"
+
+#: .\admin_interface\models.py
+msgid "title"
+msgstr "العنوان"
+
+#: .\admin_interface\models.py
+msgid "color"
+msgstr "اللون"
+
+#: .\admin_interface\models.py
+msgid "visible"
+msgstr "مرئي"
+
+#: .\admin_interface\models.py
+msgid "Leave blank to use the default Django logo"
+msgstr "اتركه فارغاً لاستخدام شعار Django الافتراضي"
+
+#: .\admin_interface\models.py
+msgid "logo"
+msgstr "الشعار"
+
+#: .\admin_interface\models.py
+msgid "max width"
+msgstr "أقصى عرض"
+
+#: .\admin_interface\models.py
+msgid "max height"
+msgstr "أقصى ارتفاع"
+
+#: .\admin_interface\models.py
+msgid "(.ico|.png|.gif - 16x16|32x32 px)"
+msgstr "(.ico|.png|.gif - 16x16|32x32 بكسل)"
+
+#: .\admin_interface\models.py
+msgid "favicon"
+msgstr "الأيقونة"
+
+#: .\admin_interface\models.py
+msgid ""
+"(red: #E74C3C, orange: #E67E22, yellow: #F1C40F, green: #2ECC71, blue: "
+"#3498DB)"
+msgstr ""
+"(أحمر: #E74C3C، برتقالي: #E67E22، أصفر: #F1C40F، أخضر: #2ECC71، أزرق: "
+"#3498DB)"
+
+#: .\admin_interface\models.py
+msgid "visible in header (marker and name)"
+msgstr "مرئي في رأس الصفحة (المحدد والاسم)"
+
+#: .\admin_interface\models.py
+msgid "visible in favicon (marker)"
+msgstr "مرئي في الأيقونة (المحدد)"
+
+#: .\admin_interface\models.py
+msgid "Default Select"
+msgstr "اختيار افتراضي"
+
+#: .\admin_interface\models.py
+msgid "Minimal Select"
+msgstr "اختيار مصغر"
+
+#: .\admin_interface\models.py
+msgid "control"
+msgstr "عنصر التحكم"
+
+#: .\admin_interface\models.py
+msgid "code"
+msgstr "الكود"
+
+#: .\admin_interface\models.py
+msgid "display"
+msgstr "العرض"
+
+#: .\admin_interface\models.py
+msgid "background color"
+msgstr "لون الخلفية"
+
+#: .\admin_interface\models.py
+msgid "text color"
+msgstr "لون النص"
+
+#: .\admin_interface\models.py
+msgid "link color"
+msgstr "لون الرابط"
+
+#: .\admin_interface\models.py
+msgid "link hover color"
+msgstr "لون التمرير على الرابط"
+
+#: .\admin_interface\models.py
+msgid "background selected color"
+msgstr "لون الخلفية للمحدد"
+
+#: .\admin_interface\models.py
+msgid "link selected color"
+msgstr "لون الرابط للمحدد"
+
+#: .\admin_interface\models.py
+msgid "rounded corners"
+msgstr "زوايا دائرية"
+
+#: .\admin_interface\models.py
+msgid "link active color"
+msgstr "لون الرابط النشط"
+
+#: .\admin_interface\models.py
+msgid "background hover color"
+msgstr "لون خلفية التمرير"
+
+#: .\admin_interface\models.py
+msgid "background opacity"
+msgstr "شفافية الخلفية"
+
+#: .\admin_interface\models.py
+msgid "close button visible"
+msgstr "زر الإغلاق مرئي"
+
+#: .\admin_interface\models.py
+msgid "highlight active"
+msgstr "تمييز النشط"
+
+#: .\admin_interface\models.py
+msgid "use dropdown"
+msgstr "استخدام القائمة المنسدلة"
+
+#: .\admin_interface\models.py
+msgid "sticky position"
+msgstr "موضع ثابت"
+
+#: .\admin_interface\models.py
+msgid "quick remove links for active filters at top of sidebar"
+msgstr "روابط الإزالة السريعة لعوامل التصفية النشطة أعلى الشريط الجانبي"
+
+#: .\admin_interface\models.py
+msgid "foldable apps"
+msgstr "طي وتوسيع التطبيقات"
+
+#: .\admin_interface\models.py
+msgid "fieldsets as tabs"
+msgstr "عرض المجموعات في شكل ألسنة"
+
+#: .\admin_interface\models.py
+msgid "inlines as tabs"
+msgstr "عرض السجلات المرتبطة في شكل ألسنة"
+
+#: .\admin_interface\models.py
+msgid "collapsible stacked inlines"
+msgstr "إمكانية طي السجلات المتراصة"
+
+#: .\admin_interface\models.py
+msgid "collapsible stacked inlines collapsed"
+msgstr "السجلات المتراصة مطوية افتراضياً"
+
+#: .\admin_interface\models.py
+msgid "collapsible tabular inlines"
+msgstr "إمكانية طي السجلات الجدولية"
+
+#: .\admin_interface\models.py
+msgid "collapsible tabular inlines collapsed"
+msgstr "السجلات الجدولية مطوية افتراضياً"
+
+#: .\admin_interface\models.py
+msgid "sticky actions"
+msgstr "الإجراءات الثابتة"
+
+#: .\admin_interface\models.py
+msgid "sticky submit"
+msgstr "إرسال ثابت"
+
+#: .\admin_interface\models.py
+msgid "sticky pagination"
+msgstr "ترقيم الصفحات الثابت"
+
+#: .\admin_interface\models.py
+msgid "Theme"
+msgstr "السمة"
+
+#: .\admin_interface\models.py
+msgid "Themes"
+msgstr "السمات"
+
+#: .\admin_interface\templates\admin\change_list.html
+msgid "Filter"
+msgstr "فلترة"
+
+#. Translators: don't translate this, the django catalog already contains it
+#: .\admin_interface\templates\admin\change_list.html
+msgid "Hide counts"
+msgstr "إخفاء العدد"
+
+#. Translators: don't translate this, the django catalog already contains it
+#: .\admin_interface\templates\admin\change_list.html
+msgid "Show counts"
+msgstr "عرض العدد"
+
+#. Translators: don't translate this, the django catalog already contains it
+#: .\admin_interface\templates\admin\change_list.html
+msgid "Clear all filters"
+msgstr "مسح كل عوامل الفلترة"
+
+#: .\admin_interface\templates\admin\edit_inline\headerless_stacked.html
+#: .\admin_interface\templates\admin\edit_inline\headerless_tabular.html
+msgid "Change"
+msgstr "تعديل"
+
+#: .\admin_interface\templates\admin\edit_inline\headerless_stacked.html
+#: .\admin_interface\templates\admin\edit_inline\headerless_tabular.html
+msgid "View"
+msgstr "عرض"
+
+#: .\admin_interface\templates\admin\edit_inline\headerless_stacked.html
+#: .\admin_interface\templates\admin\edit_inline\headerless_tabular.html
+msgid "View on site"
+msgstr "عرض على الموقع"
+
+#: .\admin_interface\templates\admin\edit_inline\headerless_tabular.html
+msgid "Delete?"
+msgstr "حذف؟"
+
+#: .\admin_interface\templates\admin\filter.html
+#: .\admin_interface\templates\admin_interface\dropdown_filter.html
+#, python-format
+
+msgid " By %(filter_title)s "
+msgstr " حسب %(filter_title)s "
+
+#: .\admin_interface\templates\admin\popup_response.html
+msgid "Popup closing..."
+msgstr "يتم إغلاق النافذة المنبثقة..."
