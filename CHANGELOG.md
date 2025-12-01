@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.31.1](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.31.1) - 2025-12-02
+-   [js] Prevent modal popup navigation links from opening a modal. (by [julianwachholz](https://github.com/julianwachholz) #462)
+-   [i18n] Add Arabic translation. #459 (by [@khaledsukkar2](https://github.com/khaledsukkar2) in #460)
+-   [ci] Bump actions.
+-   [ci] Bump `pre-commit` hooks.
+-   [ci] Bump test requirements.
+
 ## [0.31.0](https://github.com/fabiocaccamo/django-admin-interface/releases/tag/0.31.0) - 2025-11-10
 -   [python] Add option for making changelist actions sticky.
 -   [python] Enable by default sticky behavior.
