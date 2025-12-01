@@ -43,7 +43,7 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
   - `django-streamfield`
   - `django-tabbed-admin`
   - `sorl-thumbnail`
-- Translated in many languages: `de`, `es`, `fa`, `fr`, `it`, `pl`, `pt_BR`, `ru`, `tr`, `ar`
+- Translated in many languages: `ar`, `de`, `es`, `fa`, `fr`, `it`, `pl`, `pt_BR`, `ru`, `tr`
 
 ## Installation
 - Run `pip install django-admin-interface`
