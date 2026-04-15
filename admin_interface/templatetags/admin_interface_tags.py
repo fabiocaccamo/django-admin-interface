@@ -9,6 +9,7 @@ from django.contrib.admin.utils import get_fields_from_path
 from django.templatetags.static import static
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
+
 try:
     from slugify import slugify
 except ImportError:
