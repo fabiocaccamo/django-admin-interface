@@ -11,6 +11,14 @@ def default_link_selected(apps, schema_editor):
     )
 
 
+def reverse_default_link_selected(apps, schema_editor):
+    Theme = apps.get_model("admin_interface", "Theme")
+    db_alias = schema_editor.connection.alias
+    Theme.objects.using(db_alias).update(
+        css_module_link_color=F("css_module_link_selected_color")
+    )
+
+
 class Migration(migrations.Migration):
     dependencies = [
         ("admin_interface", "0019_add_form_sticky"),
@@ -39,5 +47,7 @@ class Migration(migrations.Migration):
                 verbose_name="link selected color",
             ),
         ),
-        migrations.RunPython(default_link_selected, reverse_code=migrations.RunPython.noop),
+        migrations.RunPython(
+            default_link_selected, reverse_code=reverse_default_link_selected
+        ),
     ]
