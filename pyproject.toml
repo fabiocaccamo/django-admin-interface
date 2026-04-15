@@ -49,11 +49,6 @@ maintainers = [
     { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
 ]
 
-[project.optional-dependencies]
-slugify = [
-    "python-slugify >= 7.0.0, < 9.0.0",
-]
-
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"
