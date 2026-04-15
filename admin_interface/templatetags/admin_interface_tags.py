@@ -9,7 +9,11 @@ from django.contrib.admin.utils import get_fields_from_path
 from django.templatetags.static import static
 from django.urls import NoReverseMatch, reverse
 from django.utils import translation
-from slugify import slugify
+
+try:
+    from slugify import slugify
+except ImportError:
+    from django.utils.text import slugify
 
 from admin_interface.cache import get_cached_active_theme, set_cached_active_theme
 from admin_interface.metadata import __version__
