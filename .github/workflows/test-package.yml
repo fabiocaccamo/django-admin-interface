@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Create matrix
-        uses: fabiocaccamo/create-matrix-action@v6
+        uses: fabiocaccamo/create-matrix-action@c31a63f5bfe2ce1cc2a95d4adb6d45e880f5548f # v6
         id: create_matrix
         with:
           matrix: |
@@ -38,10 +38,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v6
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
     - name: Set up Python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
       with:
         python-version: '3.x'
         cache: 'pip'
@@ -84,13 +84,13 @@ jobs:
 
     steps:
 
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
     - name: Install psycopg2 prerequisites
       run: sudo apt install libpq-dev
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
       with:
         python-version: ${{ matrix.python-version }}
         cache: 'pip'
@@ -121,7 +121,7 @@ jobs:
         coverage xml -o ./coverage.xml
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v6
+      uses: codecov/codecov-action@57e3a136b779b570ffcdbf80b3bdc90e7fab3de2 # v6.0.0
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         fail_ci_if_error: false
