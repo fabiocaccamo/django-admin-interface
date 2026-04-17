@@ -1,5 +1,7 @@
 name: Create release
 
+permissions: {}
+
 on:
   push:
     tags:
@@ -10,24 +12,25 @@ jobs:
     runs-on: ubuntu-latest
     # environment: release
     permissions:
+      contents: write
       id-token: write
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Extract release notes
         id: extract-release-notes
-        uses: ffurrer2/extract-release-notes@v3
+        uses: ffurrer2/extract-release-notes@273da39a24fb7db106a35526c8162815faffd31d # v3.1.0
 
       - name: Create release
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         with:
           body: ${{ steps.extract-release-notes.outputs.release_notes }}
           token: ${{ secrets.WORKFLOWS_CREATE_RELEASE_TOKEN }}
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: '3.x'
           cache: 'pip'
@@ -39,7 +42,7 @@ jobs:
           python -m build
 
       - name: Publish on PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b # v1.14.0
         with:
           packages-dir: dist/
           # password: ${{ secrets.WORKFLOWS_PUBLISH_TO_PYPI_TOKEN }}
