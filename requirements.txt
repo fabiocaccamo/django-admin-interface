@@ -1,2 +1,2 @@
-django >= 2.2
+django >= 4.2
 django-colorfield == 0.14.0
