@@ -2,13 +2,15 @@
 
 ## Supported Versions
 
-Keep this library updated to the latest version.
+Only the latest stable release receives security fixes.
 
 | Version | Supported          |
 | ------- | ------------------ |
 | latest  | :white_check_mark: |
-| oldest  | :x:                |
+| older   | :x:                |
 
 ## Reporting a Vulnerability
 
-Open an issue.
+**Please do not open a public GitHub issue for security vulnerabilities.**
+
+Use GitHub's private [Report a vulnerability](https://github.com/fabiocaccamo/django-admin-interface/security/advisories/new) feature. You will receive a response within 7 days, and a fix will be released as soon as possible depending on severity.
