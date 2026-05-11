@@ -68,6 +68,16 @@
 }
 /* end-fix */
 
+/* Restore Django admin date/time popup widths overridden by module styles. */
+.admin-interface .calendarbox {
+    width: 19em;
+}
+
+.admin-interface .clockbox {
+    width: auto;
+}
+/* end-fix */
+
 /* fixed related widget and select2 */
 /* begin fix issue #10 - Related widget broken in long tabular inline */
 .admin-interface .related-widget-wrapper {
