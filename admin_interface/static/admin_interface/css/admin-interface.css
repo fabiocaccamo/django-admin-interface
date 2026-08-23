@@ -198,7 +198,8 @@
     color: var(--admin-interface-module-link-hover-color);
 }
 
-.admin-interface div.breadcrumbs {
+.admin-interface div.breadcrumbs,
+.admin-interface ol.breadcrumbs {
     background: var(--admin-interface-module-background-color);
     color: var(--admin-interface-module-text-color);
 }
