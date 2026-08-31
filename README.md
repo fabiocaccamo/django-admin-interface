@@ -51,12 +51,12 @@ django-admin-interface is a modern **responsive flat admin interface customizabl
 - Add `admin_interface` and `colorfield` to `settings.INSTALLED_APPS` **before** `django.contrib.admin`
 ```python
 INSTALLED_APPS = (
-    #...
+    # ...
     "admin_interface",
     "colorfield",
-    #...
+    # ...
     "django.contrib.admin",
-    #...
+    # ...
 )
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
@@ -75,10 +75,13 @@ To make a fieldset start expanded with a `Hide` button to collapse, add the clas
 class MyModelAdmin(admin.ModelAdmin):
     # ...
     fieldsets = [
-        ("Section title", {
-            "classes": ("collapse", "expanded"),
-            "fields": (...),
-        }),
+        (
+            "Section title",
+            {
+                "classes": ("collapse", "expanded"),
+                "fields": (...),
+            },
+        ),
     ]
     # ...
 ```
@@ -217,7 +220,9 @@ You can simply ignore the warning (this has been discussed [here](https://github
 ```python
 import warnings
 
-warnings.filterwarnings("ignore", module="admin_interface.templatetags.admin_interface_tags")
+warnings.filterwarnings(
+    "ignore", module="admin_interface.templatetags.admin_interface_tags"
+)
 ```
 
 ### Language Chooser not showing
