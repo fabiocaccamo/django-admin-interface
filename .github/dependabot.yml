@@ -9,6 +9,8 @@ updates:
       python-requirements:
         patterns:
           - "*"
+    ignore:
+      - dependency-name: "django"
 
   - package-ecosystem: "github-actions"
     directory: "/"
