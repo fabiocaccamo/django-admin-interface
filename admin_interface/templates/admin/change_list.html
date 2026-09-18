@@ -1,5 +1,19 @@
 {% extends "admin/change_list.html" %}
 {% load admin_interface_tags admin_list i18n %}
+
+{% block object-tools-items %}
+  {% admin_interface_use_object_actions cl.model_admin as show_object_actions %}
+  {% if show_object_actions %}
+    {% for tool in objectactions %}
+        <li class="objectaction-item" data-tool-name="{{ tool.name }}">
+        {% url tools_view_name tool=tool.name as action_url %}
+        {% include 'django_object_actions/action_trigger.html' %}
+        </li>
+    {% endfor %}
+  {% endif %}
+  {{ block.super }}
+{% endblock object-tools-items %}
+
 {# copied from django 5.1.2 #}
 
 {% block filters %}
