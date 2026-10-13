@@ -43,6 +43,7 @@ dependencies = [
     "django-colorfield >= 0.8.0, < 1.0.0",
 ]
 dynamic = ["version"]
+requires-python = ">=3.10"
 maintainers = [
     { name = "Fabio Caccamo", email = "fabio.caccamo@gmail.com" },
 ]
