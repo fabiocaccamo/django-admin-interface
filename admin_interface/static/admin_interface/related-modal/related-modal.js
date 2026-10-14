@@ -73,11 +73,13 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
                 // fix for django 1.7 TODO remove
                 iframeSrc = updateURLParameter(iframeSrc, '_popup', '1');
 
-                // build the iframe html
-                const iframeHTML = '<iframe id="related-modal-iframe" name="' + iframeName + '" src="' + iframeSrc + '"></iframe>';
-                const modalHTML = '<div class="related-modal-iframe-container">' + iframeHTML + '</div>';
-                const modalEl = $(modalHTML);
-                const iframeEl = modalEl.find('#related-modal-iframe');
+                // build the iframe using DOM API to avoid XSS via string concatenation
+                const iframeEl = $('<iframe>').attr({
+                    id: 'related-modal-iframe',
+                    name: iframeName,
+                    src: iframeSrc,
+                });
+                const modalEl = $('<div>').addClass('related-modal-iframe-container').append(iframeEl);
 
                 if (e.data.lookup === true) {
                     // set current window as iframe opener because
