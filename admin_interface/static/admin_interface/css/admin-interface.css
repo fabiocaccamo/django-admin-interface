@@ -198,18 +198,23 @@
     color: var(--admin-interface-module-link-hover-color);
 }
 
-.admin-interface div.breadcrumbs {
+.admin-interface div.breadcrumbs,
+.admin-interface ol.breadcrumbs {
     background: var(--admin-interface-module-background-color);
     color: var(--admin-interface-module-text-color);
 }
 
-.admin-interface div.breadcrumbs a {
+.admin-interface div.breadcrumbs a,
+.admin-interface ol.breadcrumbs li a {
     color: var(--admin-interface-module-link-color);
 }
 
 .admin-interface div.breadcrumbs a:active,
 .admin-interface div.breadcrumbs a:focus,
-.admin-interface div.breadcrumbs a:hover {
+.admin-interface div.breadcrumbs a:hover,
+.admin-interface ol.breadcrumbs li a:active,
+.admin-interface ol.breadcrumbs li a:focus,
+.admin-interface ol.breadcrumbs li a:hover {
     color: var(--admin-interface-module-link-hover-color);
 }
 
