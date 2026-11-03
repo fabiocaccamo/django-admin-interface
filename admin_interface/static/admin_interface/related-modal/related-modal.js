@@ -61,17 +61,15 @@ if (typeof(django) !== 'undefined' && typeof(django.jQuery) !== 'undefined') {
                 // it will be available as window.name in the loaded iframe
                 const iframeName = linkEl.attr('id');
                 let iframeSrc = href;
+                let popupValue = '1';
 
                 if (e.data.lookup !== true) {
                     // browsers stop loading nested iframes having the same src url
-                    // create a random parameter and append it to the src url to prevent it
-                    // this workaround doesn't work with related lookup url
-                    const iframeSrcRandom = String(Math.round(Math.random() * 999999));
-                    iframeSrc = updateURLParameter(iframeSrc, '_modal', iframeSrcRandom);
+                    // vary the allowed _popup parameter instead of adding an unknown filter
+                    popupValue = String(Math.round(Math.random() * 999999));
                 }
 
-                // fix for django 1.7 TODO remove
-                iframeSrc = updateURLParameter(iframeSrc, '_popup', '1');
+                iframeSrc = updateURLParameter(iframeSrc, '_popup', popupValue);
 
                 // build the iframe html
                 const iframeHTML = '<iframe id="related-modal-iframe" name="' + iframeName + '" src="' + iframeSrc + '"></iframe>';
