@@ -262,6 +262,18 @@ url = reverse(f"admin:myapp_mymodel_change", args=[mymodel_instance.pk])
 url = f"{url}?_popup=1"
 ```
 
+### Show validation errors in a related modal
+
+To keep the modal open when an input is invalid, raise a
+`django.core.exceptions.ValidationError` in your admin form's
+`clean_<field>()` method, or in `clean()` for checks involving multiple fields.
+Set `ModelAdmin.form` to your custom `ModelForm`. Django then redisplays the
+form in the modal with the validation errors.
+
+An error added with `messages.error()` inside `ModelAdmin.save_model()` does
+not invalidate the form. At that point Django has already validated the form
+and will still send the popup response that closes the modal.
+
 ## Testing
 ```bash
 # clone repository
