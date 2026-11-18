@@ -236,6 +236,23 @@ class AdminInterfaceTemplateTagsTestCase(TestCase):
         self.assertEqual(context["date_label"], "last login")
         self.assertEqual(context["date_value"], date(2022, 11, 1))
 
+    def test_date_hierarchy_removal_preserves_filters_with_shared_prefix(self):
+        params = {
+            "last_login__year": 2022,
+            "last_login__year__gte": 2020,
+            "last_login_method": "sso",
+        }
+        changelist = self._get_changelist_mock(params)
+        changelist.model._meta.get_field.return_value.verbose_name = "last login"
+
+        context = templatetags.admin_interface_date_hierarchy_removal_link(
+            changelist, "last_login"
+        )
+
+        self.assertEqual(
+            context["removal_link"], "?last_login__year__gte=2020&last_login_method=sso"
+        )
+
     def test_date_hierarchy_removal_link_year_month_day(self):
         params = {
             "last_login__year": 2022,
