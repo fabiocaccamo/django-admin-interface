@@ -19,6 +19,13 @@ from admin_interface.cache import get_cached_active_theme, set_cached_active_the
 from admin_interface.metadata import __version__
 from admin_interface.models import Theme
 
+try:
+    from django_object_actions import BaseDjangoObjectActions
+
+    DJANGO_OBJECT_ACTIONS_INSTALLED = True
+except ImportError:
+    DJANGO_OBJECT_ACTIONS_INSTALLED = False
+
 register = template.Library()
 
 
@@ -195,3 +202,10 @@ def admin_interface_use_changeform_tabs(adminform, inline_forms):
 @register.filter
 def admin_interface_slugify(name):
     return slugify(str(name or ""))
+
+
+@register.simple_tag
+def admin_interface_use_object_actions(model_admin):
+    return DJANGO_OBJECT_ACTIONS_INSTALLED and isinstance(
+        model_admin, BaseDjangoObjectActions
+    )
