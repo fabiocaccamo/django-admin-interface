@@ -146,7 +146,6 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field_name):
     date_label = " ".join(date_labels).lower()
 
     params = changelist.get_filters_params()
-    date_params = [param for param in params if param.startswith(date_field_name)]
 
     date_args = [datetime.datetime.now().year, 1, 1]
     date_format = "Y"
@@ -168,7 +167,8 @@ def admin_interface_date_hierarchy_removal_link(changelist, date_field_name):
         break
     date_value = datetime.date(*date_args)
 
-    removal_link = changelist.get_query_string(remove=date_params)
+    date_params = {f"{date_field_name}__{part}": None for part, _ in date_filters}
+    removal_link = changelist.get_query_string(new_params=date_params)
 
     return {
         "cl": changelist,
