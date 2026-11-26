@@ -1,24 +1,24 @@
-.admin-interface #changelist .changelist-footer .paginator {
+.admin-interface #changelist .paginator {
     margin-top: -1px; /* merge 2 borders into 1 */
     line-height: 1.5em;
 }
 
-.admin-interface #changelist .changelist-footer .paginator a,
-.admin-interface #changelist .changelist-footer .paginator a:link,
-.admin-interface #changelist .changelist-footer .paginator a:visited,
-.admin-interface #changelist .changelist-footer .paginator a[aria-current="page"],
-.admin-interface #changelist .changelist-footer .paginator .this-page {
+.admin-interface #changelist .paginator a,
+.admin-interface #changelist .paginator a:link,
+.admin-interface #changelist .paginator a:visited,
+.admin-interface #changelist .paginator a[aria-current="page"],
+.admin-interface #changelist .paginator .this-page {
     padding: 7px 12px;
 }
 
-.admin-interface #changelist .changelist-footer .paginator a,
-.admin-interface #changelist .changelist-footer .paginator a[aria-current="page"],
-.admin-interface #changelist .changelist-footer .paginator .this-page {
+.admin-interface #changelist .paginator a,
+.admin-interface #changelist .paginator a[aria-current="page"],
+.admin-interface #changelist .paginator .this-page {
     margin-left: 0px;
 }
 
-body.admin-interface #changelist .changelist-footer .paginator a.showall,
-body.admin-interface #changelist .changelist-footer .paginator a.showall:link,
-body.admin-interface #changelist .changelist-footer .paginator a.showall:visited {
+body.admin-interface #changelist .paginator a.showall,
+body.admin-interface #changelist .paginator a.showall:link,
+body.admin-interface #changelist .paginator a.showall:visited {
     margin-left: 20px;
 }
